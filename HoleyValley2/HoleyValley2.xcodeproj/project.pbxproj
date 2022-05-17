@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		842B2716179E6AC1C506F91A /* Pods_HoleyValley2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B661294B867C36531446097 /* Pods_HoleyValley2.framework */; };
+		8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0192B02822F2CF0057C3D8 /* DecorationType.swift */; };
+		8E5671442823080400B0395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5671432823080400B0395E /* Assets.xcassets */; };
+		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
+		8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB3E28219663005E0C2A /* AppDelegate.swift */; };
+		8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB4028219663005E0C2A /* SceneDelegate.swift */; };
+		8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9AB4428219663005E0C2A /* Main.storyboard */; };
+		8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9AB4928219666005E0C2A /* LaunchScreen.storyboard */; };
+		8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB532821967D005E0C2A /* RealmManager.swift */; };
+		8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF9CD628327B7B0058899B /* UIImageView.swift */; };
+		8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F1D2821987B00D7210D /* Decoration.swift */; };
+		8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F2128219BA500D7210D /* ServicesViewController.swift */; };
+		8EE42F2428219BA500D7210D /* ServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE42F2228219BA500D7210D /* ServicesViewController.xib */; };
+		8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F2628219BC900D7210D /* CatalogViewController.swift */; };
+		8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE42F2728219BC900D7210D /* CatalogViewController.xib */; };
+		8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F2B28219C2E00D7210D /* ReceptionViewController.swift */; };
+		8EE42F2E28219C2E00D7210D /* ReceptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE42F2C28219C2E00D7210D /* ReceptionViewController.xib */; };
+		8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F3028219C5400D7210D /* ProfileViewController.swift */; };
+		8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE42F3128219C5400D7210D /* ProfileViewController.xib */; };
+		8EE42F3528219C7600D7210D /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F3428219C7600D7210D /* BarController.swift */; };
+		8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F382821A1AC00D7210D /* DecorationCell.swift */; };
+		8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE42F392821A1AC00D7210D /* DecorationCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B661294B867C36531446097 /* Pods_HoleyValley2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoleyValley2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25FFF1A673E257735732082B /* Pods-HoleyValley2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoleyValley2.debug.xcconfig"; path = "Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2.debug.xcconfig"; sourceTree = "<group>"; };
+		8E0192B02822F2CF0057C3D8 /* DecorationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationType.swift; sourceTree = "<group>"; };
+		8E5671432823080400B0395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppIcons/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8EA9AB3B28219663005E0C2A /* HoleyValley2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleyValley2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EA9AB3E28219663005E0C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8EA9AB4028219663005E0C2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8EA9AB4528219663005E0C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8EA9AB4A28219666005E0C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8EA9AB4C28219666005E0C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EA9AB532821967D005E0C2A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		8ECF9CD628327B7B0058899B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		8EE42F1D2821987B00D7210D /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
+		8EE42F2128219BA500D7210D /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		8EE42F2228219BA500D7210D /* ServicesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesViewController.xib; sourceTree = "<group>"; };
+		8EE42F2628219BC900D7210D /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		8EE42F2728219BC900D7210D /* CatalogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogViewController.xib; sourceTree = "<group>"; };
+		8EE42F2B28219C2E00D7210D /* ReceptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptionViewController.swift; sourceTree = "<group>"; };
+		8EE42F2C28219C2E00D7210D /* ReceptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceptionViewController.xib; sourceTree = "<group>"; };
+		8EE42F3028219C5400D7210D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8EE42F3128219C5400D7210D /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		8EE42F3428219C7600D7210D /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
+		8EE42F382821A1AC00D7210D /* DecorationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationCell.swift; sourceTree = "<group>"; };
+		8EE42F392821A1AC00D7210D /* DecorationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecorationCell.xib; sourceTree = "<group>"; };
+		D6DAF3DF2163D1BA599EE55B /* Pods-HoleyValley2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoleyValley2.release.xcconfig"; path = "Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EA9AB3828219663005E0C2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842B2716179E6AC1C506F91A /* Pods_HoleyValley2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E959A30944ACF9ECA9F2438 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25FFF1A673E257735732082B /* Pods-HoleyValley2.debug.xcconfig */,
+				D6DAF3DF2163D1BA599EE55B /* Pods-HoleyValley2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8EA9AB3228219663005E0C2A = {
+			isa = PBXGroup;
+			children = (
+				8EA9AB3D28219663005E0C2A /* HoleyValley2 */,
+				8EA9AB3C28219663005E0C2A /* Products */,
+				3E959A30944ACF9ECA9F2438 /* Pods */,
+				EF00659F2B0477495E114BF8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8EA9AB3C28219663005E0C2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EA9AB3B28219663005E0C2A /* HoleyValley2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EA9AB3D28219663005E0C2A /* HoleyValley2 */ = {
+			isa = PBXGroup;
+			children = (
+				8ECF9CD5283279D20058899B /* Extensions */,
+				8EE42F362821A18D00D7210D /* Cells */,
+				8EE42F1F28219B7100D7210D /* Controllers */,
+				8EE42F1C2821986B00D7210D /* Model */,
+				8EA9AB5228219672005E0C2A /* RealmManager */,
+				8EA9AB3E28219663005E0C2A /* AppDelegate.swift */,
+				8EA9AB4028219663005E0C2A /* SceneDelegate.swift */,
+				8EA9AB4428219663005E0C2A /* Main.storyboard */,
+				8E5671432823080400B0395E /* Assets.xcassets */,
+				8EA9AB4928219666005E0C2A /* LaunchScreen.storyboard */,
+				8EA9AB4C28219666005E0C2A /* Info.plist */,
+				8EE42F3428219C7600D7210D /* BarController.swift */,
+				8E7C439528326834001C0A2A /* GoogleService-Info.plist */,
+			);
+			path = HoleyValley2;
+			sourceTree = "<group>";
+		};
+		8EA9AB5228219672005E0C2A /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				8EA9AB532821967D005E0C2A /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		8ECF9CD5283279D20058899B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8ECF9CD628327B7B0058899B /* UIImageView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8EE42F1C2821986B00D7210D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F1D2821987B00D7210D /* Decoration.swift */,
+				8E0192B02822F2CF0057C3D8 /* DecorationType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8EE42F1F28219B7100D7210D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F2F28219C3100D7210D /* ProfileViewController */,
+				8EE42F2A28219BCB00D7210D /* ReceptionViewController */,
+				8EE42F2528219BA800D7210D /* CatalogViewController */,
+				8EE42F2028219B7800D7210D /* ServicesViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8EE42F2028219B7800D7210D /* ServicesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F2128219BA500D7210D /* ServicesViewController.swift */,
+				8EE42F2228219BA500D7210D /* ServicesViewController.xib */,
+			);
+			path = ServicesViewController;
+			sourceTree = "<group>";
+		};
+		8EE42F2528219BA800D7210D /* CatalogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F2628219BC900D7210D /* CatalogViewController.swift */,
+				8EE42F2728219BC900D7210D /* CatalogViewController.xib */,
+			);
+			path = CatalogViewController;
+			sourceTree = "<group>";
+		};
+		8EE42F2A28219BCB00D7210D /* ReceptionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F2B28219C2E00D7210D /* ReceptionViewController.swift */,
+				8EE42F2C28219C2E00D7210D /* ReceptionViewController.xib */,
+			);
+			path = ReceptionViewController;
+			sourceTree = "<group>";
+		};
+		8EE42F2F28219C3100D7210D /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F3028219C5400D7210D /* ProfileViewController.swift */,
+				8EE42F3128219C5400D7210D /* ProfileViewController.xib */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
+		8EE42F362821A18D00D7210D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F372821A19000D7210D /* DecorationCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8EE42F372821A19000D7210D /* DecorationCell */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F382821A1AC00D7210D /* DecorationCell.swift */,
+				8EE42F392821A1AC00D7210D /* DecorationCell.xib */,
+			);
+			path = DecorationCell;
+			sourceTree = "<group>";
+		};
+		EF00659F2B0477495E114BF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B661294B867C36531446097 /* Pods_HoleyValley2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EA9AB3A28219663005E0C2A /* HoleyValley2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EA9AB4F28219666005E0C2A /* Build configuration list for PBXNativeTarget "HoleyValley2" */;
+			buildPhases = (
+				C9C55C786F216B0B211E089D /* [CP] Check Pods Manifest.lock */,
+				8EA9AB3728219663005E0C2A /* Sources */,
+				8EA9AB3828219663005E0C2A /* Frameworks */,
+				8EA9AB3928219663005E0C2A /* Resources */,
+				E2C4452181BBF4ACFD7085EB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HoleyValley2;
+			productName = HoleyValley2;
+			productReference = 8EA9AB3B28219663005E0C2A /* HoleyValley2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EA9AB3328219663005E0C2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					8EA9AB3A28219663005E0C2A = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 8EA9AB3628219663005E0C2A /* Build configuration list for PBXProject "HoleyValley2" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EA9AB3228219663005E0C2A;
+			productRefGroup = 8EA9AB3C28219663005E0C2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EA9AB3A28219663005E0C2A /* HoleyValley2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EA9AB3928219663005E0C2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */,
+				8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */,
+				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
+				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
+				8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */,
+				8EE42F2E28219C2E00D7210D /* ReceptionViewController.xib in Resources */,
+				8EE42F2428219BA500D7210D /* ServicesViewController.xib in Resources */,
+				8E5671442823080400B0395E /* Assets.xcassets in Resources */,
+				8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9C55C786F216B0B211E089D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoleyValley2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2C4452181BBF4ACFD7085EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EA9AB3728219663005E0C2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
+				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
+				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
+				8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */,
+				8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */,
+				8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */,
+				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,
+				8EE42F3528219C7600D7210D /* BarController.swift in Sources */,
+				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,
+				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,
+				8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */,
+				8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8EA9AB4428219663005E0C2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EA9AB4528219663005E0C2A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8EA9AB4928219666005E0C2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EA9AB4A28219666005E0C2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8EA9AB4D28219666005E0C2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8EA9AB4E28219666005E0C2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EA9AB5028219666005E0C2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FFF1A673E257735732082B /* Pods-HoleyValley2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8HDA39CT36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HoleyValley2/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = access.random.HoleyValley2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EA9AB5128219666005E0C2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6DAF3DF2163D1BA599EE55B /* Pods-HoleyValley2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8HDA39CT36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HoleyValley2/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = access.random.HoleyValley2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EA9AB3628219663005E0C2A /* Build configuration list for PBXProject "HoleyValley2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EA9AB4D28219666005E0C2A /* Debug */,
+				8EA9AB4E28219666005E0C2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EA9AB4F28219666005E0C2A /* Build configuration list for PBXNativeTarget "HoleyValley2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EA9AB5028219666005E0C2A /* Debug */,
+				8EA9AB5128219666005E0C2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8EA9AB3328219663005E0C2A /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_HoleyValley2 {
+  umbrella header "Pods-HoleyValley2-umbrella.h"
+
+  export *
+  module * { export * }
+}
