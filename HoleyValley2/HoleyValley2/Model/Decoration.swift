@@ -19,8 +19,15 @@ import UIKit
 
 class Decoration {
 
-    var name: String?
-    var price: String?
-    var describtion: String?
-    var image: UIImageView?
+    var name: String
+    var price: Int
+    var describtion: String
+    var image: String
+    
+    internal init(name: String, price: Int, describtion: String, image: String) {
+        self.name = name
+        self.price = price
+        self.describtion = describtion
+        self.image = image
+    }
 }

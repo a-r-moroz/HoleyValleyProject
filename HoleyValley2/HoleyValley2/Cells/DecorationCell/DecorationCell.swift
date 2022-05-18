@@ -18,6 +18,8 @@ class DecorationCell: UITableViewCell {
     
     var database: DatabaseReference!
     var decorationDescription = String()
+    var decorations = [Decoration]()
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,11 +46,24 @@ class DecorationCell: UITableViewCell {
             }
             guard let value = snapshot.value as? NSDictionary else { return }
             
-            self.decorationPictureView.setImageFromULR(value["picture"] as! String)
-            self.decorationNameLabel.text = (value["name"] as? String ?? "")
-            self.decorationPriceLabel.text = String(value["price"] as? Int ?? 0) + " BYN"
-            self.decorationDescription = (value["description"] as? String ?? "")
-            print(self.decorationDescription)
+//            self.decorationPictureView.setImageFromULR(value["picture"] as? String ?? Const.defaultImage)
+//            self.decorationNameLabel.text = (value["name"] as? String ?? "")
+//            self.decorationPriceLabel.text = String(value["price"] as? Int ?? 0) + " BYN"
+//            self.decorationDescription = (value["description"] as? String ?? "")
+//            print(self.decorationDescription)
+            
+            let item = Decoration(name: value["name"] as? String ?? "",
+                                  price: value["price"] as? Int ?? 0,
+                                  describtion: value["description"] as? String ?? "",
+                                  image: value["picture"] as? String ?? Const.defaultImage
+            )
+            self.decorationPictureView.setImageFromULR(item.image)
+            self.decorationNameLabel.text = item.name
+            self.decorationPriceLabel.text = String(item.price) + " BYN"
+            self.decorationDescription = item.describtion
+            self.decorations.append(item)
+            
+//            self.decorations.append([value["picture"] as! String, value["name"] as? String ?? "", String(value["price"] as? Int ?? 0) + " BYN", (value["description"] as? String ?? "")])
         })
         
         //    var decorationItem = Decoration()

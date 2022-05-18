@@ -25,6 +25,8 @@ class CatalogViewController: UIViewController {
 //
 //    var config = Realm.Configuration(fileURL: fileURL)
     
+    var decorations = [Decoration]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,7 +60,7 @@ extension CatalogViewController: UITableViewDataSource {
         guard let decorationCell = cell as? DecorationCell else { return cell }
         decorationCell.setupCell(row: indexPath.row)
 //        decorationCell.decorationPictureView.image = UIImage(data: decorations[indexPath.row].picture!)
-
+        decorations = decorationCell.decorations
         return decorationCell
     }
     
