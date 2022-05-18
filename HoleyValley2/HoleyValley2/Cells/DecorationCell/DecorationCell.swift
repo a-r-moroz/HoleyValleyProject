@@ -61,6 +61,7 @@ class DecorationCell: UITableViewCell {
             self.decorationNameLabel.text = item.name
             self.decorationPriceLabel.text = String(item.price) + " BYN"
             self.decorationDescription = item.describtion
+            
             self.decorations.append(item)
             
 //            self.decorations.append([value["picture"] as! String, value["name"] as? String ?? "", String(value["price"] as? Int ?? 0) + " BYN", (value["description"] as? String ?? "")])

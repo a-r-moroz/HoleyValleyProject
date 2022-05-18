@@ -12,6 +12,8 @@
 		8E5671442823080400B0395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5671432823080400B0395E /* Assets.xcassets */; };
 		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
 		8E9D8F532835A34B009FDF12 /* Conctants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D8F522835A34B009FDF12 /* Conctants.swift */; };
+		8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D8F552835A774009FDF12 /* DecorationViewController.swift */; };
+		8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D8F562835A774009FDF12 /* DecorationViewController.xib */; };
 		8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB3E28219663005E0C2A /* AppDelegate.swift */; };
 		8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB4028219663005E0C2A /* SceneDelegate.swift */; };
 		8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9AB4428219663005E0C2A /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		8E5671432823080400B0395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppIcons/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8E9D8F522835A34B009FDF12 /* Conctants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conctants.swift; sourceTree = "<group>"; };
+		8E9D8F552835A774009FDF12 /* DecorationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationViewController.swift; sourceTree = "<group>"; };
+		8E9D8F562835A774009FDF12 /* DecorationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecorationViewController.xib; sourceTree = "<group>"; };
 		8EA9AB3B28219663005E0C2A /* HoleyValley2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleyValley2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA9AB3E28219663005E0C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA9AB4028219663005E0C2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 				D6DAF3DF2163D1BA599EE55B /* Pods-HoleyValley2.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E9D8F542835A759009FDF12 /* DecorationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D8F552835A774009FDF12 /* DecorationViewController.swift */,
+				8E9D8F562835A774009FDF12 /* DecorationViewController.xib */,
+			);
+			path = DecorationViewController;
 			sourceTree = "<group>";
 		};
 		8EA9AB3228219663005E0C2A = {
@@ -150,6 +163,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D8F542835A759009FDF12 /* DecorationViewController */,
 				8EE42F2F28219C3100D7210D /* ProfileViewController */,
 				8EE42F2A28219BCB00D7210D /* ReceptionViewController */,
 				8EE42F2528219BA800D7210D /* CatalogViewController */,
@@ -279,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */,
 				8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */,
 				8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */,
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
@@ -344,6 +359,7 @@
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
 				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
+				8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */,
 				8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */,
 				8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */,
 				8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */,

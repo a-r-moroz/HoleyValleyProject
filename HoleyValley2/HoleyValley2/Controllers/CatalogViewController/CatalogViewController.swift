@@ -46,6 +46,11 @@ class CatalogViewController: UIViewController {
 
 extension CatalogViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let decorationVC = DecorationViewController(nibName: String(describing: DecorationViewController.self), bundle: nil)
+//        decorationVC.currentDecoration = decorations[indexPath.row]
+//        let item = decorations[indexPath.row]
+        navigationController?.pushViewController(decorationVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
