@@ -24,6 +24,8 @@ class CatalogViewController: UIViewController {
         decorationsTable.dataSource = self
         setupTable()
         
+        title = "Каталог"
+        
     }
     
     private func setupTable() {
@@ -32,8 +34,10 @@ class CatalogViewController: UIViewController {
     
     private func setupCell(cell: DecorationCell, row: Int) {
         
-        cell.decorationPictureView.image = UIImage(named: "defaultImage")
-        cell.decorationPictureView.contentMode = .scaleAspectFill
+        self.view.isUserInteractionEnabled = false
+
+//        cell.decorationPictureView.image = UIImage(named: "defaultImage")
+//        cell.decorationPictureView.contentMode = .scaleAspectFill
         
         database = Database.database().reference()
         database.child("decorations").child("\(row)").getData(completion: { error, snapshot in
@@ -54,6 +58,8 @@ class CatalogViewController: UIViewController {
             cell.decorationPriceLabel.text = String(item.price) + " BYN"
 
             self.decorations.append(item)
+            
+            self.view.isUserInteractionEnabled = true
             
         })
     }

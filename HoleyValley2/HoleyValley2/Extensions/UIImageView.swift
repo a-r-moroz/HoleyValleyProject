@@ -23,3 +23,37 @@ extension UIImageView {
         }
     }
 }
+
+//extension UIImageView {
+//    override open func awakeFromNib() {
+//
+//      self.layoutIfNeeded()
+//      layer.cornerRadius = self.frame.height / 10
+//      layer.masksToBounds = true
+//
+//     }}
+
+extension UIImageView {
+    func setRounding() {
+
+      self.layoutIfNeeded()
+      layer.cornerRadius = 25
+      layer.masksToBounds = true
+
+     }}
+
+//extension UIImageView {
+//  func enableZoom() {
+//    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
+//    isUserInteractionEnabled = true
+//    addGestureRecognizer(pinchGesture)
+//  }
+//
+//  @objc
+//  private func startZooming(_ sender: UIPinchGestureRecognizer) {
+//    let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
+//    guard let scale = scaleResult, scale.a > 1, scale.d > 1 else { return }
+//    sender.view?.transform = scale
+//    sender.scale = 1
+//  }
+//}

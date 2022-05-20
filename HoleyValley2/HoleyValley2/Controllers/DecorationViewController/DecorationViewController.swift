@@ -20,6 +20,8 @@ class DecorationViewController: UIViewController {
         super.viewDidLoad()
         
         setupViewControllerWithData()
+        decorationImageTapped()
+        decorationImage.setRounding()
     }
     
     func setupViewControllerWithData() {
@@ -28,6 +30,25 @@ class DecorationViewController: UIViewController {
         decorationPriceLabel.text = String(item.price) + Const.belRublesSign
         decorationDescribtionLabel.text = item.describtion
         decorationImage.setImageFromULR(item.image)
+        
+    }
+    
+    func decorationImageTapped() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        decorationImage.isUserInteractionEnabled = true
+        decorationImage.addGestureRecognizer(tap)
+    }
+    
+    @objc func tapped() {
+        
+        let imageVC = ImageViewController(nibName: String(describing: ImageViewController.self), bundle: nil)
+        
+        guard let im = decorationImage.image else { return }
+        imageVC.imageToSet = im
+        imageVC.modalTransitionStyle = .coverVertical
+        imageVC.modalPresentationStyle = .overFullScreen
+        self.present(imageVC, animated: true)
         
     }
 }
