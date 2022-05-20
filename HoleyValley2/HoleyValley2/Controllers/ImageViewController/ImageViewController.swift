@@ -10,56 +10,62 @@ import UIKit
 class ImageViewController: UIViewController {
 
     @IBOutlet weak var decorationImage: UIImageView!
+    @IBOutlet weak var scrollImageView: UIScrollView!
     
     var imageToSet = UIImage()
-    var scrollImage = UIScrollView()
+//    var scrollImage = UIScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollImage.delegate = self
-        scrollImage.minimumZoomScale = 1.0
-        scrollImage.maximumZoomScale = 6.0
-        var vWidth = self.view.frame.width
-        var vHeight = self.view.frame.height
-        scrollImage.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
-        self.view!.addSubview(scrollImage)
-        scrollImage.addSubview(decorationImage)
-        decorationImage!.clipsToBounds = false
+        scrollImageView.delegate = self
+        scrollImageView.minimumZoomScale = 1.0
+        scrollImageView.maximumZoomScale = 5.0
+        scrollImageView.alwaysBounceVertical = false
+        scrollImageView.alwaysBounceHorizontal = false
+        scrollImageView.showsVerticalScrollIndicator = false
+        scrollImageView.showsHorizontalScrollIndicator = false
+        scrollImageView.flashScrollIndicators()
+//        scrollImageView.
         
 
-        
-        scrollImage.alwaysBounceVertical = false
-        scrollImage.alwaysBounceHorizontal = false
+//        doudleTapGesture()
 
         
-        addPinch()
+//        scrollImage.delegate = self
+//        scrollImage.minimumZoomScale = 1.0
+//        scrollImage.maximumZoomScale = 6.0
+//        var vWidth = self.view.frame.width
+//        var vHeight = self.view.frame.height
+//        scrollImage.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
+//        self.view.addSubview(scrollImage)
+//        scrollImage.addSubview(decorationImage)
+//        decorationImage!.clipsToBounds = false
+//        scrollImage.alwaysBounceVertical = false
+//        scrollImage.alwaysBounceHorizontal = false
+//        scrollImage.showsVerticalScrollIndicator = false
+//        scrollImage.flashScrollIndicators()
+//
+//        scrollImage.alwaysBounceVertical = false
+//        scrollImage.alwaysBounceHorizontal = false
+        
         decorationImage.image = imageToSet
 
     }
+    
+//    func doubleTapToZoom() {
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(doudleTapGesture))
+//        tap.numberOfTapsRequired = 2
+//        scrollImageView.addGestureRecognizer(tap)
+//    }
+//
+//    @objc func doudleTapGesture() {
+//        self.scrollImageView.zoomScale = 2
+//    }
 
     @IBAction func closeAction(_ sender: UIButton) {
         
         dismiss(animated: true)
-    }
-    
-    func addPinch() {
-        
-        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinchAction(_:)))
-        decorationImage.addGestureRecognizer(pinch)
-    }
-    
-    @objc func pinchAction(_ sender: UIPinchGestureRecognizer) {
-        
-        if sender.state == .changed {
-            
-            let size = decorationImage.frame.height
-            let scale = sender.scale
-            let center = decorationImage.center
-            decorationImage.frame = CGRect(x: 0, y: 0, width: size * scale, height: size * scale)
-            decorationImage.layer.cornerRadius = decorationImage.frame.height / 2
-            decorationImage.center = center
-        }
     }
 }
 
@@ -67,6 +73,6 @@ extension ImageViewController: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
-        return self.decorationImage
+        return decorationImage
     }
 }
