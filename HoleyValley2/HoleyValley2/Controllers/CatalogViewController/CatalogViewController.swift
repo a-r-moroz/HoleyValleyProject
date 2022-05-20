@@ -6,24 +6,12 @@
 //
 
 import UIKit
+import Firebase
 //import RealmSwift
 
 class CatalogViewController: UIViewController {
 
     @IBOutlet weak var decorationsTable: UITableView!
-    
-//    var decorations = RealmManager.read(type: Decorations.self)
-    
-//    let username = "default2"
-//    var config = Realm.Configuration.defaultConfiguration
-//    config.fileURL?.deletingLastPathComponent()
-//    config.fileURL!.appendPathComponent(username)
-//    config.fileURL!.appendPathExtension("default2")
-//    let realm = try! Realm(configuration: config)
-    
-//    let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)!.appendingPathComponent("default2")
-//
-//    var config = Realm.Configuration(fileURL: fileURL)
     
     var decorations = [Decoration]()
     
@@ -33,13 +21,40 @@ class CatalogViewController: UIViewController {
         decorationsTable.delegate = self
         decorationsTable.dataSource = self
         setupTable()
-        
-//        print(Realm.Configuration.defaultConfiguration.fileURL)
-        // ///Users/andrewmoroz/Library/Developer/CoreSimulator/Devices/9AA12F1F-9F28-47F0-A25E-B55C71AF539A/data/Containers/Data/Application/BFF7EE7D-EFE8-4A96-A911-8067DC9519D4/Documents/default.realm
     }
     
     private func setupTable() {
         decorationsTable.register(UINib(nibName: String(describing: DecorationCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DecorationCell.self))
+    }
+    
+    private func setupCell(cell: DecorationCell, row: Int) {
+            
+        cell.decorationPictureView.image = UIImage(named: "defaultImage")
+        cell.decorationPictureView.contentMode = .scaleAspectFill
+        
+        var database: DatabaseReference!
+            
+            database = Database.database().reference()
+            database.child("decorations").child("\(row)").getData(completion: { error, snapshot in
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                guard let value = snapshot.value as? NSDictionary else { return }
+                
+                let item = Decoration(name: value["name"] as? String ?? "",
+                                      price: value["price"] as? Int ?? 0,
+                                      describtion: value["description"] as? String ?? "",
+                                      image: value["picture"] as? String ?? Const.defaultImage
+                )
+                cell.decorationPictureView.setImageFromULR(item.image)
+                cell.decorationNameLabel.text = item.name
+                cell.decorationPriceLabel.text = String(item.price) + " BYN"
+                cell.decorationDescription = item.describtion
+                
+                self.decorations.append(item)
+                
+            })
     }
     
 }
@@ -57,13 +72,14 @@ extension CatalogViewController: UITableViewDelegate {
  
 extension CatalogViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 48
+        return decorations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DecorationCell.self), for: indexPath)
         guard let decorationCell = cell as? DecorationCell else { return cell }
-        decorationCell.setupCell(row: indexPath.row)
+//        decorationCell.setupCell(row: indexPath.row)
+        setupCell(cell: decorationCell, row: indexPath.row)
 //        decorationCell.decorationPictureView.image = UIImage(data: decorations[indexPath.row].picture!)
         decorations = decorationCell.decorations
         return decorationCell
