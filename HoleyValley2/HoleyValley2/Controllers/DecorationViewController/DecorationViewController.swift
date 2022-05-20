@@ -19,5 +19,15 @@ class DecorationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViewControllerWithData()
+    }
+    
+    func setupViewControllerWithData() {
+        guard let item = currentDecoration else { return }
+        decorationNameLabel.text = item.name
+        decorationPriceLabel.text = String(item.price) + Const.belRublesSign
+        decorationDescribtionLabel.text = item.describtion
+        decorationImage.setImageFromULR(item.image)
+        
     }
 }

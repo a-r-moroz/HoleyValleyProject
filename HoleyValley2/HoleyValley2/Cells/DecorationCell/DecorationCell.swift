@@ -13,13 +13,8 @@ class DecorationCell: UITableViewCell {
     @IBOutlet weak var decorationPictureView: UIImageView!
     @IBOutlet weak var decorationNameLabel: UILabel!
     @IBOutlet weak var decorationPriceLabel: UILabel!
-    
-//    let database = Database.database().reference()
-    
-    var database: DatabaseReference!
-    var decorationDescription = String()
-    var decorations = [Decoration]()
-
+        
+//    var database: DatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()
