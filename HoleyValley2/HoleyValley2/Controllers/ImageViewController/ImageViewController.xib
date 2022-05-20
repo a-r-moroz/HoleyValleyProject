@@ -28,13 +28,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="D4F-ia-C3o">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="D4F-ia-C3o" secondAttribute="bottom" id="9cS-nJ-aij"/>
-                        <constraint firstItem="D4F-ia-C3o" firstAttribute="centerX" secondItem="GUh-Fm-7OV" secondAttribute="centerX" id="MBE-Xz-Iah"/>
-                        <constraint firstItem="D4F-ia-C3o" firstAttribute="centerY" secondItem="GUh-Fm-7OV" secondAttribute="centerY" id="S4r-I9-mYe"/>
                         <constraint firstAttribute="trailing" secondItem="D4F-ia-C3o" secondAttribute="trailing" id="UWw-WP-k6x"/>
                         <constraint firstItem="D4F-ia-C3o" firstAttribute="leading" secondItem="GUh-Fm-7OV" secondAttribute="leading" id="eIf-bG-pJW"/>
                         <constraint firstItem="D4F-ia-C3o" firstAttribute="top" secondItem="GUh-Fm-7OV" secondAttribute="top" id="jdF-GQ-twD"/>
@@ -54,11 +52,9 @@
             <constraints>
                 <constraint firstItem="ion-5f-mn7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Djj-hu-GGk"/>
                 <constraint firstAttribute="bottom" secondItem="GUh-Fm-7OV" secondAttribute="bottom" id="Fxa-KW-DDu"/>
-                <constraint firstItem="GUh-Fm-7OV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Q3e-Ha-w1i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ion-5f-mn7" secondAttribute="trailing" constant="16" id="Q5F-dT-vSw"/>
                 <constraint firstItem="GUh-Fm-7OV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tj4-cg-Fbw"/>
                 <constraint firstAttribute="trailing" secondItem="GUh-Fm-7OV" secondAttribute="trailing" id="YIZ-xJ-Cih"/>
-                <constraint firstItem="GUh-Fm-7OV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xSG-SI-Y7Y"/>
                 <constraint firstItem="GUh-Fm-7OV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z0M-ZC-cVT"/>
             </constraints>
             <point key="canvasLocation" x="132" y="62"/>

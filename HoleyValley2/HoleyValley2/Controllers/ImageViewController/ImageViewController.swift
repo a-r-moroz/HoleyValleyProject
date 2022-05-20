@@ -17,59 +17,67 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var decorationImageConstraintTrailing: NSLayoutConstraint!
     
     var imageToSet = UIImage()
-    //    var scrollImage = UIScrollView()
+    lazy var doubleTapToZoom: UIGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doudleTapGesture))
+        tap.numberOfTapsRequired = 2
+        return doubleTapToZoom
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollImageView.delegate = self
-        scrollImageView.minimumZoomScale = 1.0
-        scrollImageView.maximumZoomScale = 5.0
-        scrollImageView.alwaysBounceVertical = false
-        scrollImageView.alwaysBounceHorizontal = false
-        scrollImageView.showsVerticalScrollIndicator = false
-        scrollImageView.showsHorizontalScrollIndicator = false
-        scrollImageView.flashScrollIndicators()
-        //        scrollImageView.
-        
-        
-        //        doudleTapGesture()
-        
-        
-        //        scrollImage.delegate = self
-        //        scrollImage.minimumZoomScale = 1.0
-        //        scrollImage.maximumZoomScale = 6.0
-        //        var vWidth = self.view.frame.width
-        //        var vHeight = self.view.frame.height
-        //        scrollImage.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
-        //        self.view.addSubview(scrollImage)
-        //        scrollImage.addSubview(decorationImage)
-        //        decorationImage!.clipsToBounds = false
-        //        scrollImage.alwaysBounceVertical = false
-        //        scrollImage.alwaysBounceHorizontal = false
-        //        scrollImage.showsVerticalScrollIndicator = false
-        //        scrollImage.flashScrollIndicators()
-        //
-        //        scrollImage.alwaysBounceVertical = false
-        //        scrollImage.alwaysBounceHorizontal = false
-        
+                
         decorationImage.image = imageToSet
         scrollViewDidZoom(scrollImageView)
+        
+        setupScrollView()
+        updateConstraintsForSize(view.bounds.size)
+        updateMinZoomSize((view.bounds.size))
+        
+//        scrollImageView.addGestureRecognizer(doubleTapToZoom)
+//        scrollImageView.isUserInteractionEnabled = true
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        centerImage()
     }
     
-    //    func scrollViewDidZoom(scrollView: UIScrollView) {
-    //    let subView = scrollView.subviews[0] // get the image view
-    //    let offsetX = max((scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5, 0.0)
-    //    let offsetY = max((scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5, 0.0)
-    //    // adjust the center of image view
-    //    subView.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX, scrollView.contentSize.height * 0.5 + offsetY)
-    //    }
+    @objc func doudleTapGesture(_ sender: UITapGestureRecognizer) {
+        
+        let location = sender.location(in: sender.view)
+        zoomAction(point: location, animated: true)
+        }
+    
+    func zoomAction(point: CGPoint,animated: Bool) {
+        let currentScale = scrollImageView.zoomScale
+        let minScale = scrollImageView.minimumZoomScale
+        let maxScale = scrollImageView.maximumZoomScale
+        
+        if (minScale == maxScale && maxScale > 1) {
+            return
+        }
+        
+        let toScale = maxScale
+        let finalScale = (currentScale == minScale) ? toScale : minScale
+        let zoomRect = zoomRect(scale: finalScale, center: point)
+        scrollImageView.zoom(to: zoomRect, animated: animated)
+
+    }
+    
+    func zoomRect(scale: CGFloat, center: CGPoint) -> CGRect {
+        var zoomRect = CGRect.zero
+        let bounds = scrollImageView.bounds
+        
+        zoomRect.size.width = bounds.self.width / scale
+        zoomRect.size.height = bounds.self.height / scale
+        
+        zoomRect.origin.x = center.x - (zoomRect.size.width / 2)
+        zoomRect.origin.y = center.y - (zoomRect.size.height / 2)
+        
+        return zoomRect
+
+
+    }
     
     //    func doubleTapToZoom() {
     //        let tap = UITapGestureRecognizer(target: self, action: #selector(doudleTapGesture))
@@ -81,22 +89,51 @@ class ImageViewController: UIViewController {
     //        self.scrollImageView.zoomScale = 2
     //    }
     
-    func centerImage() {
-        let boundsSize = scrollImageView.bounds.size
-        var frameToCenter = view.frame
+    
+    func setupScrollView() {
         
-        if frameToCenter.size.width < boundsSize.width {
-            frameToCenter.origin.x = boundsSize.width / 2
-        } else {
-            frameToCenter.origin.x = 0
-        }
-        if frameToCenter.size.height < boundsSize.height {
-            frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2
-        } else {
-            frameToCenter.origin.y = 0
-        }
+        scrollImageView.delegate = self
+        scrollImageView.alwaysBounceVertical = false
+        scrollImageView.alwaysBounceHorizontal = false
+        scrollImageView.showsVerticalScrollIndicator = false
+        scrollImageView.showsHorizontalScrollIndicator = false
+        scrollImageView.flashScrollIndicators()
         
-        scrollImageView.frame = frameToCenter
+        //        scrollImage.minimumZoomScale = 1.0
+        //        scrollImage.maximumZoomScale = 6.0
+        //        var vWidth = self.view.frame.width
+        //        var vHeight = self.view.frame.height
+        //        scrollImage.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
+        //        self.view.addSubview(scrollImage)
+        //        scrollImage.addSubview(decorationImage)
+        //        decorationImage!.clipsToBounds = false
+        //        scrollImage.flashScrollIndicators()
+
+    }
+    
+    func updateMinZoomSize(_ size: CGSize) {
+        
+        let widthScale = size.width / decorationImage.bounds.width
+        let heigthScale = size.height / decorationImage.bounds.height
+        let minScale = min(widthScale, heigthScale)
+        
+        scrollImageView.minimumZoomScale = minScale
+        scrollImageView.maximumZoomScale = 2
+        scrollImageView.zoomScale = minScale
+
+    }
+    
+    func updateConstraintsForSize(_ size: CGSize) {
+        
+        let yOffset = max(0, (size.height - decorationImage.frame.height) / 2)
+        decorationImageConstraintTop.constant = yOffset
+        decorationImageConstraintBottom.constant = yOffset
+        
+        let xOffset = max(0, (size.width - decorationImage.frame.width) / 2)
+        decorationImageConstraintLeading.constant = xOffset
+        decorationImageConstraintTrailing.constant = xOffset
+        
+        view.layoutIfNeeded()
     }
     
     
@@ -110,13 +147,11 @@ extension ImageViewController: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
-        return decorationImage
+        return self.decorationImage
     }
         
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-//        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0, 0)
-//        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0, 0)
-//        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
-        centerImage()
+        
+        updateConstraintsForSize(view.bounds.size)
     }
 }
