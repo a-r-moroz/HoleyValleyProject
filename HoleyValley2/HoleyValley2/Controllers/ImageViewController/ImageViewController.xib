@@ -11,6 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
                 <outlet property="decorationImage" destination="D4F-ia-C3o" id="j9p-pZ-9yB"/>
+                <outlet property="decorationImageConstraintBottom" destination="9cS-nJ-aij" id="qXj-7L-wnx"/>
+                <outlet property="decorationImageConstraintLeading" destination="eIf-bG-pJW" id="OTN-tA-unW"/>
+                <outlet property="decorationImageConstraintTop" destination="jdF-GQ-twD" id="IY1-XU-LQU"/>
+                <outlet property="decorationImageConstraintTrailing" destination="UWw-WP-k6x" id="cl0-Ei-emR"/>
                 <outlet property="scrollImageView" destination="GUh-Fm-7OV" id="h0i-tB-C8g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +27,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUh-Fm-7OV">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4F-ia-C3o">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="D4F-ia-C3o">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         </imageView>
                     </subviews>
@@ -61,6 +65,7 @@
         </view>
     </objects>
     <resources>
+        <image name="defaultImage" width="1000" height="1000"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
