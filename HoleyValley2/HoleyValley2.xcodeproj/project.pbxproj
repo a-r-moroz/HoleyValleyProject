@@ -25,6 +25,7 @@
 		8EC8080128393FBA008E176D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FF28393FBA008E176D /* SplashViewController.swift */; };
 		8EC8080228393FBA008E176D /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC8080028393FBA008E176D /* SplashViewController.xib */; };
 		8EC8080428393FF8008E176D /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8080328393FF8008E176D /* SplashPresenter.swift */; };
+		8EC8080628396A48008E176D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8080528396A48008E176D /* Service.swift */; };
 		8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF9CD628327B7B0058899B /* UIImageView.swift */; };
 		8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F1D2821987B00D7210D /* Decoration.swift */; };
 		8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F2128219BA500D7210D /* ServicesViewController.swift */; };
@@ -62,6 +63,7 @@
 		8EC807FF28393FBA008E176D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8EC8080028393FBA008E176D /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8EC8080328393FF8008E176D /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		8EC8080528396A48008E176D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8ECF9CD628327B7B0058899B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		8EE42F1D2821987B00D7210D /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
 		8EE42F2128219BA500D7210D /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE42F1D2821987B00D7210D /* Decoration.swift */,
+				8EC8080528396A48008E176D /* Service.swift */,
 				8E0192B02822F2CF0057C3D8 /* DecorationType.swift */,
 				8E9D8F522835A34B009FDF12 /* Conctants.swift */,
 				8EC8080328393FF8008E176D /* SplashPresenter.swift */,
@@ -401,6 +404,7 @@
 				8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */,
 				8EAB66EA2837A5CA00D976B6 /* ImageViewController.swift in Sources */,
 				8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */,
+				8EC8080628396A48008E176D /* Service.swift in Sources */,
 				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,
 				8EE42F3528219C7600D7210D /* BarController.swift in Sources */,
 				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,

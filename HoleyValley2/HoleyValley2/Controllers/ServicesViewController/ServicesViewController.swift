@@ -11,12 +11,14 @@ import Firebase
 class ServicesViewController: UIViewController {
     
     var database: DatabaseReference!
-    var decorations = [Decoration]()
+    var services = [Service]()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        decorations = FirebaseManager.getDecorations()
+        
+        services = FirebaseManager.getServices()
     }
+    
 }
