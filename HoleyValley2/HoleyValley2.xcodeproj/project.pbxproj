@@ -21,6 +21,10 @@
 		8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB532821967D005E0C2A /* RealmManager.swift */; };
 		8EAB66EA2837A5CA00D976B6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB66E82837A5CA00D976B6 /* ImageViewController.swift */; };
 		8EAB66EB2837A5CA00D976B6 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */; };
+		8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FC2838FDF4008E176D /* FirebaseManager.swift */; };
+		8EC8080128393FBA008E176D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FF28393FBA008E176D /* SplashViewController.swift */; };
+		8EC8080228393FBA008E176D /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC8080028393FBA008E176D /* SplashViewController.xib */; };
+		8EC8080428393FF8008E176D /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8080328393FF8008E176D /* SplashPresenter.swift */; };
 		8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF9CD628327B7B0058899B /* UIImageView.swift */; };
 		8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F1D2821987B00D7210D /* Decoration.swift */; };
 		8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F2128219BA500D7210D /* ServicesViewController.swift */; };
@@ -54,6 +58,10 @@
 		8EA9AB532821967D005E0C2A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		8EAB66E82837A5CA00D976B6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		8EC807FC2838FDF4008E176D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		8EC807FF28393FBA008E176D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		8EC8080028393FBA008E176D /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		8EC8080328393FF8008E176D /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		8ECF9CD628327B7B0058899B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		8EE42F1D2821987B00D7210D /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
 		8EE42F2128219BA500D7210D /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 		8EA9AB5228219672005E0C2A /* RealmManager */ = {
 			isa = PBXGroup;
 			children = (
+				8EC807FC2838FDF4008E176D /* FirebaseManager.swift */,
 				8EA9AB532821967D005E0C2A /* RealmManager.swift */,
 			);
 			path = RealmManager;
@@ -153,6 +162,15 @@
 				8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */,
 			);
 			path = ImageViewController;
+			sourceTree = "<group>";
+		};
+		8EC807FE28393F2F008E176D /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8EC807FF28393FBA008E176D /* SplashViewController.swift */,
+				8EC8080028393FBA008E176D /* SplashViewController.xib */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		8ECF9CD5283279D20058899B /* Extensions */ = {
@@ -169,6 +187,7 @@
 				8EE42F1D2821987B00D7210D /* Decoration.swift */,
 				8E0192B02822F2CF0057C3D8 /* DecorationType.swift */,
 				8E9D8F522835A34B009FDF12 /* Conctants.swift */,
+				8EC8080328393FF8008E176D /* SplashPresenter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +195,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8EC807FE28393F2F008E176D /* Splash */,
 				8EAB66E72837A5B000D976B6 /* ImageViewController */,
 				8E9D8F542835A759009FDF12 /* DecorationViewController */,
 				8EE42F2F28219C3100D7210D /* ProfileViewController */,
@@ -314,6 +334,7 @@
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
 				8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */,
 				8EE42F2E28219C2E00D7210D /* ReceptionViewController.xib in Resources */,
+				8EC8080228393FBA008E176D /* SplashViewController.xib in Resources */,
 				8EE42F2428219BA500D7210D /* ServicesViewController.xib in Resources */,
 				8E5671442823080400B0395E /* Assets.xcassets in Resources */,
 				8EAB66EB2837A5CA00D976B6 /* ImageViewController.xib in Resources */,
@@ -373,6 +394,7 @@
 				8E9D8F532835A34B009FDF12 /* Conctants.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
+				8EC8080128393FBA008E176D /* SplashViewController.swift in Sources */,
 				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
 				8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */,
 				8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */,
@@ -382,9 +404,11 @@
 				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,
 				8EE42F3528219C7600D7210D /* BarController.swift in Sources */,
 				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,
+				8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */,
 				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,
 				8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */,
 				8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */,
+				8EC8080428393FF8008E176D /* SplashPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

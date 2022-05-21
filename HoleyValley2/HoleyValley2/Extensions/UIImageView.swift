@@ -37,7 +37,7 @@ extension UIImageView {
     func setRounding() {
 
       self.layoutIfNeeded()
-      layer.cornerRadius = 25
+      layer.cornerRadius = 10
       layer.masksToBounds = true
 
      }}

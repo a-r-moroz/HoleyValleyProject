@@ -12,9 +12,16 @@ import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    private var splashPresenter: SplashPresenterDescription? = SplashPresenter()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        splashPresenter?.presentSplash()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.splashPresenter?.dissmissSplash(completion: { [weak self] in
+                self?.splashPresenter = nil
+            })
+        }
         
 //        UITabBar.appearance().tintColor = UIColor(red: 255/255, green: 0, blue: 108/255, alpha: 1)
         UITabBar.appearance().tintColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1)

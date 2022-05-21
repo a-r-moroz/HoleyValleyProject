@@ -22,12 +22,14 @@ class Decoration {
     var name: String
     var price: Int
     var describtion: String
+    var type: String
     var image: String
     
-    internal init(name: String, price: Int, describtion: String, image: String) {
+    internal init(name: String, price: Int, describtion: String, type: String, image: String) {
         self.name = name
         self.price = price
         self.describtion = describtion
+        self.type = type
         self.image = image
     }
 }

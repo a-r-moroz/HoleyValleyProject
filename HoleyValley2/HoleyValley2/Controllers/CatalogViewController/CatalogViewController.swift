@@ -23,6 +23,7 @@ class CatalogViewController: UIViewController {
         decorationsTable.delegate = self
         decorationsTable.dataSource = self
         setupTable()
+        decorations = FirebaseManager.getDecorations()
         
         title = "Каталог"
         
@@ -50,7 +51,8 @@ class CatalogViewController: UIViewController {
             let item = Decoration(name: value["name"] as? String ?? "",
                                   price: value["price"] as? Int ?? 0,
                                   describtion: value["description"] as? String ?? "",
-                                  image: value["picture"] as? String ?? Const.defaultImage
+                                  type: value["type"] as? String ?? "",
+                                  image: value["picture"] as? String ?? Constants.defaultImage
             )
             
             cell.decorationPictureView.setImageFromULR(item.image)
