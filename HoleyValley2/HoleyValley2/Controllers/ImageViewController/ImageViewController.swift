@@ -9,6 +9,41 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
+    var imageScrollView: ImageScrollView!
+    var imageToSet = UIImage()
+
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        imageScrollView = ImageScrollView(frame: view.bounds)
+        self.view.addSubview(imageScrollView)
+        self.view.sendSubviewToBack(imageScrollView)
+        setupImageScrollView()
+        
+        self.imageScrollView.set(image: imageToSet)
+        
+    }
+    
+    func setupImageScrollView() {
+        
+        imageScrollView.translatesAutoresizingMaskIntoConstraints = false
+        imageScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        imageScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        imageScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        imageScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    }
+    
+    @IBAction func closeAction(_ sender: UIButton) {
+        
+        dismiss(animated: true)
+    }
+}
+
+    
+    
+    
+    /*
     @IBOutlet weak var decorationImage: UIImageView!
     @IBOutlet weak var scrollImageView: UIScrollView!
     @IBOutlet weak var decorationImageConstraintBottom: NSLayoutConstraint!
@@ -51,7 +86,7 @@ class ImageViewController: UIViewController {
         zoomAction(point: location, animated: true)
         }
     
-    func zoomAction(point: CGPoint,animated: Bool) {
+    func zoomAction(point: CGPoint, animated: Bool) {
         let currentScale = scrollImageView.zoomScale
         let minScale = scrollImageView.minimumZoomScale
         let maxScale = scrollImageView.maximumZoomScale
@@ -140,10 +175,7 @@ class ImageViewController: UIViewController {
     }
     
     
-    @IBAction func closeAction(_ sender: UIButton) {
-        
-        dismiss(animated: true)
-    }
+
 }
 
 extension ImageViewController: UIScrollViewDelegate {
@@ -157,4 +189,6 @@ extension ImageViewController: UIScrollViewDelegate {
         
         updateConstraintsForSize(view.bounds.size)
     }
-}
+     
+     */
+

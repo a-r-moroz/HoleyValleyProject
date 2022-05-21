@@ -10,12 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
-                <outlet property="decorationImage" destination="D4F-ia-C3o" id="j9p-pZ-9yB"/>
-                <outlet property="decorationImageConstraintBottom" destination="9cS-nJ-aij" id="qXj-7L-wnx"/>
-                <outlet property="decorationImageConstraintLeading" destination="eIf-bG-pJW" id="OTN-tA-unW"/>
-                <outlet property="decorationImageConstraintTop" destination="jdF-GQ-twD" id="IY1-XU-LQU"/>
-                <outlet property="decorationImageConstraintTrailing" destination="UWw-WP-k6x" id="cl0-Ei-emR"/>
-                <outlet property="scrollImageView" destination="GUh-Fm-7OV" id="h0i-tB-C8g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,20 +18,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUh-Fm-7OV">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="D4F-ia-C3o">
-                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="D4F-ia-C3o" secondAttribute="bottom" id="9cS-nJ-aij"/>
-                        <constraint firstAttribute="trailing" secondItem="D4F-ia-C3o" secondAttribute="trailing" id="UWw-WP-k6x"/>
-                        <constraint firstItem="D4F-ia-C3o" firstAttribute="leading" secondItem="GUh-Fm-7OV" secondAttribute="leading" id="eIf-bG-pJW"/>
-                        <constraint firstItem="D4F-ia-C3o" firstAttribute="top" secondItem="GUh-Fm-7OV" secondAttribute="top" id="jdF-GQ-twD"/>
-                    </constraints>
-                </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ion-5f-mn7">
                     <rect key="frame" x="356" y="60" width="42" height="31"/>
                     <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,17 +31,12 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ion-5f-mn7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Djj-hu-GGk"/>
-                <constraint firstAttribute="bottom" secondItem="GUh-Fm-7OV" secondAttribute="bottom" id="Fxa-KW-DDu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ion-5f-mn7" secondAttribute="trailing" constant="16" id="Q5F-dT-vSw"/>
-                <constraint firstItem="GUh-Fm-7OV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tj4-cg-Fbw"/>
-                <constraint firstAttribute="trailing" secondItem="GUh-Fm-7OV" secondAttribute="trailing" id="YIZ-xJ-Cih"/>
-                <constraint firstItem="GUh-Fm-7OV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z0M-ZC-cVT"/>
             </constraints>
             <point key="canvasLocation" x="132" y="62"/>
         </view>
     </objects>
     <resources>
-        <image name="defaultImage" width="1000" height="1000"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
