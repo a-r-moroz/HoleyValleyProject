@@ -20,7 +20,7 @@ class ImageViewController: UIViewController {
     lazy var doubleTapToZoom: UIGestureRecognizer = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(doudleTapGesture))
         tap.numberOfTapsRequired = 2
-        return doubleTapToZoom
+        return tap
     }()
     
     override func viewDidLoad() {
@@ -32,6 +32,9 @@ class ImageViewController: UIViewController {
         setupScrollView()
         updateConstraintsForSize(view.bounds.size)
         updateMinZoomSize((view.bounds.size))
+        
+        scrollImageView.addGestureRecognizer(doubleTapToZoom)
+        scrollImageView.isUserInteractionEnabled = true
         
 //        scrollImageView.addGestureRecognizer(doubleTapToZoom)
 //        scrollImageView.isUserInteractionEnabled = true
@@ -53,11 +56,11 @@ class ImageViewController: UIViewController {
         let minScale = scrollImageView.minimumZoomScale
         let maxScale = scrollImageView.maximumZoomScale
         
-        if (minScale == maxScale && maxScale > 1) {
+        if (minScale == maxScale && minScale > 1) {
             return
         }
         
-        let toScale = maxScale
+        let toScale = maxScale / 2
         let finalScale = (currentScale == minScale) ? toScale : minScale
         let zoomRect = zoomRect(scale: finalScale, center: point)
         scrollImageView.zoom(to: zoomRect, animated: animated)
@@ -68,8 +71,8 @@ class ImageViewController: UIViewController {
         var zoomRect = CGRect.zero
         let bounds = scrollImageView.bounds
         
-        zoomRect.size.width = bounds.self.width / scale
-        zoomRect.size.height = bounds.self.height / scale
+        zoomRect.size.width = bounds.size.width / scale
+        zoomRect.size.height = bounds.size.height / scale
         
         zoomRect.origin.x = center.x - (zoomRect.size.width / 2)
         zoomRect.origin.y = center.y - (zoomRect.size.height / 2)
