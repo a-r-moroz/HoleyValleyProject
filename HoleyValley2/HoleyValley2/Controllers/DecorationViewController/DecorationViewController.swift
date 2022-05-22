@@ -28,7 +28,7 @@ class DecorationViewController: UIViewController {
         guard let item = currentDecoration else { return }
         decorationNameLabel.text = item.name
         decorationPriceLabel.text = String(item.price) + Constants.belRublesSign
-        decorationDescribtionLabel.text = item.describtion
+        decorationDescribtionLabel.text = item.description
         decorationImage.setImageFromULR(item.image)
         
     }

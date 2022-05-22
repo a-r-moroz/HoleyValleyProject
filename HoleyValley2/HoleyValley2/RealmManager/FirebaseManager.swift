@@ -24,12 +24,12 @@ final class FirebaseManager {
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let value = child.value as? NSDictionary
                 let name = value?["name"] as? String ?? ""
-                let describtion = value?["describtion"] as? String ?? ""
+                let description = value?["describtion"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
                 let type = value?["type"] as? String ?? ""
                 let picture = value?["picture"] as? String ?? ""
                 
-                let item = Decoration(name: name, price: price, describtion: describtion, type: type, image: picture)
+                let item = Decoration(name: name, price: price, description: description, type: type, image: picture)
                 
                 decorations.append(item)
                 print(decorations.count)

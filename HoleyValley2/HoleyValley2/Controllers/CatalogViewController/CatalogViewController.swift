@@ -50,7 +50,7 @@ class CatalogViewController: UIViewController {
             
             let item = Decoration(name: value["name"] as? String ?? "",
                                   price: value["price"] as? Int ?? 0,
-                                  describtion: value["description"] as? String ?? "",
+                                  description: value["description"] as? String ?? "",
                                   type: value["type"] as? String ?? "",
                                   image: value["picture"] as? String ?? Constants.defaultImage
             )
