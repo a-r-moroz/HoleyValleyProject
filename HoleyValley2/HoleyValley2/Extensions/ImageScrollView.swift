@@ -70,7 +70,9 @@ class ImageScrollView: UIScrollView, UIScrollViewDelegate {
             maxScale = 0.3
         }
         if minScale >= 0.1 && minScale < 0.5 {
-            maxScale = 0.7
+            maxScale = 0.8
+//            maxScale = 0.7
+
         }
         if minScale >= 0.5 {
             maxScale = max(1.0, minScale)

@@ -20,6 +20,7 @@ class ImageViewController: UIViewController {
         self.view.addSubview(imageScrollView)
         self.view.sendSubviewToBack(imageScrollView)
         setupImageScrollView()
+        dismissBySwipe()
         
         self.imageScrollView.set(image: imageToSet)
         
@@ -32,6 +33,17 @@ class ImageViewController: UIViewController {
         imageScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         imageScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         imageScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    }
+    
+    func dismissBySwipe() {
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(toSwipe))
+        swipe.direction = .down
+        view.addGestureRecognizer(swipe)
+    }
+    
+    @objc func toSwipe(sender: UISwipeGestureRecognizer) {
+        
+        dismiss(animated: true)
     }
     
     @IBAction func closeAction(_ sender: UIButton) {
