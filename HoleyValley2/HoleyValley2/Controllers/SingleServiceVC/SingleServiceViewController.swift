@@ -30,6 +30,8 @@ class SingleServiceViewController: UIViewController {
         setupViewControllerWithData()
         catalogButtonOutlet.setRounding()
         appointmentButtonOutlet.setRounding()
+        catalogButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
+        appointmentButtonOutlet.addShadow(color: CGColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1))
         catalogButtonOutlet.setBackgroundImage(UIImage(named: "imagePattern"), for: .normal)
     }
     

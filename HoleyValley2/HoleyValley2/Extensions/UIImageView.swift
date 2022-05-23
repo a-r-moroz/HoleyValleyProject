@@ -34,12 +34,12 @@ extension UIImageView {
 //     }}
 
 extension UIImageView {
+    
     func setRounding() {
 
       self.layoutIfNeeded()
       layer.cornerRadius = 10
       layer.masksToBounds = true
-
      }}
 
 //extension UIImageView {

@@ -30,7 +30,7 @@ class ImageScrollView: UIScrollView, UIScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(image: UIImage) {
+    func setImage(image: UIImage) {
         
         imageZoomView?.removeFromSuperview()
         imageZoomView = nil

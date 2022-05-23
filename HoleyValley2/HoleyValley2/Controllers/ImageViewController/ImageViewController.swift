@@ -22,7 +22,7 @@ class ImageViewController: UIViewController {
         setupImageScrollView()
         dismissBySwipe()
         
-        self.imageScrollView.set(image: imageToSet)
+        self.imageScrollView.setImage(image: imageToSet)
         
     }
     

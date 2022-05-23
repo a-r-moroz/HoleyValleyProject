@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReceptionViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
+                <outlet property="appointmentButtonOutlet" destination="AQd-jk-RWw" id="MGh-Ci-G8r"/>
+                <outlet property="mapWithCoordinatesView" destination="bhp-Mf-LQ6" id="ke3-DP-vtK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +19,74 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4V1-tC-GGy">
+                    <rect key="frame" x="87" y="317" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как нас найти?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfG-Bh-PA6">
+                    <rect key="frame" x="16" y="64" width="382" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-Mf-LQ6">
+                    <rect key="frame" x="16" y="114" width="382" height="382"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bhp-Mf-LQ6" secondAttribute="height" multiplier="1:1" id="hgi-hu-D6b"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минск, Кальварийская улица, 25" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9l-9J-qiS">
+                    <rect key="frame" x="16" y="516" width="382" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQd-jk-RWw">
+                    <rect key="frame" x="115.5" y="586.5" width="183" height="32"/>
+                    <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="ARh-aw-yO8"/>
+                        <constraint firstAttribute="width" constant="183" id="dsL-lZ-aoi"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Записаться">
+                        <backgroundConfiguration key="background" image="imagePatternForButton" imageContentMode="scaleAspectFill"/>
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="appointmentButtonAction:" destination="-1" eventType="touchUpInside" id="5RM-Xv-4qu"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="62"/>
+            <constraints>
+                <constraint firstItem="bhp-Mf-LQ6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0X5-ko-kUZ"/>
+                <constraint firstItem="AQd-jk-RWw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C9e-1Y-M8g"/>
+                <constraint firstItem="x9l-9J-qiS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Kpj-K1-ZyW"/>
+                <constraint firstItem="ZfG-Bh-PA6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="OX9-Gy-Jej"/>
+                <constraint firstItem="x9l-9J-qiS" firstAttribute="top" secondItem="bhp-Mf-LQ6" secondAttribute="bottom" constant="20" id="YsF-ZE-HZb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bhp-Mf-LQ6" secondAttribute="trailing" constant="16" id="bJ1-ik-gJB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x9l-9J-qiS" secondAttribute="trailing" constant="16" id="cKp-fV-qIO"/>
+                <constraint firstItem="bhp-Mf-LQ6" firstAttribute="top" secondItem="ZfG-Bh-PA6" secondAttribute="bottom" constant="20" id="gpC-rf-2Y5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZfG-Bh-PA6" secondAttribute="trailing" constant="16" id="hvg-ll-rUf"/>
+                <constraint firstItem="AQd-jk-RWw" firstAttribute="top" secondItem="x9l-9J-qiS" secondAttribute="bottom" constant="50" id="rz1-1g-w94"/>
+                <constraint firstItem="ZfG-Bh-PA6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="zEJ-kV-j8S"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="61.607142857142854"/>
         </view>
     </objects>
     <resources>
+        <image name="imagePatternForButton" width="1000" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
