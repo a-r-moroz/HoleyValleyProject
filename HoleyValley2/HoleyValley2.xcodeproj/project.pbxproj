@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		842B2716179E6AC1C506F91A /* Pods_HoleyValley2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B661294B867C36531446097 /* Pods_HoleyValley2.framework */; };
 		8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0192B02822F2CF0057C3D8 /* DecorationType.swift */; };
+		8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD45283B921B0039D1F9 /* ServiceCell.swift */; };
+		8E13BD48283B921C0039D1F9 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E13BD46283B921B0039D1F9 /* ServiceCell.xib */; };
+		8E13BD4C283B92D00039D1F9 /* SingleServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD4A283B92D00039D1F9 /* SingleServiceViewController.swift */; };
+		8E13BD4D283B92D00039D1F9 /* SingleServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */; };
+		8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD4E283BA0690039D1F9 /* UIButton.swift */; };
 		8E5671442823080400B0395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5671432823080400B0395E /* Assets.xcassets */; };
 		8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E609B8A28399FFF001D242E /* ImageScrollView.swift */; };
 		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
@@ -46,6 +51,11 @@
 		1B661294B867C36531446097 /* Pods_HoleyValley2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoleyValley2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25FFF1A673E257735732082B /* Pods-HoleyValley2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoleyValley2.debug.xcconfig"; path = "Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2.debug.xcconfig"; sourceTree = "<group>"; };
 		8E0192B02822F2CF0057C3D8 /* DecorationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationType.swift; sourceTree = "<group>"; };
+		8E13BD45283B921B0039D1F9 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		8E13BD46283B921B0039D1F9 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		8E13BD4A283B92D00039D1F9 /* SingleServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleServiceViewController.swift; sourceTree = "<group>"; };
+		8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleServiceViewController.xib; sourceTree = "<group>"; };
+		8E13BD4E283BA0690039D1F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		8E5671432823080400B0395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppIcons/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8E609B8A28399FFF001D242E /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -101,6 +111,24 @@
 				D6DAF3DF2163D1BA599EE55B /* Pods-HoleyValley2.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E13BD44283B918F0039D1F9 /* ServiceCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E13BD45283B921B0039D1F9 /* ServiceCell.swift */,
+				8E13BD46283B921B0039D1F9 /* ServiceCell.xib */,
+			);
+			path = ServiceCell;
+			sourceTree = "<group>";
+		};
+		8E13BD49283B92AF0039D1F9 /* SingleServiceVC */ = {
+			isa = PBXGroup;
+			children = (
+				8E13BD4A283B92D00039D1F9 /* SingleServiceViewController.swift */,
+				8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */,
+			);
+			path = SingleServiceVC;
 			sourceTree = "<group>";
 		};
 		8E9D8F542835A759009FDF12 /* DecorationViewController */ = {
@@ -182,6 +210,7 @@
 			children = (
 				8ECF9CD628327B7B0058899B /* UIImageView.swift */,
 				8E609B8A28399FFF001D242E /* ImageScrollView.swift */,
+				8E13BD4E283BA0690039D1F9 /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				8EC807FE28393F2F008E176D /* Splash */,
+				8E13BD49283B92AF0039D1F9 /* SingleServiceVC */,
 				8EAB66E72837A5B000D976B6 /* ImageViewController */,
 				8E9D8F542835A759009FDF12 /* DecorationViewController */,
 				8EE42F2F28219C3100D7210D /* ProfileViewController */,
@@ -251,6 +281,7 @@
 		8EE42F362821A18D00D7210D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E13BD44283B918F0039D1F9 /* ServiceCell */,
 				8EE42F372821A19000D7210D /* DecorationCell */,
 			);
 			path = Cells;
@@ -339,12 +370,14 @@
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
 				8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */,
+				8E13BD4D283B92D00039D1F9 /* SingleServiceViewController.xib in Resources */,
 				8EE42F2E28219C2E00D7210D /* ReceptionViewController.xib in Resources */,
 				8EC8080228393FBA008E176D /* SplashViewController.xib in Resources */,
 				8EE42F2428219BA500D7210D /* ServicesViewController.xib in Resources */,
 				8E5671442823080400B0395E /* Assets.xcassets in Resources */,
 				8EAB66EB2837A5CA00D976B6 /* ImageViewController.xib in Resources */,
 				8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */,
+				8E13BD48283B921C0039D1F9 /* ServiceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,9 +430,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E13BD4C283B92D00039D1F9 /* SingleServiceViewController.swift in Sources */,
 				8E9D8F532835A34B009FDF12 /* Conctants.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
+				8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */,
 				8EC8080128393FBA008E176D /* SplashViewController.swift in Sources */,
 				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
 				8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */,
@@ -410,6 +445,7 @@
 				8EC8080628396A48008E176D /* Service.swift in Sources */,
 				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,
 				8EE42F3528219C7600D7210D /* BarController.swift in Sources */,
+				8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */,
 				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,
 				8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */,
 				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,

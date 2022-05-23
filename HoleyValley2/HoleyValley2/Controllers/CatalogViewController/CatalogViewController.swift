@@ -23,7 +23,7 @@ class CatalogViewController: UIViewController {
         decorationsTable.delegate = self
         decorationsTable.dataSource = self
         setupTable()
-        decorations = FirebaseManager.getDecorations()
+//        decorations = FirebaseManager.getDecorations()
         
         title = "Каталог"
         
@@ -57,7 +57,7 @@ class CatalogViewController: UIViewController {
             
             cell.decorationPictureView.setImageFromULR(item.image)
             cell.decorationNameLabel.text = item.name
-            cell.decorationPriceLabel.text = String(item.price) + " BYN"
+            cell.decorationPriceLabel.text = String(item.price) + Constants.belRublesSign
 
             self.decorations.append(item)
             

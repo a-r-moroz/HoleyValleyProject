@@ -54,13 +54,14 @@ final class FirebaseManager {
                 let price = value?["price"] as? Int ?? 0
                 
 //                let item = Service(name: name, price: price, describtion: describtion)
-                let item = Service()
-                item.name = name
-                item.describtion = describtion
-                item.price = price
                 
-                services.append(item)
-                print(services.count)
+//                let item = Service()
+//                item.name = name
+//                item.describtion = describtion
+//                item.price = price
+//
+//                services.append(item)
+//                print(services.count)
             }
         }
         return services
