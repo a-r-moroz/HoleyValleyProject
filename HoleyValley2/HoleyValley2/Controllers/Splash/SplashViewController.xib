@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,14 +16,32 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchComplexGradient" translatesAutoresizingMaskIntoConstraints="NO" id="qAg-HT-L12">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_CleanSmall" translatesAutoresizingMaskIntoConstraints="NO" id="NB0-c9-xjd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemMintColor"/>
-            <point key="canvasLocation" x="132" y="80"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qAg-HT-L12" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="44z-hh-FjU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NB0-c9-xjd" secondAttribute="trailing" id="NsY-zk-Zj0"/>
+                <constraint firstItem="qAg-HT-L12" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WyB-MK-0pA"/>
+                <constraint firstItem="NB0-c9-xjd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="c4R-e3-D5o"/>
+                <constraint firstAttribute="bottom" secondItem="qAg-HT-L12" secondAttribute="bottom" id="eGe-6A-MKJ"/>
+                <constraint firstAttribute="trailing" secondItem="qAg-HT-L12" secondAttribute="trailing" id="eTB-V0-qE8"/>
+                <constraint firstItem="NB0-c9-xjd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gmX-zz-ZqK"/>
+                <constraint firstItem="qAg-HT-L12" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="p3w-5B-4on"/>
+                <constraint firstAttribute="bottom" secondItem="NB0-c9-xjd" secondAttribute="bottom" id="svD-6S-jRD"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="launchComplexGradient" width="1000" height="2000"/>
+        <image name="launch_CleanSmall" width="1000" height="2000"/>
     </resources>
 </document>

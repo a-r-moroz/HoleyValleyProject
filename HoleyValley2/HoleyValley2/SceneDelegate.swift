@@ -12,12 +12,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
-        window?.rootViewController = BarController()
-        window?.makeKeyAndVisible()
+        self.window?.rootViewController = UIViewController(nibName: String(describing: SplashViewController.self), bundle: nil)
+            self.window?.makeKeyAndVisible()
+        splashController()
+    }
+    
+    func splashController() {
+
+        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(fireTimer(sender:)), userInfo: nil, repeats: false)
+    }
+    
+    @objc func fireTimer(sender: Timer) {
+        
+        self.window?.rootViewController = BarController()
+        self.window?.makeKeyAndVisible()
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
