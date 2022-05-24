@@ -18,11 +18,13 @@ class ReceptionViewController: UIViewController {
         appointmentButtonOutlet.setCapsuleRounding()
         appointmentButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
         mapWithCoordinatesView.layer.cornerRadius = 10
+        
+        title = "Контакты"
     }
-
+    
     @IBAction func appointmentButtonAction(_ sender: UIButton) {
         
-        let appointmentVC = AppointmentViewController(nibName: String(describing: appointmentButtonOutlet.self), bundle: nil)
+        let appointmentVC = AppointmentViewController(nibName: String(describing: AppointmentViewController.self), bundle: nil)
         
         navigationController?.pushViewController(appointmentVC, animated: true)
     }
