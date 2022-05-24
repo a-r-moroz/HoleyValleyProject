@@ -11,10 +11,14 @@ class ServiceCell: UITableViewCell {
 
     @IBOutlet weak var serviceName: UILabel!
     @IBOutlet weak var servicePrice: UILabel!
+    @IBOutlet weak var viewForShadow: UIView!
+    @IBOutlet weak var ViewWithData: UIView!
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
-        // Initialization code
+        viewForShadow.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
+        ViewWithData.setRoundingToView(cornerRadius: 18)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

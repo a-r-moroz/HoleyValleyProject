@@ -40,7 +40,8 @@ extension UIImageView {
       self.layoutIfNeeded()
       layer.cornerRadius = 10
       layer.masksToBounds = true
-     }}
+     }
+}
 
 //extension UIImageView {
 //  func enableZoom() {

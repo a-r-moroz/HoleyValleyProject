@@ -10,45 +10,81 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="ServiceCell" customModule="HoleyValley2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="ServiceCell" customModule="HoleyValley2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmw-F3-0kn">
-                        <rect key="frame" x="16" y="10" width="288" height="20.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DZ-mf-fPS">
-                        <rect key="frame" x="16" y="40.5" width="288" height="20.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" systemColor="systemGray2Color"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpf-0G-RhI">
+                        <rect key="frame" x="16" y="10" width="288" height="71"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tia-As-ESW">
+                        <rect key="frame" x="16" y="10" width="288" height="71"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmw-F3-0kn">
+                                <rect key="frame" x="8" y="8" width="234" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DZ-mf-fPS">
+                                <rect key="frame" x="8" y="38.5" width="234" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="brp-wc-PcF">
+                                <rect key="frame" x="250" y="22.5" width="30" height="26.5"/>
+                                <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ytg-Ck-aUi"/>
+                                    <constraint firstAttribute="width" constant="30" id="rY7-Ax-MRd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hmw-F3-0kn" firstAttribute="top" secondItem="tia-As-ESW" secondAttribute="top" constant="8" id="AEP-jk-0bd"/>
+                            <constraint firstItem="9DZ-mf-fPS" firstAttribute="top" secondItem="hmw-F3-0kn" secondAttribute="bottom" constant="10" id="AR4-EA-7RL"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9DZ-mf-fPS" secondAttribute="bottom" constant="8" id="ARD-Qh-xvf"/>
+                            <constraint firstItem="brp-wc-PcF" firstAttribute="centerY" secondItem="tia-As-ESW" secondAttribute="centerY" id="Awj-0f-WAg"/>
+                            <constraint firstItem="brp-wc-PcF" firstAttribute="leading" secondItem="hmw-F3-0kn" secondAttribute="trailing" constant="8" id="OX0-Z5-gqK"/>
+                            <constraint firstAttribute="trailing" secondItem="brp-wc-PcF" secondAttribute="trailing" constant="8" id="Tdy-aS-v3X"/>
+                            <constraint firstItem="hmw-F3-0kn" firstAttribute="leading" secondItem="tia-As-ESW" secondAttribute="leading" constant="8" id="Xlc-Fj-PIH"/>
+                            <constraint firstItem="9DZ-mf-fPS" firstAttribute="leading" secondItem="tia-As-ESW" secondAttribute="leading" constant="8" id="dbG-HJ-oOq"/>
+                            <constraint firstItem="brp-wc-PcF" firstAttribute="leading" secondItem="9DZ-mf-fPS" secondAttribute="trailing" constant="8" id="fp0-L8-Xsq"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hmw-F3-0kn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3c1-Sb-RoM"/>
-                    <constraint firstItem="hmw-F3-0kn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4yo-PC-OxF"/>
-                    <constraint firstItem="9DZ-mf-fPS" firstAttribute="top" secondItem="hmw-F3-0kn" secondAttribute="bottom" constant="10" id="E99-LP-BYi"/>
-                    <constraint firstAttribute="trailing" secondItem="9DZ-mf-fPS" secondAttribute="trailing" constant="16" id="G7Y-Kn-29U"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9DZ-mf-fPS" secondAttribute="bottom" constant="10" id="HID-lR-pfL"/>
-                    <constraint firstItem="9DZ-mf-fPS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Pii-TE-XwN"/>
-                    <constraint firstAttribute="trailing" secondItem="hmw-F3-0kn" secondAttribute="trailing" constant="16" id="tYG-Na-9qF"/>
+                    <constraint firstAttribute="trailing" secondItem="Cpf-0G-RhI" secondAttribute="trailing" constant="16" id="19y-3b-lmU"/>
+                    <constraint firstItem="Cpf-0G-RhI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4yJ-Zq-nHh"/>
+                    <constraint firstItem="Cpf-0G-RhI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6Yu-GO-ULL"/>
+                    <constraint firstItem="tia-As-ESW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Nv0-uL-zgS"/>
+                    <constraint firstAttribute="bottom" secondItem="tia-As-ESW" secondAttribute="bottom" constant="10" id="Rv5-EZ-PT1"/>
+                    <constraint firstAttribute="trailing" secondItem="tia-As-ESW" secondAttribute="trailing" constant="16" id="aJh-S1-FZb"/>
+                    <constraint firstAttribute="bottom" secondItem="Cpf-0G-RhI" secondAttribute="bottom" constant="10" id="cBA-SQ-VlT"/>
+                    <constraint firstItem="tia-As-ESW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="uy2-9g-Yri"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="ViewWithData" destination="tia-As-ESW" id="nUr-eV-SsW"/>
                 <outlet property="serviceName" destination="hmw-F3-0kn" id="EVa-jP-5Sp"/>
                 <outlet property="servicePrice" destination="9DZ-mf-fPS" id="OqZ-wC-zOl"/>
+                <outlet property="viewForShadow" destination="Cpf-0G-RhI" id="YET-5X-MoL"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="72.321428571428569"/>
+            <point key="canvasLocation" x="131.8840579710145" y="75.334821428571431"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

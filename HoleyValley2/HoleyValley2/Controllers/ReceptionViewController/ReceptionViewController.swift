@@ -15,12 +15,16 @@ class ReceptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        appointmentButtonOutlet.setRounding()
-        appointmentButtonOutlet.addShadow(color: CGColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1))
+        appointmentButtonOutlet.setCapsuleRounding()
+        appointmentButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
         mapWithCoordinatesView.layer.cornerRadius = 10
     }
 
     @IBAction func appointmentButtonAction(_ sender: UIButton) {
+        
+        let appointmentVC = AppointmentViewController(nibName: String(describing: appointmentButtonOutlet.self), bundle: nil)
+        
+        navigationController?.pushViewController(appointmentVC, animated: true)
     }
     
 }
