@@ -14,6 +14,8 @@
 		8E13BD4C283B92D00039D1F9 /* SingleServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD4A283B92D00039D1F9 /* SingleServiceViewController.swift */; };
 		8E13BD4D283B92D00039D1F9 /* SingleServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */; };
 		8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD4E283BA0690039D1F9 /* UIButton.swift */; };
+		8E516316283CCE06004CAFD3 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E516314283CCE06004CAFD3 /* SplashViewController.swift */; };
+		8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E516315283CCE06004CAFD3 /* SplashViewController.xib */; };
 		8E5671442823080400B0395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5671432823080400B0395E /* Assets.xcassets */; };
 		8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E609B8A28399FFF001D242E /* ImageScrollView.swift */; };
 		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
@@ -28,8 +30,6 @@
 		8EAB66EA2837A5CA00D976B6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB66E82837A5CA00D976B6 /* ImageViewController.swift */; };
 		8EAB66EB2837A5CA00D976B6 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */; };
 		8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FC2838FDF4008E176D /* FirebaseManager.swift */; };
-		8EC8080128393FBA008E176D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FF28393FBA008E176D /* SplashViewController.swift */; };
-		8EC8080228393FBA008E176D /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC8080028393FBA008E176D /* SplashViewController.xib */; };
 		8EC8080628396A48008E176D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8080528396A48008E176D /* Service.swift */; };
 		8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF9CD628327B7B0058899B /* UIImageView.swift */; };
 		8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F1D2821987B00D7210D /* Decoration.swift */; };
@@ -55,6 +55,8 @@
 		8E13BD4A283B92D00039D1F9 /* SingleServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleServiceViewController.swift; sourceTree = "<group>"; };
 		8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleServiceViewController.xib; sourceTree = "<group>"; };
 		8E13BD4E283BA0690039D1F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		8E516314283CCE06004CAFD3 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		8E516315283CCE06004CAFD3 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8E5671432823080400B0395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppIcons/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8E609B8A28399FFF001D242E /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -71,8 +73,6 @@
 		8EAB66E82837A5CA00D976B6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		8EC807FC2838FDF4008E176D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		8EC807FF28393FBA008E176D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		8EC8080028393FBA008E176D /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8EC8080528396A48008E176D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8ECF9CD628327B7B0058899B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		8EE42F1D2821987B00D7210D /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
@@ -194,13 +194,13 @@
 			path = ImageViewController;
 			sourceTree = "<group>";
 		};
-		8EC807FE28393F2F008E176D /* Splash */ = {
+		8EC807FE28393F2F008E176D /* SplashViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8EC807FF28393FBA008E176D /* SplashViewController.swift */,
-				8EC8080028393FBA008E176D /* SplashViewController.xib */,
+				8E516314283CCE06004CAFD3 /* SplashViewController.swift */,
+				8E516315283CCE06004CAFD3 /* SplashViewController.xib */,
 			);
-			path = Splash;
+			path = SplashViewController;
 			sourceTree = "<group>";
 		};
 		8ECF9CD5283279D20058899B /* Extensions */ = {
@@ -227,7 +227,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8EC807FE28393F2F008E176D /* Splash */,
+				8EC807FE28393F2F008E176D /* SplashViewController */,
 				8E13BD49283B92AF0039D1F9 /* SingleServiceVC */,
 				8EAB66E72837A5B000D976B6 /* ImageViewController */,
 				8E9D8F542835A759009FDF12 /* DecorationViewController */,
@@ -364,12 +364,12 @@
 				8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */,
 				8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */,
 				8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */,
+				8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */,
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
 				8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */,
 				8E13BD4D283B92D00039D1F9 /* SingleServiceViewController.xib in Resources */,
 				8EE42F2E28219C2E00D7210D /* ReceptionViewController.xib in Resources */,
-				8EC8080228393FBA008E176D /* SplashViewController.xib in Resources */,
 				8EE42F2428219BA500D7210D /* ServicesViewController.xib in Resources */,
 				8E5671442823080400B0395E /* Assets.xcassets in Resources */,
 				8EAB66EB2837A5CA00D976B6 /* ImageViewController.xib in Resources */,
@@ -432,7 +432,6 @@
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
 				8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */,
-				8EC8080128393FBA008E176D /* SplashViewController.swift in Sources */,
 				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
 				8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */,
 				8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */,
@@ -449,6 +448,7 @@
 				8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */,
 				8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */,
 				8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */,
+				8E516316283CCE06004CAFD3 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

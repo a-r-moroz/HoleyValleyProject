@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="HoleyValley2" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchComplexGradient" translatesAutoresizingMaskIntoConstraints="NO" id="9ud-K6-isk">
+                    <rect key="frame" x="0.0" y="400" width="414" height="496"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_CleanSmall" translatesAutoresizingMaskIntoConstraints="NO" id="8QU-Lk-jj3">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchWithLight" translatesAutoresizingMaskIntoConstraints="NO" id="NGY-ai-cqt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piercing Studio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41v-Vs-Wwi">
+                    <rect key="frame" x="16" y="794" width="382" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holey Valley" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg7-R9-Iht">
+                    <rect key="frame" x="16" y="760" width="382" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9ud-K6-isk" secondAttribute="bottom" id="DZw-Tv-Yij"/>
+                <constraint firstItem="sg7-R9-Iht" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EH9-p5-hh4"/>
+                <constraint firstItem="8QU-Lk-jj3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="G6g-7g-yFM"/>
+                <constraint firstItem="41v-Vs-Wwi" firstAttribute="top" secondItem="sg7-R9-Iht" secondAttribute="bottom" constant="10" id="O7h-wi-rGp"/>
+                <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="400" id="PIa-re-1fV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NGY-ai-cqt" secondAttribute="trailing" id="Qip-ZO-sps"/>
+                <constraint firstItem="8QU-Lk-jj3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VLz-TE-3nU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="41v-Vs-Wwi" secondAttribute="trailing" constant="16" id="aWO-ge-USU"/>
+                <constraint firstItem="NGY-ai-cqt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bDq-Sd-SPb"/>
+                <constraint firstItem="NGY-ai-cqt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bka-oE-wVj"/>
+                <constraint firstAttribute="bottom" secondItem="NGY-ai-cqt" secondAttribute="bottom" id="cbi-Kq-fL7"/>
+                <constraint firstItem="9ud-K6-isk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="daW-MT-okP"/>
+                <constraint firstAttribute="bottom" secondItem="8QU-Lk-jj3" secondAttribute="bottom" id="kgD-EZ-TJW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sg7-R9-Iht" secondAttribute="trailing" constant="16" id="lnx-y6-TBb"/>
+                <constraint firstItem="8QU-Lk-jj3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="p1U-S4-ydQ"/>
+                <constraint firstAttribute="trailing" secondItem="9ud-K6-isk" secondAttribute="trailing" id="pVX-92-SAz"/>
+                <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qtu-nh-6Hp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="41v-Vs-Wwi" secondAttribute="bottom" constant="50" id="rZn-4z-ACi"/>
+                <constraint firstItem="41v-Vs-Wwi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="stZ-rJ-KlA"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="qtu-nh-6Hp"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="132" y="60"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="launchComplexGradient" width="1000" height="2000"/>
+        <image name="launchWithLight" width="1000" height="2000"/>
+        <image name="launch_CleanSmall" width="1000" height="2000"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

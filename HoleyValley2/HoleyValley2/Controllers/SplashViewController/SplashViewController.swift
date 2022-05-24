@@ -2,7 +2,7 @@
 //  SplashViewController.swift
 //  HoleyValley2
 //
-//  Created by Andrew Moroz on 21.05.22.
+//  Created by Andrew Moroz on 24.05.22.
 //
 
 import UIKit
@@ -10,12 +10,14 @@ import UIKit
 final class SplashViewController: UIViewController {
 
     @IBOutlet weak var gradientView: UIImageView!
+    @IBOutlet weak var oldConstraint: NSLayoutConstraint!
+    @IBOutlet weak var newConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        UIView.animate(withDuration: 2.0) {
-//            
+//
 //            self.oldConstrraint.isActive = false
 //            self.newConstrraint.isActive = true
 //            self.view.layoutIfNeeded() // перерисовка вью
