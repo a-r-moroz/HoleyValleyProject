@@ -17,8 +17,9 @@ class ServiceCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        viewForShadow.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
+
         ViewWithData.setRoundingToView(cornerRadius: 18)
+        viewForShadow.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

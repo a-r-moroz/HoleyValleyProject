@@ -24,7 +24,6 @@ class DecorationCell: UITableViewCell {
         decorationPictureView.setRounding()
         viewWithData.setRoundingToView(cornerRadius: 18)
         viewForShadow.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
-//        setRoundingAndShadow(color: CGColor(gray: 0.5, alpha: 0.6))
         
     }
 

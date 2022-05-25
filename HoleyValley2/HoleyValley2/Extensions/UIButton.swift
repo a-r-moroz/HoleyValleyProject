@@ -35,7 +35,7 @@ extension UIButton {
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
         self.layer.shadowRadius = 5
-        self.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.layer.shadowOffset = CGSize(width: 1, height: 4)
         
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale

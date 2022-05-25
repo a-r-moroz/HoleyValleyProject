@@ -18,11 +18,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1z-Ba-fEp">
-                        <rect key="frame" x="16" y="10" width="288" height="163"/>
+                        <rect key="frame" x="16" y="8" width="288" height="167"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27H-HV-s17">
-                        <rect key="frame" x="16" y="10" width="288" height="163"/>
+                        <rect key="frame" x="16" y="8" width="288" height="167"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePatternLittle" translatesAutoresizingMaskIntoConstraints="NO" id="5e2-Qv-9I4">
                                 <rect key="frame" x="8" y="8" width="100" height="100"/>
@@ -32,14 +32,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6T3-F5-yc6">
-                                <rect key="frame" x="124" y="8" width="156" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="124" y="8" width="156" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY8-uo-ayx">
-                                <rect key="frame" x="124" y="38.5" width="156" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="124" y="37.5" width="156" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,14 +60,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="27H-HV-s17" secondAttribute="bottom" constant="10" id="BAI-2I-Xr8"/>
+                    <constraint firstAttribute="bottom" secondItem="27H-HV-s17" secondAttribute="bottom" constant="8" id="BAI-2I-Xr8"/>
                     <constraint firstAttribute="trailing" secondItem="o1z-Ba-fEp" secondAttribute="trailing" constant="16" id="GfN-Qo-scp"/>
-                    <constraint firstItem="o1z-Ba-fEp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Kaf-Hd-0AP"/>
+                    <constraint firstItem="o1z-Ba-fEp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Kaf-Hd-0AP"/>
                     <constraint firstAttribute="trailing" secondItem="27H-HV-s17" secondAttribute="trailing" constant="16" id="Mtu-Hi-9Le"/>
                     <constraint firstItem="27H-HV-s17" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ONm-BU-cVc"/>
                     <constraint firstItem="o1z-Ba-fEp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="iag-Eu-Ubh"/>
-                    <constraint firstItem="27H-HV-s17" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="uBk-gw-tAj"/>
-                    <constraint firstAttribute="bottom" secondItem="o1z-Ba-fEp" secondAttribute="bottom" constant="10" id="wRX-S7-yNL"/>
+                    <constraint firstItem="27H-HV-s17" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="uBk-gw-tAj"/>
+                    <constraint firstAttribute="bottom" secondItem="o1z-Ba-fEp" secondAttribute="bottom" constant="8" id="wRX-S7-yNL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
