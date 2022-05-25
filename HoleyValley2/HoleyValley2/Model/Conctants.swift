@@ -14,7 +14,16 @@ struct Constants {
     static let fbDecorationsPath = "decorations"
     static let fbServicesPath = "services"
 
-    
+    struct DecorationType {
+        
+        static let shtanga = "Штанга"
+        static let nostrill = "Нострилл"
+        static let circular = "Циркуляр"
+        static let labret = "Лабрет"
+        static let kolco = "Кольцо"
+        static let banan = "Банан"
+        static let top = "Топ"
+    }
     
     
     
