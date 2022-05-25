@@ -10,5 +10,6 @@ target 'HoleyValley2' do
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'FSCalendar'
 
 end
