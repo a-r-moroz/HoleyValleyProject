@@ -16,6 +16,7 @@ class CatalogViewController: UIViewController {
     var database: DatabaseReference!
     
     var decorations = [Decoration]()
+    var decorationsShtanga = [Decoration]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

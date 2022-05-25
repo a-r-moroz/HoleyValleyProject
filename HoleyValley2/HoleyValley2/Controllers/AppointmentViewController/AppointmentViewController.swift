@@ -10,15 +10,26 @@ import Firebase
 
 class AppointmentViewController: UIViewController {
 
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var surnameField: UITextField!
+    
+    
     var ref: DatabaseReference!
+    var name = String()
+    var surname = String()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        ref = Database.database().reference()
 
         
     }
-
+    
+    @IBAction func saveAppointmentAction(_ sender: UIButton) {
+        
+        ref = Database.database().reference()
+        self.ref.child("appointments").setValue(["name": name])
+    }
+    
 }
