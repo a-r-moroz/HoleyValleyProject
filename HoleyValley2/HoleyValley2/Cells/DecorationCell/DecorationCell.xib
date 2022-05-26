@@ -17,10 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1z-Ba-fEp">
-                        <rect key="frame" x="16" y="8" width="288" height="167"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27H-HV-s17">
                         <rect key="frame" x="16" y="8" width="288" height="167"/>
                         <subviews>
@@ -43,31 +39,47 @@
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2y-lv-zh3">
+                                <rect key="frame" x="124" y="10" width="156" height="16"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="3ha-SF-rxR"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePn-2v-Xuw">
+                                <rect key="frame" x="124" y="39.5" width="78" height="16"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="HQT-CV-cLH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5e2-Qv-9I4" firstAttribute="top" secondItem="27H-HV-s17" secondAttribute="top" constant="8" id="9wQ-wK-L65"/>
+                            <constraint firstItem="ePn-2v-Xuw" firstAttribute="leading" secondItem="5e2-Qv-9I4" secondAttribute="trailing" constant="16" id="KDS-Rr-6lh"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5e2-Qv-9I4" secondAttribute="bottom" constant="8" id="Liw-dt-b7e"/>
                             <constraint firstItem="dY8-uo-ayx" firstAttribute="leading" secondItem="5e2-Qv-9I4" secondAttribute="trailing" constant="16" id="QvR-S7-vTk"/>
+                            <constraint firstItem="ePn-2v-Xuw" firstAttribute="centerY" secondItem="dY8-uo-ayx" secondAttribute="centerY" id="RfV-B7-G1V"/>
                             <constraint firstItem="6T3-F5-yc6" firstAttribute="leading" secondItem="5e2-Qv-9I4" secondAttribute="trailing" constant="16" id="SAA-VY-Gkc"/>
                             <constraint firstItem="6T3-F5-yc6" firstAttribute="top" secondItem="5e2-Qv-9I4" secondAttribute="top" id="ShV-9o-TGc"/>
+                            <constraint firstItem="l2y-lv-zh3" firstAttribute="leading" secondItem="5e2-Qv-9I4" secondAttribute="trailing" constant="16" id="Uc7-Lq-ip2"/>
                             <constraint firstAttribute="trailing" secondItem="dY8-uo-ayx" secondAttribute="trailing" constant="8" id="bCP-6n-euy"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dY8-uo-ayx" secondAttribute="bottom" constant="8" id="d1d-ha-9nO"/>
+                            <constraint firstItem="l2y-lv-zh3" firstAttribute="centerY" secondItem="6T3-F5-yc6" secondAttribute="centerY" id="eS4-Lg-Lzs"/>
                             <constraint firstItem="dY8-uo-ayx" firstAttribute="top" secondItem="6T3-F5-yc6" secondAttribute="bottom" constant="10" id="ikh-yB-hBM"/>
+                            <constraint firstAttribute="trailing" secondItem="l2y-lv-zh3" secondAttribute="trailing" constant="8" id="tip-7o-dxv"/>
                             <constraint firstItem="5e2-Qv-9I4" firstAttribute="leading" secondItem="27H-HV-s17" secondAttribute="leading" constant="8" id="uTG-XR-ed3"/>
+                            <constraint firstItem="dY8-uo-ayx" firstAttribute="centerX" secondItem="ePn-2v-Xuw" secondAttribute="trailing" id="uh9-ZX-bq9"/>
                             <constraint firstAttribute="trailing" secondItem="6T3-F5-yc6" secondAttribute="trailing" constant="8" id="xYi-on-fuM"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="27H-HV-s17" secondAttribute="bottom" constant="8" id="BAI-2I-Xr8"/>
-                    <constraint firstAttribute="trailing" secondItem="o1z-Ba-fEp" secondAttribute="trailing" constant="16" id="GfN-Qo-scp"/>
-                    <constraint firstItem="o1z-Ba-fEp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Kaf-Hd-0AP"/>
                     <constraint firstAttribute="trailing" secondItem="27H-HV-s17" secondAttribute="trailing" constant="16" id="Mtu-Hi-9Le"/>
                     <constraint firstItem="27H-HV-s17" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ONm-BU-cVc"/>
-                    <constraint firstItem="o1z-Ba-fEp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="iag-Eu-Ubh"/>
                     <constraint firstItem="27H-HV-s17" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="uBk-gw-tAj"/>
-                    <constraint firstAttribute="bottom" secondItem="o1z-Ba-fEp" secondAttribute="bottom" constant="8" id="wRX-S7-yNL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -75,7 +87,8 @@
                 <outlet property="decorationNameLabel" destination="6T3-F5-yc6" id="x92-ly-nWY"/>
                 <outlet property="decorationPictureView" destination="5e2-Qv-9I4" id="qEF-w9-vtf"/>
                 <outlet property="decorationPriceLabel" destination="dY8-uo-ayx" id="z1V-XI-OKM"/>
-                <outlet property="viewForShadow" destination="o1z-Ba-fEp" id="QzS-IY-tvD"/>
+                <outlet property="previewName" destination="l2y-lv-zh3" id="3M4-jB-uWQ"/>
+                <outlet property="previewPrice" destination="ePn-2v-Xuw" id="aWd-cE-26K"/>
                 <outlet property="viewWithData" destination="27H-HV-s17" id="My2-fR-FdT"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="107.47767857142857"/>
@@ -88,6 +101,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

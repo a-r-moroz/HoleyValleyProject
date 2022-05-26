@@ -14,7 +14,8 @@ class DecorationCell: UITableViewCell {
     @IBOutlet weak var decorationNameLabel: UILabel!
     @IBOutlet weak var decorationPriceLabel: UILabel!
     @IBOutlet weak var viewWithData: UIView!
-    @IBOutlet weak var viewForShadow: UIView!
+    @IBOutlet weak var previewName: UIView!
+    @IBOutlet weak var previewPrice: UIView!
     
 //    var database: DatabaseReference!
     
@@ -23,7 +24,12 @@ class DecorationCell: UITableViewCell {
         
         decorationPictureView.setRounding()
         viewWithData.setRoundingToView(cornerRadius: 18)
-        viewForShadow.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
+        viewWithData.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
+        
+        previewName.layer.cornerRadius = previewName.frame.height / 4
+        previewPrice.layer.cornerRadius = previewPrice.frame.height / 4
+        previewName.isHidden = false
+        previewPrice.isHidden = false
         
     }
 

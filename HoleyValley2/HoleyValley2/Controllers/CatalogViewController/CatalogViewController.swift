@@ -62,6 +62,8 @@ class CatalogViewController: UIViewController {
 
             self.decorations.append(item)
             
+            cell.previewName.isHidden = true
+            cell.previewPrice.isHidden = true
             self.view.isUserInteractionEnabled = true
             
         })
@@ -89,8 +91,10 @@ extension CatalogViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DecorationCell.self), for: indexPath)
         guard let decorationCell = cell as? DecorationCell else { return cell }
+        
         setupCell(cell: decorationCell, row: indexPath.row)
         print("INDEX: \n\(indexPath.row)")
         return decorationCell

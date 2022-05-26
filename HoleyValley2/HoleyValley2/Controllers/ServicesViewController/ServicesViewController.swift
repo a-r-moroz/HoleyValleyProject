@@ -59,6 +59,9 @@ class ServicesViewController: UIViewController {
 
             self.services.append(item)
             
+            cell.previewName.isHidden = true
+            cell.previewPrice.isHidden = true
+            
             self.view.isUserInteractionEnabled = true
             
         })
@@ -86,7 +89,9 @@ extension ServicesViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ServiceCell.self), for: indexPath)
         guard let serviceCell = cell as? ServiceCell else { return cell }
+
         setupCell(cell: serviceCell, row: indexPath.row)
+
         return serviceCell
     }
 }
