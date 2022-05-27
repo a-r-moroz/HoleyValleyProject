@@ -14,7 +14,7 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var surnameField: UITextField!
-    @IBOutlet weak var calendarView: FSCalendar!
+//    @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     
@@ -31,8 +31,8 @@ class AppointmentViewController: UIViewController {
         
         confirmButtonOutlet.setCapsuleRounding()
         confirmButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
-        calendarView.delegate = self
-        calendarView.dataSource = self
+//        calendarView.delegate = self
+//        calendarView.dataSource = self
 
         let picker = UIPickerView()
         timeField.inputView = picker
@@ -63,13 +63,13 @@ class AppointmentViewController: UIViewController {
     
 }
 
-extension AppointmentViewController: FSCalendarDelegate {
-    
-}
-
-extension AppointmentViewController: FSCalendarDataSource {
-    
-}
+//extension AppointmentViewController: FSCalendarDelegate {
+//
+//}
+//
+//extension AppointmentViewController: FSCalendarDataSource {
+//
+//}
 
 extension AppointmentViewController: UIPickerViewDelegate {
     
@@ -92,9 +92,4 @@ extension AppointmentViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         timeField.text = openingHours[row]
     }
-}
-
-extension AppointmentViewController: UITextFieldDelegate {
-    
-    
 }
