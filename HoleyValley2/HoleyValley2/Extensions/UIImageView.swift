@@ -41,6 +41,12 @@ extension UIImageView {
       layer.cornerRadius = 10
       layer.masksToBounds = true
      }
+    
+    func setRoundingToImage(cornerRadius: CGFloat) {
+
+        self.layer.cornerRadius = cornerRadius
+        self.layer.masksToBounds = true
+    }
 }
 
 //extension UIImageView {

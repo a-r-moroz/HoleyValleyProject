@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct Constants {
+struct Const {
     static let appName = "HoleyValley"
     static let defaultImage = "https://firebasestorage.googleapis.com/v0/b/holeyvalleytest.appspot.com/o/decorations%2FdefaultImage.png?alt=media&token=dd3b9287-3524-4e9f-a35f-7ba48e30bd41"
     static let belRublesSign = " BYN"
@@ -23,6 +24,16 @@ struct Constants {
         static let kolco = "Кольцо"
         static let banan = "Банан"
         static let top = "Топ"
+    }
+    
+    struct Colors {
+        
+        static let gray: UIColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1)
+    }
+    
+    struct CornerRadiusTo {
+        
+        static let viewAndImage: CGFloat = 18
     }
     
     

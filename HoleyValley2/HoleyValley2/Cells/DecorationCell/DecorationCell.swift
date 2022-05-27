@@ -24,7 +24,7 @@ class DecorationCell: UITableViewCell {
         
         decorationPictureView.setRounding()
         viewWithData.setRoundingToView(cornerRadius: 18)
-        viewWithData.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
+        viewWithData.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
         
         previewName.layer.cornerRadius = previewName.frame.height / 4
         previewPrice.layer.cornerRadius = previewPrice.frame.height / 4

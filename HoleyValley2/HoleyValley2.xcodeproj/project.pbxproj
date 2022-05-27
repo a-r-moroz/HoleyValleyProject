@@ -22,7 +22,7 @@
 		8E5671442823080400B0395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5671432823080400B0395E /* Assets.xcassets */; };
 		8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E609B8A28399FFF001D242E /* ImageScrollView.swift */; };
 		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
-		8E9D8F532835A34B009FDF12 /* Conctants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D8F522835A34B009FDF12 /* Conctants.swift */; };
+		8E9D8F532835A34B009FDF12 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D8F522835A34B009FDF12 /* Const.swift */; };
 		8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D8F552835A774009FDF12 /* DecorationViewController.swift */; };
 		8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D8F562835A774009FDF12 /* DecorationViewController.xib */; };
 		8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB3E28219663005E0C2A /* AppDelegate.swift */; };
@@ -66,7 +66,7 @@
 		8E5671432823080400B0395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppIcons/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8E609B8A28399FFF001D242E /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		8E9D8F522835A34B009FDF12 /* Conctants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conctants.swift; sourceTree = "<group>"; };
+		8E9D8F522835A34B009FDF12 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8E9D8F552835A774009FDF12 /* DecorationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationViewController.swift; sourceTree = "<group>"; };
 		8E9D8F562835A774009FDF12 /* DecorationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecorationViewController.xib; sourceTree = "<group>"; };
 		8EA9AB3B28219663005E0C2A /* HoleyValley2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleyValley2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,7 +235,7 @@
 				8EE42F1D2821987B00D7210D /* Decoration.swift */,
 				8EC8080528396A48008E176D /* Service.swift */,
 				8E0192B02822F2CF0057C3D8 /* DecorationType.swift */,
-				8E9D8F522835A34B009FDF12 /* Conctants.swift */,
+				8E9D8F522835A34B009FDF12 /* Const.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 			files = (
 				8E13A0B5283D67E2002D35EB /* AppointmentViewController.swift in Sources */,
 				8E13BD4C283B92D00039D1F9 /* SingleServiceViewController.swift in Sources */,
-				8E9D8F532835A34B009FDF12 /* Conctants.swift in Sources */,
+				8E9D8F532835A34B009FDF12 /* Const.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
 				8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */,

@@ -28,19 +28,18 @@ class SingleServiceViewController: UIViewController {
         super.viewDidLoad()
 
         setupViewControllerWithData()
-        catalogButtonOutlet.setCapsuleRounding()
-        appointmentButtonOutlet.setCapsuleRounding()
-        catalogButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
-        appointmentButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
+        catalogButtonOutlet.setCapsuleRoundingToButton()
+        appointmentButtonOutlet.setCapsuleRoundingToButton()
+        catalogButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
 //        appointmentButtonOutlet.addShadow(color: CGColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1), cornerRadius: 10)
-        catalogButtonOutlet.setBackgroundImage(UIImage(named: "imagePattern"), for: .normal)
     }
     
     func setupViewControllerWithData() {
         
         guard let item = currentService else { return }
         serviseNameLabel.text = item.name
-        servicePriceLabel.text = "от " + String(item.price) + Constants.belRublesSign
+        servicePriceLabel.text = "от " + String(item.price) + Const.belRublesSign
         serviceDescriptionLabel.text = item.description
         advantageHeader1.text = item.advantageHeader1
         advantageBody1.text = item.advantageBody1

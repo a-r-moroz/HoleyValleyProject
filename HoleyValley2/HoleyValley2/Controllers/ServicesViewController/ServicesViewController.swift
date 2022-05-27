@@ -55,7 +55,7 @@ class ServicesViewController: UIViewController {
             )
             
             cell.serviceName.text = item.name
-            cell.servicePrice.text = "от " + String(item.price) + Constants.belRublesSign
+            cell.servicePrice.text = "от " + String(item.price) + Const.belRublesSign
 
             self.services.append(item)
             

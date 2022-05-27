@@ -14,10 +14,8 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var surnameField: UITextField!
-//    @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var confirmButtonOutlet: UIButton!
-    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var calendarView: FSCalendar!
     
     var ref: DatabaseReference!
     var name = String()
@@ -29,18 +27,18 @@ class AppointmentViewController: UIViewController {
         
         super.viewDidLoad()
         
-        confirmButtonOutlet.setCapsuleRounding()
-        confirmButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
-//        calendarView.delegate = self
-//        calendarView.dataSource = self
+        confirmButtonOutlet.setCapsuleRoundingToButton()
+        confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
 
         let picker = UIPickerView()
         timeField.inputView = picker
         picker.delegate = self
         picker.dataSource = self
         
-        hideKeyboardByTap()
-    
+//        hideKeyboardByTap()
+        
+        calendarView.delegate = self
+        calendarView.dataSource = self
     }
     
     //Calls this function when the tap is recognized to hide keyboard
@@ -63,14 +61,6 @@ class AppointmentViewController: UIViewController {
     
 }
 
-//extension AppointmentViewController: FSCalendarDelegate {
-//
-//}
-//
-//extension AppointmentViewController: FSCalendarDataSource {
-//
-//}
-
 extension AppointmentViewController: UIPickerViewDelegate {
     
 }
@@ -92,4 +82,15 @@ extension AppointmentViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         timeField.text = openingHours[row]
     }
+}
+
+extension AppointmentViewController: FSCalendarDelegate {
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print(date)
+    }
+}
+
+extension AppointmentViewController: FSCalendarDataSource {
+
 }

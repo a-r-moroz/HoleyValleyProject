@@ -10,19 +10,19 @@ import UIKit
 
 extension UIButton {
     
-    func setRounding(cornerRadius: CGFloat) {
+    func setRoundingToButton(cornerRadius: CGFloat) {
 
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
      }
     
-    func setCapsuleRounding() {
+    func setCapsuleRoundingToButton() {
 
         self.layer.cornerRadius = self.frame.height / 2
         self.layer.masksToBounds = true
      }
     
-    func addShadow(color: CGColor) {
+    func setShadowToButton(color: CGColor) {
         
 //        self.layer.shadowColor = color
 //        self.layer.shadowOpacity = 1

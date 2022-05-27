@@ -17,7 +17,7 @@ final class FirebaseManager {
 //        database = Database.database().reference()
         var decorations: [Decoration] = [Decoration]()
             
-        let query = self.database.child(Constants.fbDecorationsPath).queryOrderedByKey()
+        let query = self.database.child(Const.fbDecorationsPath).queryOrderedByKey()
         
         query.observeSingleEvent(of: .value) { snapshot in
             
@@ -42,7 +42,7 @@ final class FirebaseManager {
         
         var services: [Service] = [Service]()
             
-        let query = self.database.child(Constants.fbServicesPath).queryOrderedByKey()
+        let query = self.database.child(Const.fbServicesPath).queryOrderedByKey()
         
         query.observeSingleEvent(of: .value) { snapshot in
             

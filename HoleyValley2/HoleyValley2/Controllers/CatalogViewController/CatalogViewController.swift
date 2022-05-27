@@ -53,12 +53,12 @@ class CatalogViewController: UIViewController {
                                   price: value["price"] as? Int ?? 0,
                                   description: value["description"] as? String ?? "",
                                   type: value["type"] as? String ?? "",
-                                  image: value["picture"] as? String ?? Constants.defaultImage
+                                  image: value["picture"] as? String ?? Const.defaultImage
             )
             
             cell.decorationPictureView.setImageFromULR(item.image)
             cell.decorationNameLabel.text = item.name
-            cell.decorationPriceLabel.text = String(item.price) + Constants.belRublesSign
+            cell.decorationPriceLabel.text = String(item.price) + Const.belRublesSign
 
             self.decorations.append(item)
             

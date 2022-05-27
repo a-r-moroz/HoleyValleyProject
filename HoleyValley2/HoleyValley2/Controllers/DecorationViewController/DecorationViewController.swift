@@ -21,13 +21,13 @@ class DecorationViewController: UIViewController {
         
         setupViewControllerWithData()
         decorationImageTapped()
-        decorationImage.setRounding()
+        decorationImage.setRoundingToImage(cornerRadius: 18)
     }
     
     func setupViewControllerWithData() {
         guard let item = currentDecoration else { return }
         decorationNameLabel.text = item.name
-        decorationPriceLabel.text = String(item.price) + Constants.belRublesSign
+        decorationPriceLabel.text = String(item.price) + Const.belRublesSign
         decorationDescribtionLabel.text = item.description
         decorationImage.setImageFromULR(item.image)
         

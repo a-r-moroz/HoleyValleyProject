@@ -15,9 +15,9 @@ class ReceptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        appointmentButtonOutlet.setCapsuleRounding()
-        appointmentButtonOutlet.addShadow(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1))
-        mapWithCoordinatesView.layer.cornerRadius = 10
+        appointmentButtonOutlet.setCapsuleRoundingToButton()
+        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        mapWithCoordinatesView.setRoundingToView(cornerRadius: 18)
         
         title = "Контакты"
     }

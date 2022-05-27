@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppointmentViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
+                <outlet property="calendarView" destination="JHh-vA-pWR" id="PL1-RD-QDy"/>
                 <outlet property="confirmButtonOutlet" destination="u4e-mj-Tvu" id="FLL-Bq-wDS"/>
-                <outlet property="keyboardHeightLayoutConstraint" destination="cw7-2w-H8w" id="6Yc-9u-DXa"/>
                 <outlet property="nameField" destination="9oj-lj-eEg" id="2eS-hb-BK2"/>
                 <outlet property="surnameField" destination="s2H-tP-Ymv" id="F00-1M-a7s"/>
                 <outlet property="timeField" destination="1Ft-Q9-3CE" id="vB6-Rg-une"/>
@@ -41,7 +41,7 @@
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-Q9-3CE">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Время" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-Q9-3CE">
                                     <rect key="frame" x="16" y="483" width="382" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -52,12 +52,12 @@
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9oj-lj-eEg">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9oj-lj-eEg">
                                     <rect key="frame" x="16" y="567.5" width="382" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-tP-Ymv">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-tP-Ymv">
                                     <rect key="frame" x="16" y="611.5" width="382" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -71,39 +71,56 @@
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Записаться">
+                                    <buttonConfiguration key="configuration" style="plain" title="Готово">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="saveAppointmentAction:" destination="-1" eventType="touchUpInside" id="wXH-z6-PZ0"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXR-fZ-IL9">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHh-vA-pWR" customClass="FSCalendar">
                                     <rect key="frame" x="16" y="50.5" width="382" height="382"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="PXR-fZ-IL9" secondAttribute="height" multiplier="1:1" id="4eI-ht-sqH"/>
+                                        <constraint firstAttribute="width" secondItem="JHh-vA-pWR" secondAttribute="height" multiplier="1:1" id="4XJ-ZF-vDA"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                            <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                            <color key="value" systemColor="labelColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                            <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                            <color key="value" systemColor="systemGray2Color"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="9oj-lj-eEg" firstAttribute="top" secondItem="NWx-jh-U5e" secondAttribute="bottom" constant="10" id="3UA-A3-twR"/>
+                                <constraint firstItem="mmY-tI-fbW" firstAttribute="top" secondItem="JHh-vA-pWR" secondAttribute="bottom" constant="20" id="6lk-gV-dTA"/>
                                 <constraint firstAttribute="trailing" secondItem="9oj-lj-eEg" secondAttribute="trailing" constant="16" id="82K-2p-e3k"/>
                                 <constraint firstItem="s2H-tP-Ymv" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="CO1-d1-8YZ"/>
-                                <constraint firstAttribute="trailing" secondItem="PXR-fZ-IL9" secondAttribute="trailing" constant="16" id="Dao-cQ-J6i"/>
                                 <constraint firstAttribute="trailing" secondItem="1Ft-Q9-3CE" secondAttribute="trailing" constant="16" id="ML1-wH-gVW"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="top" secondItem="egm-LX-PUI" secondAttribute="top" constant="20" id="PHN-BL-bzf"/>
                                 <constraint firstAttribute="trailing" secondItem="Ge7-HS-Mrn" secondAttribute="trailing" constant="16" id="Rw1-2m-ntg"/>
-                                <constraint firstAttribute="trailing" secondItem="PXR-fZ-IL9" secondAttribute="trailing" constant="16" id="SZK-F4-XnA"/>
+                                <constraint firstItem="JHh-vA-pWR" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="SBe-aP-t5K"/>
                                 <constraint firstItem="s2H-tP-Ymv" firstAttribute="top" secondItem="9oj-lj-eEg" secondAttribute="bottom" constant="10" id="TKW-bd-Eu9"/>
                                 <constraint firstAttribute="trailing" secondItem="mmY-tI-fbW" secondAttribute="trailing" constant="16" id="WPt-5k-Pb5"/>
                                 <constraint firstAttribute="bottom" secondItem="u4e-mj-Tvu" secondAttribute="bottom" constant="30" id="WlJ-lv-wm9"/>
+                                <constraint firstAttribute="trailing" secondItem="JHh-vA-pWR" secondAttribute="trailing" constant="16" id="Xf8-WV-gKh"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="Yvr-Gc-aDh"/>
                                 <constraint firstAttribute="trailing" secondItem="s2H-tP-Ymv" secondAttribute="trailing" constant="16" id="aWo-K0-xfv"/>
-                                <constraint firstItem="mmY-tI-fbW" firstAttribute="top" secondItem="PXR-fZ-IL9" secondAttribute="bottom" constant="20" id="ajH-Di-A7P"/>
-                                <constraint firstItem="PXR-fZ-IL9" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="dIO-zQ-pOn"/>
                                 <constraint firstItem="9oj-lj-eEg" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="hf3-zm-umE"/>
+                                <constraint firstItem="JHh-vA-pWR" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="jdk-Ub-Zk6"/>
                                 <constraint firstItem="NWx-jh-U5e" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="lJD-qC-4pi"/>
                                 <constraint firstItem="1Ft-Q9-3CE" firstAttribute="top" secondItem="mmY-tI-fbW" secondAttribute="bottom" constant="10" id="nFh-ry-B0C"/>
                                 <constraint firstItem="NWx-jh-U5e" firstAttribute="top" secondItem="1Ft-Q9-3CE" secondAttribute="bottom" constant="20" id="nPg-F2-ILE"/>
@@ -111,7 +128,6 @@
                                 <constraint firstItem="u4e-mj-Tvu" firstAttribute="centerX" secondItem="egm-LX-PUI" secondAttribute="centerX" id="qVy-nk-lOM"/>
                                 <constraint firstItem="mmY-tI-fbW" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="qdj-M0-GMQ"/>
                                 <constraint firstItem="u4e-mj-Tvu" firstAttribute="top" secondItem="s2H-tP-Ymv" secondAttribute="bottom" constant="30" id="uWA-6i-zPS"/>
-                                <constraint firstItem="PXR-fZ-IL9" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="uaF-rD-myi"/>
                                 <constraint firstAttribute="trailing" secondItem="NWx-jh-U5e" secondAttribute="trailing" constant="16" id="v9Q-LA-gNG"/>
                             </constraints>
                         </view>
@@ -137,8 +153,14 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
