@@ -16,6 +16,7 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var surnameField: UITextField!
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var confirmButtonOutlet: UIButton!
+    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     
     
     var ref: DatabaseReference!
@@ -38,11 +39,17 @@ class AppointmentViewController: UIViewController {
         picker.delegate = self
         picker.dataSource = self
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        hideKeyboardByTap()
+    
     }
-
-    //Calls this function when the tap is recognized.
+    
+    //Calls this function when the tap is recognized to hide keyboard
+    private func hideKeyboardByTap() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -50,7 +57,7 @@ class AppointmentViewController: UIViewController {
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
-        ref = Database.database().reference()
+//        ref = Database.database().reference()
 //        self.ref.child("appointments").setValue(["name": name])
     }
     
@@ -85,4 +92,9 @@ extension AppointmentViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         timeField.text = openingHours[row]
     }
+}
+
+extension AppointmentViewController: UITextFieldDelegate {
+    
+    
 }

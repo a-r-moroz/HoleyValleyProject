@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="calendarView" destination="BDN-vp-25Z" id="N2p-1u-HcB"/>
                 <outlet property="confirmButtonOutlet" destination="u4e-mj-Tvu" id="FLL-Bq-wDS"/>
+                <outlet property="keyboardHeightLayoutConstraint" destination="cw7-2w-H8w" id="6Yc-9u-DXa"/>
                 <outlet property="nameField" destination="9oj-lj-eEg" id="2eS-hb-BK2"/>
                 <outlet property="surnameField" destination="s2H-tP-Ymv" id="F00-1M-a7s"/>
                 <outlet property="timeField" destination="1Ft-Q9-3CE" id="vB6-Rg-une"/>
