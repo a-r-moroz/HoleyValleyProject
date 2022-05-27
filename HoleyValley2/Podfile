@@ -11,7 +11,5 @@ target 'HoleyValley2' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'IQKeyboardManager'
-  pod 'FSCalendar'
-
 
 end
