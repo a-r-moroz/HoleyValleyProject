@@ -12,6 +12,7 @@ final class FirebaseManager {
     private static var database: DatabaseReference! = Database.database().reference()
 //    database = Database.database().reference()
     
+    /*
     static func getDecorations() -> [Decoration] {
         
 //        database = Database.database().reference()
@@ -53,17 +54,46 @@ final class FirebaseManager {
                 let describtion = value?["describtion"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
                 
-//                let item = Service(name: name, price: price, describtion: describtion)
+                let item = Service(name: name, price: price, describtion: describtion)
                 
-//                let item = Service()
-//                item.name = name
-//                item.describtion = describtion
-//                item.price = price
-//
-//                services.append(item)
-//                print(services.count)
+                let item = Service()
+                item.name = name
+                item.describtion = describtion
+                item.price = price
+
+                services.append(item)
+                print(services.count)
             }
         }
         return services
+    }
+     
+     */
+    
+    static func loadDecorations(tableView: UITableView) -> [Decoration] {
+        
+        var decorations = [Decoration]()
+            
+        let query = self.database.child(Const.fbDecorationsPath).queryOrderedByKey()
+        
+        query.observeSingleEvent(of: .value) { snapshot in
+            
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                let value = child.value as? NSDictionary
+                let name = value?["name"] as? String ?? ""
+                let description = value?["describtion"] as? String ?? ""
+                let price = value?["price"] as? Int ?? 0
+                let type = value?["type"] as? String ?? ""
+                let picture = value?["picture"] as? String ?? ""
+                
+                let item = Decoration(name: name, price: price, description: description, type: type, image: picture)
+                decorations.append(item)
+                
+                DispatchQueue.main.async {
+                    tableView.reloadData()
+                }
+            }
+        }
+        return decorations
     }
 }

@@ -17,9 +17,12 @@ class ServicesViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         servicesTable.delegate = self
         servicesTable.dataSource = self
+        
         setupTable()
+        loadServices()
         title = "Услуги"
 
 //        services = FirebaseManager.getServices()
@@ -31,42 +34,52 @@ class ServicesViewController: UIViewController {
         servicesTable.register(nib, forCellReuseIdentifier: String(describing: ServiceCell.self))
     }
     
-    private func setupCell(cell: ServiceCell, row: Int) {
-        
-        self.view.isUserInteractionEnabled = false
+    func loadServices() {
         
         database = Database.database().reference()
-        database.child("services").child("\(row)").getData(completion: { error, snapshot in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            guard let value = snapshot.value as? NSDictionary else { return }
+        services = []
             
-            let item = Service(name: value["name"] as? String ?? "",
-                               price: value["price"] as? Int ?? 0,
-                               description: value["description"] as? String ?? "",
-                               advantageHeader1: value["advantageHeader1"] as? String ?? "",
-                               advantageBody1: value["advantageBody1"] as? String ?? "",
-                               advantageHeader2: value["advantageHeader2"] as? String ?? "",
-                               advantageBody2: value["advantageBody2"] as? String ?? "",
-                               advantageHeader3: value["advantageHeader3"] as? String ?? "",
-                               advantageBody3: value["advantageBody3"] as? String ?? ""
-            )
+        let query = self.database.child(Const.fbServicesPath).queryOrderedByKey()
+        
+        query.observeSingleEvent(of: .value) { snapshot in
             
-            cell.serviceName.text = item.name
-            cell.servicePrice.text = "от " + String(item.price) + Const.belRublesSign
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                
+                let value = child.value as? NSDictionary
+                
+                let name = value?["name"] as? String ?? ""
+                let price = value?["price"] as? Int ?? 0
+                let description = value?["description"] as? String ?? ""
+                let advantageHeader1 = value?["advantageHeader1"] as? String ?? ""
+                let advantageHeader2 = value?["advantageHeader2"] as? String ?? ""
+                let advantageHeader3 = value?["advantageHeader3"] as? String ?? ""
+                let advantageBody1 = value?["advantageBody1"] as? String ?? ""
+                let advantageBody2 = value?["advantageBody2"] as? String ?? ""
+                let advantageBody3 = value?["advantageBody3"] as? String ?? ""
+                
+                /*
+                 let item = Service(name: value["name"] as? String ?? "",
+                                    price: value["price"] as? Int ?? 0,
+                                    description: value["description"] as? String ?? "",
+                                    advantageHeader1: value["advantageHeader1"] as? String ?? "",
+                                    advantageBody1: value["advantageBody1"] as? String ?? "",
+                                    advantageHeader2: value["advantageHeader2"] as? String ?? "",
+                                    advantageBody2: value["advantageBody2"] as? String ?? "",
+                                    advantageHeader3: value["advantageHeader3"] as? String ?? "",
+                                    advantageBody3: value["advantageBody3"] as? String ?? ""
+                 )
+                 */
 
-            self.services.append(item)
-            
-            cell.previewName.isHidden = true
-            cell.previewPrice.isHidden = true
-            
-            self.view.isUserInteractionEnabled = true
-            
-        })
+                let item = Service(name: name, price: price, description: description, advantageHeader1: advantageHeader1, advantageBody1: advantageBody1, advantageHeader2: advantageHeader2, advantageBody2: advantageBody2, advantageHeader3: advantageHeader3, advantageBody3: advantageBody3)
+                
+                self.services.append(item)
+                
+                DispatchQueue.main.async {
+                    self.servicesTable.reloadData()
+                }
+            }
+        }
     }
-    
 }
 
 extension ServicesViewController: UITableViewDelegate {
@@ -82,16 +95,20 @@ extension ServicesViewController: UITableViewDelegate {
 
 extension ServicesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return services.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ServiceCell.self), for: indexPath)
         guard let serviceCell = cell as? ServiceCell else { return cell }
-
-        setupCell(cell: serviceCell, row: indexPath.row)
-
+        
+        let service = services[indexPath.row]
+        serviceCell.serviceName.text = service.name
+        serviceCell.servicePrice.text = "от " + String(service.price) + Const.belRublesSign
+        serviceCell.previewName.isHidden = true
+        serviceCell.previewPrice.isHidden = true
+        
         return serviceCell
     }
 }

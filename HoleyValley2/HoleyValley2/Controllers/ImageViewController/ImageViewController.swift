@@ -8,7 +8,7 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-    
+        
     var imageScrollView: ImageScrollView!
     var imageToSet = UIImage()
 
@@ -23,7 +23,7 @@ class ImageViewController: UIViewController {
         dismissBySwipe()
         
         self.imageScrollView.setImage(image: imageToSet)
-        
+//        hideAndShowUIBySwipe()
     }
     
     func setupImageScrollView() {
@@ -35,7 +35,7 @@ class ImageViewController: UIViewController {
         imageScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     }
     
-    func dismissBySwipe() {
+    private func dismissBySwipe() {
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(toSwipe))
         swipe.direction = .down
         view.addGestureRecognizer(swipe)
@@ -45,6 +45,18 @@ class ImageViewController: UIViewController {
         
         dismiss(animated: true)
     }
+    
+//    private func hideAndShowUIBySwipe() {
+//
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(singleTap(sender:)))
+//        tap.numberOfTapsRequired = 1
+//        self.view.addGestureRecognizer(tap)
+//    }
+//
+//    @objc func singleTap(sender: UITapGestureRecognizer) {
+//
+//        closeButtonOutlet.isHidden = !closeButtonOutlet.isHidden
+//    }
     
     @IBAction func closeAction(_ sender: UIButton) {
         

@@ -28,56 +28,50 @@ class CatalogViewController: UIViewController {
         
         title = "Каталог"
         
+        loadDecorations()
+        print("COUNT \n\(decorations.count)")
     }
     
     private func setupTable() {
+        
         decorationsTable.register(UINib(nibName: String(describing: DecorationCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DecorationCell.self))
     }
     
-    private func setupCell(cell: DecorationCell, row: Int) {
-        
-        self.view.isUserInteractionEnabled = false
-
-//        cell.decorationPictureView.image = UIImage(named: "defaultImage")
-//        cell.decorationPictureView.contentMode = .scaleAspectFill
+    
+    func loadDecorations() {
         
         database = Database.database().reference()
-        database.child("decorations").child("\(row)").getData(completion: { error, snapshot in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
+        decorations = []
+            
+        let query = self.database.child(Const.fbDecorationsPath).queryOrderedByKey()
+        
+        query.observeSingleEvent(of: .value) { snapshot in
+            
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                let value = child.value as? NSDictionary
+                let name = value?["name"] as? String ?? ""
+                let description = value?["description"] as? String ?? ""
+                let price = value?["price"] as? Int ?? 0
+                let type = value?["type"] as? String ?? ""
+                let picture = value?["picture"] as? String ?? ""
+                
+                let item = Decoration(name: name, price: price, description: description, type: type, image: picture)
+                
+                self.decorations.append(item)                
+                DispatchQueue.main.async {
+                    self.decorationsTable.reloadData()
+                }
             }
-            guard let value = snapshot.value as? NSDictionary else { return }
-            
-            let item = Decoration(name: value["name"] as? String ?? "",
-                                  price: value["price"] as? Int ?? 0,
-                                  description: value["description"] as? String ?? "",
-                                  type: value["type"] as? String ?? "",
-                                  image: value["picture"] as? String ?? Const.defaultImage
-            )
-            
-            cell.decorationPictureView.setImageFromULR(item.image)
-            cell.decorationNameLabel.text = item.name
-            cell.decorationPriceLabel.text = String(item.price) + Const.belRublesSign
-
-            self.decorations.append(item)
-            
-            cell.previewName.isHidden = true
-            cell.previewPrice.isHidden = true
-            self.view.isUserInteractionEnabled = true
-            
-        })
+        }
     }
-    
-    
 }
 
 extension CatalogViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let decorationVC = DecorationViewController(nibName: String(describing: DecorationViewController.self), bundle: nil)
-                decorationVC.currentDecoration = decorations[indexPath.row]
-        //        let item = decorations[indexPath.row]
+        decorationVC.currentDecoration = decorations[indexPath.row]
         navigationController?.pushViewController(decorationVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -87,7 +81,8 @@ extension CatalogViewController: UITableViewDelegate {
 extension CatalogViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 48
+        
+        return decorations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,10 +90,16 @@ extension CatalogViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DecorationCell.self), for: indexPath)
         guard let decorationCell = cell as? DecorationCell else { return cell }
         
-        setupCell(cell: decorationCell, row: indexPath.row)
+        let decor = decorations[indexPath.row]
+        
+        decorationCell.decorationNameLabel.text = decor.name
+        decorationCell.decorationPriceLabel.text = String(decor.price) + Const.belRublesSign
+        decorationCell.decorationPictureView.setImageFromULR(decor.image)
+
+        decorationCell.previewName.isHidden = true
+        decorationCell.previewPrice.isHidden = true
+        
         print("INDEX: \n\(indexPath.row)")
         return decorationCell
     }
-    
-    
 }

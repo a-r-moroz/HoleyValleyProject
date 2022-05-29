@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egm-LX-PUI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="755.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="775.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Давайте выберем день:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-HS-Mrn">
                                     <rect key="frame" x="16" y="20" width="382" height="20.5"/>
@@ -115,7 +115,7 @@
                                 <constraint firstItem="JHh-vA-pWR" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="SBe-aP-t5K"/>
                                 <constraint firstItem="s2H-tP-Ymv" firstAttribute="top" secondItem="9oj-lj-eEg" secondAttribute="bottom" constant="10" id="TKW-bd-Eu9"/>
                                 <constraint firstAttribute="trailing" secondItem="mmY-tI-fbW" secondAttribute="trailing" constant="16" id="WPt-5k-Pb5"/>
-                                <constraint firstAttribute="bottom" secondItem="u4e-mj-Tvu" secondAttribute="bottom" constant="30" id="WlJ-lv-wm9"/>
+                                <constraint firstAttribute="bottom" secondItem="u4e-mj-Tvu" secondAttribute="bottom" constant="50" id="WlJ-lv-wm9"/>
                                 <constraint firstAttribute="trailing" secondItem="JHh-vA-pWR" secondAttribute="trailing" constant="16" id="Xf8-WV-gKh"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="Yvr-Gc-aDh"/>
                                 <constraint firstAttribute="trailing" secondItem="s2H-tP-Ymv" secondAttribute="trailing" constant="16" id="aWo-K0-xfv"/>
