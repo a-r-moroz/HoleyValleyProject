@@ -17,10 +17,12 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var calendarView: FSCalendar!
     
-    var ref: DatabaseReference!
-    var name = String()
-    var surname = String()
+    var database: DatabaseReference!
+    var name: String?
+    var surname: String?
     let openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+//    var selectedAppointment: Appointment?
+    var selectedDate: String?
 
     
     override func viewDidLoad() {
@@ -39,6 +41,10 @@ class AppointmentViewController: UIViewController {
         
         calendarView.delegate = self
         calendarView.dataSource = self
+        calendarView.locale = Locale(identifier: "RU")
+        
+        database = Database.database().reference()
+
     }
     
     //Calls this function when the tap is recognized to hide keyboard
@@ -55,8 +61,11 @@ class AppointmentViewController: UIViewController {
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
-//        ref = Database.database().reference()
-//        self.ref.child("appointments").setValue(["name": name])
+        guard let name = nameField.text, let surname = surnameField.text, let time = timeField.text, let date = selectedDate else { return }
+        
+        
+        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
+//        self.database.child("appointments").setValue(["name": name])
     }
     
 }
@@ -87,12 +96,34 @@ extension AppointmentViewController: UIPickerViewDataSource {
 extension AppointmentViewController: FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        
+        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.dateFormat = "d MMM, yyyy"
+        let dateString = dateFormatter.string(from: date)
+        selectedDate = dateString
+        print(dateString)
     }
+    
+//    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+//
+//        print("deselect")
+//    }
+    
+//    func calendar(_ calendar: FSCalendar, shouldDeselect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+//        return true
+//    }
 }
 
 extension AppointmentViewController: FSCalendarDataSource {
 
+    func minimumDate(for calendar: FSCalendar) -> Date {
+        return Date()
+    }
+    
+    func maximumDate(for calendar: FSCalendar) -> Date {
+        return Date().addingTimeInterval((24 * 60 * 60) * 45)
+    }
 }
 
 //extension AppointmentViewController: UITextFieldDelegate {
