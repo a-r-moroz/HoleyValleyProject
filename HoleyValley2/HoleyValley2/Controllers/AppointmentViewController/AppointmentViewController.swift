@@ -27,7 +27,8 @@ class AppointmentViewController: UIViewController {
 //
 //        return allHours
 //    }()
-
+    var usingHours = [String]()
+    var busyHours = [String]()
     
     override func viewDidLoad() {
         
@@ -63,39 +64,20 @@ class AppointmentViewController: UIViewController {
         view.endEditing(true)
     }
     
-    func availableHours() -> [String] {
+    func availableHours(date: String) {
         
         var allHours = [String]()
+        database = Database.database().reference().child("\(Const.Firebase.appointmentsPath)/\(date)")
+
         
-        if let date = selectedDate {
-            
-            let query = self.database.child("\(Const.Firebase.appointmentsPath)/\(date)").queryOrderedByKey()
-
-                query.observeSingleEvent(of: .value) { snapshot in
-
-                    for child in snapshot.children.allObjects as! [DataSnapshot] {
-                        let key = child.key
-                        allHours.append(key)
-
-            
-        //                    for i in self.openingHours {
-        //                        let hour = value?["\(i)"] as? String ?? ""
-        //                        if hour != i {
-        //                            allHours.append(hour)
-        //                        } else {
-        //                            continue
-        //                        }
-        //
-        //                    }
-                                            
-        //                    DispatchQueue.main.async {
-        //                        self.openingHours = allHours
-        //                    }
-                    }
-                }
+        database.observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                allHours.append(key)
+            }
+            self.usingHours = allHours
         }
-    
-    return allHours
 }
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
@@ -120,15 +102,24 @@ extension AppointmentViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return openingHours.count
+        for i in openingHours {
+            for a in busyHours {
+                if i == a {
+                    continue
+                } else {
+                    usingHours.append(i)
+                }
+            }
+        }
+        return usingHours.count
 
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        openingHours[row]
+        usingHours[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        timeField.text = openingHours[row]
+        timeField.text = usingHours[row]
     }
 }
 
@@ -141,7 +132,8 @@ extension AppointmentViewController: FSCalendarDelegate {
         dateFormatter.dateFormat = "d MMM, yyyy"
         let dateString = dateFormatter.string(from: date)
         selectedDate = dateString
-        print(availableHours())
+        availableHours(date: dateString)
+        print("ARRAY:\n\(usingHours)")
         print(dateString)
     }
     
@@ -162,7 +154,7 @@ extension AppointmentViewController: FSCalendarDataSource {
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
-        return Date().addingTimeInterval((24 * 60 * 60) * 45)
+        return Date().addingTimeInterval((24 * 60 * 60) * 55)
     }
 }
 
