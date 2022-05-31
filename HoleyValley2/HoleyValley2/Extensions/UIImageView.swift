@@ -47,6 +47,18 @@ extension UIImageView {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
+    
+    func setShadowToImage(color: CGColor) {
+        
+        self.layer.shadowColor = color
+        self.layer.shadowOpacity = 0.4
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 20
+        self.layer.shadowOffset = .zero
+        
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
 }
 
 //extension UIImageView {
