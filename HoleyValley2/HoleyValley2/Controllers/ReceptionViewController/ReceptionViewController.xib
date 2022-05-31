@@ -13,6 +13,7 @@
                 <outlet property="appointmentButtonOutlet" destination="u14-SZ-qtY" id="yRO-5z-pLJ"/>
                 <outlet property="instagramLogo" destination="ZVj-9w-WpO" id="CcN-HS-NjP"/>
                 <outlet property="mapWithCoordinatesView" destination="bhp-Mf-LQ6" id="ke3-DP-vtK"/>
+                <outlet property="phoneNumberLabel" destination="Ftb-jq-1u4" id="mlp-WX-BxP"/>
                 <outlet property="tiktokLogo" destination="Qlf-9E-XY5" id="Ku3-1b-ucv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,7 +27,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vU-Br-07O">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="806.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-Mf-LQ6">
                                     <rect key="frame" x="16" y="20" width="382" height="382"/>
@@ -48,14 +49,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="age" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-K3-jaL">
-                                    <rect key="frame" x="192" y="722" width="30" height="30"/>
+                                    <rect key="frame" x="192" y="702.5" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="Qtp-bU-cKt"/>
                                         <constraint firstAttribute="height" constant="30" id="tVv-Mx-y7N"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если Вам меньше 18 лет, для оказания услуг необходимо присутствие одного из Ваших законных опекунов." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRg-dX-iH0">
-                                    <rect key="frame" x="16" y="757" width="382" height="29"/>
+                                    <rect key="frame" x="16" y="737.5" width="382" height="29"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" systemColor="systemGray2Color"/>
                                     <nil key="highlightedColor"/>
@@ -76,18 +77,6 @@
                                         <action selector="appointmentButtonAction:" destination="-1" eventType="touchUpInside" id="svb-Ro-gcP"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы в соцсетях:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llu-sU-Aj5">
-                                    <rect key="frame" x="16" y="564.5" width="382" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+375 (33) 990-77-88" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-jq-1u4">
-                                    <rect key="frame" x="16" y="662.5" width="382" height="19.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Bt-Y6-na9">
                                     <rect key="frame" x="152" y="592.5" width="110" height="50"/>
                                     <subviews>
@@ -109,18 +98,43 @@
                                         </imageView>
                                     </subviews>
                                 </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы в соцсетях:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llu-sU-Aj5">
+                                    <rect key="frame" x="16" y="564.5" width="382" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-3B-Hro">
+                                    <rect key="frame" x="116.5" y="662.5" width="181" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ifY-WW-vuh">
+                                            <rect key="frame" x="0.0" y="1.5" width="20" height="17.5"/>
+                                            <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Z1m-a6-RhI"/>
+                                                <constraint firstAttribute="width" constant="20" id="sl3-pb-NOv"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+375 (33) 990-77-88" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-jq-1u4">
+                                            <rect key="frame" x="31" y="0.0" width="150" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Llu-sU-Aj5" secondAttribute="trailing" constant="16" id="4Xe-xe-G04"/>
-                                <constraint firstAttribute="bottom" secondItem="VRg-dX-iH0" secondAttribute="bottom" constant="30" id="4v8-FJ-dYM"/>
+                                <constraint firstAttribute="bottom" secondItem="VRg-dX-iH0" secondAttribute="bottom" constant="40" id="4v8-FJ-dYM"/>
                                 <constraint firstItem="Llu-sU-Aj5" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="9nL-Vo-ba5"/>
                                 <constraint firstAttribute="trailing" secondItem="bhp-Mf-LQ6" secondAttribute="trailing" constant="16" id="AF2-TR-z07"/>
                                 <constraint firstItem="4sJ-JM-Kc3" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="At7-vA-BZS"/>
-                                <constraint firstItem="Ftb-jq-1u4" firstAttribute="top" secondItem="7Bt-Y6-na9" secondAttribute="bottom" constant="20" id="EfM-9t-e3P"/>
                                 <constraint firstItem="x9l-9J-qiS" firstAttribute="top" secondItem="bhp-Mf-LQ6" secondAttribute="bottom" constant="20" id="Eie-gR-uDf"/>
                                 <constraint firstItem="x9l-9J-qiS" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="F2E-fl-Uz4"/>
                                 <constraint firstItem="7Bt-Y6-na9" firstAttribute="centerX" secondItem="u14-SZ-qtY" secondAttribute="centerX" id="FKU-P6-XFL"/>
-                                <constraint firstItem="Ftb-jq-1u4" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="KEr-tB-Qjk"/>
+                                <constraint firstItem="GTM-3B-Hro" firstAttribute="top" secondItem="7Bt-Y6-na9" secondAttribute="bottom" constant="20" id="LcI-Tg-clK"/>
+                                <constraint firstItem="Mt0-K3-jaL" firstAttribute="top" secondItem="GTM-3B-Hro" secondAttribute="bottom" constant="20" id="Mj4-Xx-LIt"/>
                                 <constraint firstItem="bhp-Mf-LQ6" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="P9M-mq-LUB"/>
                                 <constraint firstItem="7Bt-Y6-na9" firstAttribute="top" secondItem="Llu-sU-Aj5" secondAttribute="bottom" constant="10" id="TEW-hj-84T"/>
                                 <constraint firstItem="VRg-dX-iH0" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="X9p-iP-lgH"/>
@@ -131,8 +145,7 @@
                                 <constraint firstItem="4sJ-JM-Kc3" firstAttribute="top" secondItem="x9l-9J-qiS" secondAttribute="bottom" constant="5" id="gsK-PH-gPi"/>
                                 <constraint firstItem="VRg-dX-iH0" firstAttribute="top" secondItem="Mt0-K3-jaL" secondAttribute="bottom" constant="5" id="hKB-98-eev"/>
                                 <constraint firstAttribute="trailing" secondItem="VRg-dX-iH0" secondAttribute="trailing" constant="16" id="m7d-cj-3Kp"/>
-                                <constraint firstItem="Mt0-K3-jaL" firstAttribute="top" secondItem="Ftb-jq-1u4" secondAttribute="bottom" constant="40" id="mzQ-9P-MT1"/>
-                                <constraint firstAttribute="trailing" secondItem="Ftb-jq-1u4" secondAttribute="trailing" constant="16" id="t2q-I1-Bm1"/>
+                                <constraint firstItem="GTM-3B-Hro" firstAttribute="centerX" secondItem="u14-SZ-qtY" secondAttribute="centerX" id="rPZ-EY-vGo"/>
                                 <constraint firstItem="u14-SZ-qtY" firstAttribute="top" secondItem="4sJ-JM-Kc3" secondAttribute="bottom" constant="20" id="tDj-bq-MBz"/>
                                 <constraint firstItem="bhp-Mf-LQ6" firstAttribute="top" secondItem="2vU-Br-07O" secondAttribute="top" constant="20" id="tTq-fK-4gJ"/>
                                 <constraint firstAttribute="trailing" secondItem="x9l-9J-qiS" secondAttribute="trailing" constant="16" id="w6i-bq-6i5"/>
@@ -162,6 +175,7 @@
     <resources>
         <image name="age" width="1000" height="1000"/>
         <image name="instagram_logo" width="1000" height="1000"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="tiktok_logo" width="1000" height="1000"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

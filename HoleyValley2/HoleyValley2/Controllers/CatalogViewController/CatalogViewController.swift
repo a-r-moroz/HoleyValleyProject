@@ -43,7 +43,7 @@ class CatalogViewController: UIViewController {
         database = Database.database().reference()
         decorations = []
             
-        let query = self.database.child(Const.fbDecorationsPath).queryOrderedByKey()
+        let query = self.database.child(Const.Firebase.decorationsPath).queryOrderedByKey()
         
         query.observeSingleEvent(of: .value) { snapshot in
             

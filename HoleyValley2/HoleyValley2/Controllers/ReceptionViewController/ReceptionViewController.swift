@@ -13,6 +13,7 @@ class ReceptionViewController: UIViewController {
     @IBOutlet weak var appointmentButtonOutlet: UIButton!
     @IBOutlet weak var instagramLogo: UIImageView!
     @IBOutlet weak var tiktokLogo: UIImageView!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

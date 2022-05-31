@@ -20,9 +20,13 @@ class AppointmentViewController: UIViewController {
     var database: DatabaseReference!
     var name: String?
     var surname: String?
-    let openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    var openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
 //    var selectedAppointment: Appointment?
     var selectedDate: String?
+//    private lazy var availableHours: [String] = {
+//
+//        return allHours
+//    }()
 
     
     override func viewDidLoad() {
@@ -58,6 +62,41 @@ class AppointmentViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    func availableHours() -> [String] {
+        
+        var allHours = [String]()
+        
+        if let date = selectedDate {
+            
+            let query = self.database.child("\(Const.Firebase.appointmentsPath)/\(date)").queryOrderedByKey()
+
+                query.observeSingleEvent(of: .value) { snapshot in
+
+                    for child in snapshot.children.allObjects as! [DataSnapshot] {
+                        let key = child.key
+                        allHours.append(key)
+
+            
+        //                    for i in self.openingHours {
+        //                        let hour = value?["\(i)"] as? String ?? ""
+        //                        if hour != i {
+        //                            allHours.append(hour)
+        //                        } else {
+        //                            continue
+        //                        }
+        //
+        //                    }
+                                            
+        //                    DispatchQueue.main.async {
+        //                        self.openingHours = allHours
+        //                    }
+                    }
+                }
+        }
+    
+    return allHours
+}
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
@@ -102,6 +141,7 @@ extension AppointmentViewController: FSCalendarDelegate {
         dateFormatter.dateFormat = "d MMM, yyyy"
         let dateString = dateFormatter.string(from: date)
         selectedDate = dateString
+        print(availableHours())
         print(dateString)
     }
     

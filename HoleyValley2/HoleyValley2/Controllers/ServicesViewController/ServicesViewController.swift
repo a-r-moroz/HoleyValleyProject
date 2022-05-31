@@ -39,7 +39,7 @@ class ServicesViewController: UIViewController {
         database = Database.database().reference()
         services = []
             
-        let query = self.database.child(Const.fbServicesPath).queryOrderedByKey()
+        let query = self.database.child(Const.Firebase.servicesPath).queryOrderedByKey()
         
         query.observeSingleEvent(of: .value) { snapshot in
             

@@ -12,8 +12,6 @@ struct Const {
     static let appName = "HoleyValley"
     static let defaultImage = "https://firebasestorage.googleapis.com/v0/b/holeyvalleytest.appspot.com/o/decorations%2FdefaultImage.png?alt=media&token=dd3b9287-3524-4e9f-a35f-7ba48e30bd41"
     static let belRublesSign = " BYN"
-    static let fbDecorationsPath = "decorations"
-    static let fbServicesPath = "services"
 
     struct DecorationType {
         
@@ -34,6 +32,13 @@ struct Const {
     struct CornerRadiusTo {
         
         static let viewAndImage: CGFloat = 18
+    }
+    
+    struct Firebase {
+        
+        static let decorationsPath = "decorations"
+        static let servicesPath = "services"
+        static let appointmentsPath = "appointments"
     }
     
     
