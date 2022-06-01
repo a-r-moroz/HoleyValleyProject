@@ -14,6 +14,7 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var surnameField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var calendarView: FSCalendar!
     
@@ -76,16 +77,19 @@ class AppointmentViewController: UIViewController {
                 let key = snap.key
                 allHours.append(key)
             }
-            self.usingHours = allHours
+            self.busyHours = allHours
+            print(self.busyHours)
         }
 }
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
-        guard let name = nameField.text, let surname = surnameField.text, let time = timeField.text, let date = selectedDate else { return }
+        guard let name = nameField.text, let surname = surnameField.text, let time = timeField.text, let phone = phoneField.text else { return }
+                //, let date = selectedDate
         
         
-        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
+        self.database.child("\(time)").setValue(["name" : surname + " " + name, "phone" : phone])
+//        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
 //        self.database.child("appointments").setValue(["name": name])
     }
     
@@ -102,15 +106,7 @@ extension AppointmentViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        for i in openingHours {
-            for a in busyHours {
-                if i == a {
-                    continue
-                } else {
-                    usingHours.append(i)
-                }
-            }
-        }
+
         return usingHours.count
 
     }
@@ -133,7 +129,24 @@ extension AppointmentViewController: FSCalendarDelegate {
         let dateString = dateFormatter.string(from: date)
         selectedDate = dateString
         availableHours(date: dateString)
-        print("ARRAY:\n\(usingHours)")
+//        for i in busyHours {
+//            usingHours = openingHours.filter { $0 != i }
+//        }
+        
+        usingHours = openingHours.filter { !busyHours.contains($0) }
+        
+//        for i in openingHours {
+//        for a in busyHours {
+//            if i == a {
+//                continue
+//            } else {
+//                usingHours.append(i)
+//            }
+//        }
+//        }
+        
+        print("ARRAY BUSY:\n\(busyHours)")
+        print("ARRAY USE:\n\(usingHours)")
         print(dateString)
     }
     
@@ -158,10 +171,41 @@ extension AppointmentViewController: FSCalendarDataSource {
     }
 }
 
-//extension AppointmentViewController: UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//}
+/*
+
+extension AppointmentViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+        return false
+    }
+    
+ /// mask example: `+X (XXX) XXX-XXXXX
+    func format(with mask: String, phone: String) -> String {
+
+        let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = numbers.startIndex
+        
+        for ch in mask where index < numbers.endIndex {
+            
+            if ch == "X" {
+                result.append(numbers[index])
+                index = numbers.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+}
+ 
+*/
