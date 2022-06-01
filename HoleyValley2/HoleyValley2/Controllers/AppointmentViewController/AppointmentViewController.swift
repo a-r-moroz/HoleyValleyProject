@@ -22,7 +22,6 @@ class AppointmentViewController: UIViewController {
     var name: String?
     var surname: String?
     var openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
-//    var selectedAppointment: Appointment?
     var selectedDate: String?
 //    private lazy var availableHours: [String] = {
 //
@@ -67,18 +66,23 @@ class AppointmentViewController: UIViewController {
     
     func availableHours(date: String) {
         
-        var allHours = [String]()
         database = Database.database().reference().child("\(Const.Firebase.appointmentsPath)/\(date)")
 
+        self.busyHours = []
         
         database.observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let key = snap.key
-                allHours.append(key)
+                self.busyHours.append(key)
+//                self.usingHours.filter { $0 != key }
             }
-            self.busyHours = allHours
-            print(self.busyHours)
+
+            DispatchQueue.main.async {
+                self.usingHours = self.openingHours.filter { !self.busyHours.contains($0) }
+                print("ARRAY BUSY:\n\(self.busyHours)")
+                print("ARRAY USE:\n\(self.usingHours)")
+            }
         }
 }
     
@@ -125,15 +129,15 @@ extension AppointmentViewController: FSCalendarDelegate {
         
         let dateFormatter = DateFormatter()
 //        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.locale = Locale(identifier: "RU")
         dateFormatter.dateFormat = "d MMM, yyyy"
         let dateString = dateFormatter.string(from: date)
         selectedDate = dateString
         availableHours(date: dateString)
-//        for i in busyHours {
-//            usingHours = openingHours.filter { $0 != i }
-//        }
-        
-        usingHours = openingHours.filter { !busyHours.contains($0) }
+                
+        //        for i in busyHours {
+        //            usingHours = openingHours.filter { $0 != i }
+        //        }
         
 //        for i in openingHours {
 //        for a in busyHours {
@@ -145,8 +149,7 @@ extension AppointmentViewController: FSCalendarDelegate {
 //        }
 //        }
         
-        print("ARRAY BUSY:\n\(busyHours)")
-        print("ARRAY USE:\n\(usingHours)")
+
         print(dateString)
     }
     
