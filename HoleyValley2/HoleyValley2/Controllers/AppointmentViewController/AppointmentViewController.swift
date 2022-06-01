@@ -11,6 +11,7 @@ import FSCalendar
 
 class AppointmentViewController: UIViewController {
 
+    @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var surnameField: UITextField!
@@ -36,11 +37,14 @@ class AppointmentViewController: UIViewController {
         
         confirmButtonOutlet.setCapsuleRoundingToButton()
         confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        infoView.setRoundingToView(cornerRadius: 18)
+        infoView.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
 
         let picker = UIPickerView()
         timeField.inputView = picker
         picker.delegate = self
         picker.dataSource = self
+        phoneField.delegate = self
         
 //        hideKeyboardByTap()
         
@@ -174,7 +178,6 @@ extension AppointmentViewController: FSCalendarDataSource {
     }
 }
 
-/*
 
 extension AppointmentViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -211,4 +214,3 @@ extension AppointmentViewController: UITextFieldDelegate {
     }
 }
  
-*/

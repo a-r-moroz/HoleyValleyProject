@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="calendarView" destination="JHh-vA-pWR" id="PL1-RD-QDy"/>
                 <outlet property="confirmButtonOutlet" destination="u4e-mj-Tvu" id="FLL-Bq-wDS"/>
+                <outlet property="infoView" destination="wf9-4Q-QN6" id="Jfv-SP-tZs"/>
                 <outlet property="nameField" destination="9oj-lj-eEg" id="2eS-hb-BK2"/>
                 <outlet property="phoneField" destination="sOj-Fh-mYL" id="Ukd-CC-k0q"/>
                 <outlet property="surnameField" destination="s2H-tP-Ymv" id="F00-1M-a7s"/>
@@ -28,43 +29,43 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egm-LX-PUI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1064"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1070"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сначала выберем день:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-HS-Mrn">
-                                    <rect key="frame" x="16" y="224" width="382" height="20.5"/>
+                                    <rect key="frame" x="16" y="230" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберем время:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmY-tI-fbW">
-                                    <rect key="frame" x="16" y="656.5" width="382" height="20.5"/>
+                                    <rect key="frame" x="16" y="662.5" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="12:00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-Q9-3CE">
-                                    <rect key="frame" x="16" y="687" width="382" height="34"/>
+                                    <rect key="frame" x="16" y="693" width="382" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как Вас зовут?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWx-jh-U5e">
-                                    <rect key="frame" x="16" y="741" width="382" height="20.5"/>
+                                    <rect key="frame" x="16" y="747" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9oj-lj-eEg">
-                                    <rect key="frame" x="16" y="771.5" width="382" height="34"/>
+                                    <rect key="frame" x="16" y="777.5" width="382" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-tP-Ymv">
-                                    <rect key="frame" x="16" y="815.5" width="382" height="34"/>
+                                    <rect key="frame" x="16" y="821.5" width="382" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-mj-Tvu">
-                                    <rect key="frame" x="115.5" y="964" width="183" height="50"/>
+                                    <rect key="frame" x="115.5" y="970" width="183" height="50"/>
                                     <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="cqi-FN-nKV"/>
@@ -80,7 +81,7 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHh-vA-pWR" customClass="FSCalendar">
-                                    <rect key="frame" x="16" y="254.5" width="382" height="382"/>
+                                    <rect key="frame" x="16" y="260.5" width="382" height="382"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="JHh-vA-pWR" secondAttribute="height" multiplier="1:1" id="4XJ-ZF-vDA"/>
@@ -99,10 +100,13 @@
                                             <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                            <color key="value" systemColor="systemGray2Color"/>
+                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
                                             <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                            <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
@@ -118,32 +122,46 @@
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVE-3E-IGI">
-                                    <rect key="frame" x="57" y="96.5" width="341" height="107.5"/>
-                                    <string key="text">Обратите внимание, что прокол нельзя делать в период острых заболеваний; месяц после выздоровления, вакцинации, хирургических вмешательств; за месяц и в течение месяца после перелетов и дальних переездов. После прокола 2 месяца нельзя плавать в водоемах.</string>
-                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                    <color key="textColor" systemColor="systemGray2Color"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kM3-6C-92q">
-                                    <rect key="frame" x="16" y="138.5" width="25" height="24"/>
-                                    <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="uIU-GG-PHx"/>
-                                        <constraint firstAttribute="width" constant="25" id="xsG-v4-Uy4"/>
-                                    </constraints>
-                                </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+375 (   )" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sOj-Fh-mYL">
-                                    <rect key="frame" x="16" y="900" width="382" height="34"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+375 (XX) XXX-XX-XX" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sOj-Fh-mYL">
+                                    <rect key="frame" x="16" y="906" width="382" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон на случай, если что-то поменяется:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-jV-0G3">
-                                    <rect key="frame" x="16" y="869.5" width="382" height="20.5"/>
+                                    <rect key="frame" x="16" y="875.5" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf9-4Q-QN6">
+                                    <rect key="frame" x="16" y="96.5" width="382" height="113.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVE-3E-IGI">
+                                            <rect key="frame" x="41" y="10" width="333" height="93.5"/>
+                                            <string key="text">Обратите внимание, что прокол нельзя делать в период острых заболеваний; месяц после выздоровления, вакцинации, хирургических вмешательств; за месяц и в течение месяца после перелетов и дальних переездов. После прокола 2 месяца нельзя плавать в водоемах.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kM3-6C-92q">
+                                            <rect key="frame" x="8" y="45" width="25" height="24"/>
+                                            <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="uIU-GG-PHx"/>
+                                                <constraint firstAttribute="width" constant="25" id="xsG-v4-Uy4"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="VVE-3E-IGI" firstAttribute="top" secondItem="wf9-4Q-QN6" secondAttribute="top" constant="10" id="Kyq-o2-LnK"/>
+                                        <constraint firstItem="VVE-3E-IGI" firstAttribute="leading" secondItem="kM3-6C-92q" secondAttribute="trailing" constant="8" id="Z0c-T3-1Kj"/>
+                                        <constraint firstAttribute="bottom" secondItem="VVE-3E-IGI" secondAttribute="bottom" constant="10" id="eIF-GR-7eN"/>
+                                        <constraint firstItem="kM3-6C-92q" firstAttribute="centerY" secondItem="VVE-3E-IGI" secondAttribute="centerY" id="g7d-Po-44v"/>
+                                        <constraint firstItem="kM3-6C-92q" firstAttribute="leading" secondItem="wf9-4Q-QN6" secondAttribute="leading" constant="8" id="jZz-Ir-pR8"/>
+                                        <constraint firstAttribute="trailing" secondItem="VVE-3E-IGI" secondAttribute="trailing" constant="8" id="oRl-S3-gju"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -152,15 +170,13 @@
                                 <constraint firstAttribute="trailing" secondItem="sOj-Fh-mYL" secondAttribute="trailing" constant="16" id="689-xK-1v0"/>
                                 <constraint firstItem="mmY-tI-fbW" firstAttribute="top" secondItem="JHh-vA-pWR" secondAttribute="bottom" constant="20" id="6lk-gV-dTA"/>
                                 <constraint firstAttribute="trailing" secondItem="9oj-lj-eEg" secondAttribute="trailing" constant="16" id="82K-2p-e3k"/>
-                                <constraint firstItem="kM3-6C-92q" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="BNa-Iy-jhs"/>
                                 <constraint firstItem="s2H-tP-Ymv" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="CO1-d1-8YZ"/>
                                 <constraint firstItem="Nra-Ur-VNz" firstAttribute="top" secondItem="egm-LX-PUI" secondAttribute="top" constant="20" id="Kt0-Sj-iMF"/>
+                                <constraint firstItem="wf9-4Q-QN6" firstAttribute="top" secondItem="3Xi-fA-n1m" secondAttribute="bottom" constant="10" id="M8S-Ey-9AY"/>
                                 <constraint firstAttribute="trailing" secondItem="JxE-jV-0G3" secondAttribute="trailing" constant="16" id="MFL-hy-NmR"/>
                                 <constraint firstAttribute="trailing" secondItem="1Ft-Q9-3CE" secondAttribute="trailing" constant="16" id="ML1-wH-gVW"/>
                                 <constraint firstItem="sOj-Fh-mYL" firstAttribute="top" secondItem="JxE-jV-0G3" secondAttribute="bottom" constant="10" id="Nak-ax-amX"/>
-                                <constraint firstItem="VVE-3E-IGI" firstAttribute="leading" secondItem="kM3-6C-92q" secondAttribute="trailing" constant="16" id="OBi-PC-23y"/>
                                 <constraint firstAttribute="trailing" secondItem="Nra-Ur-VNz" secondAttribute="trailing" constant="16" id="OIl-mO-nUM"/>
-                                <constraint firstItem="Ge7-HS-Mrn" firstAttribute="top" secondItem="VVE-3E-IGI" secondAttribute="bottom" constant="20" id="PHN-BL-bzf"/>
                                 <constraint firstAttribute="trailing" secondItem="Ge7-HS-Mrn" secondAttribute="trailing" constant="16" id="Rw1-2m-ntg"/>
                                 <constraint firstItem="JHh-vA-pWR" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="SBe-aP-t5K"/>
                                 <constraint firstItem="s2H-tP-Ymv" firstAttribute="top" secondItem="9oj-lj-eEg" secondAttribute="bottom" constant="10" id="TKW-bd-Eu9"/>
@@ -170,10 +186,9 @@
                                 <constraint firstAttribute="trailing" secondItem="JHh-vA-pWR" secondAttribute="trailing" constant="16" id="Xf8-WV-gKh"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="Yvr-Gc-aDh"/>
                                 <constraint firstAttribute="trailing" secondItem="s2H-tP-Ymv" secondAttribute="trailing" constant="16" id="aWo-K0-xfv"/>
-                                <constraint firstItem="kM3-6C-92q" firstAttribute="centerY" secondItem="VVE-3E-IGI" secondAttribute="centerY" id="aoR-FX-k88"/>
-                                <constraint firstAttribute="trailing" secondItem="VVE-3E-IGI" secondAttribute="trailing" constant="16" id="bBv-dE-Qzy"/>
                                 <constraint firstItem="Nra-Ur-VNz" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="eKm-R8-tTK"/>
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="top" secondItem="Nra-Ur-VNz" secondAttribute="bottom" constant="10" id="fNM-M6-Fa8"/>
+                                <constraint firstAttribute="trailing" secondItem="wf9-4Q-QN6" secondAttribute="trailing" constant="16" id="g5G-ZD-Ppa"/>
                                 <constraint firstItem="u4e-mj-Tvu" firstAttribute="top" secondItem="sOj-Fh-mYL" secondAttribute="bottom" constant="30" id="hef-Zn-AC5"/>
                                 <constraint firstItem="9oj-lj-eEg" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="hf3-zm-umE"/>
                                 <constraint firstItem="JxE-jV-0G3" firstAttribute="top" secondItem="s2H-tP-Ymv" secondAttribute="bottom" constant="20" id="iEf-SK-0Hl"/>
@@ -185,9 +200,10 @@
                                 <constraint firstAttribute="trailing" secondItem="3Xi-fA-n1m" secondAttribute="trailing" constant="16" id="q4G-ml-Brx"/>
                                 <constraint firstItem="u4e-mj-Tvu" firstAttribute="centerX" secondItem="egm-LX-PUI" secondAttribute="centerX" id="qVy-nk-lOM"/>
                                 <constraint firstItem="mmY-tI-fbW" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="qdj-M0-GMQ"/>
+                                <constraint firstItem="wf9-4Q-QN6" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="qiA-Eb-DhM"/>
+                                <constraint firstItem="Ge7-HS-Mrn" firstAttribute="top" secondItem="wf9-4Q-QN6" secondAttribute="bottom" constant="20" id="sLX-It-leK"/>
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="tSd-z1-PLX"/>
                                 <constraint firstAttribute="trailing" secondItem="NWx-jh-U5e" secondAttribute="trailing" constant="16" id="v9Q-LA-gNG"/>
-                                <constraint firstItem="VVE-3E-IGI" firstAttribute="top" secondItem="3Xi-fA-n1m" secondAttribute="bottom" constant="10" id="xMT-Co-bCr"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -215,6 +231,9 @@
         <image name="exclamationmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

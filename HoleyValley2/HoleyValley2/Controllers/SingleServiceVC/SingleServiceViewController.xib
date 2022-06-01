@@ -236,14 +236,6 @@
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="59.598214285714285"/>
         </view>
-        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="BeJ-Af-anZ">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <viewLayoutGuide key="safeArea" id="YMo-pi-v0f"/>
-            <viewLayoutGuide key="contentLayoutGuide" id="luc-D0-tOV"/>
-            <viewLayoutGuide key="frameLayoutGuide" id="CAF-K7-xnP"/>
-            <point key="canvasLocation" x="4" y="-585"/>
-        </scrollView>
     </objects>
     <resources>
         <image name="like" width="1000" height="1000"/>
