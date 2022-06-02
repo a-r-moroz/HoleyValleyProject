@@ -238,7 +238,7 @@
         </view>
     </objects>
     <resources>
-        <image name="like" width="1000" height="1000"/>
+        <image name="like" width="144" height="144"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

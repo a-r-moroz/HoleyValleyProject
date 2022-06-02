@@ -30,6 +30,8 @@ class CatalogViewController: UIViewController {
         
         loadDecorations()
         print("COUNT \n\(decorations.count)")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "slider.vertical.3"), primaryAction: nil, menu: nil)
     }
     
     private func setupTable() {

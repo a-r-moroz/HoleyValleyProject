@@ -31,6 +31,30 @@ extension UIView {
         self.layer.rasterizationScale = UIScreen.main.scale
     }
     
+    func setShadowWithOffsetToView(color: CGColor) {
+        
+        self.layer.shadowColor = color
+        self.layer.shadowOpacity = 0.3
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 10
+        self.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+//    func setShadowToImage(color: CGColor) {
+//
+//        self.layer.shadowColor = color
+//        self.layer.shadowOpacity = 0.4
+//        self.layer.masksToBounds = false
+//        self.layer.shadowRadius = 20
+//        self.layer.shadowOffset = .zero
+//
+//        self.layer.shouldRasterize = true
+//        self.layer.rasterizationScale = UIScreen.main.scale
+//    }
+    
     /*
     func makeTapOnView() {
         

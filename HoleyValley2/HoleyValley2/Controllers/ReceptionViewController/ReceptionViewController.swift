@@ -21,10 +21,12 @@ class ReceptionViewController: UIViewController {
         appointmentButtonOutlet.setCapsuleRoundingToButton()
         appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         mapWithCoordinatesView.setRoundingToView(cornerRadius: 18)
-        instagramLogo.setRoundingToImage(cornerRadius: 18)
-        tiktokLogo.setRoundingToImage(cornerRadius: 18)
-        instagramLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
-        tiktokLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
+        mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
+
+//        instagramLogo.setRoundingToImage(cornerRadius: 18)
+//        tiktokLogo.setRoundingToImage(cornerRadius: 18)
+//        instagramLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
+//        tiktokLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
         
         title = "Контакты"
         
