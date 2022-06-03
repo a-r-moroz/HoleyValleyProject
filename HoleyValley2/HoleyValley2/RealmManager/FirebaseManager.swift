@@ -70,7 +70,7 @@ final class FirebaseManager {
      
      */
     
-    static func loadDecorations(tableView: UITableView) -> [Decoration] {
+    static func loadDecorationsNoWork(tableView: UITableView) -> [Decoration] {
         
         var decorations = [Decoration]()
             

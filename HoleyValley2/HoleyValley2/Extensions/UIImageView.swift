@@ -10,13 +10,14 @@ import UIKit
 
 extension UIImageView {
     func setImageFromULR(_ url: String) {
+        
+        guard let pictureUrl = URL(string: url) else { return }
+        
         DispatchQueue.global().async {
-            if let pictureUrl = URL(string: url) {
-                if let data = try? Data(contentsOf: pictureUrl) {
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self.image = image
-                        }
+            if let data = try? Data(contentsOf: pictureUrl) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.image = image
                     }
                 }
             }

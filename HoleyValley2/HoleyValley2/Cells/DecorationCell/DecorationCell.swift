@@ -37,4 +37,8 @@ class DecorationCell: UITableViewCell {
         
         super.setSelected(selected, animated: animated)
     }
+    
+    override func prepareForReuse() {
+        self.decorationPictureView.image = UIImage(named: "imagePatternLittle")
+    }
 }
