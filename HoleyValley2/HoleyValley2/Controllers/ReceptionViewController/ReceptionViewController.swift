@@ -13,6 +13,7 @@ class ReceptionViewController: UIViewController {
     @IBOutlet weak var appointmentButtonOutlet: UIButton!
     @IBOutlet weak var instagramLogo: UIImageView!
     @IBOutlet weak var tiktokLogo: UIImageView!
+    @IBOutlet weak var wathsappLogo: UIImageView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
     override func viewDidLoad() {
@@ -32,6 +33,7 @@ class ReceptionViewController: UIViewController {
         
         instagramAction()
         tiktokAction()
+        wathsappAction()
     }
     
     private func instagramAction() {
@@ -61,6 +63,36 @@ class ReceptionViewController: UIViewController {
             UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
         }
     }
+    
+    private func wathsappAction() {
+        
+        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapWatsapp(sender:)))
+        wathsappLogo.isUserInteractionEnabled = true
+        wathsappLogo.addGestureRecognizer(tapLogo)
+    }
+    
+    @objc func tapWatsapp(sender: UITapGestureRecognizer) {
+        let phoneNumber =  "375339907788"
+        let targetURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(targetURL)
+        }
+    }
+    
+//    private func phoneAction() {
+//
+//        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(didPressCall(sender:)))
+//        phoneNumberLabel.isUserInteractionEnabled = true
+//        phoneNumberLabel.addGestureRecognizer(tapLogo)
+//    }
+//
+//    @objc func didPressCall(sender: UITapGestureRecognizer) {
+//        let number = "375339907788"
+//        if let url = URL(string: "tel://\(number)") { UIApplication.shared.open(url, options: [:], completionHandler: nil
+//        )}
+//    }
     
     @IBAction func appointmentButtonAction(_ sender: UIButton) {
         
