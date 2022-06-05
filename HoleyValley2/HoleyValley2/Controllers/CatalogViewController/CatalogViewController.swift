@@ -16,8 +16,8 @@ class CatalogViewController: UIViewController {
     var database: DatabaseReference!
     
     var decorations = [Decoration]()
-    var decorationsShtanga = [Decoration]()
-    
+    var sortingDecorations = [Decoration]()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +31,8 @@ class CatalogViewController: UIViewController {
         loadDecorations()
         print("COUNT \n\(decorations.count)")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "slider.vertical.3"), primaryAction: nil, menu: nil)
+        addSortingButton()
+        
     }
     
     private func setupTable() {
@@ -66,6 +67,40 @@ class CatalogViewController: UIViewController {
             }
         }
     }
+    
+    private func addSortingButton() {
+        
+        let sortingButton = UIBarButtonItem(image: UIImage(systemName: "slider.vertical.3"), style: .plain, target: self, action: #selector(showSortingVC(sender:)))
+        navigationItem.rightBarButtonItem = sortingButton
+    }
+    
+    @objc func showSortingVC(sender: UIBarButtonItem) {
+        
+//        let sortingVC = SortingViewController(nibName: String(describing: SortingViewController.self), bundle: nil)
+//
+//        navigationController?.pushViewController(sortingVC, animated: true)
+        
+        let sortingVC = SortingViewController(nibName: String(describing: SortingViewController.self), bundle: nil)
+        
+        sortingVC.modalTransitionStyle = .coverVertical
+        sortingVC.modalPresentationStyle = .overFullScreen
+        self.present(sortingVC, animated: true)
+        
+        sortingVC.saveSortingParameters = {
+            print("Current value: \(sortingVC.currentType), \(sortingVC.currentPrice)")
+            
+            if sortingVC.currentType != sortingVC.defaultSortingByType {
+//                self.sortingDecorations = self.decorations.filter { decoration in
+//                    return decoration.type == sortingVC.currentType }
+                self.sortingDecorations = self.decorations.filter({ $0.type == sortingVC.currentType })
+//                !self.busyHours.contains($0)
+                print(self.sortingDecorations)
+//                DispatchQueue.main.async {
+//                    self.decorationsTable.reloadData()
+//                }
+            }
+        }
+    }
 }
 
 extension CatalogViewController: UITableViewDelegate {
@@ -76,6 +111,7 @@ extension CatalogViewController: UITableViewDelegate {
         decorationVC.currentDecoration = decorations[indexPath.row]
         navigationController?.pushViewController(decorationVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 }
 

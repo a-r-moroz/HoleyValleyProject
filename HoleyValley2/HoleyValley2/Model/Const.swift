@@ -15,6 +15,7 @@ struct Const {
 
     struct DecorationType {
         
+        static let defaultType = "Все украшения"
         static let shtanga = "Штанга"
         static let nostrill = "Нострилл"
         static let circular = "Циркуляр"
@@ -24,9 +25,17 @@ struct Const {
         static let top = "Топ"
     }
     
+    struct priceDirecion {
+        
+        static let defaultState = "—"
+        static let increace = "Сначала дешевле"
+        static let decrease = "Сначала дороже"
+    }
+    
     struct Colors {
         
-        static let gray: UIColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1)
+        static let gray: UIColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
+        static let gold: UIColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1.0)
     }
     
     struct CornerRadiusTo {

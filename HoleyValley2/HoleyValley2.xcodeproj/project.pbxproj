@@ -22,8 +22,13 @@
 		8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E516315283CCE06004CAFD3 /* SplashViewController.xib */; };
 		8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51631A283CFD72004CAFD3 /* UIView.swift */; };
 		8E5671442823080400B0395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5671432823080400B0395E /* Assets.xcassets */; };
+		8E59ACEB284A3ED50080039A /* SortingPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E59ACEA284A3ED50080039A /* SortingPoints.swift */; };
 		8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E609B8A28399FFF001D242E /* ImageScrollView.swift */; };
 		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
+		8E9D512B284D01260019F8A0 /* SortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5129284D01260019F8A0 /* SortingViewController.swift */; };
+		8E9D512C284D01260019F8A0 /* SortingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D512A284D01260019F8A0 /* SortingViewController.xib */; };
+		8E9D5130284D0CBA0019F8A0 /* SortingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D512E284D0CBA0019F8A0 /* SortingCell.swift */; };
+		8E9D5131284D0CBA0019F8A0 /* SortingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D512F284D0CBA0019F8A0 /* SortingCell.xib */; };
 		8E9D8F532835A34B009FDF12 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D8F522835A34B009FDF12 /* Const.swift */; };
 		8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D8F552835A774009FDF12 /* DecorationViewController.swift */; };
 		8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D8F562835A774009FDF12 /* DecorationViewController.xib */; };
@@ -68,8 +73,13 @@
 		8E516315283CCE06004CAFD3 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8E51631A283CFD72004CAFD3 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8E5671432823080400B0395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppIcons/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		8E59ACEA284A3ED50080039A /* SortingPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingPoints.swift; sourceTree = "<group>"; };
 		8E609B8A28399FFF001D242E /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8E9D5129284D01260019F8A0 /* SortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingViewController.swift; sourceTree = "<group>"; };
+		8E9D512A284D01260019F8A0 /* SortingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingViewController.xib; sourceTree = "<group>"; };
+		8E9D512E284D0CBA0019F8A0 /* SortingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingCell.swift; sourceTree = "<group>"; };
+		8E9D512F284D0CBA0019F8A0 /* SortingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingCell.xib; sourceTree = "<group>"; };
 		8E9D8F522835A34B009FDF12 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8E9D8F552835A774009FDF12 /* DecorationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationViewController.swift; sourceTree = "<group>"; };
 		8E9D8F562835A774009FDF12 /* DecorationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecorationViewController.xib; sourceTree = "<group>"; };
@@ -146,6 +156,24 @@
 				8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */,
 			);
 			path = SingleServiceVC;
+			sourceTree = "<group>";
+		};
+		8E9D5128284D010A0019F8A0 /* SortingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D5129284D01260019F8A0 /* SortingViewController.swift */,
+				8E9D512A284D01260019F8A0 /* SortingViewController.xib */,
+			);
+			path = SortingViewController;
+			sourceTree = "<group>";
+		};
+		8E9D512D284D0C9F0019F8A0 /* SortingCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D512E284D0CBA0019F8A0 /* SortingCell.swift */,
+				8E9D512F284D0CBA0019F8A0 /* SortingCell.xib */,
+			);
+			path = SortingCell;
 			sourceTree = "<group>";
 		};
 		8E9D8F542835A759009FDF12 /* DecorationViewController */ = {
@@ -238,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE42F1D2821987B00D7210D /* Decoration.swift */,
+				8E59ACEA284A3ED50080039A /* SortingPoints.swift */,
 				8EC8080528396A48008E176D /* Service.swift */,
 				8E0192B02822F2CF0057C3D8 /* DecorationType.swift */,
 				8E9D8F522835A34B009FDF12 /* Const.swift */,
@@ -249,6 +278,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D5128284D010A0019F8A0 /* SortingViewController */,
 				8E13A0B2283D67C2002D35EB /* AppointmentViewController */,
 				8EC807FE28393F2F008E176D /* SplashViewController */,
 				8E13BD49283B92AF0039D1F9 /* SingleServiceVC */,
@@ -301,6 +331,7 @@
 		8EE42F362821A18D00D7210D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D512D284D0C9F0019F8A0 /* SortingCell */,
 				8E13BD44283B918F0039D1F9 /* ServiceCell */,
 				8EE42F372821A19000D7210D /* DecorationCell */,
 			);
@@ -387,6 +418,7 @@
 				8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */,
 				8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */,
 				8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */,
+				8E9D5131284D0CBA0019F8A0 /* SortingCell.xib in Resources */,
 				8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */,
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
@@ -399,6 +431,7 @@
 				8E13A0B6283D67E2002D35EB /* AppointmentViewController.xib in Resources */,
 				8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */,
 				8E13BD48283B921C0039D1F9 /* ServiceCell.xib in Resources */,
+				8E9D512C284D01260019F8A0 /* SortingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +487,7 @@
 				8E13A0B5283D67E2002D35EB /* AppointmentViewController.swift in Sources */,
 				8E13BD4C283B92D00039D1F9 /* SingleServiceViewController.swift in Sources */,
 				8E9D8F532835A34B009FDF12 /* Const.swift in Sources */,
+				8E9D512B284D01260019F8A0 /* SortingViewController.swift in Sources */,
 				8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
@@ -463,12 +497,14 @@
 				8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */,
 				8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */,
 				8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */,
+				8E9D5130284D0CBA0019F8A0 /* SortingCell.swift in Sources */,
 				8EAB66EA2837A5CA00D976B6 /* ImageViewController.swift in Sources */,
 				8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */,
 				8EC8080628396A48008E176D /* Service.swift in Sources */,
 				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,
 				8EE42F3528219C7600D7210D /* BarController.swift in Sources */,
 				8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */,
+				8E59ACEB284A3ED50080039A /* SortingPoints.swift in Sources */,
 				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,
 				8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */,
 				8E19E52528456454007FABB0 /* Appointment.swift in Sources */,
