@@ -11,9 +11,10 @@ class ReceptionViewController: UIViewController {
 
     @IBOutlet weak var mapWithCoordinatesView: UIView!
     @IBOutlet weak var appointmentButtonOutlet: UIButton!
+    @IBOutlet weak var telegramLogo: UIImageView!
+    @IBOutlet weak var wathsappLogo: UIImageView!
     @IBOutlet weak var instagramLogo: UIImageView!
     @IBOutlet weak var tiktokLogo: UIImageView!
-    @IBOutlet weak var wathsappLogo: UIImageView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
     override func viewDidLoad() {
@@ -33,7 +34,8 @@ class ReceptionViewController: UIViewController {
         
         instagramAction()
         tiktokAction()
-        wathsappAction()
+        whatsappAction()
+        telegramAction()
     }
     
     private func instagramAction() {
@@ -64,16 +66,33 @@ class ReceptionViewController: UIViewController {
         }
     }
     
-    private func wathsappAction() {
+    private func whatsappAction() {
         
-        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapWatsapp(sender:)))
+        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapWhatsapp(sender:)))
         wathsappLogo.isUserInteractionEnabled = true
         wathsappLogo.addGestureRecognizer(tapLogo)
     }
     
-    @objc func tapWatsapp(sender: UITapGestureRecognizer) {
+    @objc func tapWhatsapp(sender: UITapGestureRecognizer) {
         let phoneNumber =  "375339907788"
         let targetURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(targetURL)
+        }
+    }
+    
+    private func telegramAction() {
+        
+        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapTelegram(sender:)))
+        telegramLogo.isUserInteractionEnabled = true
+        telegramLogo.addGestureRecognizer(tapLogo)
+    }
+    
+    @objc func tapTelegram(sender: UITapGestureRecognizer) {
+        let phoneNumber =  "375339907788"
+        let targetURL = URL(string: "https://t.me/+\(phoneNumber)")!
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
         } else {

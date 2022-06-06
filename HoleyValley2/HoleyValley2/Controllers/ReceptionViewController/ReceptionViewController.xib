@@ -14,6 +14,7 @@
                 <outlet property="instagramLogo" destination="ZVj-9w-WpO" id="CcN-HS-NjP"/>
                 <outlet property="mapWithCoordinatesView" destination="bhp-Mf-LQ6" id="ke3-DP-vtK"/>
                 <outlet property="phoneNumberLabel" destination="Ftb-jq-1u4" id="mlp-WX-BxP"/>
+                <outlet property="telegramLogo" destination="s6n-0u-wCx" id="st8-ay-CFV"/>
                 <outlet property="tiktokLogo" destination="Qlf-9E-XY5" id="Ku3-1b-ucv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wathsappLogo" destination="8fE-gL-JGF" id="F7H-nA-3MV"/>
@@ -28,7 +29,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vU-Br-07O">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="786.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="808.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-Mf-LQ6">
                                     <rect key="frame" x="16" y="20" width="382" height="382"/>
@@ -43,27 +44,40 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Режим работы: Пн - Вс, 12:00 - 20:00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sJ-JM-Kc3">
-                                    <rect key="frame" x="16" y="446.5" width="382" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" systemColor="systemGray2Color"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nKA-Tf-oW9">
+                                    <rect key="frame" x="16" y="446.5" width="382" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JKs-qS-ggB">
+                                            <rect key="frame" x="0.0" y="0.5" width="20" height="19"/>
+                                            <color key="tintColor" systemColor="systemGray2Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="4CJ-PU-H7G"/>
+                                                <constraint firstAttribute="width" constant="20" id="6c2-Vu-xcD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пн - Вс, 12:00 - 20:00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sJ-JM-Kc3">
+                                            <rect key="frame" x="30" y="0.0" width="352" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="age" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-K3-jaL">
-                                    <rect key="frame" x="192" y="682.5" width="30" height="30"/>
+                                    <rect key="frame" x="192" y="694.5" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="Qtp-bU-cKt"/>
                                         <constraint firstAttribute="height" constant="30" id="tVv-Mx-y7N"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если Вам меньше 18 лет, для оказания услуг необходимо присутствие одного из Ваших законных опекунов." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRg-dX-iH0">
-                                    <rect key="frame" x="16" y="717.5" width="382" height="29"/>
+                                    <rect key="frame" x="16" y="729.5" width="382" height="29"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" systemColor="systemGray2Color"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u14-SZ-qtY">
-                                    <rect key="frame" x="115.5" y="484.5" width="183" height="50"/>
+                                    <rect key="frame" x="115.5" y="496.5" width="183" height="50"/>
                                     <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="183" id="0Ou-Ly-EKi"/>
@@ -79,39 +93,46 @@
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Bt-Y6-na9">
-                                    <rect key="frame" x="152" y="592.5" width="110" height="30"/>
+                                    <rect key="frame" x="132" y="604.5" width="150" height="30"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZVj-9w-WpO">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="telegram_logo" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-0u-wCx">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="NwI-ot-L4h"/>
+                                                <constraint firstAttribute="width" constant="30" id="qMF-Fg-TWU"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whatsapp_logo" translatesAutoresizingMaskIntoConstraints="NO" id="8fE-gL-JGF">
+                                            <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="TS5-cq-Skb"/>
+                                                <constraint firstAttribute="width" constant="30" id="pk5-P4-Ywd"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZVj-9w-WpO">
+                                            <rect key="frame" x="80" y="0.0" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="XLD-Q0-Tse"/>
                                                 <constraint firstAttribute="width" constant="30" id="wYB-fa-Y9r"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiktok_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qlf-9E-XY5">
-                                            <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                            <rect key="frame" x="120" y="0.0" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="315-GO-KHQ"/>
                                                 <constraint firstAttribute="width" constant="30" id="ie5-uc-XAD"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8fE-gL-JGF">
-                                            <rect key="frame" x="80" y="0.5" width="30" height="29"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="TS5-cq-Skb"/>
-                                                <constraint firstAttribute="width" constant="30" id="pk5-P4-Ywd"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы в соцсетях:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llu-sU-Aj5">
-                                    <rect key="frame" x="16" y="564.5" width="382" height="18"/>
+                                    <rect key="frame" x="16" y="576.5" width="382" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" systemColor="systemGray2Color"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-3B-Hro">
-                                    <rect key="frame" x="116.5" y="642.5" width="181" height="20"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-3B-Hro">
+                                    <rect key="frame" x="117" y="654.5" width="180" height="20"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ifY-WW-vuh">
                                             <rect key="frame" x="0.0" y="1.5" width="20" height="17.5"/>
@@ -122,7 +143,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+375 (33) 990-77-88" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-jq-1u4">
-                                            <rect key="frame" x="31" y="0.0" width="150" height="20"/>
+                                            <rect key="frame" x="30" y="0.0" width="150" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -132,27 +153,27 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Llu-sU-Aj5" secondAttribute="trailing" constant="16" id="4Xe-xe-G04"/>
-                                <constraint firstAttribute="bottom" secondItem="VRg-dX-iH0" secondAttribute="bottom" constant="40" id="4v8-FJ-dYM"/>
+                                <constraint firstAttribute="bottom" secondItem="VRg-dX-iH0" secondAttribute="bottom" constant="50" id="4v8-FJ-dYM"/>
                                 <constraint firstItem="Llu-sU-Aj5" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="9nL-Vo-ba5"/>
                                 <constraint firstAttribute="trailing" secondItem="bhp-Mf-LQ6" secondAttribute="trailing" constant="16" id="AF2-TR-z07"/>
-                                <constraint firstItem="4sJ-JM-Kc3" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="At7-vA-BZS"/>
                                 <constraint firstItem="x9l-9J-qiS" firstAttribute="top" secondItem="bhp-Mf-LQ6" secondAttribute="bottom" constant="20" id="Eie-gR-uDf"/>
                                 <constraint firstItem="x9l-9J-qiS" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="F2E-fl-Uz4"/>
                                 <constraint firstItem="7Bt-Y6-na9" firstAttribute="centerX" secondItem="u14-SZ-qtY" secondAttribute="centerX" id="FKU-P6-XFL"/>
+                                <constraint firstItem="u14-SZ-qtY" firstAttribute="top" secondItem="nKA-Tf-oW9" secondAttribute="bottom" constant="30" id="HMJ-3c-EGf"/>
+                                <constraint firstItem="nKA-Tf-oW9" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="KR8-gx-xPT"/>
                                 <constraint firstItem="GTM-3B-Hro" firstAttribute="top" secondItem="7Bt-Y6-na9" secondAttribute="bottom" constant="20" id="LcI-Tg-clK"/>
                                 <constraint firstItem="Mt0-K3-jaL" firstAttribute="top" secondItem="GTM-3B-Hro" secondAttribute="bottom" constant="20" id="Mj4-Xx-LIt"/>
                                 <constraint firstItem="bhp-Mf-LQ6" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="P9M-mq-LUB"/>
                                 <constraint firstItem="7Bt-Y6-na9" firstAttribute="top" secondItem="Llu-sU-Aj5" secondAttribute="bottom" constant="10" id="TEW-hj-84T"/>
                                 <constraint firstItem="VRg-dX-iH0" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="X9p-iP-lgH"/>
                                 <constraint firstItem="Mt0-K3-jaL" firstAttribute="centerX" secondItem="u14-SZ-qtY" secondAttribute="centerX" id="YfF-4r-Wcb"/>
-                                <constraint firstAttribute="trailing" secondItem="4sJ-JM-Kc3" secondAttribute="trailing" constant="16" id="ZML-YS-huq"/>
                                 <constraint firstItem="Llu-sU-Aj5" firstAttribute="top" secondItem="u14-SZ-qtY" secondAttribute="bottom" constant="30" id="eUi-Rr-kK5"/>
                                 <constraint firstItem="u14-SZ-qtY" firstAttribute="centerX" secondItem="2vU-Br-07O" secondAttribute="centerX" id="fM3-dU-aIA"/>
-                                <constraint firstItem="4sJ-JM-Kc3" firstAttribute="top" secondItem="x9l-9J-qiS" secondAttribute="bottom" constant="5" id="gsK-PH-gPi"/>
                                 <constraint firstItem="VRg-dX-iH0" firstAttribute="top" secondItem="Mt0-K3-jaL" secondAttribute="bottom" constant="5" id="hKB-98-eev"/>
                                 <constraint firstAttribute="trailing" secondItem="VRg-dX-iH0" secondAttribute="trailing" constant="16" id="m7d-cj-3Kp"/>
+                                <constraint firstItem="nKA-Tf-oW9" firstAttribute="top" secondItem="x9l-9J-qiS" secondAttribute="bottom" constant="5" id="qhV-Gb-gT4"/>
+                                <constraint firstAttribute="trailing" secondItem="nKA-Tf-oW9" secondAttribute="trailing" constant="16" id="rDl-ia-fmI"/>
                                 <constraint firstItem="GTM-3B-Hro" firstAttribute="centerX" secondItem="u14-SZ-qtY" secondAttribute="centerX" id="rPZ-EY-vGo"/>
-                                <constraint firstItem="u14-SZ-qtY" firstAttribute="top" secondItem="4sJ-JM-Kc3" secondAttribute="bottom" constant="20" id="tDj-bq-MBz"/>
                                 <constraint firstItem="bhp-Mf-LQ6" firstAttribute="top" secondItem="2vU-Br-07O" secondAttribute="top" constant="20" id="tTq-fK-4gJ"/>
                                 <constraint firstAttribute="trailing" secondItem="x9l-9J-qiS" secondAttribute="trailing" constant="16" id="w6i-bq-6i5"/>
                             </constraints>
@@ -180,10 +201,12 @@
     </objects>
     <resources>
         <image name="age" width="1000" height="1000"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
         <image name="instagram_logo" width="144" height="144"/>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <image name="telegram_logo" width="144" height="144"/>
         <image name="tiktok_logo" width="144" height="144"/>
+        <image name="whatsapp_logo" width="144" height="144"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

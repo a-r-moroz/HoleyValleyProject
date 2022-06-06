@@ -22,6 +22,7 @@ class SortingViewController: UIViewController {
     let defaultSortingByPrice = "-"
     var saveSortingParameters: (() -> ())?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,13 +46,13 @@ class SortingViewController: UIViewController {
         saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         
         setupTable()
-        sortingParametersTable.delegate = self
-        sortingParametersTable.dataSource = self
-        
+//        setupBlur()
     }
     
     private func setupTable() {
      
+        sortingParametersTable.delegate = self
+        sortingParametersTable.dataSource = self
         sortingParametersTable.register(UINib(nibName: String(describing: SortingCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SortingCell.self))
     }
     
@@ -67,6 +68,22 @@ class SortingViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    func setupBlur() {
+        
+        let blur = UIBlurEffect(style: .regular)
+        let visualEffect = UIVisualEffectView(effect: blur)
+        visualEffect.frame = backView.bounds
+        visualEffect.alpha = 0.0
+        view.addSubview(visualEffect)
+        view.sendSubviewToBack(visualEffect)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01, execute: {
+            UIView.animate(withDuration: 0.4, delay: 0.02) {
+                visualEffect.alpha = 1
+            }
+        })
+    }
+    
     @IBAction func cleanAction(_ sender: UIButton) {
         
     }
@@ -74,7 +91,6 @@ class SortingViewController: UIViewController {
     @IBAction func saveSortingParametersAction(_ sender: UIButton) {
         
         saveSortingParameters?()
-
         dismiss(animated: true)
     }
 }

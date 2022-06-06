@@ -12,6 +12,12 @@ class BarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let blur = UIBlurEffect(style: .regular)
+//        let visualEffect = UIVisualEffectView(effect: blur)
+//        visualEffect.frame = tabBar.bounds
+//        tabBar.addSubview(visualEffect)
+//        tabBar.sendSubviewToBack(visualEffect)
+//        tabBar.isTranslucent = true
         setupControllers()
     }
     
@@ -28,7 +34,6 @@ class BarController: UITabBarController {
         catalogVC.navigationBar.tintColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1.0)
         receptionVC.navigationBar.tintColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1.0)
         profileVC.navigationBar.tintColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1.0)
-
         
         servicesVC.tabBarItem = UITabBarItem(title: "Услуги", image: UIImage(systemName: "star.fill")?.withConfiguration(iconConfig), tag: 0)
         catalogVC.tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(systemName: "square.grid.3x3.fill")?.withConfiguration(iconConfig), tag: 0)
@@ -36,6 +41,8 @@ class BarController: UITabBarController {
         profileVC.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.fill")?.withConfiguration(iconConfig), tag: 0)
         
         self.viewControllers = [servicesVC, catalogVC, receptionVC, profileVC]
+        
+
     }
     
     

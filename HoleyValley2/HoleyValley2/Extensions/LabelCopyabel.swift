@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class LabelCopyable: UILabel {
 override public var canBecomeFirstResponder: Bool {
 get {
@@ -45,3 +46,4 @@ override func canPerformAction(_ action: Selector, withSender sender: Any?) -> B
 return (action == #selector(copy(_:)))
     }
 }
+*/

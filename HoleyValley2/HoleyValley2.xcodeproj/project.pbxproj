@@ -39,6 +39,9 @@
 		8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9AB532821967D005E0C2A /* RealmManager.swift */; };
 		8EAB66EA2837A5CA00D976B6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB66E82837A5CA00D976B6 /* ImageViewController.swift */; };
 		8EAB66EB2837A5CA00D976B6 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */; };
+		8EAB9147284EB8F9003BB9AA /* InputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAB9146284EB8F9003BB9AA /* InputField.xib */; };
+		8EAB9149284EB91D003BB9AA /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB9148284EB91D003BB9AA /* InputField.swift */; };
+		8EAB914B284EB9F6003BB9AA /* ValidationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB914A284EB9F6003BB9AA /* ValidationType.swift */; };
 		8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FC2838FDF4008E176D /* FirebaseManager.swift */; };
 		8EC8080628396A48008E176D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8080528396A48008E176D /* Service.swift */; };
 		8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF9CD628327B7B0058899B /* UIImageView.swift */; };
@@ -92,6 +95,9 @@
 		8EA9AB532821967D005E0C2A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		8EAB66E82837A5CA00D976B6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		8EAB9146284EB8F9003BB9AA /* InputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputField.xib; sourceTree = "<group>"; };
+		8EAB9148284EB91D003BB9AA /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		8EAB914A284EB9F6003BB9AA /* ValidationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationType.swift; sourceTree = "<group>"; };
 		8EC807FC2838FDF4008E176D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8EC8080528396A48008E176D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8ECF9CD628327B7B0058899B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -206,6 +212,7 @@
 		8EA9AB3D28219663005E0C2A /* HoleyValley2 */ = {
 			isa = PBXGroup;
 			children = (
+				8EAB9143284EB8C2003BB9AA /* InputField */,
 				8ECF9CD5283279D20058899B /* Extensions */,
 				8EE42F362821A18D00D7210D /* Cells */,
 				8EE42F1F28219B7100D7210D /* Controllers */,
@@ -239,6 +246,16 @@
 				8EAB66E92837A5CA00D976B6 /* ImageViewController.xib */,
 			);
 			path = ImageViewController;
+			sourceTree = "<group>";
+		};
+		8EAB9143284EB8C2003BB9AA /* InputField */ = {
+			isa = PBXGroup;
+			children = (
+				8EAB9146284EB8F9003BB9AA /* InputField.xib */,
+				8EAB9148284EB91D003BB9AA /* InputField.swift */,
+				8EAB914A284EB9F6003BB9AA /* ValidationType.swift */,
+			);
+			path = InputField;
 			sourceTree = "<group>";
 		};
 		8EC807FE28393F2F008E176D /* SplashViewController */ = {
@@ -422,6 +439,7 @@
 				8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */,
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
+				8EAB9147284EB8F9003BB9AA /* InputField.xib in Resources */,
 				8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */,
 				8E13BD4D283B92D00039D1F9 /* SingleServiceViewController.xib in Resources */,
 				8EE42F2E28219C2E00D7210D /* ReceptionViewController.xib in Resources */,
@@ -496,6 +514,7 @@
 				8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */,
 				8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */,
 				8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */,
+				8EAB914B284EB9F6003BB9AA /* ValidationType.swift in Sources */,
 				8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */,
 				8E9D5130284D0CBA0019F8A0 /* SortingCell.swift in Sources */,
 				8EAB66EA2837A5CA00D976B6 /* ImageViewController.swift in Sources */,
@@ -507,6 +526,7 @@
 				8E59ACEB284A3ED50080039A /* SortingPoints.swift in Sources */,
 				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,
 				8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */,
+				8EAB9149284EB91D003BB9AA /* InputField.swift in Sources */,
 				8E19E52528456454007FABB0 /* Appointment.swift in Sources */,
 				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,
 				8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */,
