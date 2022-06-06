@@ -99,6 +99,20 @@ class AppointmentViewController: UIViewController {
         self.database.child("\(time)").setValue(["name" : surname + " " + name, "phone" : phone])
 //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
 //        self.database.child("appointments").setValue(["name": name])
+        
+        guard let date = selectedDate else { return }
+        let action = UIAlertAction(title: "Ок", style: .default) { action in
+            self.navigationController?.popViewController(animated: true) }
+        let alert = UIAlertController(title: "Ура!", message: "Вы записаны на приём к мастеру на \(date) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)
+        alert.addAction(action)
+        present(alert, animated: true)
+        
+        DispatchQueue.main.async {
+            self.timeField.text = ""
+            self.nameField.text = ""
+            self.surnameField.text = ""
+            self.phoneField.text = ""
+        }
     }
     
 }
@@ -194,7 +208,7 @@ extension AppointmentViewController: UITextFieldDelegate {
         return false
     }
     
- /// mask example: `+X (XXX) XXX-XXXXX
+ // mask example: `+X (XXX) XXX-XXXXX
     func format(with mask: String, phone: String) -> String {
 
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)

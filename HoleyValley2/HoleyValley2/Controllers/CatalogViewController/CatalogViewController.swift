@@ -17,7 +17,8 @@ class CatalogViewController: UIViewController {
     
     var decorations = [Decoration]()
     var sortingDecorations = [Decoration]()
-        
+    var originalDecorations = [Decoration]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,15 +90,24 @@ class CatalogViewController: UIViewController {
         sortingVC.saveSortingParameters = {
             print("Current value: \(sortingVC.currentType), \(sortingVC.currentPrice)")
             
+            DispatchQueue.global().async {
+                self.originalDecorations = self.decorations
+
+            }
+            
             if sortingVC.currentType != sortingVC.defaultSortingByType {
 //                self.sortingDecorations = self.decorations.filter { decoration in
 //                    return decoration.type == sortingVC.currentType }
                 self.sortingDecorations = self.decorations.filter({ $0.type == sortingVC.currentType })
-//                !self.busyHours.contains($0)
-                print(self.sortingDecorations)
-//                DispatchQueue.main.async {
-//                    self.decorationsTable.reloadData()
-//                }
+                self.decorations = self.sortingDecorations
+                
+                DispatchQueue.main.async {
+                    self.decorationsTable.reloadData()
+                }
+                
+//                let newArray = myArray
+//                    .sorted { $0.mark < $1.mark }
+//                    .map {$0.name}
             }
         }
     }
