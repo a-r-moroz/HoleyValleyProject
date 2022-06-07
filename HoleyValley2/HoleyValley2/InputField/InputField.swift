@@ -114,7 +114,7 @@ import UIKit
         self.errorLabel.isHidden = false
         UIView.animate(withDuration: 1) { [weak self] in
             self?.textField.shake()
-            self?.textField.layer.borderColor = UIColor.red.withAlphaComponent(0.8).cgColor
+            self?.textField.layer.borderColor = UIColor.systemRed.withAlphaComponent(0.8).cgColor
             
         } completion: { [weak self] isFinished in
             if isFinished {
@@ -122,7 +122,7 @@ import UIKit
                 
                 UIView.animate(withDuration: 0.5) {
                     
-                    self?.textField.layer.borderColor = UIColor.lightGray.cgColor
+                    self?.textField.layer.borderColor = UIColor.systemGray5.cgColor
                 }
                 
             }

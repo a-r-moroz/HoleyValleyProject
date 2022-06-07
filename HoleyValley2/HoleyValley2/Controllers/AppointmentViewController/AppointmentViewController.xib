@@ -13,10 +13,10 @@
                 <outlet property="calendarView" destination="JHh-vA-pWR" id="PL1-RD-QDy"/>
                 <outlet property="confirmButtonOutlet" destination="u4e-mj-Tvu" id="FLL-Bq-wDS"/>
                 <outlet property="infoView" destination="wf9-4Q-QN6" id="Jfv-SP-tZs"/>
-                <outlet property="nameField" destination="9oj-lj-eEg" id="2eS-hb-BK2"/>
-                <outlet property="phoneField" destination="sOj-Fh-mYL" id="Ukd-CC-k0q"/>
-                <outlet property="surnameField" destination="s2H-tP-Ymv" id="F00-1M-a7s"/>
-                <outlet property="timeField" destination="1Ft-Q9-3CE" id="vB6-Rg-une"/>
+                <outlet property="nameInputField" destination="B5y-bT-wfM" id="a7q-2c-F0Q"/>
+                <outlet property="phoneInputField" destination="Tbh-oF-qQf" id="hX2-u1-fnm"/>
+                <outlet property="surnameInputField" destination="ESD-ch-UUw" id="6ha-jw-xtT"/>
+                <outlet property="timeInputField" destination="jSz-hX-MoD" id="QyF-VF-xDK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egm-LX-PUI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1250"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1142.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сначала выберем день:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-HS-Mrn">
                                     <rect key="frame" x="16" y="230" width="382" height="20.5"/>
@@ -37,35 +37,8 @@
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберем время:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmY-tI-fbW">
-                                    <rect key="frame" x="16" y="842.5" width="382" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="12:00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-Q9-3CE">
-                                    <rect key="frame" x="16" y="873" width="382" height="34"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как Вас зовут?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWx-jh-U5e">
-                                    <rect key="frame" x="16" y="927" width="382" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9oj-lj-eEg">
-                                    <rect key="frame" x="16" y="957.5" width="382" height="34"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-tP-Ymv">
-                                    <rect key="frame" x="16" y="1001.5" width="382" height="34"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-mj-Tvu">
-                                    <rect key="frame" x="115.5" y="1150" width="183" height="50"/>
+                                    <rect key="frame" x="115.5" y="1042.5" width="183" height="50"/>
                                     <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="cqi-FN-nKV"/>
@@ -122,17 +95,6 @@
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+375 (XX) XXX-XX-XX" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sOj-Fh-mYL">
-                                    <rect key="frame" x="16" y="1086" width="382" height="34"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон на случай, если что-то поменяется:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-jV-0G3">
-                                    <rect key="frame" x="16" y="1055.5" width="382" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf9-4Q-QN6">
                                     <rect key="frame" x="16" y="96.5" width="382" height="113.5"/>
                                     <subviews>
@@ -164,59 +126,77 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSz-hX-MoD" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
                                     <rect key="frame" x="16" y="662.5" width="382" height="85"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="85" id="wDE-Ae-Mc7"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Выберите доступное время"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="error" value="Время введено некорректно."/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-bT-wfM" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="767.5" width="382" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="cot-2N-ueS"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Как вас зовут?"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="error" value="Имя введено некорректно."/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-ch-UUw" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="847.5" width="382" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="u5T-SL-DgG"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="error" value="Фамилия введена некорректно."/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbh-oF-qQf" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="927.5" width="382" height="85"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="AAM-jf-iNo"/>
+                                        <constraint firstAttribute="height" constant="85" id="KRO-YP-2fd"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Телефон для связи:"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="error" value="Номер телефона введен некорректно."/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="JxE-jV-0G3" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="1mJ-zm-f5E"/>
-                                <constraint firstItem="9oj-lj-eEg" firstAttribute="top" secondItem="NWx-jh-U5e" secondAttribute="bottom" constant="10" id="3UA-A3-twR"/>
-                                <constraint firstAttribute="trailing" secondItem="sOj-Fh-mYL" secondAttribute="trailing" constant="16" id="689-xK-1v0"/>
-                                <constraint firstItem="mmY-tI-fbW" firstAttribute="top" secondItem="JHh-vA-pWR" secondAttribute="bottom" constant="200" id="6lk-gV-dTA"/>
-                                <constraint firstAttribute="trailing" secondItem="9oj-lj-eEg" secondAttribute="trailing" constant="16" id="82K-2p-e3k"/>
-                                <constraint firstItem="s2H-tP-Ymv" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="CO1-d1-8YZ"/>
+                                <constraint firstItem="Tbh-oF-qQf" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="1o5-ol-b8f"/>
+                                <constraint firstItem="Tbh-oF-qQf" firstAttribute="top" secondItem="ESD-ch-UUw" secondAttribute="bottom" constant="20" id="2Sv-K6-T3s"/>
+                                <constraint firstAttribute="trailing" secondItem="Tbh-oF-qQf" secondAttribute="trailing" constant="16" id="4qX-nP-aBC"/>
+                                <constraint firstAttribute="trailing" secondItem="B5y-bT-wfM" secondAttribute="trailing" constant="16" id="9uw-RH-8rc"/>
+                                <constraint firstItem="ESD-ch-UUw" firstAttribute="top" secondItem="B5y-bT-wfM" secondAttribute="bottom" id="Bxq-nc-2Qb"/>
+                                <constraint firstItem="ESD-ch-UUw" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="DaX-t7-3vh"/>
                                 <constraint firstItem="Nra-Ur-VNz" firstAttribute="top" secondItem="egm-LX-PUI" secondAttribute="top" constant="20" id="Kt0-Sj-iMF"/>
                                 <constraint firstAttribute="trailing" secondItem="jSz-hX-MoD" secondAttribute="trailing" constant="16" id="LsL-7T-a2s"/>
                                 <constraint firstItem="wf9-4Q-QN6" firstAttribute="top" secondItem="3Xi-fA-n1m" secondAttribute="bottom" constant="10" id="M8S-Ey-9AY"/>
-                                <constraint firstAttribute="trailing" secondItem="JxE-jV-0G3" secondAttribute="trailing" constant="16" id="MFL-hy-NmR"/>
-                                <constraint firstAttribute="trailing" secondItem="1Ft-Q9-3CE" secondAttribute="trailing" constant="16" id="ML1-wH-gVW"/>
-                                <constraint firstItem="sOj-Fh-mYL" firstAttribute="top" secondItem="JxE-jV-0G3" secondAttribute="bottom" constant="10" id="Nak-ax-amX"/>
                                 <constraint firstAttribute="trailing" secondItem="Nra-Ur-VNz" secondAttribute="trailing" constant="16" id="OIl-mO-nUM"/>
                                 <constraint firstAttribute="trailing" secondItem="Ge7-HS-Mrn" secondAttribute="trailing" constant="16" id="Rw1-2m-ntg"/>
                                 <constraint firstItem="JHh-vA-pWR" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="SBe-aP-t5K"/>
-                                <constraint firstItem="s2H-tP-Ymv" firstAttribute="top" secondItem="9oj-lj-eEg" secondAttribute="bottom" constant="10" id="TKW-bd-Eu9"/>
-                                <constraint firstItem="sOj-Fh-mYL" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="Udi-Gh-hQG"/>
-                                <constraint firstAttribute="trailing" secondItem="mmY-tI-fbW" secondAttribute="trailing" constant="16" id="WPt-5k-Pb5"/>
+                                <constraint firstItem="u4e-mj-Tvu" firstAttribute="top" secondItem="Tbh-oF-qQf" secondAttribute="bottom" constant="30" id="ThA-x9-T7N"/>
                                 <constraint firstAttribute="bottom" secondItem="u4e-mj-Tvu" secondAttribute="bottom" constant="50" id="WlJ-lv-wm9"/>
                                 <constraint firstAttribute="trailing" secondItem="JHh-vA-pWR" secondAttribute="trailing" constant="16" id="Xf8-WV-gKh"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="Yvr-Gc-aDh"/>
                                 <constraint firstItem="jSz-hX-MoD" firstAttribute="top" secondItem="JHh-vA-pWR" secondAttribute="bottom" constant="20" id="ZuY-ah-3tJ"/>
-                                <constraint firstAttribute="trailing" secondItem="s2H-tP-Ymv" secondAttribute="trailing" constant="16" id="aWo-K0-xfv"/>
                                 <constraint firstItem="Nra-Ur-VNz" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="eKm-R8-tTK"/>
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="top" secondItem="Nra-Ur-VNz" secondAttribute="bottom" constant="10" id="fNM-M6-Fa8"/>
+                                <constraint firstAttribute="trailing" secondItem="ESD-ch-UUw" secondAttribute="trailing" constant="16" id="ftk-mG-fex"/>
                                 <constraint firstAttribute="trailing" secondItem="wf9-4Q-QN6" secondAttribute="trailing" constant="16" id="g5G-ZD-Ppa"/>
-                                <constraint firstItem="u4e-mj-Tvu" firstAttribute="top" secondItem="sOj-Fh-mYL" secondAttribute="bottom" constant="30" id="hef-Zn-AC5"/>
-                                <constraint firstItem="9oj-lj-eEg" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="hf3-zm-umE"/>
-                                <constraint firstItem="JxE-jV-0G3" firstAttribute="top" secondItem="s2H-tP-Ymv" secondAttribute="bottom" constant="20" id="iEf-SK-0Hl"/>
                                 <constraint firstItem="JHh-vA-pWR" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="jdk-Ub-Zk6"/>
-                                <constraint firstItem="NWx-jh-U5e" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="lJD-qC-4pi"/>
-                                <constraint firstItem="1Ft-Q9-3CE" firstAttribute="top" secondItem="mmY-tI-fbW" secondAttribute="bottom" constant="10" id="nFh-ry-B0C"/>
-                                <constraint firstItem="NWx-jh-U5e" firstAttribute="top" secondItem="1Ft-Q9-3CE" secondAttribute="bottom" constant="20" id="nPg-F2-ILE"/>
-                                <constraint firstItem="1Ft-Q9-3CE" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="nbJ-xA-UqF"/>
+                                <constraint firstItem="B5y-bT-wfM" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="mge-XE-5jV"/>
                                 <constraint firstAttribute="trailing" secondItem="3Xi-fA-n1m" secondAttribute="trailing" constant="16" id="q4G-ml-Brx"/>
                                 <constraint firstItem="u4e-mj-Tvu" firstAttribute="centerX" secondItem="egm-LX-PUI" secondAttribute="centerX" id="qVy-nk-lOM"/>
-                                <constraint firstItem="mmY-tI-fbW" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="qdj-M0-GMQ"/>
                                 <constraint firstItem="wf9-4Q-QN6" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="qiA-Eb-DhM"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="top" secondItem="wf9-4Q-QN6" secondAttribute="bottom" constant="20" id="sLX-It-leK"/>
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="tSd-z1-PLX"/>
+                                <constraint firstItem="B5y-bT-wfM" firstAttribute="top" secondItem="jSz-hX-MoD" secondAttribute="bottom" constant="20" id="u5c-UC-NdO"/>
                                 <constraint firstItem="jSz-hX-MoD" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="ug0-uR-GP1"/>
-                                <constraint firstAttribute="trailing" secondItem="NWx-jh-U5e" secondAttribute="trailing" constant="16" id="v9Q-LA-gNG"/>
                             </constraints>
                         </view>
                     </subviews>

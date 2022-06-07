@@ -12,12 +12,13 @@ import FSCalendar
 class AppointmentViewController: UIViewController {
 
     @IBOutlet weak var infoView: UIView!
-    @IBOutlet weak var timeField: UITextField!
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var surnameField: UITextField!
-    @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var calendarView: FSCalendar!
+    
+    @IBOutlet weak var timeInputField: InputField!
+    @IBOutlet weak var nameInputField: InputField!
+    @IBOutlet weak var surnameInputField: InputField!
+    @IBOutlet weak var phoneInputField: InputField!
     
     var database: DatabaseReference!
     var name: String?
@@ -41,10 +42,8 @@ class AppointmentViewController: UIViewController {
         infoView.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
 
         let picker = UIPickerView()
-        timeField.inputView = picker
         picker.delegate = self
         picker.dataSource = self
-        phoneField.delegate = self
         
 //        hideKeyboardByTap()
         
@@ -54,6 +53,17 @@ class AppointmentViewController: UIViewController {
         
         database = Database.database().reference()
 
+        timeInputField.textField.inputView = picker
+        timeInputField.textField.placeholder = "12:00"
+        timeInputField.validationType = .none
+        nameInputField.validationType = .name
+        nameInputField.textField.placeholder = "Имя"
+        surnameInputField.validationType = .surname
+        surnameInputField.textField.placeholder = "Фамилия"
+        phoneInputField.validationType = .phone
+        phoneInputField.textField.placeholder = "+375 (XX) XXX-XX-XX"
+        phoneInputField.textField.keyboardType = .numberPad
+        phoneInputField.textField.delegate = self
     }
     
     //Calls this function when the tap is recognized to hide keyboard
@@ -92,29 +102,38 @@ class AppointmentViewController: UIViewController {
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
-        guard let name = nameField.text, let surname = surnameField.text, let time = timeField.text, let phone = phoneField.text else { return }
-                //, let date = selectedDate
-        
-        
-        self.database.child("\(time)").setValue(["name" : surname + " " + name, "phone" : phone])
-//        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
-//        self.database.child("appointments").setValue(["name": name])
-        
-        guard let date = selectedDate else { return }
-        let action = UIAlertAction(title: "Ок", style: .default) { action in
-            self.navigationController?.popViewController(animated: true) }
-        let alert = UIAlertController(title: "Ура!", message: "Вы записаны на приём к мастеру на \(date) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)
-        alert.addAction(action)
-        present(alert, animated: true)
-        
-        DispatchQueue.main.async {
-            self.timeField.text = ""
-            self.nameField.text = ""
-            self.surnameField.text = ""
-            self.phoneField.text = ""
+        if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid {
+            guard let name = nameInputField.textField.text,
+                  let surname = surnameInputField.textField.text,
+                  let time = timeInputField.textField.text,
+                  let phone = phoneInputField.textField.text else { return }
+                    // let date = selectedDate
+            
+            
+            self.database.child("\(time)").setValue(["name" : surname + " " + name, "phone" : phone])
+    //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
+    //        self.database.child("appointments").setValue(["name": name])
+            
+            guard let date = selectedDate else { return }
+            let action = UIAlertAction(title: "Ок", style: .default) { action in
+                self.navigationController?.popViewController(animated: true) }
+            let alert = UIAlertController(title: "Ура!", message: "Вы записаны на приём к мастеру на \(date) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)
+            alert.addAction(action)
+            present(alert, animated: true)
+            
+            DispatchQueue.main.async {
+                self.timeInputField.textField.text = ""
+                self.nameInputField.textField.text = ""
+                self.surnameInputField.textField.text = ""
+                self.phoneInputField.textField.text = ""
+            }
+        } else {
+            let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
+            let alert = UIAlertController(title: "Ошибка!", message: "Не все поля заполнены или заполнены некорректно! Пожалуйста, удебитесь, что данные введены правильно.", preferredStyle: .alert)
+            alert.addAction(action)
+            present(alert, animated: true)
         }
     }
-    
 }
 
 extension AppointmentViewController: UIPickerViewDelegate {
@@ -137,7 +156,7 @@ extension AppointmentViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        timeField.text = usingHours[row]
+        timeInputField.textField.text = usingHours[row]
     }
 }
 
