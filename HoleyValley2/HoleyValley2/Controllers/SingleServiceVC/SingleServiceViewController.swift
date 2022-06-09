@@ -41,12 +41,12 @@ class SingleServiceViewController: UIViewController {
         serviseNameLabel.text = item.name
         servicePriceLabel.text = "от " + String(item.price) + Const.belRublesSign
         serviceDescriptionLabel.text = item.description
-        advantageHeader1.text = item.advantageHeader1
-        advantageBody1.text = item.advantageBody1
-        advantageHeader2.text = item.advantageHeader2
-        advantageBody2.text = item.advantageBody2
-        advantageHeader3.text = item.advantageHeader3
-        advantageBody3.text = item.advantageBody3
+        advantageHeader1.text = item.advantageHeaderFirst
+        advantageBody1.text = item.advantageBodyFirst
+        advantageHeader2.text = item.advantageHeaderSecond
+        advantageBody2.text = item.advantageBodySecond
+        advantageHeader3.text = item.advantageHeaderThird
+        advantageBody3.text = item.advantageBodyThird
     }
     
     @IBAction func catalogButtonAction(_ sender: UIButton) {

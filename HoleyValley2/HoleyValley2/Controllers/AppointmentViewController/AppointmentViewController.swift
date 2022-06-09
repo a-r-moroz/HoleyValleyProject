@@ -25,6 +25,7 @@ class AppointmentViewController: UIViewController {
     var surname: String?
     var openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
     var selectedDate: String?
+    var dateForAlert: Date?
 //    private lazy var availableHours: [String] = {
 //
 //        return allHours
@@ -114,10 +115,17 @@ class AppointmentViewController: UIViewController {
     //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
     //        self.database.child("appointments").setValue(["name": name])
             
-            guard let date = selectedDate else { return }
+//            guard let date = selectedDate else { return }
+            guard let date = dateForAlert else { return }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "RU")
+            dateFormatter.dateFormat = "d MMM, yyyy"
+            let dateString = dateFormatter.string(from: date)
+            
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }
-            let alert = UIAlertController(title: "Ура!", message: "Вы записаны на приём к мастеру на \(date) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Ура!", message: "Вы записаны на прием к мастеру на \(dateString) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)
             alert.addAction(action)
             present(alert, animated: true)
             
@@ -129,7 +137,7 @@ class AppointmentViewController: UIViewController {
             }
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
-            let alert = UIAlertController(title: "Ошибка!", message: "Не все поля заполнены или заполнены некорректно! Пожалуйста, удебитесь, что данные введены правильно.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что все поля заполнены корректно.", preferredStyle: .alert)
             alert.addAction(action)
             present(alert, animated: true)
         }
@@ -166,10 +174,11 @@ extension AppointmentViewController: FSCalendarDelegate {
         
         let dateFormatter = DateFormatter()
 //        dateFormatter.dateFormat = "MMM d, yyyy"
-        dateFormatter.locale = Locale(identifier: "RU")
+        dateFormatter.locale = Locale(identifier: "EN")
         dateFormatter.dateFormat = "d MMM, yyyy"
         let dateString = dateFormatter.string(from: date)
         selectedDate = dateString
+        dateForAlert = date
         availableHours(date: dateString)
                 
         //        for i in busyHours {

@@ -12,22 +12,22 @@ final class Service {
     var name: String
     var price: Int
     var description: String
-    var advantageHeader1: String
-    var advantageBody1: String
-    var advantageHeader2: String
-    var advantageBody2: String
-    var advantageHeader3: String
-    var advantageBody3: String
+    var advantageHeaderFirst: String
+    var advantageBodyFirst: String
+    var advantageHeaderSecond: String
+    var advantageBodySecond: String
+    var advantageHeaderThird: String
+    var advantageBodyThird: String
     
-    internal init(name: String, price: Int, description: String, advantageHeader1: String, advantageBody1: String, advantageHeader2: String, advantageBody2: String, advantageHeader3: String, advantageBody3: String) {
+    internal init(name: String, price: Int, description: String, advantageHeaderFirst: String, advantageBodyFirst: String, advantageHeaderSecond: String, advantageBodySecond: String, advantageHeaderThird: String, advantageBodyThird: String) {
         self.name = name
         self.price = price
         self.description = description
-        self.advantageHeader1 = advantageHeader1
-        self.advantageBody1 = advantageBody1
-        self.advantageHeader2 = advantageHeader2
-        self.advantageBody2 = advantageBody2
-        self.advantageHeader3 = advantageHeader3
-        self.advantageBody3 = advantageBody3
+        self.advantageHeaderFirst = advantageHeaderFirst
+        self.advantageBodyFirst = advantageBodyFirst
+        self.advantageHeaderSecond = advantageHeaderSecond
+        self.advantageBodySecond = advantageBodySecond
+        self.advantageHeaderThird = advantageHeaderThird
+        self.advantageBodyThird = advantageBodyThird
     }
 }

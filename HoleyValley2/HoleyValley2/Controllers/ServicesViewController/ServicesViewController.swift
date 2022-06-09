@@ -50,12 +50,12 @@ class ServicesViewController: UIViewController {
                 let name = value?["name"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
                 let description = value?["description"] as? String ?? ""
-                let advantageHeader1 = value?["advantageHeader1"] as? String ?? ""
-                let advantageHeader2 = value?["advantageHeader2"] as? String ?? ""
-                let advantageHeader3 = value?["advantageHeader3"] as? String ?? ""
-                let advantageBody1 = value?["advantageBody1"] as? String ?? ""
-                let advantageBody2 = value?["advantageBody2"] as? String ?? ""
-                let advantageBody3 = value?["advantageBody3"] as? String ?? ""
+                let advantageHeaderFirst = value?["advantageHeaderFirst"] as? String ?? ""
+                let advantageHeaderSecond = value?["advantageHeaderSecond"] as? String ?? ""
+                let advantageHeaderThird = value?["advantageHeaderThird"] as? String ?? ""
+                let advantageBodyFirst = value?["advantageBodyFirst"] as? String ?? ""
+                let advantageBodySecond = value?["advantageBodySecond"] as? String ?? ""
+                let advantageBodyThird = value?["advantageBodyThird"] as? String ?? ""
                 
                 /*
                  let item = Service(name: value["name"] as? String ?? "",
@@ -70,7 +70,13 @@ class ServicesViewController: UIViewController {
                  )
                  */
 
-                let item = Service(name: name, price: price, description: description, advantageHeader1: advantageHeader1, advantageBody1: advantageBody1, advantageHeader2: advantageHeader2, advantageBody2: advantageBody2, advantageHeader3: advantageHeader3, advantageBody3: advantageBody3)
+                let item = Service(name: name, price: price, description: description,
+                                   advantageHeaderFirst: advantageHeaderFirst,
+                                   advantageBodyFirst: advantageBodyFirst,
+                                   advantageHeaderSecond: advantageHeaderSecond,
+                                   advantageBodySecond: advantageBodySecond,
+                                   advantageHeaderThird: advantageHeaderThird,
+                                   advantageBodyThird: advantageBodyThird)
                 
                 self.services.append(item)
                 
