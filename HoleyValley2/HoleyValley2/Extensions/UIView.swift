@@ -54,6 +54,29 @@ extension UIView {
         layer.add(animation, forKey: "shake")
     }
     
+    func strangeShake(_ view: UIView) {
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: view.center.x, y: view.center.y - 5))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: view.center.x + 10, y: view.center.y))
+
+        view.layer.add(animation, forKey: "position")
+    }
+    
+    func verticalShake(_ view: UIView) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.2
+        animation.repeatCount = 0.5
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: view.center.x, y: view.center.y + 3))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: view.center.x, y: view.center.y - 3))
+        view.layer.add(animation, forKey: "position")
+    }
+    
+    
 //    func setShadowToImage(color: CGColor) {
 //
 //        self.layer.shadowColor = color

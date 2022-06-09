@@ -39,6 +39,7 @@ class SortingViewController: UIViewController {
 //        self.navigationItem.setHidesBackButton(true, animated: true)
         
         closeViewControllerByTap()
+        closeViewControllerBySwipe()
         backView.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
         backView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
@@ -64,6 +65,18 @@ class SortingViewController: UIViewController {
     }
     
     @objc func closeTap(sender: UITapGestureRecognizer) {
+        
+        dismiss(animated: true)
+    }
+    
+    private func closeViewControllerBySwipe() {
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(closeSwipe))
+        swipe.direction = .down
+        self.view.addGestureRecognizer(swipe)
+    }
+    
+    @objc func closeSwipe(sender: UISwipeGestureRecognizer) {
         
         dismiss(animated: true)
     }

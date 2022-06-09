@@ -13,6 +13,10 @@
                 <outlet property="editButtonOutlet" destination="XPD-FG-kBr" id="adR-rL-msv"/>
                 <outlet property="nameInputField" destination="uNx-id-SNd" id="Tkq-l2-0YO"/>
                 <outlet property="nameLabel" destination="M6l-eo-uAs" id="P59-BH-8Tb"/>
+                <outlet property="newLabelConstraint" destination="2H2-Z9-vb1" id="mCb-4p-nbm"/>
+                <outlet property="newViewConstraint" destination="NP8-wD-OTG" id="Vm8-OI-TwP"/>
+                <outlet property="oldLabelConstraint" destination="t77-TD-srL" id="unQ-Hv-Jaf"/>
+                <outlet property="oldViewConstraint" destination="kTN-CD-l60" id="WZN-4j-VUk"/>
                 <outlet property="phoneInputField" destination="7tl-tE-IyI" id="l6T-O2-PfP"/>
                 <outlet property="phoneLabel" destination="o7t-hS-joa" id="drX-On-Beb"/>
                 <outlet property="surnameInputField" destination="Xie-3w-wVl" id="5fm-lG-omN"/>
@@ -37,8 +41,8 @@
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-Gi-syJ">
-                    <rect key="frame" x="16" y="64" width="382" height="307"/>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-Gi-syJ">
+                    <rect key="frame" x="16" y="-327" width="382" height="307"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTP-mQ-eLb">
                             <rect key="frame" x="300" y="10" width="74" height="32"/>
@@ -122,13 +126,21 @@
                         <action selector="editAction:" destination="-1" eventType="touchUpInside" id="NSQ-hQ-FiK"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="table wth appointments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Se-Sh-zU2">
+                    <rect key="frame" x="16" y="132.5" width="382" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eXW-Gi-syJ" secondAttribute="trailing" constant="16" id="14q-5s-qdT"/>
+                <constraint firstItem="8Se-Sh-zU2" firstAttribute="top" secondItem="eXW-Gi-syJ" secondAttribute="bottom" constant="20" id="2H2-Z9-vb1"/>
                 <constraint firstItem="XPD-FG-kBr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="M6l-eo-uAs" secondAttribute="trailing" constant="16" id="3cw-dK-omc"/>
                 <constraint firstItem="o7t-hS-joa" firstAttribute="top" secondItem="M6l-eo-uAs" secondAttribute="bottom" constant="10" id="Dgp-gC-4vj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Se-Sh-zU2" secondAttribute="trailing" constant="16" id="Hxo-tj-thm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o7t-hS-joa" secondAttribute="trailing" constant="16" id="Jwe-zk-ajf"/>
                 <constraint firstItem="M6l-eo-uAs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Kza-xr-bgg"/>
                 <constraint firstItem="XPD-FG-kBr" firstAttribute="centerY" secondItem="M6l-eo-uAs" secondAttribute="centerY" id="LKu-pI-6sD"/>
@@ -137,7 +149,16 @@
                 <constraint firstItem="eXW-Gi-syJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="alL-L4-Miz"/>
                 <constraint firstItem="o7t-hS-joa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="eri-Sf-MfH"/>
                 <constraint firstItem="M6l-eo-uAs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="izA-PP-5Lb"/>
+                <constraint firstAttribute="top" secondItem="eXW-Gi-syJ" secondAttribute="bottom" constant="20" id="kTN-CD-l60"/>
+                <constraint firstItem="8Se-Sh-zU2" firstAttribute="top" secondItem="o7t-hS-joa" secondAttribute="bottom" constant="20" id="t77-TD-srL"/>
+                <constraint firstItem="8Se-Sh-zU2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="y7D-Gn-veR"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="2H2-Z9-vb1"/>
+                    <exclude reference="NP8-wD-OTG"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="131.8840579710145" y="59.598214285714285"/>
         </view>
     </objects>

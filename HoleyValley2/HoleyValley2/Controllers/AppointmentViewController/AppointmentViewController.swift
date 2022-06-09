@@ -23,7 +23,7 @@ class AppointmentViewController: UIViewController {
     var database: DatabaseReference!
     var name: String?
     var surname: String?
-    var openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    var openingHours = Const.openingHours
     var selectedDate: String?
     var dateForAlert: Date?
 //    private lazy var availableHours: [String] = {

@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 struct Const {
-    static let appName = "HoleyValley"
+    
     static let defaultImage = "https://firebasestorage.googleapis.com/v0/b/holeyvalleytest.appspot.com/o/decorations%2FdefaultImage.png?alt=media&token=dd3b9287-3524-4e9f-a35f-7ba48e30bd41"
     static let belRublesSign = " BYN"
+    static let openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+
 
     struct DecorationType {
         

@@ -16,6 +16,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var surnameInputField: InputField!
     @IBOutlet weak var phoneInputField: InputField!
     @IBOutlet weak var viewWithData: UIView!
+    @IBOutlet weak var oldViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var newViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var oldLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var newLabelConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         
@@ -25,38 +29,92 @@ class ProfileViewController: UIViewController {
         viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         nameInputField.validationType = .name
         nameInputField.textField.placeholder = "Имя"
+        nameInputField.placeholderLabel.textColor = .label
         surnameInputField.validationType = .surname
         surnameInputField.textField.placeholder = "Фамилия"
+        surnameInputField.placeholderLabel.textColor = .label
         phoneInputField.validationType = .phone
         phoneInputField.textField.placeholder = "+375 (XX) XXX-XX-XX"
+        phoneInputField.placeholderLabel.textColor = .label
         phoneInputField.textField.keyboardType = .numberPad
 //        phoneInputField.textField.delegate = self
     }
 
     @IBAction func editAction(_ sender: UIButton) {
         
-        UIView.animate(withDuration: 0.3, delay: 0.1) {
+        self.oldViewConstraint.isActive = false
+        self.oldLabelConstraint.isActive = false
+        self.newViewConstraint.isActive = true
+        self.newLabelConstraint.isActive = true
+        
+        UIView.animate(withDuration: 0.7, delay: 0.05) {
             
-            self.nameLabel.isHidden = true
-            self.phoneLabel.isHidden = true
-            self.editButtonOutlet.isHidden = true
-            self.viewWithData.isHidden = false
+            self.view.layoutIfNeeded()
+            self.viewWithData.alpha = 1
+            self.nameLabel.alpha = 0
+            self.phoneLabel.alpha = 0
+            self.editButtonOutlet.alpha = 0
+
+        } completion: { finish in
+            if finish {
+                self.viewWithData.verticalShake(self.viewWithData)
+                self.view.layoutIfNeeded()
+            }
         }
     }
 
     @IBAction func saveAction(_ sender: UIButton) {
         
+        if nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid {
+            
+            
+            
+            self.oldViewConstraint.isActive = true
+            self.oldLabelConstraint.isActive = true
+            self.newViewConstraint.isActive = false
+            self.newLabelConstraint.isActive = false
+            
+            UIView.animate(withDuration: 0.7, delay: 0.05) {
+                
+                self.view.layoutIfNeeded()
+                self.viewWithData.alpha = 0
+                self.nameLabel.alpha = 1
+                self.phoneLabel.alpha = 1
+                self.editButtonOutlet.alpha = 1
+            } completion: { finish in
+                if finish {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        } else {
+            let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
+            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что все поля заполнены корректно.", preferredStyle: .alert)
+            alert.addAction(action)
+            present(alert, animated: true)
+        }
         
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
         
-        UIView.animate(withDuration: 0.3, delay: 0.1) {
+        self.oldViewConstraint.isActive = true
+        self.oldLabelConstraint.isActive = true
+        self.newViewConstraint.isActive = false
+        self.newLabelConstraint.isActive = false
+        
+        UIView.animate(withDuration: 0.7, delay: 0.05) {
             
-            self.viewWithData.isHidden = true
-            self.nameLabel.isHidden = false
-            self.phoneLabel.isHidden = false
-            self.editButtonOutlet.isHidden = false
+            self.view.layoutIfNeeded()
+            self.viewWithData.alpha = 0
+            self.nameLabel.alpha = 1
+            self.phoneLabel.alpha = 1
+            self.editButtonOutlet.alpha = 1
+        } completion: { finish in
+            if finish {
+                self.view.layoutIfNeeded()
+            }
         }
     }
+    
+    
 }
