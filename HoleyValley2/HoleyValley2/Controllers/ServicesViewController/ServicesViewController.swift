@@ -11,6 +11,8 @@ import Firebase
 class ServicesViewController: UIViewController {
     
     @IBOutlet weak var servicesTable: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     var database: DatabaseReference!
     var services = [Service]()
     
@@ -18,6 +20,7 @@ class ServicesViewController: UIViewController {
         
         super.viewDidLoad()
         
+        self.spinner.startAnimating()
         servicesTable.delegate = self
         servicesTable.dataSource = self
         
@@ -84,6 +87,7 @@ class ServicesViewController: UIViewController {
                     self.servicesTable.reloadData()
                 }
             }
+            self.spinner.stopAnimating()
         }
     }
 }

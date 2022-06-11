@@ -12,6 +12,7 @@ import Firebase
 class CatalogViewController: UIViewController {
     
     @IBOutlet weak var decorationsTable: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var database: DatabaseReference!
     
@@ -22,6 +23,7 @@ class CatalogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        spinner.startAnimating()
         decorationsTable.delegate = self
         decorationsTable.dataSource = self
         setupTable()
@@ -66,6 +68,7 @@ class CatalogViewController: UIViewController {
                     self.decorationsTable.reloadData()
                 }
             }
+            self.spinner.stopAnimating()
         }
     }
     

@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatalogViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
                 <outlet property="decorationsTable" destination="E2U-vq-8PN" id="Esu-BD-ejk"/>
+                <outlet property="spinner" destination="flN-FS-ys2" id="lzF-px-VYZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,14 +24,19 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="flN-FS-ys2">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="E2U-vq-8PN" secondAttribute="bottom" id="7YH-0e-Mvq"/>
+                <constraint firstItem="flN-FS-ys2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="BW6-c1-EVk"/>
                 <constraint firstItem="E2U-vq-8PN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wpz-qK-Mfx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E2U-vq-8PN" secondAttribute="trailing" id="iGW-sh-CK5"/>
                 <constraint firstItem="E2U-vq-8PN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lqf-qk-KkG"/>
+                <constraint firstItem="flN-FS-ys2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tj6-A1-YxE"/>
             </constraints>
             <point key="canvasLocation" x="132" y="82"/>
         </view>
