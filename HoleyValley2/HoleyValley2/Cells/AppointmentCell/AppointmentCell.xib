@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="AppointmentCell" customModule="HoleyValley2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoQ-Bs-RBU">
+                        <rect key="frame" x="16" y="8" width="288" height="66"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnX-5t-ShB">
+                                <rect key="frame" x="12" y="8" width="34.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyZ-yi-Glb">
+                                <rect key="frame" x="12" y="32.5" width="36" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vyZ-yi-Glb" firstAttribute="leading" secondItem="MoQ-Bs-RBU" secondAttribute="leading" constant="12" id="8WE-04-nYC"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vyZ-yi-Glb" secondAttribute="bottom" constant="8" id="EWu-Yo-013"/>
+                            <constraint firstItem="EnX-5t-ShB" firstAttribute="top" secondItem="MoQ-Bs-RBU" secondAttribute="top" constant="8" id="Wjh-YF-PgE"/>
+                            <constraint firstItem="vyZ-yi-Glb" firstAttribute="top" secondItem="EnX-5t-ShB" secondAttribute="bottom" constant="5" id="e5M-n4-6Rd"/>
+                            <constraint firstItem="EnX-5t-ShB" firstAttribute="leading" secondItem="MoQ-Bs-RBU" secondAttribute="leading" constant="12" id="wKs-3a-eZ1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MoQ-Bs-RBU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0EM-PU-zkd"/>
+                    <constraint firstAttribute="bottom" secondItem="MoQ-Bs-RBU" secondAttribute="bottom" constant="8" id="NGh-zD-rX0"/>
+                    <constraint firstItem="MoQ-Bs-RBU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="lqw-rm-uvi"/>
+                    <constraint firstAttribute="trailing" secondItem="MoQ-Bs-RBU" secondAttribute="trailing" constant="16" id="w9l-CR-KDA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ViewWithData" destination="MoQ-Bs-RBU" id="7AU-KZ-fTc"/>
+                <outlet property="appointmentDate" destination="EnX-5t-ShB" id="RMX-XG-Yo8"/>
+                <outlet property="appointmentTime" destination="vyZ-yi-Glb" id="kX4-x4-RQx"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="71.651785714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

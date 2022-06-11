@@ -17,7 +17,7 @@ import UIKit
 //    @objc dynamic var picture: Data?
 //}
 
-class Decoration {
+final class Decoration {
 
     var name: String
     var price: Int

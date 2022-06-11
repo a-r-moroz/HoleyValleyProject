@@ -16,16 +16,26 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var surnameInputField: InputField!
     @IBOutlet weak var phoneInputField: InputField!
     @IBOutlet weak var viewWithData: UIView!
+    @IBOutlet weak var appointmentsTable: UITableView!
     @IBOutlet weak var oldViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var newViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var oldLabelConstraint: NSLayoutConstraint!
     @IBOutlet weak var newLabelConstraint: NSLayoutConstraint!
+    
+    var appointments = [Appointment]()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         title = "Профиль"
+        setupInputFields()
+        setupTable()
+        appointments = BarController.appointments
+    }
+    
+    private func setupInputFields() {
+        
         viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         nameInputField.validationType = .name
         nameInputField.textField.placeholder = "Имя"
@@ -42,8 +52,15 @@ class ProfileViewController: UIViewController {
         phoneInputField.textField.keyboardType = .numberPad
 //        phoneInputField.textField.delegate = self
     }
-
-    @IBAction func editAction(_ sender: UIButton) {
+    
+    private func setupTable() {
+        
+        appointmentsTable.register(UINib(nibName: String(describing: AppointmentCell.self), bundle: nil), forCellReuseIdentifier: String(describing: AppointmentCell.self))
+        appointmentsTable.delegate = self
+        appointmentsTable.dataSource = self
+    }
+    
+    private func openingAnimation() {
         
         UIView.animate(withDuration: 0.2, delay: 0.0) {
             
@@ -75,26 +92,6 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-
-    @IBAction func saveAction(_ sender: UIButton) {
-        
-        if nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid {
-            
-            //
-            
-        } else {
-            let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
-            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что все поля заполнены корректно.", preferredStyle: .alert)
-            alert.addAction(action)
-            present(alert, animated: true)
-        }
-        
-    }
-    
-    @IBAction func cancelAction(_ sender: UIButton) {
-        
-        closingAnimation()
-    }
     
     private func closingAnimation() {
         
@@ -124,6 +121,59 @@ class ProfileViewController: UIViewController {
                 self.phoneInputField.textField.text = ""
             }
         }
+    }
+
+    @IBAction func editAction(_ sender: UIButton) {
+        
+        openingAnimation()
+    }
+
+    @IBAction func saveAction(_ sender: UIButton) {
+        
+        if nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid {
+            
+            //
+            
+        } else {
+            let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
+            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что все поля заполнены корректно.", preferredStyle: .alert)
+            alert.addAction(action)
+            present(alert, animated: true)
+        }
+        
+    }
+    
+    @IBAction func cancelAction(_ sender: UIButton) {
+        
+        closingAnimation()
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension ProfileViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        appointments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let appointment = appointments[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AppointmentCell.self), for: indexPath)
+        guard let appointmentCell = cell as? AppointmentCell else { return cell }
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "RU")
+        dateFormatter.dateFormat = "d MMM, yyyy"
+        let dateString = dateFormatter.string(from: appointment.date)
+        appointmentCell.appointmentDate.text = dateString
+        appointmentCell.appointmentTime.text = appointment.time
+        return appointmentCell
     }
     
     

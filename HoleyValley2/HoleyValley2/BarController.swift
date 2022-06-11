@@ -8,6 +8,8 @@
 import UIKit
 
 class BarController: UITabBarController {
+    
+    static var appointments = [Appointment]()
         
     override func viewDidLoad() {
         super.viewDidLoad()

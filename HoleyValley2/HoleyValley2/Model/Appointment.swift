@@ -9,7 +9,7 @@ import Foundation
 
 struct Appointment {
     
-    var date: Date
-    var name: String
-    var time: String
+    var date: Date = Date.now
+    var time: String = "12:00"
+//    var phone: String
 }
