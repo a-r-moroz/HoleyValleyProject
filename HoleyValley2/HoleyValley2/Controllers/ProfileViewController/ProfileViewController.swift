@@ -67,7 +67,7 @@ class ProfileViewController: UIViewController {
         
         if nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid {
             
-            
+            //
             
             self.oldViewConstraint.isActive = true
             self.oldLabelConstraint.isActive = true
@@ -84,6 +84,9 @@ class ProfileViewController: UIViewController {
             } completion: { finish in
                 if finish {
                     self.view.layoutIfNeeded()
+                    self.nameInputField.textField.text = ""
+                    self.surnameInputField.textField.text = ""
+                    self.phoneInputField.textField.text = ""
                 }
             }
         } else {
@@ -112,6 +115,9 @@ class ProfileViewController: UIViewController {
         } completion: { finish in
             if finish {
                 self.view.layoutIfNeeded()
+                self.nameInputField.textField.text = ""
+                self.surnameInputField.textField.text = ""
+                self.phoneInputField.textField.text = ""
             }
         }
     }
