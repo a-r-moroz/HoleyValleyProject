@@ -116,11 +116,11 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPD-FG-kBr">
-                    <rect key="frame" x="346" y="59.5" width="52" height="30"/>
+                    <rect key="frame" x="342.5" y="58.5" width="55.5" height="32"/>
                     <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Ред.">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="editAction:" destination="-1" eventType="touchUpInside" id="NSQ-hQ-FiK"/>

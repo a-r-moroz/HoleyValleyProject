@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
         self.newViewConstraint.isActive = true
         self.newLabelConstraint.isActive = true
         
-        UIView.animate(withDuration: 0.7, delay: 0.05) {
+        UIView.animate(withDuration: 0.7, delay: 0.05, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseOut]) {
             
             self.view.layoutIfNeeded()
             self.viewWithData.alpha = 1
@@ -55,9 +55,9 @@ class ProfileViewController: UIViewController {
             self.phoneLabel.alpha = 0
             self.editButtonOutlet.alpha = 0
 
-        } completion: { finish in
+        } completion: { (finish) in
             if finish {
-                self.viewWithData.verticalShake(self.viewWithData)
+//                self.viewWithData.verticalShake(self.viewWithData)
                 self.view.layoutIfNeeded()
             }
         }
