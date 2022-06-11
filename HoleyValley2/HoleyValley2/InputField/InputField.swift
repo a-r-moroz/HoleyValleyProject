@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Haptica
 
 @IBDesignable class InputField: UIView {
     
@@ -115,6 +116,7 @@ import UIKit
         UIView.animate(withDuration: 1) { [weak self] in
             self?.textField.shake()
             self?.textField.layer.borderColor = UIColor.systemRed.withAlphaComponent(0.8).cgColor
+            Haptic.play("o-o-o-o-o-o", delay: 0.2)
             
         } completion: { [weak self] isFinished in
             if isFinished {

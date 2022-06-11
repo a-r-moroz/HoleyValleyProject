@@ -12,5 +12,7 @@ target 'HoleyValley2' do
   pod 'Firebase/Storage'
   pod 'IQKeyboardManager'
   pod 'FSCalendar'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'Haptica'
 
 end

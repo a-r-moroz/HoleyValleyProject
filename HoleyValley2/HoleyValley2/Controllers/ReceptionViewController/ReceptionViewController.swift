@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ShimmerSwift
 
 class ReceptionViewController: UIViewController {
 
@@ -36,6 +37,7 @@ class ReceptionViewController: UIViewController {
         tiktokAction()
         whatsappAction()
         telegramAction()
+//        AddShimmer()
     }
     
     private func instagramAction() {

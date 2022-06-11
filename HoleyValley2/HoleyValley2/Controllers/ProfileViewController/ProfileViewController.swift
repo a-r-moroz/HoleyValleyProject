@@ -45,12 +45,7 @@ class ProfileViewController: UIViewController {
 
     @IBAction func editAction(_ sender: UIButton) {
         
-        self.oldViewConstraint.isActive = false
-        self.oldLabelConstraint.isActive = false
-        self.newViewConstraint.isActive = true
-        self.newLabelConstraint.isActive = true
-        
-        UIView.animate(withDuration: 0.7, delay: 0.05, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.2, delay: 0.0) {
             
             self.view.layoutIfNeeded()
             self.viewWithData.alpha = 1
@@ -60,6 +55,21 @@ class ProfileViewController: UIViewController {
 
         } completion: { (finish) in
             if finish {
+                
+                self.oldViewConstraint.isActive = false
+                self.oldLabelConstraint.isActive = false
+                self.newViewConstraint.isActive = true
+                self.newLabelConstraint.isActive = true
+                
+                UIView.animate(withDuration: 0.7, delay: 0.05, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseOut]) {
+                    
+                    self.viewWithData.alpha = 1
+                    self.nameLabel.alpha = 0
+                    self.phoneLabel.alpha = 0
+                    self.editButtonOutlet.alpha = 0
+                    self.view.layoutIfNeeded()
+
+                }
 //                self.viewWithData.verticalShake(self.viewWithData)
                 self.view.layoutIfNeeded()
             }
@@ -72,26 +82,6 @@ class ProfileViewController: UIViewController {
             
             //
             
-            self.oldViewConstraint.isActive = true
-            self.oldLabelConstraint.isActive = true
-            self.newViewConstraint.isActive = false
-            self.newLabelConstraint.isActive = false
-            
-            UIView.animate(withDuration: 0.5, delay: 0.05) {
-                
-                self.view.layoutIfNeeded()
-                self.viewWithData.alpha = 0
-                self.nameLabel.alpha = 1
-                self.phoneLabel.alpha = 1
-                self.editButtonOutlet.alpha = 1
-            } completion: { finish in
-                if finish {
-                    self.view.layoutIfNeeded()
-                    self.nameInputField.textField.text = ""
-                    self.surnameInputField.textField.text = ""
-                    self.phoneInputField.textField.text = ""
-                }
-            }
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
             let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что все поля заполнены корректно.", preferredStyle: .alert)
@@ -103,6 +93,11 @@ class ProfileViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: UIButton) {
         
+        closingAnimation()
+    }
+    
+    private func closingAnimation() {
+        
         self.oldViewConstraint.isActive = true
         self.oldLabelConstraint.isActive = true
         self.newViewConstraint.isActive = false
@@ -111,12 +106,18 @@ class ProfileViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.05) {
             
             self.view.layoutIfNeeded()
-            self.viewWithData.alpha = 0
-            self.nameLabel.alpha = 1
-            self.phoneLabel.alpha = 1
-            self.editButtonOutlet.alpha = 1
+
         } completion: { finish in
             if finish {
+                
+                UIView.animate(withDuration: 0.2, delay: 0.0) {
+                    
+                    self.viewWithData.alpha = 0
+                    self.nameLabel.alpha = 1
+                    self.phoneLabel.alpha = 1
+                    self.editButtonOutlet.alpha = 1
+                }
+                
                 self.view.layoutIfNeeded()
                 self.nameInputField.textField.text = ""
                 self.surnameInputField.textField.text = ""
