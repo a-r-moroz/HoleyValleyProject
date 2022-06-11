@@ -30,12 +30,15 @@ class ProfileViewController: UIViewController {
         nameInputField.validationType = .name
         nameInputField.textField.placeholder = "Имя"
         nameInputField.placeholderLabel.textColor = .label
+//        nameInputField.placeholderLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         surnameInputField.validationType = .surname
         surnameInputField.textField.placeholder = "Фамилия"
         surnameInputField.placeholderLabel.textColor = .label
+//        surnameInputField.placeholderLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         phoneInputField.validationType = .phone
         phoneInputField.textField.placeholder = "+375 (XX) XXX-XX-XX"
         phoneInputField.placeholderLabel.textColor = .label
+//        phoneInputField.placeholderLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         phoneInputField.textField.keyboardType = .numberPad
 //        phoneInputField.textField.delegate = self
     }
@@ -74,7 +77,7 @@ class ProfileViewController: UIViewController {
             self.newViewConstraint.isActive = false
             self.newLabelConstraint.isActive = false
             
-            UIView.animate(withDuration: 0.7, delay: 0.05) {
+            UIView.animate(withDuration: 0.5, delay: 0.05) {
                 
                 self.view.layoutIfNeeded()
                 self.viewWithData.alpha = 0
@@ -105,7 +108,7 @@ class ProfileViewController: UIViewController {
         self.newViewConstraint.isActive = false
         self.newLabelConstraint.isActive = false
         
-        UIView.animate(withDuration: 0.7, delay: 0.05) {
+        UIView.animate(withDuration: 0.5, delay: 0.05) {
             
             self.view.layoutIfNeeded()
             self.viewWithData.alpha = 0
