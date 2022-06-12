@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import FSCalendar
-import RealmSwift
+//import RealmSwift
 
 class AppointmentViewController: UIViewController {
 
@@ -125,12 +125,12 @@ class AppointmentViewController: UIViewController {
             dateFormatter.locale = Locale(identifier: "RU")
             dateFormatter.dateFormat = "d MMM, yyyy"
             let dateString = dateFormatter.string(from: date)
-            
+            /*
             let newAppointment = Appointment()
             newAppointment.time = time
             newAppointment.date = date
             RealmManager.add(object: newAppointment)
-            
+            */
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }
             let alert = UIAlertController(title: "Ура!", message: "Вы записаны на прием к мастеру на \(dateString) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)

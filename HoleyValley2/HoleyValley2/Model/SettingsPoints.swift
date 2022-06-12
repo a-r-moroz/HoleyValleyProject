@@ -11,11 +11,14 @@ import UIKit
 enum SettingsPoints: CaseIterable {
     
     case notifications
+    case notificationsTime
     
     var settingTitle: String {
         switch self {
         case .notifications:
             return "Напоминания по времени"
+        case .notificationsTime:
+            return "Время напоминаний"
         }
     }
 }

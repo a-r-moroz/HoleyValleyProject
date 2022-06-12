@@ -4,7 +4,7 @@
 //
 //  Created by Andrew Moroz on 30.05.22.
 //
-
+/*
 import Foundation
 import RealmSwift
 
@@ -16,3 +16,4 @@ import RealmSwift
 //    @objc dynamic var time: String = "12:00"
 //    var phone: String
 }
+*/

@@ -23,14 +23,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var newLabelConstraint: NSLayoutConstraint!
     
 //    var appointments = [Appointment]()
-    
+    /*
     var appointments = RealmManager.read(type: Appointment.self) {
         didSet {
             appointmentsTable.reloadData()
 //            checkTableCount()
         }
     }
-    
+    */
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -41,14 +41,14 @@ class ProfileViewController: UIViewController {
         addSettingsButton()
 //        appointments = BarController.appointments
     }
-    
+    /*
     override func viewWillAppear(_ animated: Bool) {
 
         appointments = RealmManager.read(type: Appointment.self)
         appointmentsTable.reloadData()
 //        checkTableCount()
     }
-    
+    */
     private func setupInputFields() {
         
         viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
@@ -71,8 +71,8 @@ class ProfileViewController: UIViewController {
     private func setupTable() {
         
         appointmentsTable.register(UINib(nibName: String(describing: AppointmentCell.self), bundle: nil), forCellReuseIdentifier: String(describing: AppointmentCell.self))
-        appointmentsTable.delegate = self
-        appointmentsTable.dataSource = self
+//        appointmentsTable.delegate = self
+//        appointmentsTable.dataSource = self
     }
     
     private func openingAnimation() {
@@ -177,6 +177,7 @@ class ProfileViewController: UIViewController {
     }
 }
 
+/*
 extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -206,3 +207,4 @@ extension ProfileViewController: UITableViewDataSource {
     
     
 }
+*/

@@ -9,6 +9,11 @@ import UIKit
 
 class SettingsCell: UITableViewCell {
 
+    @IBOutlet weak var settingNameLabel: UILabel!
+    @IBOutlet weak var settingSwitch: UISwitch!
+    
+    var switchAction: ((_ isOn: Bool) -> ())?
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -22,4 +27,16 @@ class SettingsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupCellWith(_ type: SettingsPoints) {
+        settingNameLabel.text = type.settingTitle
+    }
+    
+    @IBAction func toggleSwitch(_ sender: UISwitch) {
+        switchAction?(sender.isOn)
+    }
+        
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        switchAction = nil
+    }
 }

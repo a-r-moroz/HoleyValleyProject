@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController {
     
     let sections = SettingsSections.allCases
     let settings = SettingsPoints.allCases
+    var changeBackground = false
+    var cellLowAlpha = true
     
     override func viewDidLoad() {
         
@@ -41,12 +43,49 @@ extension SettingsViewController: UITableViewDataSource {
         return sections.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].sectionTitle
+    }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        var imageView: UIImageView
+//        var image = sections[section].sectionImage
+//        imageView.image = image
+//        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+//        header.addSubview(header)
+//        return header
+        
+//        var imageView = UIImageView()
+//        imageView.image = sections[section].sectionImage
+//        return imageView
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingsCell.self), for: indexPath)
+        guard let settingCell = cell as? SettingsCell else { return cell }
+        settingCell.setupCellWith(settings[indexPath.row])
+        
+        settingCell.settingSwitch.isOn = changeBackground
+        
+        switch settings[indexPath.row] {
+        case .notifications:
+            settingCell.accessoryType = .none
+            settingCell.selectionStyle = .none
+            settingCell.switchAction = { isOn in
+                self.changeBackground = !self.changeBackground
+                self.cellLowAlpha = !self.cellLowAlpha
+                self.view.backgroundColor = self.changeBackground ? .systemRed : .white
+            }
+        case .notificationsTime:
+            settingCell.settingSwitch.isHidden = true
+//            settingCell.settingNameLabel.alpha = self.cellLowAlpha ? 0.5 : 1.0
+        }
+        
+        return settingCell
     }
     
     

@@ -4,7 +4,7 @@
 //
 //  Created by Andrew Moroz on 3.05.22.
 //
-
+/*
 import Foundation
 import RealmSwift
 
@@ -58,3 +58,4 @@ final class RealmManager {
         try? realm.commitWrite()
     }
 }
+*/

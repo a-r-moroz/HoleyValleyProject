@@ -25,6 +25,9 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-oy-gdi">
                         <rect key="frame" x="255" y="10" width="51" height="31"/>
                         <color key="onTintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <action selector="toggleSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="3W1-g0-aYW"/>
+                        </connections>
                     </switch>
                 </subviews>
                 <constraints>
@@ -37,6 +40,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="settingNameLabel" destination="Flt-xC-QhF" id="l6E-Ux-jDH"/>
+                <outlet property="settingSwitch" destination="2Ow-oy-gdi" id="KJG-na-vek"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="67.96875"/>
         </tableViewCell>
     </objects>
