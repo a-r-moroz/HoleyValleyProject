@@ -22,7 +22,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var oldLabelConstraint: NSLayoutConstraint!
     @IBOutlet weak var newLabelConstraint: NSLayoutConstraint!
     
-    var appointments = [Appointment]()
+//    var appointments = [Appointment]()
+    
+    var appointments = RealmManager.read(type: Appointment.self) {
+        didSet {
+            appointmentsTable.reloadData()
+//            checkTableCount()
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -31,7 +38,15 @@ class ProfileViewController: UIViewController {
         title = "Профиль"
         setupInputFields()
         setupTable()
-        appointments = BarController.appointments
+        addSettingsButton()
+//        appointments = BarController.appointments
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+        appointments = RealmManager.read(type: Appointment.self)
+        appointmentsTable.reloadData()
+//        checkTableCount()
     }
     
     private func setupInputFields() {
@@ -121,6 +136,19 @@ class ProfileViewController: UIViewController {
                 self.phoneInputField.textField.text = ""
             }
         }
+    }
+    
+    private func addSettingsButton() {
+        
+        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(showSortingVC(sender:)))
+        navigationItem.rightBarButtonItem = settingsButton
+    }
+    
+    @objc func showSortingVC(sender:UIBarButtonItem) {
+        
+        let settingsVC = SettingsViewController(nibName: String(describing: SettingsViewController.self), bundle: nil)
+        
+        self.navigationController?.pushViewController(settingsVC, animated: true)
     }
 
     @IBAction func editAction(_ sender: UIButton) {

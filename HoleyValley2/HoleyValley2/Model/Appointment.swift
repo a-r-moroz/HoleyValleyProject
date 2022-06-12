@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Appointment {
+@objc final class Appointment: Object {
     
-    var date: Date = Date.now
-    var time: String = "12:00"
+    @objc dynamic var date: Date = Date.now
+    @objc dynamic var time: String = "12:00"
+//    @objc dynamic var date: Date = Date.now
+//    @objc dynamic var time: String = "12:00"
 //    var phone: String
 }

@@ -23,6 +23,11 @@
 		8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51631A283CFD72004CAFD3 /* UIView.swift */; };
 		8E5671442823080400B0395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5671432823080400B0395E /* Assets.xcassets */; };
 		8E59ACEB284A3ED50080039A /* SortingPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E59ACEA284A3ED50080039A /* SortingPoints.swift */; };
+		8E5AA6FD2856056D00CE70B7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AA6FB2856056D00CE70B7 /* SettingsViewController.swift */; };
+		8E5AA6FE2856056D00CE70B7 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5AA6FC2856056D00CE70B7 /* SettingsViewController.xib */; };
+		8E5AA70228564C0C00CE70B7 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AA70028564C0C00CE70B7 /* SettingsCell.swift */; };
+		8E5AA70328564C0C00CE70B7 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5AA70128564C0C00CE70B7 /* SettingsCell.xib */; };
+		8E5AA7052856527800CE70B7 /* SettingsPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AA7042856527800CE70B7 /* SettingsPoints.swift */; };
 		8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E609B8A28399FFF001D242E /* ImageScrollView.swift */; };
 		8E75D61F285517B100ACBAF8 /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75D61D285517B100ACBAF8 /* AppointmentCell.swift */; };
 		8E75D620285517B100ACBAF8 /* AppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E75D61E285517B100ACBAF8 /* AppointmentCell.xib */; };
@@ -79,6 +84,11 @@
 		8E51631A283CFD72004CAFD3 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8E5671432823080400B0395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AppIcons/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8E59ACEA284A3ED50080039A /* SortingPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingPoints.swift; sourceTree = "<group>"; };
+		8E5AA6FB2856056D00CE70B7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8E5AA6FC2856056D00CE70B7 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		8E5AA70028564C0C00CE70B7 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		8E5AA70128564C0C00CE70B7 /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
+		8E5AA7042856527800CE70B7 /* SettingsPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPoints.swift; sourceTree = "<group>"; };
 		8E609B8A28399FFF001D242E /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		8E75D61D285517B100ACBAF8 /* AppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
 		8E75D61E285517B100ACBAF8 /* AppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentCell.xib; sourceTree = "<group>"; };
@@ -168,6 +178,24 @@
 			path = SingleServiceVC;
 			sourceTree = "<group>";
 		};
+		8E5AA6FA2856054E00CE70B7 /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				8E5AA6FB2856056D00CE70B7 /* SettingsViewController.swift */,
+				8E5AA6FC2856056D00CE70B7 /* SettingsViewController.xib */,
+			);
+			path = SettingsVC;
+			sourceTree = "<group>";
+		};
+		8E5AA6FF28564BD300CE70B7 /* SettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E5AA70028564C0C00CE70B7 /* SettingsCell.swift */,
+				8E5AA70128564C0C00CE70B7 /* SettingsCell.xib */,
+			);
+			path = SettingsCell;
+			sourceTree = "<group>";
+		};
 		8E75D61C2855179300ACBAF8 /* AppointmentCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +258,7 @@
 				8EE42F362821A18D00D7210D /* Cells */,
 				8EE42F1F28219B7100D7210D /* Controllers */,
 				8EE42F1C2821986B00D7210D /* Model */,
-				8EA9AB5228219672005E0C2A /* RealmManager */,
+				8EA9AB5228219672005E0C2A /* Managers */,
 				8EA9AB3E28219663005E0C2A /* AppDelegate.swift */,
 				8EA9AB4028219663005E0C2A /* SceneDelegate.swift */,
 				8EA9AB4428219663005E0C2A /* Main.storyboard */,
@@ -243,13 +271,13 @@
 			path = HoleyValley2;
 			sourceTree = "<group>";
 		};
-		8EA9AB5228219672005E0C2A /* RealmManager */ = {
+		8EA9AB5228219672005E0C2A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				8EC807FC2838FDF4008E176D /* FirebaseManager.swift */,
 				8EA9AB532821967D005E0C2A /* RealmManager.swift */,
 			);
-			path = RealmManager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		8EAB66E72837A5B000D976B6 /* ImageViewController */ = {
@@ -301,6 +329,7 @@
 				8E0192B02822F2CF0057C3D8 /* DecorationType.swift */,
 				8E9D8F522835A34B009FDF12 /* Const.swift */,
 				8E19E52428456454007FABB0 /* Appointment.swift */,
+				8E5AA7042856527800CE70B7 /* SettingsPoints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +337,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E5AA6FA2856054E00CE70B7 /* SettingsVC */,
 				8E9D5128284D010A0019F8A0 /* SortingViewController */,
 				8E13A0B2283D67C2002D35EB /* AppointmentViewController */,
 				8EC807FE28393F2F008E176D /* SplashViewController */,
@@ -361,6 +391,7 @@
 		8EE42F362821A18D00D7210D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E5AA6FF28564BD300CE70B7 /* SettingsCell */,
 				8E75D61C2855179300ACBAF8 /* AppointmentCell */,
 				8E9D512D284D0C9F0019F8A0 /* SortingCell */,
 				8E13BD44283B918F0039D1F9 /* ServiceCell */,
@@ -446,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E5AA70328564C0C00CE70B7 /* SettingsCell.xib in Resources */,
 				8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */,
 				8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */,
 				8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */,
@@ -465,6 +497,7 @@
 				8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */,
 				8E13BD48283B921C0039D1F9 /* ServiceCell.xib in Resources */,
 				8E9D512C284D01260019F8A0 /* SortingViewController.xib in Resources */,
+				8E5AA6FE2856056D00CE70B7 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +552,7 @@
 			files = (
 				8E13A0B5283D67E2002D35EB /* AppointmentViewController.swift in Sources */,
 				8E13BD4C283B92D00039D1F9 /* SingleServiceViewController.swift in Sources */,
+				8E5AA6FD2856056D00CE70B7 /* SettingsViewController.swift in Sources */,
 				8E9D8F532835A34B009FDF12 /* Const.swift in Sources */,
 				8E9D512B284D01260019F8A0 /* SortingViewController.swift in Sources */,
 				8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */,
@@ -536,6 +570,7 @@
 				8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */,
 				8EC8080628396A48008E176D /* Service.swift in Sources */,
 				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,
+				8E5AA70228564C0C00CE70B7 /* SettingsCell.swift in Sources */,
 				8EE42F3528219C7600D7210D /* BarController.swift in Sources */,
 				8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */,
 				8E59ACEB284A3ED50080039A /* SortingPoints.swift in Sources */,
@@ -545,6 +580,7 @@
 				8E19E52528456454007FABB0 /* Appointment.swift in Sources */,
 				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,
 				8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */,
+				8E5AA7052856527800CE70B7 /* SettingsPoints.swift in Sources */,
 				8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */,
 				8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */,
 				8E516316283CCE06004CAFD3 /* SplashViewController.swift in Sources */,

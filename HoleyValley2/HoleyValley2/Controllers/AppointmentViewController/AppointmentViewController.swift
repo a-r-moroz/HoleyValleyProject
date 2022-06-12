@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FSCalendar
+import RealmSwift
 
 class AppointmentViewController: UIViewController {
 
@@ -26,7 +27,6 @@ class AppointmentViewController: UIViewController {
     var openingHours = Const.openingHours
     var selectedDate: String?
     var dateForAlert: Date?
-    var newAppointment: Appointment?
 //    private lazy var availableHours: [String] = {
 //
 //        return allHours
@@ -111,8 +111,8 @@ class AppointmentViewController: UIViewController {
                   let phone = phoneInputField.textField.text else { return }
                     // let date = selectedDate
             
-            newAppointment?.time = String(Date.now.timeIntervalSince1970)
-            BarController.appointments.append(newAppointment ?? Appointment())
+//            newAppointment?.time = String(Date.now.timeIntervalSince1970)
+//            BarController.appointments.append(newAppointment ?? Appointment())
             
             self.database.child("\(time)").setValue(["name" : surname + " " + name, "phone" : phone])
     //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
@@ -120,11 +120,16 @@ class AppointmentViewController: UIViewController {
             
 //            guard let date = selectedDate else { return }
             guard let date = dateForAlert else { return }
-            newAppointment?.date = date
+            
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "RU")
             dateFormatter.dateFormat = "d MMM, yyyy"
             let dateString = dateFormatter.string(from: date)
+            
+            let newAppointment = Appointment()
+            newAppointment.time = time
+            newAppointment.date = date
+            RealmManager.add(object: newAppointment)
             
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }

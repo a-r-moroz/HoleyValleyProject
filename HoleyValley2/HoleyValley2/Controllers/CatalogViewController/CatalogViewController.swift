@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import SDWebImage
-//import RealmSwift
+import RealmSwift
 
 class CatalogViewController: UIViewController {
     
