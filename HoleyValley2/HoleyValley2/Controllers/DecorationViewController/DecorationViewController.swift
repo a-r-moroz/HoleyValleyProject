@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DecorationViewController: UIViewController {
 
@@ -29,8 +30,7 @@ class DecorationViewController: UIViewController {
         decorationNameLabel.text = item.name
         decorationPriceLabel.text = String(item.price) + Const.belRublesSign
         decorationDescribtionLabel.text = item.description
-        decorationImage.setImageFromULR(item.image)
-        
+        decorationImage.sd_setImage(with: URL(string: item.image), placeholderImage: UIImage(named: "imagePattern.png"))        
     }
     
     func decorationImageTapped() {

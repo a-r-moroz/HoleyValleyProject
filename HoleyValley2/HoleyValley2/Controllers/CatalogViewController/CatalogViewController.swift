@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 //import RealmSwift
 
 class CatalogViewController: UIViewController {
@@ -146,6 +147,7 @@ extension CatalogViewController: UITableViewDataSource {
         decorationCell.decorationNameLabel.text = decor.name
         decorationCell.decorationPriceLabel.text = String(decor.price) + Const.belRublesSign
         decorationCell.decorationPictureView.setImageFromULR(decor.image)
+        decorationCell.decorationPictureView.sd_setImage(with: URL(string: decor.image), placeholderImage: UIImage(named: "imagePatternLittle.png"))
 
         decorationCell.previewName.isHidden = true
         decorationCell.previewPrice.isHidden = true
