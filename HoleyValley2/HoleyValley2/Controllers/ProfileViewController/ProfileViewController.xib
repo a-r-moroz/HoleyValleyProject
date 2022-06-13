@@ -131,12 +131,10 @@
                     </variation>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPD-FG-kBr">
-                    <rect key="frame" x="342.5" y="58.5" width="55.5" height="32"/>
+                    <rect key="frame" x="355.5" y="59" width="42.5" height="31"/>
                     <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Ред.">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                    </buttonConfiguration>
+                    <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
                     <connections>
                         <action selector="editAction:" destination="-1" eventType="touchUpInside" id="NSQ-hQ-FiK"/>
                     </connections>
@@ -184,6 +182,7 @@
         </view>
     </objects>
     <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

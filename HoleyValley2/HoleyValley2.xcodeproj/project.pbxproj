@@ -49,6 +49,8 @@
 		8EAB9147284EB8F9003BB9AA /* InputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAB9146284EB8F9003BB9AA /* InputField.xib */; };
 		8EAB9149284EB91D003BB9AA /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB9148284EB91D003BB9AA /* InputField.swift */; };
 		8EAB914B284EB9F6003BB9AA /* ValidationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB914A284EB9F6003BB9AA /* ValidationType.swift */; };
+		8EBBF8022857351000FE8655 /* NotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBF8002857351000FE8655 /* NotificationsSettingsViewController.swift */; };
+		8EBBF8032857351000FE8655 /* NotificationsSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBF8012857351000FE8655 /* NotificationsSettingsViewController.xib */; };
 		8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FC2838FDF4008E176D /* FirebaseManager.swift */; };
 		8EC8080628396A48008E176D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8080528396A48008E176D /* Service.swift */; };
 		8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF9CD628327B7B0058899B /* UIImageView.swift */; };
@@ -112,6 +114,8 @@
 		8EAB9146284EB8F9003BB9AA /* InputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputField.xib; sourceTree = "<group>"; };
 		8EAB9148284EB91D003BB9AA /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		8EAB914A284EB9F6003BB9AA /* ValidationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationType.swift; sourceTree = "<group>"; };
+		8EBBF8002857351000FE8655 /* NotificationsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewController.swift; sourceTree = "<group>"; };
+		8EBBF8012857351000FE8655 /* NotificationsSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsSettingsViewController.xib; sourceTree = "<group>"; };
 		8EC807FC2838FDF4008E176D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8EC8080528396A48008E176D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8ECF9CD628327B7B0058899B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -299,6 +303,15 @@
 			path = InputField;
 			sourceTree = "<group>";
 		};
+		8EBBF7FF285734E800FE8655 /* NotificationsSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8EBBF8002857351000FE8655 /* NotificationsSettingsViewController.swift */,
+				8EBBF8012857351000FE8655 /* NotificationsSettingsViewController.xib */,
+			);
+			path = NotificationsSettingsViewController;
+			sourceTree = "<group>";
+		};
 		8EC807FE28393F2F008E176D /* SplashViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +350,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8EBBF7FF285734E800FE8655 /* NotificationsSettingsViewController */,
 				8E5AA6FA2856054E00CE70B7 /* SettingsVC */,
 				8E9D5128284D010A0019F8A0 /* SortingViewController */,
 				8E13A0B2283D67C2002D35EB /* AppointmentViewController */,
@@ -477,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBBF8032857351000FE8655 /* NotificationsSettingsViewController.xib in Resources */,
 				8E5AA70328564C0C00CE70B7 /* SettingsCell.xib in Resources */,
 				8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */,
 				8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */,
@@ -576,6 +591,7 @@
 				8E59ACEB284A3ED50080039A /* SortingPoints.swift in Sources */,
 				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,
 				8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */,
+				8EBBF8022857351000FE8655 /* NotificationsSettingsViewController.swift in Sources */,
 				8EAB9149284EB91D003BB9AA /* InputField.swift in Sources */,
 				8E19E52528456454007FABB0 /* Appointment.swift in Sources */,
 				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,

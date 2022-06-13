@@ -39,6 +39,14 @@ class ProfileViewController: UIViewController {
         setupInputFields()
         setupTable()
         addSettingsButton()
+        phoneInputField.textField.delegate = self
+        
+        guard let name = UserDefaults.standard.string(forKey: "userName"),
+              let surname = UserDefaults.standard.string(forKey: "userSurname"),
+              let phone = UserDefaults.standard.string(forKey: "userPhone") else { return }
+        nameLabel.text = name + " " + surname
+        phoneLabel.text = phone
+
 //        appointments = BarController.appointments
     }
     /*
@@ -160,8 +168,18 @@ class ProfileViewController: UIViewController {
         
         if nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid {
             
-            //
+            guard let name = nameInputField.textField.text,
+                  let surname = surnameInputField.textField.text,
+                  let phone = phoneInputField.textField.text else { return }
             
+            UserDefaults.standard.set(name, forKey: "userName")
+            UserDefaults.standard.set(surname, forKey: "userSurname")
+            UserDefaults.standard.set(phone, forKey: "userPhone")
+            
+            nameLabel.text = name + " " + surname
+            phoneLabel.text = phone
+            
+            closingAnimation()
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
             let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что все поля заполнены корректно.", preferredStyle: .alert)
@@ -208,3 +226,40 @@ extension ProfileViewController: UITableViewDataSource {
     
 }
 */
+
+extension ProfileViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+        return false
+    }
+    
+ // mask example: `+X (XXX) XXX-XXXXX
+    func format(with mask: String, phone: String) -> String {
+
+        let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = numbers.startIndex
+        
+        for ch in mask where index < numbers.endIndex {
+            
+            if ch == "X" {
+                result.append(numbers[index])
+                index = numbers.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+}
+ 

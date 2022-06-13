@@ -34,6 +34,14 @@ extension SettingsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.row == 1 {
+            
+            let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
+            notificationsSettingsVC.modalTransitionStyle = .coverVertical
+            notificationsSettingsVC.modalPresentationStyle = .overFullScreen
+            self.present(notificationsSettingsVC, animated: true)
+        }
     }
 }
 

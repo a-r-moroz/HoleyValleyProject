@@ -66,6 +66,14 @@ class AppointmentViewController: UIViewController {
         phoneInputField.textField.placeholder = "+375 (XX) XXX-XX-XX"
         phoneInputField.textField.keyboardType = .numberPad
         phoneInputField.textField.delegate = self
+        
+        guard let name = UserDefaults.standard.string(forKey: "userName"),
+              let surname = UserDefaults.standard.string(forKey: "userSurname"),
+              let phone = UserDefaults.standard.string(forKey: "userPhone") else { return }
+        nameInputField.textField.text = name
+        surnameInputField.textField.text = surname
+        phoneInputField.textField.text = phone
+        
     }
     
     //Calls this function when the tap is recognized to hide keyboard
