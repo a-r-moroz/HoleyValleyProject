@@ -131,10 +131,13 @@
                     </variation>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPD-FG-kBr">
-                    <rect key="frame" x="355.5" y="59" width="42.5" height="31"/>
+                    <rect key="frame" x="368" y="64" width="30" height="48.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="B5b-7I-dXO"/>
+                    </constraints>
                     <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                    <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system"/>
                     <connections>
                         <action selector="editAction:" destination="-1" eventType="touchUpInside" id="NSQ-hQ-FiK"/>
                     </connections>
@@ -160,12 +163,13 @@
                 <constraint firstItem="o7t-hS-joa" firstAttribute="top" secondItem="M6l-eo-uAs" secondAttribute="bottom" constant="10" id="Dgp-gC-4vj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Se-Sh-zU2" secondAttribute="trailing" constant="16" id="Hxo-tj-thm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o7t-hS-joa" secondAttribute="trailing" constant="16" id="Jwe-zk-ajf"/>
+                <constraint firstItem="XPD-FG-kBr" firstAttribute="bottom" secondItem="o7t-hS-joa" secondAttribute="bottom" id="K2F-Gm-RFF"/>
                 <constraint firstItem="M6l-eo-uAs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Kza-xr-bgg"/>
-                <constraint firstItem="XPD-FG-kBr" firstAttribute="centerY" secondItem="M6l-eo-uAs" secondAttribute="centerY" id="LKu-pI-6sD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XPD-FG-kBr" secondAttribute="trailing" constant="16" id="PUh-xy-vwh"/>
                 <constraint firstItem="aXb-T2-ij4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="RY1-le-bAE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e7q-Sw-h7X" secondAttribute="trailing" id="XHu-y2-fon"/>
                 <constraint firstItem="e7q-Sw-h7X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Z2i-Vi-GxX"/>
+                <constraint firstItem="XPD-FG-kBr" firstAttribute="top" secondItem="M6l-eo-uAs" secondAttribute="top" id="aIf-TF-QeE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aXb-T2-ij4" secondAttribute="trailing" constant="16" id="dml-fd-rXL"/>
                 <constraint firstItem="8Se-Sh-zU2" firstAttribute="top" secondItem="aXb-T2-ij4" secondAttribute="bottom" constant="20" id="egN-en-WlE"/>
                 <constraint firstItem="o7t-hS-joa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="eri-Sf-MfH"/>
@@ -182,7 +186,7 @@
         </view>
     </objects>
     <resources>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

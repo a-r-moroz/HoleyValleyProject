@@ -73,7 +73,7 @@ class AppointmentViewController: UIViewController {
         nameInputField.textField.text = name
         surnameInputField.textField.text = surname
         phoneInputField.textField.text = phone
-        
+                
     }
     
     //Calls this function when the tap is recognized to hide keyboard
@@ -118,7 +118,7 @@ class AppointmentViewController: UIViewController {
                   let time = timeInputField.textField.text,
                   let phone = phoneInputField.textField.text else { return }
                     // let date = selectedDate
-            
+
 //            newAppointment?.time = String(Date.now.timeIntervalSince1970)
 //            BarController.appointments.append(newAppointment ?? Appointment())
             
@@ -139,6 +139,10 @@ class AppointmentViewController: UIViewController {
             newAppointment.date = date
             RealmManager.add(object: newAppointment)
             */
+            
+            let notificationBody = "Ждём Вас сегодня в \(time)\nпо адресу: Кальварийская улица, 25, 302"
+            NotificationManager.requestAutorization(body: notificationBody, time: date)
+            
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }
             let alert = UIAlertController(title: "Ура!", message: "Вы записаны на прием к мастеру на \(dateString) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)

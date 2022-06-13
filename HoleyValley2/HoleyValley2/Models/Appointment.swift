@@ -17,3 +17,12 @@ import RealmSwift
 //    var phone: String
 }
 */
+ 
+ import Foundation
+
+ final class Appointment {
+     
+     var date: Date = Date.now
+     var time: String = "12:00"
+ }
+
