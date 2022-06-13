@@ -261,7 +261,7 @@
 				8ECF9CD5283279D20058899B /* Extensions */,
 				8EE42F362821A18D00D7210D /* Cells */,
 				8EE42F1F28219B7100D7210D /* Controllers */,
-				8EE42F1C2821986B00D7210D /* Model */,
+				8EE42F1C2821986B00D7210D /* Models */,
 				8EA9AB5228219672005E0C2A /* Managers */,
 				8EA9AB3E28219663005E0C2A /* AppDelegate.swift */,
 				8EA9AB4028219663005E0C2A /* SceneDelegate.swift */,
@@ -333,7 +333,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		8EE42F1C2821986B00D7210D /* Model */ = {
+		8EE42F1C2821986B00D7210D /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				8EE42F1D2821987B00D7210D /* Decoration.swift */,
@@ -344,7 +344,7 @@
 				8E19E52428456454007FABB0 /* Appointment.swift */,
 				8E5AA7042856527800CE70B7 /* SettingsPoints.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
