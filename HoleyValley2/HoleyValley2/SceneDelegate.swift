@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
 //        self.window?.isHidden = false
         splashController()
+        NotificationManager.requestDefaultAutorization()
     }
     
     func splashController() {

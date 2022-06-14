@@ -30,7 +30,9 @@ class NotificationManager {
         content.body = body
         content.sound = .defaultCritical
                 
-        let pushDate = Date(timeIntervalSince1970: time.timeIntervalSince1970 - (60 * 60))
+//        let pushDate = time
+        let pushDate = Date(timeIntervalSince1970: time.timeIntervalSince1970)
+//        let pushDate = Date(timeIntervalSince1970: time.timeIntervalSince1970 - (60 * 60))
 //        let pushDate = Date(timeIntervalSince1970: time.timeIntervalSince1970 - (15 * 60))
         // UserDefaults.standard.string(forKey: "userName")
 
@@ -42,6 +44,36 @@ class NotificationManager {
         
         // реквест для размещения уведомления в центре уведомлений
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
+    }
+    
+    class func requestDefaultAutorization() {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                setDefaultNotification()
+            } else {
+                print("Error")
+            }
+        }
+    }
+    
+    class func setDefaultNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Внимание!"
+        content.body = "Это специальное напоминание, которое должно придти в понедельник 18.04.2022 в 19:30"
+        content.sound = .defaultCritical
+        
+        var dateComponents = DateComponents()
+        dateComponents.day = 14
+        dateComponents.hour = 15
+        dateComponents.minute = 28
+        
+        let defaultTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: defaultTrigger)
         
         UNUserNotificationCenter.current().add(request)
     }

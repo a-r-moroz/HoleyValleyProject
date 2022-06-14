@@ -67,6 +67,7 @@
 		8EE42F3528219C7600D7210D /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F3428219C7600D7210D /* BarController.swift */; };
 		8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F382821A1AC00D7210D /* DecorationCell.swift */; };
 		8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE42F392821A1AC00D7210D /* DecorationCell.xib */; };
+		8EEB32252858B12A00918EA4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB32242858B12A00918EA4 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		8EE42F3428219C7600D7210D /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
 		8EE42F382821A1AC00D7210D /* DecorationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationCell.swift; sourceTree = "<group>"; };
 		8EE42F392821A1AC00D7210D /* DecorationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecorationCell.xib; sourceTree = "<group>"; };
+		8EEB32242858B12A00918EA4 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D6DAF3DF2163D1BA599EE55B /* Pods-HoleyValley2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoleyValley2.release.xcconfig"; path = "Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -332,6 +334,7 @@
 				8E13BD4E283BA0690039D1F9 /* UIButton.swift */,
 				8E51631A283CFD72004CAFD3 /* UIView.swift */,
 				8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */,
+				8EEB32242858B12A00918EA4 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				8E5AA7052856527800CE70B7 /* SettingsPoints.swift in Sources */,
 				8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */,
 				8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */,
+				8EEB32252858B12A00918EA4 /* Date.swift in Sources */,
 				8E516316283CCE06004CAFD3 /* SplashViewController.swift in Sources */,
 				8E75D61F285517B100ACBAF8 /* AppointmentCell.swift in Sources */,
 			);

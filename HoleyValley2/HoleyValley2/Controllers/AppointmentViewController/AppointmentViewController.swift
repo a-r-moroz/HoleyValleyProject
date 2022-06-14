@@ -140,8 +140,11 @@ class AppointmentViewController: UIViewController {
             RealmManager.add(object: newAppointment)
             */
             
+            let curDate = date.toLocalTime()
+            let notificationDate = curDate.addingTimeInterval((15 * 60 * 60) + (51 * 60))
+
             let notificationBody = "Ждём Вас сегодня в \(time)\nпо адресу: Кальварийская улица, 25, 302"
-            NotificationManager.requestAutorization(body: notificationBody, time: date)
+            NotificationManager.requestAutorization(body: notificationBody, time: notificationDate)
             
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }
@@ -215,6 +218,10 @@ extension AppointmentViewController: FSCalendarDelegate {
 //        }
 //        }
         
+        
+//        let curDate = dateForAlert!.toLocalTime()
+//        let notificationDate = curDate.addingTimeInterval(11 * 60 * 60)
+//        print(notificationDate)
 
         print(dateString)
     }
