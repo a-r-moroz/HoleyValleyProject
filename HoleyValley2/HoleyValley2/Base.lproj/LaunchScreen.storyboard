@@ -16,13 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchWithLight" translatesAutoresizingMaskIntoConstraints="NO" id="73r-dN-N35">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchComplexGradient" translatesAutoresizingMaskIntoConstraints="NO" id="X6O-Rc-TGK">
-                                <rect key="frame" x="0.0" y="348" width="414" height="548"/>
+                                <rect key="frame" x="0.0" y="300" width="414" height="596"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_CleanSmall" translatesAutoresizingMaskIntoConstraints="NO" id="iB1-lH-JL7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_CleanSmall" translatesAutoresizingMaskIntoConstraints="NO" id="gD4-w0-Ws4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
@@ -30,17 +27,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="X6O-Rc-TGK" secondAttribute="trailing" id="0BX-i6-0Zd"/>
-                            <constraint firstItem="73r-dN-N35" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="0Ct-n9-nhb"/>
-                            <constraint firstAttribute="bottom" secondItem="iB1-lH-JL7" secondAttribute="bottom" id="BMz-D1-Tax"/>
-                            <constraint firstAttribute="trailing" secondItem="iB1-lH-JL7" secondAttribute="trailing" id="EH8-tU-PWJ"/>
-                            <constraint firstItem="73r-dN-N35" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qhn-fi-jqq"/>
-                            <constraint firstItem="iB1-lH-JL7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R9Q-KC-Esu"/>
-                            <constraint firstItem="iB1-lH-JL7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="SM1-TW-jNA"/>
+                            <constraint firstItem="gD4-w0-Ws4" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5i9-VH-V9R"/>
                             <constraint firstItem="X6O-Rc-TGK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ULJ-QQ-zFg"/>
-                            <constraint firstItem="X6O-Rc-TGK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="Zf1-hE-YY2"/>
-                            <constraint firstAttribute="trailing" secondItem="73r-dN-N35" secondAttribute="trailing" id="ao2-WH-qcS"/>
-                            <constraint firstAttribute="bottom" secondItem="73r-dN-N35" secondAttribute="bottom" id="rXB-Qu-k39"/>
+                            <constraint firstItem="gD4-w0-Ws4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="YAJ-k2-dPs"/>
+                            <constraint firstAttribute="bottom" secondItem="gD4-w0-Ws4" secondAttribute="bottom" id="mL9-Iq-ArW"/>
                             <constraint firstAttribute="bottom" secondItem="X6O-Rc-TGK" secondAttribute="bottom" id="x3Y-YD-qOO"/>
+                            <constraint firstAttribute="trailing" secondItem="gD4-w0-Ws4" secondAttribute="trailing" id="yWk-V7-9ET"/>
+                            <constraint firstItem="X6O-Rc-TGK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="300" id="zyi-nh-NDa"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -51,7 +44,6 @@
     </scenes>
     <resources>
         <image name="launchComplexGradient" width="1000" height="2000"/>
-        <image name="launchWithLight" width="1000" height="2000"/>
         <image name="launch_CleanSmall" width="1000" height="2000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
