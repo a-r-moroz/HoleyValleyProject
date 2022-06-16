@@ -32,10 +32,12 @@ extension UIButton {
         
 //        self.layer.cornerRadius = cornerRadius
         self.layer.shadowColor = color
-        self.layer.shadowOpacity = 0.4 // 0.3
+        self.layer.shadowOpacity = 0.35 // 0.3
         self.layer.masksToBounds = false
-        self.layer.shadowRadius = 20 //5
-        self.layer.shadowOffset = .zero // CGSize(width: 0, height: 5)
+        self.layer.shadowRadius = 15 //5
+//        self.layer.shadowOffset = .zero
+        self.layer.shadowOffset = CGSize(width: 0, height: 5)
+
         
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale

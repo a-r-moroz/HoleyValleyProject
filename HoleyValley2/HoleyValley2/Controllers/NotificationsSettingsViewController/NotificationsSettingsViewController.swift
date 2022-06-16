@@ -11,9 +11,8 @@ class NotificationsSettingsViewController: UIViewController {
 
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var saveButtonOutlet: UIButton!
-    @IBOutlet weak var cancelButtonOutlet: UIButton!
     @IBOutlet weak var viewWithData: UIView!
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var backgroundImage: UIView!
     
     var postDate: (() -> ())?
     var notificationDate: Date?
@@ -22,28 +21,27 @@ class NotificationsSettingsViewController: UIViewController {
         super.viewDidLoad()
 
 //        viewWithData.setRoundingToView(cornerRadius: 41)
-        viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        viewWithData.layer.borderColor = Const.Colors.gold.cgColor
-        viewWithData.layer.borderWidth = 1
+        viewWithData.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
+        viewWithData.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
         saveButtonOutlet.setCapsuleRoundingToButton()
         saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        cancelButtonOutlet.setCapsuleRoundingToButton()
-        cancelButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         
         timePicker.locale = Locale(identifier: "ru")
 
+        closeViewControllerByTap()
+        closeViewControllerBySwipe()
         
 //        timePicker.datePickerMode = .time
         timePicker.addTarget(self, action: #selector(timePickerValue(sender:)), for: UIControl.Event.valueChanged)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-                
-        UIView.animate(withDuration: 0.3, delay: 0.3) {
-            self.backgroundView.alpha = 1.0
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        UIView.animate(withDuration: 0.3, delay: 0.3) {
+//            self.backgroundView.alpha = 1.0
+//        }
+//    }
     
     @objc func timePickerValue(sender: UIDatePicker) {
         
@@ -64,22 +62,34 @@ class NotificationsSettingsViewController: UIViewController {
         let selectedTime = dateFormatter.string(from: sender.date)
         print(selectedTime)
     }
+    
+    private func closeViewControllerByTap() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(closeTap(sender:)))
+        backgroundImage.addGestureRecognizer(tap)
+        backgroundImage.isUserInteractionEnabled = true
+    }
+    
+    @objc func closeTap(sender: UITapGestureRecognizer) {
+        
+        dismiss(animated: true)
+    }
+    
+    private func closeViewControllerBySwipe() {
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(closeSwipe))
+        swipe.direction = .down
+        self.view.addGestureRecognizer(swipe)
+    }
+    
+    @objc func closeSwipe(sender: UISwipeGestureRecognizer) {
+        
+        dismiss(animated: true)
+    }
 
     @IBAction func saveAction(_ sender: UIButton) {
         
         postDate?()
         dismiss(animated: true)
-    }
-    
-    @IBAction func cancelAction(_ sender: UIButton) {
-        
-        UIView.animate(withDuration: 0.2) {
-            
-            self.backgroundView.alpha = 0.0
-            
-        } completion: { finished in
-            
-            self.dismiss(animated: true)
-        }
     }
 }

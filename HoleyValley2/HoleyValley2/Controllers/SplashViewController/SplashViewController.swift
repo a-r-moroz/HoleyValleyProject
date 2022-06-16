@@ -16,6 +16,21 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.oldConstraint.isActive = false
+        self.newConstraint.isActive = true
+        
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: [.curveEaseInOut]) {
+            self.view.layoutIfNeeded()
+        } completion: { finish in
+            
+//            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//            let sceneDelegate = windowScene.delegate as? SceneDelegate
+//            else { return }
+//
+//            sceneDelegate.splashController()
+        }
+
+        
 //        UIView.animate(withDuration: 2.0) {
 //
 //            self.oldConstrraint.isActive = false

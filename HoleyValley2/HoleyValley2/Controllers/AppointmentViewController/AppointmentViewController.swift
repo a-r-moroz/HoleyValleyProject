@@ -50,7 +50,7 @@ class AppointmentViewController: UIViewController {
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
-        
+                
 //        hideKeyboardByTap()
         
         calendarView.delegate = self
@@ -148,7 +148,7 @@ class AppointmentViewController: UIViewController {
 //            let notificationDate = curDate.addingTimeInterval((15 * 60 * 60) + (51 * 60))
 
             
-            let notificationBody = "Ждём Вас сегодня в \(time)\nпо адресу: Кальварийская улица, 25, 302"
+            let notificationBody = "Ждём Вас \(dateString) в \(time)\nпо адресу: \(Const.salonAddress)"
             NotificationManager.requestAutorization(body: notificationBody, time: dateForNotification)
             // 2022-06-15 11:39:26 +0000
             print("dateForNotification: \(dateForNotification)")

@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
+                <outlet property="gradientView" destination="9ud-K6-isk" id="80x-Ic-m4I"/>
+                <outlet property="newConstraint" destination="FCw-E8-oqB" id="eBF-o5-lNc"/>
+                <outlet property="oldConstraint" destination="PIa-re-1fV" id="fmp-Rm-SEW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,12 +22,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchComplexGradient" translatesAutoresizingMaskIntoConstraints="NO" id="9ud-K6-isk">
-                    <rect key="frame" x="0.0" y="400" width="414" height="496"/>
+                    <rect key="frame" x="0.0" y="348" width="414" height="548"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_CleanSmall" translatesAutoresizingMaskIntoConstraints="NO" id="8QU-Lk-jj3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchWithLight" translatesAutoresizingMaskIntoConstraints="NO" id="NGY-ai-cqt">
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchWithLight" translatesAutoresizingMaskIntoConstraints="NO" id="NGY-ai-cqt">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piercing Studio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41v-Vs-Wwi">
@@ -45,9 +48,10 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="9ud-K6-isk" secondAttribute="bottom" id="DZw-Tv-Yij"/>
                 <constraint firstItem="sg7-R9-Iht" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EH9-p5-hh4"/>
+                <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FCw-E8-oqB"/>
                 <constraint firstItem="8QU-Lk-jj3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="G6g-7g-yFM"/>
                 <constraint firstItem="41v-Vs-Wwi" firstAttribute="top" secondItem="sg7-R9-Iht" secondAttribute="bottom" constant="10" id="O7h-wi-rGp"/>
-                <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="400" id="PIa-re-1fV"/>
+                <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="PIa-re-1fV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NGY-ai-cqt" secondAttribute="trailing" id="Qip-ZO-sps"/>
                 <constraint firstItem="8QU-Lk-jj3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VLz-TE-3nU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="41v-Vs-Wwi" secondAttribute="trailing" constant="16" id="aWO-ge-USU"/>
@@ -60,11 +64,12 @@
                 <constraint firstItem="8QU-Lk-jj3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="p1U-S4-ydQ"/>
                 <constraint firstAttribute="trailing" secondItem="9ud-K6-isk" secondAttribute="trailing" id="pVX-92-SAz"/>
                 <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qtu-nh-6Hp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="41v-Vs-Wwi" secondAttribute="bottom" constant="50" id="rZn-4z-ACi"/>
+                <constraint firstAttribute="bottom" secondItem="41v-Vs-Wwi" secondAttribute="bottom" constant="84" id="rZn-4z-ACi"/>
                 <constraint firstItem="41v-Vs-Wwi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="stZ-rJ-KlA"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="FCw-E8-oqB"/>
                     <exclude reference="qtu-nh-6Hp"/>
                 </mask>
             </variation>

@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
-        self.window?.rootViewController = UIViewController(nibName: String(describing: SplashViewController.self), bundle: nil)
+        self.window?.rootViewController = SplashViewController(nibName: String(describing: SplashViewController.self), bundle: nil)
         self.window?.makeKeyAndVisible()
 //        self.window?.isHidden = false
         splashController()
