@@ -15,6 +15,7 @@
                 <outlet property="infoView" destination="wf9-4Q-QN6" id="Jfv-SP-tZs"/>
                 <outlet property="nameInputField" destination="B5y-bT-wfM" id="a7q-2c-F0Q"/>
                 <outlet property="phoneInputField" destination="Tbh-oF-qQf" id="hX2-u1-fnm"/>
+                <outlet property="setNotificationButtonOutlet" destination="fsB-Bl-YhW" id="NlM-Ax-11e"/>
                 <outlet property="surnameInputField" destination="ESD-ch-UUw" id="6ha-jw-xtT"/>
                 <outlet property="timeInputField" destination="jSz-hX-MoD" id="QyF-VF-xDK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,7 +30,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egm-LX-PUI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1142.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1222.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сначала выберем день:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-HS-Mrn">
                                     <rect key="frame" x="16" y="230" width="382" height="20.5"/>
@@ -38,7 +39,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-mj-Tvu">
-                                    <rect key="frame" x="115.5" y="1042.5" width="183" height="50"/>
+                                    <rect key="frame" x="115.5" y="1122.5" width="183" height="50"/>
                                     <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="cqi-FN-nKV"/>
@@ -164,6 +165,22 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="error" value="Номер телефона введен некорректно."/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsB-Bl-YhW">
+                                    <rect key="frame" x="115.5" y="1042.5" width="183" height="50"/>
+                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="183" id="Jgx-PL-cfi"/>
+                                        <constraint firstAttribute="height" constant="50" id="rjF-4q-8oE"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="calendar.badge.clock.rtl" catalog="system" title="Напомнить">
+                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="setNotificationAppointmentAction:" destination="-1" eventType="touchUpInside" id="b4L-BO-Mvh"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -173,13 +190,14 @@
                                 <constraint firstAttribute="trailing" secondItem="B5y-bT-wfM" secondAttribute="trailing" constant="16" id="9uw-RH-8rc"/>
                                 <constraint firstItem="ESD-ch-UUw" firstAttribute="top" secondItem="B5y-bT-wfM" secondAttribute="bottom" id="Bxq-nc-2Qb"/>
                                 <constraint firstItem="ESD-ch-UUw" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="DaX-t7-3vh"/>
+                                <constraint firstItem="fsB-Bl-YhW" firstAttribute="top" secondItem="Tbh-oF-qQf" secondAttribute="bottom" constant="30" id="Fec-i8-J4K"/>
                                 <constraint firstItem="Nra-Ur-VNz" firstAttribute="top" secondItem="egm-LX-PUI" secondAttribute="top" constant="20" id="Kt0-Sj-iMF"/>
                                 <constraint firstAttribute="trailing" secondItem="jSz-hX-MoD" secondAttribute="trailing" constant="16" id="LsL-7T-a2s"/>
                                 <constraint firstItem="wf9-4Q-QN6" firstAttribute="top" secondItem="3Xi-fA-n1m" secondAttribute="bottom" constant="10" id="M8S-Ey-9AY"/>
                                 <constraint firstAttribute="trailing" secondItem="Nra-Ur-VNz" secondAttribute="trailing" constant="16" id="OIl-mO-nUM"/>
                                 <constraint firstAttribute="trailing" secondItem="Ge7-HS-Mrn" secondAttribute="trailing" constant="16" id="Rw1-2m-ntg"/>
                                 <constraint firstItem="JHh-vA-pWR" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="SBe-aP-t5K"/>
-                                <constraint firstItem="u4e-mj-Tvu" firstAttribute="top" secondItem="Tbh-oF-qQf" secondAttribute="bottom" constant="30" id="ThA-x9-T7N"/>
+                                <constraint firstItem="u4e-mj-Tvu" firstAttribute="top" secondItem="fsB-Bl-YhW" secondAttribute="bottom" constant="30" id="ThA-x9-T7N"/>
                                 <constraint firstAttribute="bottom" secondItem="u4e-mj-Tvu" secondAttribute="bottom" constant="50" id="WlJ-lv-wm9"/>
                                 <constraint firstAttribute="trailing" secondItem="JHh-vA-pWR" secondAttribute="trailing" constant="16" id="Xf8-WV-gKh"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="Yvr-Gc-aDh"/>
@@ -197,6 +215,7 @@
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="tSd-z1-PLX"/>
                                 <constraint firstItem="B5y-bT-wfM" firstAttribute="top" secondItem="jSz-hX-MoD" secondAttribute="bottom" constant="20" id="u5c-UC-NdO"/>
                                 <constraint firstItem="jSz-hX-MoD" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="ug0-uR-GP1"/>
+                                <constraint firstItem="fsB-Bl-YhW" firstAttribute="centerX" secondItem="egm-LX-PUI" secondAttribute="centerX" id="yg8-8z-bXO"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -221,6 +240,7 @@
         </view>
     </objects>
     <resources>
+        <image name="calendar.badge.clock.rtl" catalog="system" width="128" height="108"/>
         <image name="exclamationmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

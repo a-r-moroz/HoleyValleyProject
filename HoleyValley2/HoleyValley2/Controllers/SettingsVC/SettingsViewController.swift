@@ -35,13 +35,13 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.row == 1 {
-            
-            let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
-            notificationsSettingsVC.modalTransitionStyle = .coverVertical
-            notificationsSettingsVC.modalPresentationStyle = .overFullScreen
-            self.present(notificationsSettingsVC, animated: true)
-        }
+//        if indexPath.row == 1 {
+//
+//            let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
+//            notificationsSettingsVC.modalTransitionStyle = .coverVertical
+//            notificationsSettingsVC.modalPresentationStyle = .overFullScreen
+//            self.present(notificationsSettingsVC, animated: true)
+//        }
     }
 }
 
@@ -85,11 +85,13 @@ extension SettingsViewController: UITableViewDataSource {
             settingCell.selectionStyle = .none
             settingCell.switchAction = { isOn in
                 self.changeBackground = !self.changeBackground
-                self.cellLowAlpha = !self.cellLowAlpha
+//                self.cellLowAlpha = !self.cellLowAlpha
+//                UIApplication.shared.unregisterForRemoteNotifications()
+
                 self.view.backgroundColor = self.changeBackground ? .systemRed : .white
             }
-        case .notificationsTime:
-            settingCell.settingSwitch.isHidden = true
+//        case .notificationsTime:
+//            settingCell.settingSwitch.isHidden = true
 //            settingCell.settingNameLabel.alpha = self.cellLowAlpha ? 0.5 : 1.0
         }
         

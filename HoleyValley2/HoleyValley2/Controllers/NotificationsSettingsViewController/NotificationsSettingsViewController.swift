@@ -15,12 +15,24 @@ class NotificationsSettingsViewController: UIViewController {
     @IBOutlet weak var viewWithData: UIView!
     @IBOutlet weak var backgroundView: UIView!
     
+    var postDate: (() -> ())?
+    var notificationDate: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewWithData.setRoundingToView(cornerRadius: 41)
+//        viewWithData.setRoundingToView(cornerRadius: 41)
+        viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        viewWithData.layer.borderColor = Const.Colors.gold.cgColor
+        viewWithData.layer.borderWidth = 1
+
         saveButtonOutlet.setCapsuleRoundingToButton()
+        saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         cancelButtonOutlet.setCapsuleRoundingToButton()
+        cancelButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        
+        timePicker.locale = Locale(identifier: "ru")
+
         
 //        timePicker.datePickerMode = .time
         timePicker.addTarget(self, action: #selector(timePickerValue(sender:)), for: UIControl.Event.valueChanged)
@@ -37,7 +49,17 @@ class NotificationsSettingsViewController: UIViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru")
-        dateFormatter.dateFormat = "hh:mm"
+//        dateFormatter.dateFormat = "hh:mm"
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        
+            self.notificationDate = timePicker.date
+        
+        
+//            self.selectedDate = picker.date
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "MM-dd-yyyy HH:mm"
+//            dateField.text = formatter.string(from: picker.date)
+
         
         let selectedTime = dateFormatter.string(from: sender.date)
         print(selectedTime)
@@ -45,6 +67,8 @@ class NotificationsSettingsViewController: UIViewController {
 
     @IBAction func saveAction(_ sender: UIButton) {
         
+        postDate?()
+        dismiss(animated: true)
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {

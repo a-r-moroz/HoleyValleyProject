@@ -26,16 +26,17 @@
                 <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xlg-1Z-xMI">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.30155732619999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqv-84-54x">
-                    <rect key="frame" x="16" y="286" width="382" height="324"/>
+                    <rect key="frame" x="16" y="262" width="382" height="372"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFm-YB-Izj">
-                            <rect key="frame" x="16" y="198" width="350" height="50"/>
+                            <rect key="frame" x="99.5" y="212" width="183" height="50"/>
                             <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Crq-2Y-Rm5"/>
+                                <constraint firstAttribute="width" constant="183" id="N6E-Z4-bdQ"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
@@ -47,22 +48,23 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4M-t1-iXr">
-                            <rect key="frame" x="16" y="258" width="350" height="50"/>
+                            <rect key="frame" x="99.5" y="292" width="183" height="50"/>
                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="igM-Pe-0hM"/>
+                                <constraint firstAttribute="width" constant="183" id="y9z-eB-che"/>
                             </constraints>
                             <color key="tintColor" systemColor="labelColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Отменить">
-                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="HKM-MR-Jnm"/>
                             </connections>
                         </button>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-w7-OtX">
-                            <rect key="frame" x="16" y="16" width="350" height="162"/>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-w7-OtX">
+                            <rect key="frame" x="16" y="30" width="350" height="162"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="162" id="Lac-WG-Rus"/>
                             </constraints>
@@ -70,16 +72,14 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="Mcc-w7-OtX" firstAttribute="top" secondItem="sqv-84-54x" secondAttribute="top" constant="16" id="5YZ-JY-8oO"/>
-                        <constraint firstItem="iFm-YB-Izj" firstAttribute="leading" secondItem="sqv-84-54x" secondAttribute="leading" constant="16" id="7SQ-h0-XcW"/>
-                        <constraint firstItem="X4M-t1-iXr" firstAttribute="top" secondItem="iFm-YB-Izj" secondAttribute="bottom" constant="10" id="Cvo-2O-Yvy"/>
+                        <constraint firstItem="Mcc-w7-OtX" firstAttribute="top" secondItem="sqv-84-54x" secondAttribute="top" constant="30" id="5YZ-JY-8oO"/>
+                        <constraint firstItem="X4M-t1-iXr" firstAttribute="top" secondItem="iFm-YB-Izj" secondAttribute="bottom" constant="30" id="Cvo-2O-Yvy"/>
+                        <constraint firstItem="X4M-t1-iXr" firstAttribute="centerX" secondItem="iFm-YB-Izj" secondAttribute="centerX" id="D96-P4-th0"/>
                         <constraint firstItem="iFm-YB-Izj" firstAttribute="top" secondItem="Mcc-w7-OtX" secondAttribute="bottom" constant="20" id="JJa-yx-3hx"/>
-                        <constraint firstAttribute="bottom" secondItem="X4M-t1-iXr" secondAttribute="bottom" constant="16" id="R3Y-Vm-h8C"/>
+                        <constraint firstItem="iFm-YB-Izj" firstAttribute="centerX" secondItem="sqv-84-54x" secondAttribute="centerX" id="Oal-Fg-Rp2"/>
+                        <constraint firstAttribute="bottom" secondItem="X4M-t1-iXr" secondAttribute="bottom" constant="30" id="R3Y-Vm-h8C"/>
                         <constraint firstItem="Mcc-w7-OtX" firstAttribute="leading" secondItem="sqv-84-54x" secondAttribute="leading" constant="16" id="St0-SZ-zPQ"/>
-                        <constraint firstAttribute="trailing" secondItem="iFm-YB-Izj" secondAttribute="trailing" constant="16" id="bKD-yj-bYh"/>
-                        <constraint firstItem="X4M-t1-iXr" firstAttribute="leading" secondItem="sqv-84-54x" secondAttribute="leading" constant="16" id="izR-wo-R9g"/>
                         <constraint firstAttribute="trailing" secondItem="Mcc-w7-OtX" secondAttribute="trailing" constant="16" id="kb1-XF-i78"/>
-                        <constraint firstAttribute="trailing" secondItem="X4M-t1-iXr" secondAttribute="trailing" constant="16" id="yyk-Ac-myq"/>
                     </constraints>
                 </view>
             </subviews>

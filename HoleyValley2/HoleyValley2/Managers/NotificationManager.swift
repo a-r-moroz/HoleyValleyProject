@@ -25,8 +25,8 @@ class NotificationManager {
     class func setNotification(body: String, time: Date) {
         
         let content = UNMutableNotificationContent()
-        content.title = "Напоминание"
-        content.subtitle = "Этот день настал!"
+        content.title = "Этот день настал!"
+        content.subtitle = "Ваша мечта вот-вот исполнится"
         content.body = body
         content.sound = .defaultCritical
                 

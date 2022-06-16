@@ -13,13 +13,14 @@ import FSCalendar
 class AppointmentViewController: UIViewController {
 
     @IBOutlet weak var infoView: UIView!
-    @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var calendarView: FSCalendar!
     
     @IBOutlet weak var timeInputField: InputField!
     @IBOutlet weak var nameInputField: InputField!
     @IBOutlet weak var surnameInputField: InputField!
     @IBOutlet weak var phoneInputField: InputField!
+    @IBOutlet weak var confirmButtonOutlet: UIButton!
+    @IBOutlet weak var setNotificationButtonOutlet: UIButton!
     
     var database: DatabaseReference!
     var name: String?
@@ -27,6 +28,7 @@ class AppointmentViewController: UIViewController {
     var openingHours = Const.openingHours
     var selectedDate: String?
     var dateForAlert: Date?
+    var dateForNotification = Date()
 //    private lazy var availableHours: [String] = {
 //
 //        return allHours
@@ -40,6 +42,8 @@ class AppointmentViewController: UIViewController {
         
         confirmButtonOutlet.setCapsuleRoundingToButton()
         confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        setNotificationButtonOutlet.setCapsuleRoundingToButton()
+        setNotificationButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         infoView.setRoundingToView(cornerRadius: 18)
         infoView.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
 
@@ -140,11 +144,15 @@ class AppointmentViewController: UIViewController {
             RealmManager.add(object: newAppointment)
             */
             
-            let curDate = date.toLocalTime()
-            let notificationDate = curDate.addingTimeInterval((15 * 60 * 60) + (51 * 60))
+//            let curDate = date.toLocalTime()
+//            let notificationDate = curDate.addingTimeInterval((15 * 60 * 60) + (51 * 60))
 
+            
             let notificationBody = "Ждём Вас сегодня в \(time)\nпо адресу: Кальварийская улица, 25, 302"
-            NotificationManager.requestAutorization(body: notificationBody, time: notificationDate)
+            NotificationManager.requestAutorization(body: notificationBody, time: dateForNotification)
+            // 2022-06-15 11:39:26 +0000
+            print("dateForNotification: \(dateForNotification)")
+            
             
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }
@@ -164,6 +172,21 @@ class AppointmentViewController: UIViewController {
             alert.addAction(action)
             present(alert, animated: true)
         }
+    }
+    
+    @IBAction func setNotificationAppointmentAction(_ sender: UIButton) {
+        
+        let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
+        notificationsSettingsVC.modalTransitionStyle = .coverVertical
+        notificationsSettingsVC.modalPresentationStyle = .overFullScreen
+        
+        notificationsSettingsVC.postDate = {
+            
+            guard let notDate = notificationsSettingsVC.notificationDate else { return }
+            self.dateForNotification = notDate
+        }
+        
+        self.present(notificationsSettingsVC, animated: true)
     }
 }
 
