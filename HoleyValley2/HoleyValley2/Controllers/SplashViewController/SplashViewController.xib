@@ -11,8 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
                 <outlet property="gradientView" destination="9ud-K6-isk" id="80x-Ic-m4I"/>
-                <outlet property="newConstraint" destination="eVq-db-H43" id="i7e-gN-Bfp"/>
-                <outlet property="oldConstraint" destination="1Vv-c4-qUN" id="p0K-6f-ly0"/>
+                <outlet property="newGradientConstraint" destination="eVq-db-H43" id="i7e-gN-Bfp"/>
+                <outlet property="newTextConstraint" destination="rZn-4z-ACi" id="ET5-Ho-JUl"/>
+                <outlet property="oldGradientConstraint" destination="1Vv-c4-qUN" id="p0K-6f-ly0"/>
+                <outlet property="oldTextConstraint" destination="6kV-lS-O2M" id="VO0-Zh-Yz8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,13 +30,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holey Valley" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg7-R9-Iht">
-                    <rect key="frame" x="16" y="760" width="382" height="24"/>
+                    <rect key="frame" x="16" y="910" width="382" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piercing Studio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41v-Vs-Wwi">
-                    <rect key="frame" x="16" y="794" width="382" height="18"/>
+                    <rect key="frame" x="16" y="944" width="382" height="18"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -44,6 +46,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="300" id="1Vv-c4-qUN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="41v-Vs-Wwi" secondAttribute="bottom" constant="-100" id="6kV-lS-O2M"/>
                 <constraint firstAttribute="bottom" secondItem="9ud-K6-isk" secondAttribute="bottom" id="DZw-Tv-Yij"/>
                 <constraint firstItem="8lM-7F-arv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EA6-qT-Iqh"/>
                 <constraint firstItem="sg7-R9-Iht" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EH9-p5-hh4"/>
@@ -62,6 +65,7 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="eVq-db-H43"/>
+                    <exclude reference="rZn-4z-ACi"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="132" y="60"/>
