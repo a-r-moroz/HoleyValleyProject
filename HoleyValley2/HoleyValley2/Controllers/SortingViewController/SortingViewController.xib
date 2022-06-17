@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="backView" destination="lWx-L2-0pG" id="tU3-bp-aPl"/>
                 <outlet property="backgroundImage" destination="aGk-Rb-D9B" id="CzG-G9-XOg"/>
+                <outlet property="cleanButtonOutlet" destination="Vse-I9-ixO" id="x6T-tZ-Ww4"/>
                 <outlet property="saveButtonOutlet" destination="zLU-9A-gel" id="Hrj-Mw-0tv"/>
                 <outlet property="sortingParametersTable" destination="iX2-Lk-bi3" id="LGX-ZD-Wvr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

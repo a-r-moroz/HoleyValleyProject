@@ -10,6 +10,7 @@ import UIKit
 class SortingViewController: UIViewController {
 
     @IBOutlet weak var saveButtonOutlet: UIButton!
+    @IBOutlet weak var cleanButtonOutlet: UIButton!
     @IBOutlet weak var sortingParametersTable: UITableView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
