@@ -21,6 +21,7 @@ class SortingViewController: UIViewController {
     let defaultSortingByType = "Все украшения"
     let defaultSortingByPrice = "-"
     var saveSortingParameters: (() -> ())?
+    var currentTypeButtonHeader = "Все украшения"
     
     
     override func viewDidLoad() {
@@ -47,6 +48,10 @@ class SortingViewController: UIViewController {
         saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         
         setupTable()
+        
+//        UserDefaults.standard.set("Все украшения", forKey: "currentType")
+//        UserDefaults.standard.set("-", forKey: "currentPrice")
+        
 //        setupBlur()
     }
     
@@ -134,6 +139,8 @@ extension SortingViewController: UITableViewDataSource {
         case .decorationType:
             
             let popUpSortingMenu = {(action: UIAction) in
+                
+//                action.title = UserDefaults.standard.string(forKey: "currentType") ?? Const.DecorationType.defaultType
                 self.currentType = action.title
                 print(self.currentType)
             }
@@ -151,6 +158,7 @@ extension SortingViewController: UITableViewDataSource {
                            UIAction(title: Const.DecorationType.circular, handler: popUpSortingMenu)])
             sortingCell.sortingButtonOutlet.showsMenuAsPrimaryAction = true
             sortingCell.sortingButtonOutlet.changesSelectionAsPrimaryAction = true
+            
             
         case .price:
             

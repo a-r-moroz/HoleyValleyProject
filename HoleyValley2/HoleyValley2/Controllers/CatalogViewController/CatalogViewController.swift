@@ -74,7 +74,7 @@ class CatalogViewController: UIViewController {
     
     private func addSortingButton() {
         
-        let sortingButton = UIBarButtonItem(image: UIImage(systemName: "slider.vertical.3"), style: .plain, target: self, action: #selector(showSortingVC(sender:)))
+        let sortingButton = UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .plain, target: self, action: #selector(showSortingVC(sender:)))
         navigationItem.rightBarButtonItem = sortingButton
     }
     
@@ -95,23 +95,58 @@ class CatalogViewController: UIViewController {
             
             DispatchQueue.global().async {
                 self.originalDecorations = self.decorations
-
             }
             
-            if sortingVC.currentType != sortingVC.defaultSortingByType {
-//                self.sortingDecorations = self.decorations.filter { decoration in
-//                    return decoration.type == sortingVC.currentType }
-                self.sortingDecorations = self.decorations.filter({ $0.type == sortingVC.currentType })
-                self.decorations = self.sortingDecorations
+            if sortingVC.currentType != sortingVC.defaultSortingByType && sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
                 
-                DispatchQueue.main.async {
-                    self.decorationsTable.reloadData()
+                if sortingVC.currentPrice == Const.priceDirecion.increace {
+                    
+                    self.sortingDecorations = self.decorations.sorted(by: { $0.price < $1.price })
+                    self.decorations = self.sortingDecorations
+                    
+                } else if sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
+                    
+                    self.sortingDecorations = self.decorations.sorted(by: { $0.price > $1.price })
+                    self.decorations = self.sortingDecorations
                 }
                 
-//                let newArray = myArray
-//                    .sorted { $0.mark < $1.mark }
-//                    .map {$0.name}
+                self.sortingDecorations = self.decorations.filter({ $0.type == sortingVC.currentType })
+                self.decorations = self.sortingDecorations
+                self.updateCatalogTable()
+                
+            } else if sortingVC.currentType != sortingVC.defaultSortingByType {
+
+                self.sortingDecorations = self.decorations.filter({ $0.type == sortingVC.currentType })
+                self.decorations = self.sortingDecorations
+                self.updateCatalogTable()
+                
+            } else if sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
+                
+                if sortingVC.currentPrice == Const.priceDirecion.increace {
+                    
+                    self.sortingDecorations = self.decorations.sorted(by: { $0.price < $1.price })
+                    self.decorations = self.sortingDecorations
+                    self.updateCatalogTable()
+                    
+                } else if sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
+                    
+                    self.sortingDecorations = self.decorations.sorted(by: { $0.price > $1.price })
+                    self.decorations = self.sortingDecorations
+                    self.updateCatalogTable()
+                }
+                
+            } else {
+                
+                self.decorations = self.originalDecorations
+                self.updateCatalogTable()
             }
+        }
+    }
+    
+    private func updateCatalogTable() {
+        
+        DispatchQueue.main.async {
+            self.decorationsTable.reloadData()
         }
     }
 }

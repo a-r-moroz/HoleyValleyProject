@@ -360,7 +360,6 @@
 				8E5AA6FA2856054E00CE70B7 /* SettingsVC */,
 				8E9D5128284D010A0019F8A0 /* SortingViewController */,
 				8E13A0B2283D67C2002D35EB /* AppointmentViewController */,
-				8EC807FE28393F2F008E176D /* SplashViewController */,
 				8E13BD49283B92AF0039D1F9 /* SingleServiceVC */,
 				8EAB66E72837A5B000D976B6 /* ImageViewController */,
 				8E9D8F542835A759009FDF12 /* DecorationViewController */,
@@ -368,6 +367,7 @@
 				8EE42F2A28219BCB00D7210D /* ReceptionViewController */,
 				8EE42F2528219BA800D7210D /* CatalogViewController */,
 				8EE42F2028219B7800D7210D /* ServicesViewController */,
+				8EC807FE28393F2F008E176D /* SplashViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
