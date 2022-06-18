@@ -152,11 +152,12 @@ class AppointmentViewController: UIViewController {
             NotificationManager.requestAutorization(body: notificationBody, time: dateForNotification)
             // 2022-06-15 11:39:26 +0000
             print("dateForNotification: \(dateForNotification)")
-            
+            let dateNotificationForAlert = dateFormatter.string(from: dateForNotification)
+
             
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }
-            let alert = UIAlertController(title: "Ура!", message: "Вы записаны на прием к мастеру на \(dateString) в \(time). Во вкладке Профиль можно настроить оповещения :)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Ура!", message: "Вы записаны на прием к мастеру на \(dateString) в \(time).\nНапомним \(dateNotificationForAlert) в \(Calendar.current.component(.hour, from: dateForNotification)):\(Calendar.current.component(.minute, from: dateForNotification)) 😎", preferredStyle: .alert)
             alert.addAction(action)
             present(alert, animated: true)
             
@@ -182,8 +183,8 @@ class AppointmentViewController: UIViewController {
         
         notificationsSettingsVC.postDate = {
             
-            guard let notDate = notificationsSettingsVC.notificationDate else { return }
-            self.dateForNotification = notDate
+            guard let notifDate = notificationsSettingsVC.notificationDate else { return }
+            self.dateForNotification = notifDate
         }
         
         self.present(notificationsSettingsVC, animated: true)
