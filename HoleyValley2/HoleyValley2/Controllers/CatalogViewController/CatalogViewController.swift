@@ -79,7 +79,28 @@ class CatalogViewController: UIViewController {
                 let description = value?["description"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
                 let type = value?["type"] as? String ?? ""
+//                let pictureString = value?["picture"] as? String ?? ""
                 let picture = value?["picture"] as? String ?? ""
+
+//                var picture = UIImage()
+//
+//                guard let pictureUrl = URL(string: pictureString) else { return }
+                
+//                DispatchQueue.global().async {
+//                    if let data = try? Data(contentsOf: pictureUrl) {
+//                        if let image = UIImage(data: data) {
+//                            DispatchQueue.main.async {
+//                                picture = image
+//                            }
+//                        }
+//                    }
+//                }
+                
+//                if let pictureUrl = URL(string: pictureString) {
+//                    if let pictureData = try? Data(contentsOf: pictureUrl) {
+//                        picture = UIImage(data: pictureData)!
+//                    }
+//                }
                 
                 let item = Decoration(name: name, price: price, description: description, type: type, image: picture)
                 
@@ -231,7 +252,7 @@ extension CatalogViewController: UITableViewDataSource {
         
         decorationCell.decorationNameLabel.text = decor.name
         decorationCell.decorationPriceLabel.text = String(decor.price) + Const.belRublesSign
-        decorationCell.decorationPictureView.setImageFromULR(decor.image)
+//        decorationCell.decorationPictureView.setImageFromULR(decor.image)
         decorationCell.decorationPictureView.sd_setImage(with: URL(string: decor.image), placeholderImage: UIImage(named: "imagePatternLittle.png"))
 
         decorationCell.previewName.isHidden = true
