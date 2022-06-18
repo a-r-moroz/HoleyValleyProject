@@ -68,14 +68,15 @@ import Haptica
         
         textField.addTarget(self, action: #selector(validateText), for: .allEvents)
         
-        textField.borderStyle = .none
-        textField.layer.borderColor = UIColor.systemGray5.cgColor
-        textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 8
-        
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.size.height))
-        self.textField.leftView = paddingView
-        self.textField.leftViewMode = .always
+//        textField.borderStyle = .none
+//        textField.layer.borderColor = UIColor.systemGray5.cgColor
+//        textField.layer.borderWidth = 1
+//        textField.layer.cornerRadius = 8
+//
+//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.size.height))
+//        self.textField.leftView = paddingView
+//        self.textField.leftViewMode = .always
+        textField.setupTextFieldWithBorderAndPadding(color: UIColor.systemGray5.cgColor)
         
     }
     

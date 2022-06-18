@@ -30,7 +30,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egm-LX-PUI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1222.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1182.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сначала выберем день:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-HS-Mrn">
                                     <rect key="frame" x="16" y="230" width="382" height="20.5"/>
@@ -39,7 +39,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-mj-Tvu">
-                                    <rect key="frame" x="115.5" y="1122.5" width="183" height="50"/>
+                                    <rect key="frame" x="115.5" y="1082.5" width="183" height="50"/>
                                     <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="cqi-FN-nKV"/>
@@ -108,7 +108,7 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kM3-6C-92q">
                                             <rect key="frame" x="8" y="45" width="25" height="24"/>
-                                            <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="uIU-GG-PHx"/>
                                                 <constraint firstAttribute="width" constant="25" id="xsG-v4-Uy4"/>
@@ -136,7 +136,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-bT-wfM" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="767.5" width="382" height="80"/>
+                                    <rect key="frame" x="16" y="747.5" width="382" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="cot-2N-ueS"/>
                                     </constraints>
@@ -146,7 +146,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-ch-UUw" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="847.5" width="382" height="60"/>
+                                    <rect key="frame" x="16" y="827.5" width="382" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="u5T-SL-DgG"/>
                                     </constraints>
@@ -155,7 +155,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbh-oF-qQf" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="927.5" width="382" height="85"/>
+                                    <rect key="frame" x="16" y="887.5" width="382" height="85"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="AAM-jf-iNo"/>
                                         <constraint firstAttribute="height" constant="85" id="KRO-YP-2fd"/>
@@ -166,7 +166,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsB-Bl-YhW">
-                                    <rect key="frame" x="115.5" y="1042.5" width="183" height="50"/>
+                                    <rect key="frame" x="115.5" y="1002.5" width="183" height="50"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="183" id="Jgx-PL-cfi"/>
@@ -185,7 +185,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="Tbh-oF-qQf" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="1o5-ol-b8f"/>
-                                <constraint firstItem="Tbh-oF-qQf" firstAttribute="top" secondItem="ESD-ch-UUw" secondAttribute="bottom" constant="20" id="2Sv-K6-T3s"/>
+                                <constraint firstItem="Tbh-oF-qQf" firstAttribute="top" secondItem="ESD-ch-UUw" secondAttribute="bottom" id="2Sv-K6-T3s"/>
                                 <constraint firstAttribute="trailing" secondItem="Tbh-oF-qQf" secondAttribute="trailing" constant="16" id="4qX-nP-aBC"/>
                                 <constraint firstAttribute="trailing" secondItem="B5y-bT-wfM" secondAttribute="trailing" constant="16" id="9uw-RH-8rc"/>
                                 <constraint firstItem="ESD-ch-UUw" firstAttribute="top" secondItem="B5y-bT-wfM" secondAttribute="bottom" id="Bxq-nc-2Qb"/>
@@ -213,7 +213,7 @@
                                 <constraint firstItem="wf9-4Q-QN6" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="qiA-Eb-DhM"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="top" secondItem="wf9-4Q-QN6" secondAttribute="bottom" constant="20" id="sLX-It-leK"/>
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="tSd-z1-PLX"/>
-                                <constraint firstItem="B5y-bT-wfM" firstAttribute="top" secondItem="jSz-hX-MoD" secondAttribute="bottom" constant="20" id="u5c-UC-NdO"/>
+                                <constraint firstItem="B5y-bT-wfM" firstAttribute="top" secondItem="jSz-hX-MoD" secondAttribute="bottom" id="u5c-UC-NdO"/>
                                 <constraint firstItem="jSz-hX-MoD" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="ug0-uR-GP1"/>
                                 <constraint firstItem="fsB-Bl-YhW" firstAttribute="centerX" secondItem="egm-LX-PUI" secondAttribute="centerX" id="yg8-8z-bXO"/>
                             </constraints>

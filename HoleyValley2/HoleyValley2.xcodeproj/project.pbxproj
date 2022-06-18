@@ -32,6 +32,7 @@
 		8E75D61F285517B100ACBAF8 /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75D61D285517B100ACBAF8 /* AppointmentCell.swift */; };
 		8E75D620285517B100ACBAF8 /* AppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E75D61E285517B100ACBAF8 /* AppointmentCell.xib */; };
 		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
+		8E977782285E79A1009B4817 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E977781285E79A1009B4817 /* TextField.swift */; };
 		8E9D512B284D01260019F8A0 /* SortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5129284D01260019F8A0 /* SortingViewController.swift */; };
 		8E9D512C284D01260019F8A0 /* SortingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D512A284D01260019F8A0 /* SortingViewController.xib */; };
 		8E9D5130284D0CBA0019F8A0 /* SortingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D512E284D0CBA0019F8A0 /* SortingCell.swift */; };
@@ -97,6 +98,7 @@
 		8E75D61D285517B100ACBAF8 /* AppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
 		8E75D61E285517B100ACBAF8 /* AppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentCell.xib; sourceTree = "<group>"; };
 		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8E977781285E79A1009B4817 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		8E9D5129284D01260019F8A0 /* SortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingViewController.swift; sourceTree = "<group>"; };
 		8E9D512A284D01260019F8A0 /* SortingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingViewController.xib; sourceTree = "<group>"; };
 		8E9D512E284D0CBA0019F8A0 /* SortingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingCell.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				8E51631A283CFD72004CAFD3 /* UIView.swift */,
 				8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */,
 				8EEB32242858B12A00918EA4 /* Date.swift */,
+				8E977781285E79A1009B4817 /* TextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				8EE42F1E2821987B00D7210D /* Decoration.swift in Sources */,
 				8E9D5130284D0CBA0019F8A0 /* SortingCell.swift in Sources */,
 				8EAB66EA2837A5CA00D976B6 /* ImageViewController.swift in Sources */,
+				8E977782285E79A1009B4817 /* TextField.swift in Sources */,
 				8EA9AB542821967D005E0C2A /* RealmManager.swift in Sources */,
 				8EC8080628396A48008E176D /* Service.swift in Sources */,
 				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,

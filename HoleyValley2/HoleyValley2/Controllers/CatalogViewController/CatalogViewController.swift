@@ -50,7 +50,8 @@ class CatalogViewController: UIViewController {
         
         addSortingButton()
         
-        setupSearch()
+        searchField.setupTextFieldWithBorderAndPadding(color: Const.Colors.gold.cgColor)
+        searchField.clearButtonRect(forBounds: searchField.bounds).offsetBy(dx: -10, dy: 0)
         
         searchField.addTarget(self, action: #selector(textDidChange), for: .allEvents)
         
@@ -192,24 +193,13 @@ class CatalogViewController: UIViewController {
         }
     }
     
-    private func setupSearch() {
-        
-        searchField.borderStyle = .none
-        searchField.layer.borderColor = UIColor.systemGray5.cgColor
-        searchField.layer.borderWidth = 1
-        searchField.layer.cornerRadius = 8
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: searchField.frame.size.height))
-        self.searchField.leftView = paddingView
-        self.searchField.leftViewMode = .always
-    }
-    
     @objc func textDidChange() {
 
         self.timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             
             if self.searchField.text != "" {
-                self.decorations = self.originalDecorations.filter({ $0.name.contains(self.searchField.text ?? "") })
+                self.decorations = self.originalDecorations.filter({ $0.name.lowercased().contains(self.searchField.text?.lowercased() ?? "") })
                 self.reloadCatalogTable()
                 
                 self.emptyLabel.isHidden = self.decorations.isEmpty ? false : true

@@ -27,7 +27,7 @@ class AppointmentViewController: UIViewController {
     var openingHours = Const.openingHours
     var selectedDate: String?
     var dateForAlert: Date?
-    var dateForNotification = Date()
+    var dateForNotification: Date?
 //    private lazy var availableHours: [String] = {
 //
 //        return allHours
@@ -115,7 +115,7 @@ class AppointmentViewController: UIViewController {
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
-        if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid, selectedDate != nil {
+        if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid, selectedDate != nil, timeInputField.textField.text != "" {
             guard let name = nameInputField.textField.text,
                   let surname = surnameInputField.textField.text,
                   let time = timeInputField.textField.text,
@@ -146,17 +146,23 @@ class AppointmentViewController: UIViewController {
 //            let curDate = date.toLocalTime()
 //            let notificationDate = curDate.addingTimeInterval((15 * 60 * 60) + (51 * 60))
 
-            
+            guard let notificationDate = dateForNotification else {
+                
+                let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
+                let alert = UIAlertController(title: "Упс!", message: "Настройте напоминание, чтобы не забыть о нашей встрече.", preferredStyle: .alert)
+                alert.addAction(action)
+                present(alert, animated: true)
+                return
+            }
             let notificationBody = "Ждём Вас \(dateString) в \(time)\nпо адресу: \(Const.salonAddress)"
-            NotificationManager.requestAutorization(body: notificationBody, time: dateForNotification)
+            NotificationManager.requestAutorization(body: notificationBody, time: notificationDate)
             // 2022-06-15 11:39:26 +0000
-            print("dateForNotification: \(dateForNotification)")
-            let dateNotificationForAlert = dateFormatter.string(from: dateForNotification)
+            let dateNotificationForAlert = dateFormatter.string(from: notificationDate)
 
             
             let action = UIAlertAction(title: "Ок", style: .default) { action in
                 self.navigationController?.popViewController(animated: true) }
-            let alert = UIAlertController(title: "Ура!", message: "Вы записаны на прием к мастеру на \(dateString) в \(time).\nНапомним \(dateNotificationForAlert) в \(Calendar.current.component(.hour, from: dateForNotification)):\(Calendar.current.component(.minute, from: dateForNotification)) 😎", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Ура!", message: "Вы записаны на прием к мастеру на \(dateString) в \(time).\nНапомним \(dateNotificationForAlert) в \(Calendar.current.component(.hour, from: notificationDate)):\(Calendar.current.component(.minute, from: notificationDate)) 😎", preferredStyle: .alert)
             alert.addAction(action)
             present(alert, animated: true)
             
@@ -168,7 +174,7 @@ class AppointmentViewController: UIViewController {
             }
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
-            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что все поля заполнены корректно.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что выбрана дата и доступное время, все поля заполнены корректно.", preferredStyle: .alert)
             alert.addAction(action)
             present(alert, animated: true)
         }
@@ -262,7 +268,7 @@ extension AppointmentViewController: FSCalendarDelegate {
 extension AppointmentViewController: FSCalendarDataSource {
 
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date()
+        return Calendar.current.date(byAdding: .day, value: 1, to: .now) ?? Date()
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
