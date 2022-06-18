@@ -116,7 +116,7 @@ class AppointmentViewController: UIViewController {
     
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
-        if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid {
+        if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid, selectedDate != nil {
             guard let name = nameInputField.textField.text,
                   let surname = surnameInputField.textField.text,
                   let time = timeInputField.textField.text,
