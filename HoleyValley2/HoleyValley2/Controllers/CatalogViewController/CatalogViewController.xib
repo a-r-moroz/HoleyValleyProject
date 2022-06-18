@@ -11,8 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatalogViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
                 <outlet property="decorationsTable" destination="E2U-vq-8PN" id="Esu-BD-ejk"/>
+                <outlet property="searchField" destination="7uj-dA-Adf" id="Ddf-q0-W96"/>
                 <outlet property="spinner" destination="flN-FS-ys2" id="lzF-px-VYZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewWithSearch" destination="ZIF-7E-0Vw" id="T8J-eO-aOw"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,9 +23,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E2U-vq-8PN">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="98" width="414" height="764"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIF-7E-0Vw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7uj-dA-Adf">
+                            <rect key="frame" x="16" y="10" width="382" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="UB6-L9-7j8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="7uj-dA-Adf" secondAttribute="bottom" constant="10" id="7KH-C9-Seo"/>
+                        <constraint firstItem="7uj-dA-Adf" firstAttribute="leading" secondItem="ZIF-7E-0Vw" secondAttribute="leading" constant="16" id="GR4-kA-7WJ"/>
+                        <constraint firstItem="7uj-dA-Adf" firstAttribute="top" secondItem="ZIF-7E-0Vw" secondAttribute="top" constant="10" id="aX7-vZ-0wU"/>
+                        <constraint firstAttribute="trailing" secondItem="7uj-dA-Adf" secondAttribute="trailing" constant="16" id="kGr-Mw-WJd"/>
+                    </constraints>
+                </view>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="flN-FS-ys2">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                 </activityIndicatorView>
@@ -31,14 +53,17 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZIF-7E-0Vw" secondAttribute="trailing" id="300-3t-mYG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="E2U-vq-8PN" secondAttribute="bottom" id="7YH-0e-Mvq"/>
                 <constraint firstItem="flN-FS-ys2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="BW6-c1-EVk"/>
+                <constraint firstItem="ZIF-7E-0Vw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IhQ-9e-pKM"/>
+                <constraint firstItem="E2U-vq-8PN" firstAttribute="top" secondItem="ZIF-7E-0Vw" secondAttribute="bottom" id="OhQ-pI-ex2"/>
+                <constraint firstItem="ZIF-7E-0Vw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WOu-V7-LrZ"/>
                 <constraint firstItem="E2U-vq-8PN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wpz-qK-Mfx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E2U-vq-8PN" secondAttribute="trailing" id="iGW-sh-CK5"/>
-                <constraint firstItem="E2U-vq-8PN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lqf-qk-KkG"/>
                 <constraint firstItem="flN-FS-ys2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tj6-A1-YxE"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="82"/>
+            <point key="canvasLocation" x="131.8840579710145" y="81.696428571428569"/>
         </view>
     </objects>
     <resources>

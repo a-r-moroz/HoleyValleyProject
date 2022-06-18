@@ -13,12 +13,17 @@ class CatalogViewController: UIViewController {
     
     @IBOutlet weak var decorationsTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var viewWithSearch: UIView!
     
     var database: DatabaseReference!
     
     var decorations = [Decoration]()
     var sortingDecorations = [Decoration]()
     var originalDecorations = [Decoration]()
+    var timer: Timer?
+//    var searchBar = UISearchBar()
+//    var searchField = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,14 @@ class CatalogViewController: UIViewController {
         spinner.startAnimating()
         decorationsTable.delegate = self
         decorationsTable.dataSource = self
+        
+//        searchField = UITextField(frame: CGRect(x: 0, y: 0, width: decorationsTable.frame.size.width, height: 34.0))
+//        searchField.placeholder = "Поиск"
+//        decorationsTable.tableHeaderView = searchField
+        
+//        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: decorationsTable.frame.size.width, height: 44.0))
+//        decorationsTable.tableHeaderView = searchBar
+        
         setupTable()
 //        decorations = FirebaseManager.getDecorations()
         
@@ -36,6 +49,12 @@ class CatalogViewController: UIViewController {
         
         addSortingButton()
         
+        setupSearch()
+        
+        searchField.addTarget(self, action: #selector(textDidChange), for: .allEvents)
+        
+//        viewWithSearch.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
+//        viewWithSearch.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
     private func setupTable() {
@@ -106,20 +125,20 @@ class CatalogViewController: UIViewController {
                     
                     self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price < $1.price }).filter({ $0.type == sortingVC.currentType })
                     self.decorations = self.sortingDecorations
-                    self.updateCatalogTable()
+                    self.reloadCatalogTable()
                     
                 } else if sortingVC.currentPrice == Const.priceDirecion.decrease && sortingVC.currentType != sortingVC.defaultSortingByType {
                     
                     self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price > $1.price }).filter({ $0.type == sortingVC.currentType })
                     self.decorations = self.sortingDecorations
-                    self.updateCatalogTable()
+                    self.reloadCatalogTable()
                 }
                 
             } else if sortingVC.currentType != Const.DecorationType.defaultType {
 
                 self.sortingDecorations = self.originalDecorations.filter({ $0.type == sortingVC.currentType })
                 self.decorations = self.sortingDecorations
-                self.updateCatalogTable()
+                self.reloadCatalogTable()
                 
             } else if sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
                 
@@ -127,28 +146,58 @@ class CatalogViewController: UIViewController {
                     
                     self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price < $1.price })
                     self.decorations = self.sortingDecorations
-                    self.updateCatalogTable()
+                    self.reloadCatalogTable()
                     
                 } else if sortingVC.currentPrice == Const.priceDirecion.decrease {
                     
                     self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price > $1.price })
                     self.decorations = self.sortingDecorations
-                    self.updateCatalogTable()
+                    self.reloadCatalogTable()
                 }
                 
             } else {
                 
                 self.decorations = self.originalDecorations
-                self.updateCatalogTable()
+                self.reloadCatalogTable()
             }
         }
     }
     
-    private func updateCatalogTable() {
+    private func reloadCatalogTable() {
         
         DispatchQueue.main.async {
             self.decorationsTable.reloadData()
         }
+    }
+    
+    private func setupSearch() {
+        
+        searchField.borderStyle = .none
+        searchField.layer.borderColor = UIColor.systemGray5.cgColor
+        searchField.layer.borderWidth = 1
+        searchField.layer.cornerRadius = 8
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: searchField.frame.size.height))
+        self.searchField.leftView = paddingView
+        self.searchField.leftViewMode = .always
+    }
+    
+    @objc func textDidChange() {
+
+        self.timer?.invalidate()
+        self.spinner.startAnimating()
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            
+            if self.searchField.text != "" {
+                self.decorations = self.originalDecorations.filter({ $0.name.contains(self.searchField.text ?? "") })
+                self.reloadCatalogTable()
+            } else {
+                self.decorations = self.originalDecorations
+                self.reloadCatalogTable()
+            }
+        })
+
+        self.spinner.stopAnimating()
     }
 }
 
@@ -191,3 +240,10 @@ extension CatalogViewController: UITableViewDataSource {
         return decorationCell
     }
 }
+
+//extension CatalogViewController: UISearchResultsUpdating {
+//
+//    func updateSearchResults(for searchController: UISearchController) {
+//        <#code#>
+//    }
+//}
