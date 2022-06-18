@@ -15,6 +15,7 @@ class CatalogViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var viewWithSearch: UIView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     var database: DatabaseReference!
     
@@ -184,20 +185,20 @@ class CatalogViewController: UIViewController {
     @objc func textDidChange() {
 
         self.timer?.invalidate()
-        self.spinner.startAnimating()
-
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             
             if self.searchField.text != "" {
                 self.decorations = self.originalDecorations.filter({ $0.name.contains(self.searchField.text ?? "") })
                 self.reloadCatalogTable()
+                
+                self.emptyLabel.isHidden = self.decorations.isEmpty ? false : true
+                
             } else {
                 self.decorations = self.originalDecorations
                 self.reloadCatalogTable()
+                self.emptyLabel.isHidden = true
             }
         })
-
-        self.spinner.stopAnimating()
     }
 }
 
