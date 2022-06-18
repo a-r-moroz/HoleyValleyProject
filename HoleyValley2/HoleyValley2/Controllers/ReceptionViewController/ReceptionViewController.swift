@@ -10,6 +10,7 @@ import UIKit
 class ReceptionViewController: UIViewController {
 
     @IBOutlet weak var mapWithCoordinatesView: UIView!
+    @IBOutlet weak var disclaimerView: UIView!
     @IBOutlet weak var appointmentButtonOutlet: UIButton!
     @IBOutlet weak var telegramLogo: UIImageView!
     @IBOutlet weak var wathsappLogo: UIImageView!
@@ -29,6 +30,9 @@ class ReceptionViewController: UIViewController {
 //        tiktokLogo.setRoundingToImage(cornerRadius: 18)
 //        instagramLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
 //        tiktokLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
+        
+        disclaimerView.setRoundingToView(cornerRadius: 18)
+        disclaimerView.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
         
         title = "Контакты"
         

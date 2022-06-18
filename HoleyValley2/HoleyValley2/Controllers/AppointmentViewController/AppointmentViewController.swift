@@ -14,7 +14,6 @@ class AppointmentViewController: UIViewController {
 
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var calendarView: FSCalendar!
-    
     @IBOutlet weak var timeInputField: InputField!
     @IBOutlet weak var nameInputField: InputField!
     @IBOutlet weak var surnameInputField: InputField!
