@@ -63,7 +63,9 @@ class CatalogViewController: UIViewController {
                 
                 let item = Decoration(name: name, price: price, description: description, type: type, image: picture)
                 
-                self.decorations.append(item)                
+                self.decorations.append(item)
+                self.originalDecorations.append(item)
+                
                 DispatchQueue.main.async {
                     self.decorationsTable.reloadData()
                 }
@@ -91,32 +93,31 @@ class CatalogViewController: UIViewController {
         self.present(sortingVC, animated: true)
         
         sortingVC.saveSortingParameters = {
-            print("Current value: \(sortingVC.currentType), \(sortingVC.currentPrice)")
             
-            DispatchQueue.global().async {
-                self.originalDecorations = self.decorations
-            }
+//            DispatchQueue.global().async {
+//                self.originalDecorations = self.decorations
+//            }
+            
+            print("Current value: \(sortingVC.currentType), \(sortingVC.currentPrice)")
             
             if sortingVC.currentType != sortingVC.defaultSortingByType && sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
                 
-                if sortingVC.currentPrice == Const.priceDirecion.increace {
+                if sortingVC.currentPrice == Const.priceDirecion.increace && sortingVC.currentType != sortingVC.defaultSortingByType {
                     
-                    self.sortingDecorations = self.decorations.sorted(by: { $0.price < $1.price })
+                    self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price < $1.price }).filter({ $0.type == sortingVC.currentType })
                     self.decorations = self.sortingDecorations
+                    self.updateCatalogTable()
                     
-                } else if sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
+                } else if sortingVC.currentPrice == Const.priceDirecion.decrease && sortingVC.currentType != sortingVC.defaultSortingByType {
                     
-                    self.sortingDecorations = self.decorations.sorted(by: { $0.price > $1.price })
+                    self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price > $1.price }).filter({ $0.type == sortingVC.currentType })
                     self.decorations = self.sortingDecorations
+                    self.updateCatalogTable()
                 }
                 
-                self.sortingDecorations = self.decorations.filter({ $0.type == sortingVC.currentType })
-                self.decorations = self.sortingDecorations
-                self.updateCatalogTable()
-                
-            } else if sortingVC.currentType != sortingVC.defaultSortingByType {
+            } else if sortingVC.currentType != Const.DecorationType.defaultType {
 
-                self.sortingDecorations = self.decorations.filter({ $0.type == sortingVC.currentType })
+                self.sortingDecorations = self.originalDecorations.filter({ $0.type == sortingVC.currentType })
                 self.decorations = self.sortingDecorations
                 self.updateCatalogTable()
                 
@@ -124,13 +125,13 @@ class CatalogViewController: UIViewController {
                 
                 if sortingVC.currentPrice == Const.priceDirecion.increace {
                     
-                    self.sortingDecorations = self.decorations.sorted(by: { $0.price < $1.price })
+                    self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price < $1.price })
                     self.decorations = self.sortingDecorations
                     self.updateCatalogTable()
                     
-                } else if sortingVC.currentPrice != sortingVC.defaultSortingByPrice {
+                } else if sortingVC.currentPrice == Const.priceDirecion.decrease {
                     
-                    self.sortingDecorations = self.decorations.sorted(by: { $0.price > $1.price })
+                    self.sortingDecorations = self.originalDecorations.sorted(by: { $0.price > $1.price })
                     self.decorations = self.sortingDecorations
                     self.updateCatalogTable()
                 }
