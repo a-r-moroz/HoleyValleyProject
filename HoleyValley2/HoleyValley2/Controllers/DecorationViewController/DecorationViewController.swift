@@ -15,6 +15,10 @@ class DecorationViewController: UIViewController {
     @IBOutlet weak var decorationPriceLabel: UILabel!
     @IBOutlet weak var decorationDescribtionLabel: UILabel!
     @IBOutlet weak var favoriteViewOutlet: FavoriteView!
+    @IBOutlet weak var likeIndicator: UIImageView!
+    
+    // heart.slash.fill
+    // heart.fill
     
     var currentDecoration: Decoration?
     
@@ -61,5 +65,42 @@ extension DecorationViewController: FavoriteViewDelegate {
     
     func likeAction() {
         print("Is liked")
+        
+        likeIndicator.image = favoriteViewOutlet.isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart.slash.fill")
+        likeIndicator.isHidden = false
+        
+        UIView.animate(withDuration: 0.6, delay: 0.0, options: [.curveEaseOut]) {
+            
+//            self.likeIndicator.center = self.view.center
+            self.likeIndicator.transform = CGAffineTransform(scaleX: 1.15, y: 1.15) //1.25
+            
+            UIView.animate(withDuration: 0.1, delay: 0.0) {
+                self.likeIndicator.alpha = 0.5
+            } completion: { finish in
+                UIView.animate(withDuration: 0.2, delay: 0.1) {
+                    self.likeIndicator.alpha = 0.0
+                } completion: { finish in
+                    self.likeIndicator.transform = CGAffineTransform(scaleX: 1, y: 1) // 0.8
+                    self.likeIndicator.isHidden = true
+                    self.loadViewIfNeeded()
+                }
+            }
+        }
+        
+//        UIView.animateKeyframes(withDuration: 0.6, delay: 0.0, animations: {
+//            self.likeIndicator.image
+//
+//            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.0, animations: {
+//                self.likeIndicator.alpha = 0.5
+//            } completion: { finish in
+//                UIView.animate(withDuration: 0.2, delay: 0.2) {
+//                    self.likeIndicator.alpha = 0.0
+//                } completion: { finish in
+//                    self.likeIndicator.isHidden = true
+//                    self.loadViewIfNeeded()
+//                }
+//            }
+//    })
+//        })
     }
 }

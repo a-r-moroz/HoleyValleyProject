@@ -15,7 +15,7 @@ class FavoriteView: UIView {
     weak var viewDelegate: FavoriteViewDelegate?
     
     // при изменении бул будет меняться состояние кнопки
-    private var isLiked: Bool = false {
+    var isLiked: Bool = false {
         didSet {
             setupLike()
         }
