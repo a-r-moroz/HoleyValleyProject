@@ -66,14 +66,14 @@ extension DecorationViewController: FavoriteViewDelegate {
         likeIndicator.alpha = 0.0
         likeIndicator.isHidden = false
         
-        UIView.animate(withDuration: 0.6, delay: 0.0, options: [.curveEaseOut]) {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseOut]) { // 0.6 0.0
             
             self.likeIndicator.transform = CGAffineTransform(scaleX: 1.15, y: 1.15) //1.25
             
             UIView.animate(withDuration: 0.1, delay: 0.0) {
                 self.likeIndicator.alpha = 0.5
             } completion: { finish in
-                UIView.animate(withDuration: 0.2, delay: 0.1) {
+                UIView.animate(withDuration: 0.2, delay: 0.0) { // 0.2 0.1
                     self.likeIndicator.alpha = 0.0
                 } completion: { finish in
                     self.likeIndicator.transform = CGAffineTransform(scaleX: 1, y: 1) // 0.8
