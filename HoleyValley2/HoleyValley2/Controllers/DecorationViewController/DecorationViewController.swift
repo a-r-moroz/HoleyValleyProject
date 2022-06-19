@@ -17,9 +17,6 @@ class DecorationViewController: UIViewController {
     @IBOutlet weak var favoriteViewOutlet: FavoriteView!
     @IBOutlet weak var likeIndicator: UIImageView!
     
-    // heart.slash.fill
-    // heart.fill
-    
     var currentDecoration: Decoration?
     
     override func viewDidLoad() {
@@ -64,14 +61,13 @@ class DecorationViewController: UIViewController {
 extension DecorationViewController: FavoriteViewDelegate {
     
     func likeAction() {
-        print("Is liked")
         
         likeIndicator.image = favoriteViewOutlet.isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart.slash.fill")
+        likeIndicator.alpha = 0.0
         likeIndicator.isHidden = false
         
         UIView.animate(withDuration: 0.6, delay: 0.0, options: [.curveEaseOut]) {
             
-//            self.likeIndicator.center = self.view.center
             self.likeIndicator.transform = CGAffineTransform(scaleX: 1.15, y: 1.15) //1.25
             
             UIView.animate(withDuration: 0.1, delay: 0.0) {

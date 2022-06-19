@@ -62,7 +62,7 @@
                                         <constraint firstAttribute="height" constant="50" id="wNZ-O2-1dW"/>
                                     </constraints>
                                 </view>
-                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gxi-rT-gfQ">
+                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gxi-rT-gfQ">
                                     <rect key="frame" x="100" y="145.5" width="214" height="211.5"/>
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <constraints>
