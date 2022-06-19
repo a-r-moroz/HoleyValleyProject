@@ -14,6 +14,7 @@
                 <outlet property="decorationImage" destination="sZa-eF-dnC" id="vv6-wS-FcW"/>
                 <outlet property="decorationNameLabel" destination="dX8-Lc-Y6P" id="1Cg-Um-9no"/>
                 <outlet property="decorationPriceLabel" destination="lJr-Wc-XbM" id="bUA-Bi-Myz"/>
+                <outlet property="favoriteViewOutlet" destination="DjD-dX-PW7" id="DFZ-Zb-0n4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,7 +36,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX8-Lc-Y6P">
-                                    <rect key="frame" x="16" y="402" width="382" height="20.5"/>
+                                    <rect key="frame" x="16" y="402" width="316" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -52,6 +53,14 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-dX-PW7" customClass="FavoriteView" customModule="HoleyValley2" customModuleProvider="target">
+                                    <rect key="frame" x="348" y="402" width="50" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="2SL-SN-kQQ"/>
+                                        <constraint firstAttribute="height" constant="50" id="wNZ-O2-1dW"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -62,9 +71,11 @@
                                 <constraint firstItem="lJr-Wc-XbM" firstAttribute="leading" secondItem="VPm-ib-QMl" secondAttribute="leading" constant="16" id="KIP-D0-uhZ"/>
                                 <constraint firstItem="dX8-Lc-Y6P" firstAttribute="leading" secondItem="VPm-ib-QMl" secondAttribute="leading" constant="16" id="Mz4-qr-8vK"/>
                                 <constraint firstItem="AAH-Kj-6We" firstAttribute="leading" secondItem="VPm-ib-QMl" secondAttribute="leading" constant="16" id="Z7f-na-LCU"/>
+                                <constraint firstItem="DjD-dX-PW7" firstAttribute="top" secondItem="dX8-Lc-Y6P" secondAttribute="top" id="bFQ-S1-Ppa"/>
                                 <constraint firstItem="sZa-eF-dnC" firstAttribute="top" secondItem="VPm-ib-QMl" secondAttribute="top" id="bL2-jV-50z"/>
                                 <constraint firstItem="dX8-Lc-Y6P" firstAttribute="top" secondItem="sZa-eF-dnC" secondAttribute="bottom" constant="20" id="bqt-Id-bXy"/>
-                                <constraint firstAttribute="trailing" secondItem="dX8-Lc-Y6P" secondAttribute="trailing" constant="16" id="cme-CY-39E"/>
+                                <constraint firstItem="DjD-dX-PW7" firstAttribute="leading" secondItem="dX8-Lc-Y6P" secondAttribute="trailing" constant="16" id="cme-CY-39E"/>
+                                <constraint firstAttribute="trailing" secondItem="DjD-dX-PW7" secondAttribute="trailing" constant="16" id="h2v-wz-ZKh"/>
                                 <constraint firstAttribute="trailing" secondItem="sZa-eF-dnC" secondAttribute="trailing" constant="16" id="iDF-wW-JaA"/>
                                 <constraint firstAttribute="trailing" secondItem="AAH-Kj-6We" secondAttribute="trailing" constant="16" id="jRb-Jj-Fvd"/>
                                 <constraint firstAttribute="trailing" secondItem="lJr-Wc-XbM" secondAttribute="trailing" constant="16" id="wQH-Py-E65"/>

@@ -14,11 +14,15 @@ class DecorationViewController: UIViewController {
     @IBOutlet weak var decorationNameLabel: UILabel!
     @IBOutlet weak var decorationPriceLabel: UILabel!
     @IBOutlet weak var decorationDescribtionLabel: UILabel!
+    @IBOutlet weak var favoriteViewOutlet: FavoriteView!
     
     var currentDecoration: Decoration?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        favoriteViewOutlet.viewDelegate = self
         
         setupViewControllerWithData()
         decorationImageTapped()
@@ -50,5 +54,12 @@ class DecorationViewController: UIViewController {
         imageVC.modalPresentationStyle = .overFullScreen
         self.present(imageVC, animated: true)
         
+    }
+}
+
+extension DecorationViewController: FavoriteViewDelegate {
+    
+    func likeAction() {
+        print("Is liked")
     }
 }

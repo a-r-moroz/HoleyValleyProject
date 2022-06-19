@@ -53,6 +53,9 @@
 		8EBBF8022857351000FE8655 /* NotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBF8002857351000FE8655 /* NotificationsSettingsViewController.swift */; };
 		8EBBF8032857351000FE8655 /* NotificationsSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBF8012857351000FE8655 /* NotificationsSettingsViewController.xib */; };
 		8EBBF8052857C86A00FE8655 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBF8042857C86A00FE8655 /* NotificationManager.swift */; };
+		8EC2EB52285F30E7008FA683 /* FavoriteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2EB51285F30E7008FA683 /* FavoriteView.xib */; };
+		8EC2EB54285F30FF008FA683 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2EB53285F30FF008FA683 /* FavoriteView.swift */; };
+		8EC2EB56285F3134008FA683 /* FavoriteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2EB55285F3134008FA683 /* FavoriteViewDelegate.swift */; };
 		8EC807FD2838FDF4008E176D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC807FC2838FDF4008E176D /* FirebaseManager.swift */; };
 		8EC8080628396A48008E176D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8080528396A48008E176D /* Service.swift */; };
 		8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF9CD628327B7B0058899B /* UIImageView.swift */; };
@@ -121,6 +124,9 @@
 		8EBBF8002857351000FE8655 /* NotificationsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewController.swift; sourceTree = "<group>"; };
 		8EBBF8012857351000FE8655 /* NotificationsSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsSettingsViewController.xib; sourceTree = "<group>"; };
 		8EBBF8042857C86A00FE8655 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		8EC2EB51285F30E7008FA683 /* FavoriteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteView.xib; sourceTree = "<group>"; };
+		8EC2EB53285F30FF008FA683 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		8EC2EB55285F3134008FA683 /* FavoriteViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewDelegate.swift; sourceTree = "<group>"; };
 		8EC807FC2838FDF4008E176D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8EC8080528396A48008E176D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8ECF9CD628327B7B0058899B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -263,6 +269,7 @@
 		8EA9AB3D28219663005E0C2A /* HoleyValley2 */ = {
 			isa = PBXGroup;
 			children = (
+				8EC2EB50285F30A4008FA683 /* FavoriteView */,
 				8EAB9143284EB8C2003BB9AA /* InputField */,
 				8ECF9CD5283279D20058899B /* Extensions */,
 				8EE42F362821A18D00D7210D /* Cells */,
@@ -317,6 +324,16 @@
 				8EBBF8012857351000FE8655 /* NotificationsSettingsViewController.xib */,
 			);
 			path = NotificationsSettingsViewController;
+			sourceTree = "<group>";
+		};
+		8EC2EB50285F30A4008FA683 /* FavoriteView */ = {
+			isa = PBXGroup;
+			children = (
+				8EC2EB51285F30E7008FA683 /* FavoriteView.xib */,
+				8EC2EB53285F30FF008FA683 /* FavoriteView.swift */,
+				8EC2EB55285F3134008FA683 /* FavoriteViewDelegate.swift */,
+			);
+			path = FavoriteView;
 			sourceTree = "<group>";
 		};
 		8EC807FE28393F2F008E176D /* SplashViewController */ = {
@@ -507,6 +524,7 @@
 				8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */,
 				8E9D5131284D0CBA0019F8A0 /* SortingCell.xib in Resources */,
 				8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */,
+				8EC2EB52285F30E7008FA683 /* FavoriteView.xib in Resources */,
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
 				8EAB9147284EB8F9003BB9AA /* InputField.xib in Resources */,
@@ -582,9 +600,11 @@
 				8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
+				8EC2EB54285F30FF008FA683 /* FavoriteView.swift in Sources */,
 				8EBBF8052857C86A00FE8655 /* NotificationManager.swift in Sources */,
 				8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */,
 				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
+				8EC2EB56285F3134008FA683 /* FavoriteViewDelegate.swift in Sources */,
 				8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */,
 				8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */,
 				8EE42F3A2821A1AC00D7210D /* DecorationCell.swift in Sources */,
