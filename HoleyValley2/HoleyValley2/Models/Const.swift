@@ -51,6 +51,7 @@ struct Const {
         static let decorationsPath = "decorations"
         static let servicesPath = "services"
         static let appointmentsPath = "appointments"
+        static let mastersPath = "masters"
     }
 }
 

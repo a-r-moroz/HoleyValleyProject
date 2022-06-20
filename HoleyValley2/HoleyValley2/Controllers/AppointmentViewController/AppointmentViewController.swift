@@ -13,6 +13,7 @@ import FSCalendar
 class AppointmentViewController: UIViewController {
 
     @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var selectMasterButtonOutlet: UIButton!
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var timeInputField: InputField!
     @IBOutlet weak var nameInputField: InputField!
@@ -39,6 +40,8 @@ class AppointmentViewController: UIViewController {
         
         super.viewDidLoad()
         
+        selectMasterButtonOutlet.setCapsuleRoundingToButton()
+        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         confirmButtonOutlet.setCapsuleRoundingToButton()
         confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         setNotificationButtonOutlet.setCapsuleRoundingToButton()
@@ -113,6 +116,32 @@ class AppointmentViewController: UIViewController {
         }
 }
     
+    @IBAction func selectMasterAction(_ sender: UIButton) {
+        
+        let mastersVC = MastersViewController(nibName: String(describing: MastersViewController.self), bundle: nil)
+//        self.present(mastersVC, animated: true, completion: nil)
+        
+//        mastersVC.modalTransitionStyle = .coverVertical
+//        mastersVC.modalPresentationStyle = .overFullScreen
+//        self.present(mastersVC, animated: true)
+        navigationController?.pushViewController(mastersVC, animated: true)
+    }
+    
+    @IBAction func setNotificationAppointmentAction(_ sender: UIButton) {
+        
+        let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
+        notificationsSettingsVC.modalTransitionStyle = .coverVertical
+        notificationsSettingsVC.modalPresentationStyle = .overFullScreen
+        
+        notificationsSettingsVC.postDate = {
+            
+            guard let notifDate = notificationsSettingsVC.notificationDate else { return }
+            self.dateForNotification = notifDate
+        }
+        
+        self.present(notificationsSettingsVC, animated: true)
+    }
+
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
         if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid, selectedDate != nil, timeInputField.textField.text != "" {
@@ -178,21 +207,6 @@ class AppointmentViewController: UIViewController {
             alert.addAction(action)
             present(alert, animated: true)
         }
-    }
-    
-    @IBAction func setNotificationAppointmentAction(_ sender: UIButton) {
-        
-        let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
-        notificationsSettingsVC.modalTransitionStyle = .coverVertical
-        notificationsSettingsVC.modalPresentationStyle = .overFullScreen
-        
-        notificationsSettingsVC.postDate = {
-            
-            guard let notifDate = notificationsSettingsVC.notificationDate else { return }
-            self.dateForNotification = notifDate
-        }
-        
-        self.present(notificationsSettingsVC, animated: true)
     }
 }
 
