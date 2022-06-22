@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OTa-vZ-BzY">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OTa-vZ-BzY">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Oje-Lc-2sk">
@@ -33,7 +33,7 @@
             <constraints>
                 <constraint firstItem="Oje-Lc-2sk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="89l-pn-eZn"/>
                 <constraint firstItem="Oje-Lc-2sk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Njc-NA-fDh"/>
-                <constraint firstAttribute="bottom" secondItem="OTa-vZ-BzY" secondAttribute="bottom" id="c7Q-EA-CuS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OTa-vZ-BzY" secondAttribute="bottom" id="c7Q-EA-CuS"/>
                 <constraint firstItem="OTa-vZ-BzY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fbV-Iq-ez8"/>
                 <constraint firstItem="OTa-vZ-BzY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gBW-po-W2s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OTa-vZ-BzY" secondAttribute="trailing" id="hLU-oI-Fjc"/>

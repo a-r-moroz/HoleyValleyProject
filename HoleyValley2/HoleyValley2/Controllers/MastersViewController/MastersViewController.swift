@@ -28,8 +28,10 @@ class MastersViewController: UIViewController {
 
     private func setupTable() {
         mastersTable.register(UINib(nibName: String(describing: MasterCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MasterCell.self))
-        mastersTable.delegate = self
-        mastersTable.dataSource = self
+        self.mastersTable.delegate = self
+        self.mastersTable.dataSource = self
+        self.mastersTable.allowsSelection = true
+        self.mastersTable.allowsMultipleSelection = false
     }
     
     private func loadMasters() {
@@ -85,7 +87,37 @@ extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
+        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return }
+        cell.viewWithData.layer.borderWidth = 1
+        cell.viewWithData.layer.borderColor = Const.Colors.gold.cgColor
     }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+
+        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return nil }
+
+        if let indexPathForSelectedRow = tableView.indexPathForSelectedRow,
+            indexPathForSelectedRow == indexPath {
+            cell.viewWithData.layer.borderWidth = 0
+            cell.viewWithData.layer.borderColor = nil
+            tableView.deselectRow(at: indexPath, animated: false)
+            return nil
+        }
+        return indexPath
+    }
+    
+//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//        if tableView.indexPathsForSelectedRows?.contains(indexPath) ?? false {
+//           tableView.deselectRow(at: indexPath, animated: true)
+//           return nil
+//        }
+//
+//        return indexPath
+//    }
+//
+//    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+//        return nil
+//    }
     
 }
