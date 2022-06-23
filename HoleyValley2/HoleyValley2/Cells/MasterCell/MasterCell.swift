@@ -16,6 +16,8 @@ class MasterCell: UITableViewCell {
     @IBOutlet weak var masterPhoto: UIImageView!
     @IBOutlet weak var viewWithData: UIView!
     
+    var isSelectedCell = false
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()

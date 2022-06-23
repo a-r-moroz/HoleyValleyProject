@@ -89,23 +89,50 @@ extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return }
-        cell.viewWithData.layer.borderWidth = 1
-        cell.viewWithData.layer.borderColor = Const.Colors.gold.cgColor
-    }
-
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-
-        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return nil }
-
-        if let indexPathForSelectedRow = tableView.indexPathForSelectedRow,
-            indexPathForSelectedRow == indexPath {
+        
+        if cell.isSelectedCell == false {
+            cell.viewWithData.layer.borderWidth = 1
+            cell.viewWithData.layer.borderColor = Const.Colors.gold.cgColor
+            cell.viewWithData.backgroundColor = Const.Colors.gold.withAlphaComponent(0.1)
+            cell.isSelectedCell = true
+        } else {
             cell.viewWithData.layer.borderWidth = 0
             cell.viewWithData.layer.borderColor = nil
-            tableView.deselectRow(at: indexPath, animated: false)
-            return nil
+            cell.viewWithData.backgroundColor = .secondarySystemBackground
+            cell.isSelectedCell = false
         }
-        return indexPath
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return }
+
+        cell.viewWithData.layer.borderWidth = 0
+        cell.viewWithData.layer.borderColor = nil
+        cell.viewWithData.backgroundColor = .secondarySystemBackground
+        cell.isSelectedCell = false
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return }
+//        cell.viewWithData.layer.borderWidth = 1
+//        cell.viewWithData.layer.borderColor = Const.Colors.gold.cgColor
+//    }
+//
+//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//
+//        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return nil }
+//
+//        if let indexPathForSelectedRow = tableView.indexPathForSelectedRow,
+//            indexPathForSelectedRow == indexPath {
+//            cell.viewWithData.layer.borderWidth = 0
+//            cell.viewWithData.layer.borderColor = nil
+//            tableView.deselectRow(at: indexPath, animated: false)
+//            return nil
+//        }
+//        return indexPath
+//    }
     
 //    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 //        if tableView.indexPathsForSelectedRows?.contains(indexPath) ?? false {

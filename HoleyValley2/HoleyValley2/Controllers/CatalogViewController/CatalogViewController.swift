@@ -221,7 +221,6 @@ extension CatalogViewController: UITableViewDelegate {
         decorationVC.currentDecoration = decorations[indexPath.row]
         navigationController?.pushViewController(decorationVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
 }
 

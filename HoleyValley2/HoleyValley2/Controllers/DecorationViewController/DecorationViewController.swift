@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Haptica
 
 class DecorationViewController: UIViewController {
 
@@ -72,11 +73,13 @@ extension DecorationViewController: FavoriteViewDelegate {
             
             UIView.animate(withDuration: 0.1, delay: 0.0) {
                 self.likeIndicator.alpha = 0.5
+                Haptic.play("o", delay: 0.1)
             } completion: { finish in
                 UIView.animate(withDuration: 0.2, delay: 0.0) { // 0.2 0.1
                     self.likeIndicator.alpha = 0.0
                 } completion: { finish in
                     self.likeIndicator.transform = CGAffineTransform(scaleX: 1, y: 1) // 0.8
+                    Haptic.play("o", delay: 0.1)
                     self.likeIndicator.isHidden = true
                     self.loadViewIfNeeded()
                 }
