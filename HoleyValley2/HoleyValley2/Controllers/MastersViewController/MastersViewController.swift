@@ -55,8 +55,9 @@ class MastersViewController: UIViewController {
                 let experience = value?["experience"] as? String ?? ""
                 let description = value?["description"] as? String ?? ""
                 let photo = value?["photo"] as? String ?? ""
+                let id = child.key as String
                 
-                let item = Master(name: name, surname: surname, experience: experience, description: description, photo: photo)
+                let item = Master(name: name, surname: surname, experience: experience, description: description, photo: photo, id: id)
                 
                 self.masters.append(item)
                 

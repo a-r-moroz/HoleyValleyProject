@@ -14,12 +14,15 @@ class Master {
     var experience: String
     var description: String
     var photo: String
+    var id: String
     
-    internal init(name: String, surname: String, experience: String, description: String, photo: String) {
+    internal init(name: String, surname: String, experience: String, description: String, photo: String, id: String) {
         self.name = name
         self.surname = surname
         self.experience = experience
         self.description = description
         self.photo = photo
+        self.id = id
+
     }
 }

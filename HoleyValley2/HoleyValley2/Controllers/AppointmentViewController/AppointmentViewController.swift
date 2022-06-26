@@ -139,7 +139,8 @@ class AppointmentViewController: UIViewController {
     
     func availableHours(date: String) {
         
-        database = Database.database().reference().child("\(Const.Firebase.appointmentsPath)/\(date)")
+        guard let masterID = selectedMaster?.id else { return }
+        database = Database.database().reference().child("\(Const.Firebase.appointmentsPath)/\(masterID)/\(date)")
 
         self.busyHours = []
         
@@ -204,13 +205,14 @@ class AppointmentViewController: UIViewController {
             guard let name = nameInputField.textField.text,
                   let surname = surnameInputField.textField.text,
                   let time = timeInputField.textField.text,
-                  let phone = phoneInputField.textField.text else { return }
+                  let phone = phoneInputField.textField.text,
+                  let masterID = selectedMaster?.id else { return }
                     // let date = selectedDate
 
 //            newAppointment?.time = String(Date.now.timeIntervalSince1970)
 //            BarController.appointments.append(newAppointment ?? Appointment())
             
-            self.database.child("\(time)").setValue(["name" : surname + " " + name, "phone" : phone])
+            self.database.child("\(time)").setValue(["name" : surname + " " + name, "phone" : phone, "masterID" : masterID])
     //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
     //        self.database.child("appointments").setValue(["name": name])
             
