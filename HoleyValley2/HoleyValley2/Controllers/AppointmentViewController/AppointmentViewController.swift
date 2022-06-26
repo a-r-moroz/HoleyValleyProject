@@ -89,10 +89,61 @@ class AppointmentViewController: UIViewController {
         surnameInputField.textField.text = surname
         phoneInputField.textField.text = phone
                 
+        title = "Записаться"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+//        if selectedMaster == nil, dateForNotification == nil {
+//            viewWithMaster.isHidden = true
+//            constraintWithMaster.isActive = false
+//            constraintWithoutMaster.isActive = true
+//            viewWithNotification.isHidden = true
+//            constraintWithNotification.isActive = false
+//            constraintWithoutNotification.isActive = true
+//        } else if selectedMaster == nil, dateForNotification != nil {
+//            viewWithMaster.isHidden = true
+//            constraintWithMaster.isActive = false
+//            constraintWithoutMaster.isActive = true
+//            viewWithNotification.isHidden = false
+//            constraintWithNotification.isActive = true
+//            constraintWithoutNotification.isActive = false
+//        } else if dateForNotification == nil, selectedMaster != nil {
+//            viewWithNotification.isHidden = true
+//            constraintWithNotification.isActive = false
+//            constraintWithoutNotification.isActive = true
+//            viewWithMaster.isHidden = false
+//            constraintWithMaster.isActive = true
+//            constraintWithoutMaster.isActive = false
+//        } else {
+//            viewWithMaster.isHidden = false
+//            viewWithNotification.isHidden = false
+//            constraintWithMaster.isActive = true
+//            constraintWithNotification.isActive = true
+//            constraintWithoutMaster.isActive = false
+//            constraintWithoutNotification.isActive = false
+//        }
+        
+//        if selectedMaster == nil{
+//            viewWithMaster.isHidden = true
+//            constraintWithMaster.isActive = false
+//            constraintWithoutMaster.isActive = true
+//        } else {
+//            viewWithMaster.isHidden = false
+//            constraintWithMaster.isActive = true
+//            constraintWithoutMaster.isActive = false
+//        }
+//
+//        if dateForNotification == nil {
+//            viewWithNotification.isHidden = true
+//            constraintWithNotification.isActive = false
+//            constraintWithoutNotification.isActive = true
+//        } else {
+//            viewWithNotification.isHidden = false
+//            constraintWithNotification.isActive = true
+//            constraintWithoutNotification.isActive = false
+//        }
         
         if selectedMaster == nil, dateForNotification == nil {
             viewWithMaster.isHidden = true
@@ -101,28 +152,16 @@ class AppointmentViewController: UIViewController {
             viewWithNotification.isHidden = true
             constraintWithNotification.isActive = false
             constraintWithoutNotification.isActive = true
-        } else if selectedMaster == nil, dateForNotification != nil {
-            viewWithMaster.isHidden = true
-            constraintWithMaster.isActive = false
-            constraintWithoutMaster.isActive = true
-            viewWithNotification.isHidden = false
-            constraintWithNotification.isActive = true
-            constraintWithoutNotification.isActive = false
-        } else if dateForNotification == nil, selectedMaster != nil {
-            viewWithNotification.isHidden = true
-            constraintWithNotification.isActive = false
-            constraintWithoutNotification.isActive = true
-            viewWithMaster.isHidden = false
-            constraintWithMaster.isActive = true
-            constraintWithoutMaster.isActive = false
         } else {
             viewWithMaster.isHidden = false
-            viewWithNotification.isHidden = false
             constraintWithMaster.isActive = true
-            constraintWithNotification.isActive = true
             constraintWithoutMaster.isActive = false
+            viewWithNotification.isHidden = false
+            constraintWithNotification.isActive = true
             constraintWithoutNotification.isActive = false
         }
+        
+        
     }
     
     //Calls this function when the tap is recognized to hide keyboard
@@ -189,11 +228,14 @@ class AppointmentViewController: UIViewController {
             
             guard let notifDate = notificationsSettingsVC.notificationDate else { return }
             self.dateForNotification = notifDate
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.locale = Locale(identifier: "RU")
-//            dateFormatter.dateFormat = "d MMM"
-//            let dateString = dateFormatter.string(from: notifDate)
-//            self.notificationDateLabel.text = ("\(dateString), \(Calendar.current.component(.hour, from: notifDate)):\(Calendar.current.component(.minute, from: notifDate))")
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "RU")
+            dateFormatter.dateFormat = "d MMM"
+            let dateString = dateFormatter.string(from: notifDate)
+            print("NOTIF DATE: \(dateString)")
+            self.notificationDateLabel.text = ("\(dateString), \(Calendar.current.component(.hour, from: notifDate)):\(Calendar.current.component(.minute, from: notifDate))")
+//            self.notificationDateLabel.text = ("\(dateString)")
         }
         
         self.present(notificationsSettingsVC, animated: true)

@@ -73,7 +73,7 @@ extension DecorationViewController: FavoriteViewDelegate {
             
             UIView.animate(withDuration: 0.1, delay: 0.0) {
                 self.likeIndicator.alpha = 0.5
-                Haptic.play("o", delay: 0.1)
+                Haptic.play("..", delay: 0.0)
             } completion: { finish in
                 UIView.animate(withDuration: 0.2, delay: 0.0) { // 0.2 0.1
                     self.likeIndicator.alpha = 0.0
