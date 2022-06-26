@@ -14,15 +14,24 @@ class AppointmentViewController: UIViewController {
 
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var selectMasterButtonOutlet: UIButton!
+    @IBOutlet weak var viewWithMaster: UIView!
+    @IBOutlet weak var masterNameLabel: UILabel!
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var timeInputField: InputField!
     @IBOutlet weak var nameInputField: InputField!
     @IBOutlet weak var surnameInputField: InputField!
     @IBOutlet weak var phoneInputField: InputField!
+    @IBOutlet weak var viewWithNotification: UIView!
+    @IBOutlet weak var notificationDateLabel: UILabel!
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var setNotificationButtonOutlet: UIButton!
+    @IBOutlet weak var constraintWithoutMaster: NSLayoutConstraint!
+    @IBOutlet weak var constraintWithMaster: NSLayoutConstraint!
+    @IBOutlet weak var constraintWithoutNotification: NSLayoutConstraint!
+    @IBOutlet weak var constraintWithNotification: NSLayoutConstraint!
     
     var database: DatabaseReference!
+    var selectedMaster: Master?
     var name: String?
     var surname: String?
     var openingHours = Const.openingHours
@@ -82,6 +91,40 @@ class AppointmentViewController: UIViewController {
                 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if selectedMaster == nil, dateForNotification == nil {
+            viewWithMaster.isHidden = true
+            constraintWithMaster.isActive = false
+            constraintWithoutMaster.isActive = true
+            viewWithNotification.isHidden = true
+            constraintWithNotification.isActive = false
+            constraintWithoutNotification.isActive = true
+        } else if selectedMaster == nil, dateForNotification != nil {
+            viewWithMaster.isHidden = true
+            constraintWithMaster.isActive = false
+            constraintWithoutMaster.isActive = true
+            viewWithNotification.isHidden = false
+            constraintWithNotification.isActive = true
+            constraintWithoutNotification.isActive = false
+        } else if dateForNotification == nil, selectedMaster != nil {
+            viewWithNotification.isHidden = true
+            constraintWithNotification.isActive = false
+            constraintWithoutNotification.isActive = true
+            viewWithMaster.isHidden = false
+            constraintWithMaster.isActive = true
+            constraintWithoutMaster.isActive = false
+        } else {
+            viewWithMaster.isHidden = false
+            viewWithNotification.isHidden = false
+            constraintWithMaster.isActive = true
+            constraintWithNotification.isActive = true
+            constraintWithoutMaster.isActive = false
+            constraintWithoutNotification.isActive = false
+        }
+    }
+    
     //Calls this function when the tap is recognized to hide keyboard
     private func hideKeyboardByTap() {
         
@@ -124,6 +167,14 @@ class AppointmentViewController: UIViewController {
 //        mastersVC.modalTransitionStyle = .coverVertical
 //        mastersVC.modalPresentationStyle = .overFullScreen
 //        self.present(mastersVC, animated: true)
+        
+        mastersVC.postMaster = {
+            
+            guard let master = mastersVC.selectedMaster else { return }
+            self.selectedMaster = master
+            self.masterNameLabel.text = master.name
+        }
+        
         navigationController?.pushViewController(mastersVC, animated: true)
     }
     
@@ -137,6 +188,11 @@ class AppointmentViewController: UIViewController {
             
             guard let notifDate = notificationsSettingsVC.notificationDate else { return }
             self.dateForNotification = notifDate
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.locale = Locale(identifier: "RU")
+//            dateFormatter.dateFormat = "d MMM"
+//            let dateString = dateFormatter.string(from: notifDate)
+//            self.notificationDateLabel.text = ("\(dateString), \(Calendar.current.component(.hour, from: notifDate)):\(Calendar.current.component(.minute, from: notifDate))")
         }
         
         self.present(notificationsSettingsVC, animated: true)
@@ -144,7 +200,7 @@ class AppointmentViewController: UIViewController {
 
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
         
-        if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid, selectedDate != nil, timeInputField.textField.text != "" {
+        if timeInputField.isValid, nameInputField.isValid, surnameInputField.isValid, phoneInputField.isValid, selectedDate != nil, timeInputField.textField.text != "", selectedMaster != nil {
             guard let name = nameInputField.textField.text,
                   let surname = surnameInputField.textField.text,
                   let time = timeInputField.textField.text,
@@ -200,6 +256,7 @@ class AppointmentViewController: UIViewController {
                 self.nameInputField.textField.text = ""
                 self.surnameInputField.textField.text = ""
                 self.phoneInputField.textField.text = ""
+                self.selectedMaster = nil
             }
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)

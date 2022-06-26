@@ -13,9 +13,12 @@ class MastersViewController: UIViewController {
 
     @IBOutlet weak var mastersTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var selectMasterButtonOutlet: UIButton!
     
     var masters = [Master]()
     var database: DatabaseReference!
+    var selectedMaster: Master? = nil
+    var postMaster: (() -> ())?
     
     override func viewDidLoad() {
         
@@ -24,6 +27,8 @@ class MastersViewController: UIViewController {
         self.spinner.startAnimating()
         setupTable()
         loadMasters()
+        selectMasterButtonOutlet.setCapsuleRoundingToButton()
+        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
     }
 
     private func setupTable() {
@@ -63,6 +68,18 @@ class MastersViewController: UIViewController {
         }
     }
 
+    @IBAction func selectMasterAction(_ sender: UIButton) {
+        
+        if selectedMaster != nil {
+            navigationController?.popViewController(animated: true)
+        } else {
+            let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
+            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, выберите мастера, чтобы продолжить.", preferredStyle: .alert)
+            alert.addAction(action)
+            present(alert, animated: true)
+        }
+    }
+    
 }
 
 extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
@@ -95,12 +112,21 @@ extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
             cell.viewWithData.layer.borderColor = Const.Colors.gold.cgColor
             cell.viewWithData.backgroundColor = Const.Colors.gold.withAlphaComponent(0.1)
             cell.isSelectedCell = true
+            
+            selectedMaster = masters[indexPath.row]
+            postMaster?()
+            print(selectedMaster?.name ?? "")
         } else {
             cell.viewWithData.layer.borderWidth = 0
             cell.viewWithData.layer.borderColor = nil
             cell.viewWithData.backgroundColor = .secondarySystemBackground
             cell.isSelectedCell = false
+            
+            selectedMaster = nil
+            print(selectedMaster?.name ?? "Not selected!")
         }
+        
+
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

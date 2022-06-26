@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MastersViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
                 <outlet property="mastersTable" destination="OTa-vZ-BzY" id="Yjy-B8-WaG"/>
+                <outlet property="selectMasterButtonOutlet" destination="nSU-x4-ipi" id="G1R-VK-PgG"/>
                 <outlet property="spinner" destination="Oje-Lc-2sk" id="wcA-Kl-21x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,16 +28,34 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Oje-Lc-2sk">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                 </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSU-x4-ipi">
+                    <rect key="frame" x="115.5" y="782" width="183" height="50"/>
+                    <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="183" id="R7w-1H-CEi"/>
+                        <constraint firstAttribute="height" constant="50" id="zCk-zv-jG5"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Выбрать">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="selectMasterAction:" destination="-1" eventType="touchUpInside" id="EWL-nO-Gfm"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="nSU-x4-ipi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4nI-ju-JrK"/>
                 <constraint firstItem="Oje-Lc-2sk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="89l-pn-eZn"/>
                 <constraint firstItem="Oje-Lc-2sk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Njc-NA-fDh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OTa-vZ-BzY" secondAttribute="bottom" id="c7Q-EA-CuS"/>
                 <constraint firstItem="OTa-vZ-BzY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fbV-Iq-ez8"/>
                 <constraint firstItem="OTa-vZ-BzY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gBW-po-W2s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OTa-vZ-BzY" secondAttribute="trailing" id="hLU-oI-Fjc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nSU-x4-ipi" secondAttribute="bottom" constant="30" id="m20-Lo-ljd"/>
             </constraints>
             <point key="canvasLocation" x="132" y="60"/>
         </view>
