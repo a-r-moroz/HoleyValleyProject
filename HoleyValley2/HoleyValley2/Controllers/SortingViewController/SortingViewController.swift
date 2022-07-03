@@ -116,7 +116,13 @@ extension SortingViewController: UITableViewDataSource {
                 
 //                action.title = UserDefaults.standard.string(forKey: "currentType") ?? Const.DecorationType.defaultType
                 self.currentType = action.title
-                print(self.currentType)
+                sortingCell.sortingButtonOutlet.titleLabel?.text = action.title
+//                if let sortingTitle = UserDefaults.standard.string(forKey: "sortingTitle") {
+//                sortingCell.sortingButtonOutlet.titleLabel?.text = sortingTitle
+//                } else {
+//                    UserDefaults.standard.set(action.title, forKey: "sortingTitle")
+//                }
+//                print(self.currentType)
             }
             
             sortingCell.sortingButtonOutlet.menu = UIMenu(
@@ -132,7 +138,6 @@ extension SortingViewController: UITableViewDataSource {
                            UIAction(title: Const.DecorationType.circular, handler: popUpSortingMenu)])
             sortingCell.sortingButtonOutlet.showsMenuAsPrimaryAction = true
             sortingCell.sortingButtonOutlet.changesSelectionAsPrimaryAction = true
-            
             
         case .price:
             
