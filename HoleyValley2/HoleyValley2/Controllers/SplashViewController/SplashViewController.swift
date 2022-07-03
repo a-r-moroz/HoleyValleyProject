@@ -16,6 +16,7 @@ final class SplashViewController: UIViewController {
     @IBOutlet weak var newTextConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.oldGradientConstraint.isActive = false
