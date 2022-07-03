@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MastersViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
                 <outlet property="mastersTable" destination="OTa-vZ-BzY" id="Yjy-B8-WaG"/>
+                <outlet property="selectButtonOutlet" destination="nSU-x4-ipi" id="HYl-Ty-iME"/>
                 <outlet property="selectMasterButtonOutlet" destination="nSU-x4-ipi" id="G1R-VK-PgG"/>
                 <outlet property="spinner" destination="Oje-Lc-2sk" id="wcA-Kl-21x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OTa-vZ-BzY">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="16" y="63" width="382" height="699"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Oje-Lc-2sk">
@@ -44,6 +45,12 @@
                         <action selector="selectMasterAction:" destination="-1" eventType="touchUpInside" id="EWL-nO-Gfm"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcW-Hh-mkN">
+                    <rect key="frame" x="16" y="44" width="382" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="7Io-Mi-w3G"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,10 +58,13 @@
                 <constraint firstItem="nSU-x4-ipi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4nI-ju-JrK"/>
                 <constraint firstItem="Oje-Lc-2sk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="89l-pn-eZn"/>
                 <constraint firstItem="Oje-Lc-2sk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Njc-NA-fDh"/>
-                <constraint firstItem="nSU-x4-ipi" firstAttribute="bottom" secondItem="OTa-vZ-BzY" secondAttribute="bottom" constant="-30" id="c7Q-EA-CuS"/>
-                <constraint firstItem="OTa-vZ-BzY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fbV-Iq-ez8"/>
-                <constraint firstItem="OTa-vZ-BzY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gBW-po-W2s"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OTa-vZ-BzY" secondAttribute="trailing" id="hLU-oI-Fjc"/>
+                <constraint firstItem="KcW-Hh-mkN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="R6N-gi-uOT"/>
+                <constraint firstItem="nSU-x4-ipi" firstAttribute="top" secondItem="OTa-vZ-BzY" secondAttribute="bottom" constant="20" id="c7Q-EA-CuS"/>
+                <constraint firstItem="OTa-vZ-BzY" firstAttribute="top" secondItem="KcW-Hh-mkN" secondAttribute="bottom" id="fbV-Iq-ez8"/>
+                <constraint firstItem="OTa-vZ-BzY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gBW-po-W2s"/>
+                <constraint firstItem="KcW-Hh-mkN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gkw-Hi-69W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OTa-vZ-BzY" secondAttribute="trailing" constant="16" id="hLU-oI-Fjc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KcW-Hh-mkN" secondAttribute="trailing" constant="16" id="hYO-ZE-ozl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nSU-x4-ipi" secondAttribute="bottom" constant="30" id="m20-Lo-ljd"/>
             </constraints>
             <point key="canvasLocation" x="132" y="60"/>

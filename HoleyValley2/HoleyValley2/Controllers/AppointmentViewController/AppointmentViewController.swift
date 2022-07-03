@@ -90,78 +90,28 @@ class AppointmentViewController: UIViewController {
         phoneInputField.textField.text = phone
                 
         title = "Записаться"
+        showSelectedMaster()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    private func showSelectedMaster() {
         
-//        if selectedMaster == nil, dateForNotification == nil {
-//            viewWithMaster.isHidden = true
-//            constraintWithMaster.isActive = false
-//            constraintWithoutMaster.isActive = true
-//            viewWithNotification.isHidden = true
-//            constraintWithNotification.isActive = false
-//            constraintWithoutNotification.isActive = true
-//        } else if selectedMaster == nil, dateForNotification != nil {
-//            viewWithMaster.isHidden = true
-//            constraintWithMaster.isActive = false
-//            constraintWithoutMaster.isActive = true
-//            viewWithNotification.isHidden = false
-//            constraintWithNotification.isActive = true
-//            constraintWithoutNotification.isActive = false
-//        } else if dateForNotification == nil, selectedMaster != nil {
-//            viewWithNotification.isHidden = true
-//            constraintWithNotification.isActive = false
-//            constraintWithoutNotification.isActive = true
-//            viewWithMaster.isHidden = false
-//            constraintWithMaster.isActive = true
-//            constraintWithoutMaster.isActive = false
-//        } else {
-//            viewWithMaster.isHidden = false
-//            viewWithNotification.isHidden = false
-//            constraintWithMaster.isActive = true
-//            constraintWithNotification.isActive = true
-//            constraintWithoutMaster.isActive = false
-//            constraintWithoutNotification.isActive = false
-//        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(masterLabelTapped(sender:)))
+        masterNameLabel.addGestureRecognizer(tap)
+    }
+    
+    @objc func masterLabelTapped(sender: UITapGestureRecognizer) {
         
-//        if selectedMaster == nil{
-//            viewWithMaster.isHidden = true
-//            constraintWithMaster.isActive = false
-//            constraintWithoutMaster.isActive = true
-//        } else {
-//            viewWithMaster.isHidden = false
-//            constraintWithMaster.isActive = true
-//            constraintWithoutMaster.isActive = false
-//        }
-//
-//        if dateForNotification == nil {
-//            viewWithNotification.isHidden = true
-//            constraintWithNotification.isActive = false
-//            constraintWithoutNotification.isActive = true
-//        } else {
-//            viewWithNotification.isHidden = false
-//            constraintWithNotification.isActive = true
-//            constraintWithoutNotification.isActive = false
-//        }
+        let selectedMasterVC = SelectedMasterViewController(nibName: String(describing: SelectedMasterViewController.self), bundle: nil)
         
-        if selectedMaster == nil, dateForNotification == nil {
-            viewWithMaster.isHidden = true
-            constraintWithMaster.isActive = false
-            constraintWithoutMaster.isActive = true
-            viewWithNotification.isHidden = true
-            constraintWithNotification.isActive = false
-            constraintWithoutNotification.isActive = true
-        } else {
-            viewWithMaster.isHidden = false
-            constraintWithMaster.isActive = true
-            constraintWithoutMaster.isActive = false
-            viewWithNotification.isHidden = false
-            constraintWithNotification.isActive = true
-            constraintWithoutNotification.isActive = false
+        if let sheet = selectedMasterVC.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.preferredCornerRadius = 34
         }
         
-        
+        selectedMasterVC.master = selectedMaster
+        present(selectedMasterVC, animated: true)
     }
     
     //Calls this function when the tap is recognized to hide keyboard
@@ -207,15 +157,46 @@ class AppointmentViewController: UIViewController {
 //        mastersVC.modalTransitionStyle = .coverVertical
 //        mastersVC.modalPresentationStyle = .overFullScreen
 //        self.present(mastersVC, animated: true)
+                 
+//         vc.preferredContentSize = CGSize(width: 100, height: 100)
+
+         if let sheet = mastersVC.sheetPresentationController {
+             sheet.detents = [.medium(), .large()]
+//             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+             sheet.prefersGrabberVisible = true
+             sheet.prefersEdgeAttachedInCompactHeight = true
+             sheet.preferredCornerRadius = 34
+ //            sheet.preferredFocusEnvironments = UIFocusEnvironment()
+         }
         
         mastersVC.postMaster = {
             
             guard let master = mastersVC.selectedMaster else { return }
             self.selectedMaster = master
             self.masterNameLabel.text = master.name
+            
+            if self.selectedMaster == nil {
+                self.constraintWithMaster.isActive = false
+                self.constraintWithoutMaster.isActive = true
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut]) {
+                    self.viewWithMaster.isHidden = true
+                } completion: { finished in
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.constraintWithMaster.isActive = true
+                self.constraintWithoutMaster.isActive = false
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut]) {
+                    self.viewWithMaster.isHidden = false
+                } completion: { finished in
+                    self.view.layoutIfNeeded()
+                }
+            }
         }
+                
+        present(mastersVC, animated: true)
         
-        navigationController?.pushViewController(mastersVC, animated: true)
+//        navigationController?.pushViewController(mastersVC, animated: true)
     }
     
     @IBAction func setNotificationAppointmentAction(_ sender: UIButton) {
@@ -234,6 +215,16 @@ class AppointmentViewController: UIViewController {
             dateFormatter.dateFormat = "d MMM"
             let dateString = dateFormatter.string(from: notifDate)
             print("NOTIF DATE: \(dateString)")
+            
+            if self.dateForNotification == nil {
+                self.viewWithNotification.isHidden = true
+                self.constraintWithNotification.isActive = false
+                self.constraintWithoutNotification.isActive = true
+            } else {
+                self.viewWithNotification.isHidden = false
+                self.constraintWithNotification.isActive = true
+                self.constraintWithoutNotification.isActive = false
+            }
             self.notificationDateLabel.text = ("\(dateString), \(Calendar.current.component(.hour, from: notifDate)):\(Calendar.current.component(.minute, from: notifDate))")
 //            self.notificationDateLabel.text = ("\(dateString)")
         }

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-lt-2QX">
-                        <rect key="frame" x="16" y="8" width="288" height="175"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tex-w4-4Oh">
                                 <rect key="frame" x="8" y="9.5" width="100" height="97"/>
@@ -29,19 +29,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y12-NO-zkv">
-                                <rect key="frame" x="124" y="8" width="156" height="19.5"/>
+                                <rect key="frame" x="124" y="8" width="188" height="19.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experience" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOc-ER-9zZ">
-                                <rect key="frame" x="124" y="32.5" width="156" height="18"/>
+                                <rect key="frame" x="124" y="32.5" width="188" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nec-R9-60s">
-                                <rect key="frame" x="8" y="118" width="272" height="19.5"/>
+                                <rect key="frame" x="8" y="118" width="304" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -66,10 +66,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="mPC-lt-2QX" secondAttribute="trailing" constant="16" id="c0b-KL-Qf8"/>
-                    <constraint firstItem="mPC-lt-2QX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="doF-s9-b6F"/>
-                    <constraint firstAttribute="bottom" secondItem="mPC-lt-2QX" secondAttribute="bottom" constant="8" id="phw-d4-H9q"/>
-                    <constraint firstItem="mPC-lt-2QX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="z9N-4c-Gil"/>
+                    <constraint firstAttribute="trailing" secondItem="mPC-lt-2QX" secondAttribute="trailing" id="c0b-KL-Qf8"/>
+                    <constraint firstItem="mPC-lt-2QX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="doF-s9-b6F"/>
+                    <constraint firstAttribute="bottom" secondItem="mPC-lt-2QX" secondAttribute="bottom" constant="16" id="phw-d4-H9q"/>
+                    <constraint firstItem="mPC-lt-2QX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="z9N-4c-Gil"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -14,6 +14,7 @@ class MastersViewController: UIViewController {
     @IBOutlet weak var mastersTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var selectMasterButtonOutlet: UIButton!
+    @IBOutlet weak var selectButtonOutlet: UIButton!
     
     var masters = [Master]()
     var database: DatabaseReference!
@@ -28,7 +29,10 @@ class MastersViewController: UIViewController {
         setupTable()
         loadMasters()
         selectMasterButtonOutlet.setCapsuleRoundingToButton()
-        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+//        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        mastersTable.setRoundingToView(cornerRadius: 18)
+        mastersTable.showsVerticalScrollIndicator = false
+        selectButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
     }
 
     private func setupTable() {
@@ -72,7 +76,8 @@ class MastersViewController: UIViewController {
     @IBAction func selectMasterAction(_ sender: UIButton) {
         
         if selectedMaster != nil {
-            navigationController?.popViewController(animated: true)
+//            navigationController?.popViewController(animated: true)
+            dismiss(animated: true)
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
             let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, выберите мастера, чтобы продолжить.", preferredStyle: .alert)
