@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationsSettingsViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundImage" destination="rQE-aB-BbE" id="BuL-au-UaO"/>
                 <outlet property="saveButtonOutlet" destination="iFm-YB-Izj" id="68I-Kt-oat"/>
                 <outlet property="timePicker" destination="Mcc-w7-OtX" id="87Q-ga-dR4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,14 +21,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Backgroud_lowOpacity" translatesAutoresizingMaskIntoConstraints="NO" id="rQE-aB-BbE">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqv-84-54x">
-                    <rect key="frame" x="0.0" y="539.5" width="414" height="356.5"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="352.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFm-YB-Izj">
-                            <rect key="frame" x="115.5" y="242.5" width="183" height="50"/>
+                            <rect key="frame" x="115.5" y="238.5" width="183" height="50"/>
                             <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Crq-2Y-Rm5"/>
@@ -45,47 +41,59 @@
                             </connections>
                         </button>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-w7-OtX">
-                            <rect key="frame" x="16" y="60.5" width="382" height="162"/>
+                            <rect key="frame" x="16" y="56.5" width="382" height="162"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="162" id="Lac-WG-Rus"/>
                             </constraints>
                         </datePicker>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напоминание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-JR-ru4">
-                            <rect key="frame" x="16" y="20" width="382" height="20.5"/>
+                            <rect key="frame" x="16" y="16" width="382" height="20.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ty-6o-Ze2">
+                            <rect key="frame" x="381" y="16" width="17" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="HGv-7A-U12"/>
+                                <constraint firstAttribute="width" constant="17" id="lBM-8p-HUs"/>
+                            </constraints>
+                            <color key="tintColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="M4s-6e-x0X"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="IFE-JR-ru4" secondAttribute="trailing" constant="16" id="1GT-51-UgM"/>
                         <constraint firstItem="Mcc-w7-OtX" firstAttribute="top" secondItem="IFE-JR-ru4" secondAttribute="bottom" constant="20" id="5YZ-JY-8oO"/>
                         <constraint firstItem="IFE-JR-ru4" firstAttribute="leading" secondItem="sqv-84-54x" secondAttribute="leading" constant="16" id="Hjx-jQ-Yq3"/>
-                        <constraint firstItem="IFE-JR-ru4" firstAttribute="top" secondItem="sqv-84-54x" secondAttribute="top" constant="20" id="IUf-ZP-g6f"/>
                         <constraint firstItem="iFm-YB-Izj" firstAttribute="top" secondItem="Mcc-w7-OtX" secondAttribute="bottom" constant="20" id="JJa-yx-3hx"/>
                         <constraint firstItem="iFm-YB-Izj" firstAttribute="centerX" secondItem="sqv-84-54x" secondAttribute="centerX" id="Oal-Fg-Rp2"/>
+                        <constraint firstItem="8ty-6o-Ze2" firstAttribute="top" secondItem="sqv-84-54x" secondAttribute="top" constant="16" id="SdQ-41-tSm"/>
                         <constraint firstItem="Mcc-w7-OtX" firstAttribute="leading" secondItem="sqv-84-54x" secondAttribute="leading" constant="16" id="St0-SZ-zPQ"/>
                         <constraint firstAttribute="trailing" secondItem="Mcc-w7-OtX" secondAttribute="trailing" constant="16" id="kb1-XF-i78"/>
+                        <constraint firstAttribute="trailing" secondItem="8ty-6o-Ze2" secondAttribute="trailing" constant="16" id="mzn-YC-wcK"/>
                         <constraint firstAttribute="bottom" secondItem="iFm-YB-Izj" secondAttribute="bottom" constant="64" id="n70-26-lsq"/>
+                        <constraint firstItem="IFE-JR-ru4" firstAttribute="top" secondItem="8ty-6o-Ze2" secondAttribute="top" id="ugF-fv-alf"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sqv-84-54x" secondAttribute="trailing" id="1Is-7o-YSc"/>
-                <constraint firstItem="rQE-aB-BbE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7ld-kd-EAS"/>
-                <constraint firstAttribute="bottom" secondItem="rQE-aB-BbE" secondAttribute="bottom" id="DOR-CP-8D3"/>
-                <constraint firstAttribute="bottom" secondItem="sqv-84-54x" secondAttribute="bottom" id="NdE-Dm-Ulh"/>
-                <constraint firstItem="rQE-aB-BbE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iWy-uS-Sko"/>
-                <constraint firstItem="rQE-aB-BbE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qkv-cn-cu5"/>
+                <constraint firstItem="sqv-84-54x" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8bK-On-dqq"/>
                 <constraint firstItem="sqv-84-54x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tM9-Tz-7QS"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="59.598214285714285"/>
         </view>
     </objects>
     <resources>
-        <image name="Backgroud_lowOpacity" width="900" height="1950"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

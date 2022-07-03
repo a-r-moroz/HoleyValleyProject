@@ -115,7 +115,7 @@
                                 <constraint firstItem="Xie-3w-wVl" firstAttribute="top" secondItem="uNx-id-SNd" secondAttribute="bottom" constant="5" id="hv9-om-gH8"/>
                                 <constraint firstItem="7tl-tE-IyI" firstAttribute="top" secondItem="Xie-3w-wVl" secondAttribute="bottom" constant="5" id="sM7-sw-ADb"/>
                                 <constraint firstItem="Xie-3w-wVl" firstAttribute="leading" secondItem="eXW-Gi-syJ" secondAttribute="leading" constant="16" id="uma-Yj-fAr"/>
-                                <constraint firstAttribute="bottom" secondItem="7tl-tE-IyI" secondAttribute="bottom" constant="5" id="vgM-3J-4RY"/>
+                                <constraint firstAttribute="bottom" secondItem="7tl-tE-IyI" secondAttribute="bottom" id="vgM-3J-4RY"/>
                                 <constraint firstAttribute="trailing" secondItem="Xie-3w-wVl" secondAttribute="trailing" constant="16" id="zp3-e5-lyg"/>
                             </constraints>
                         </view>

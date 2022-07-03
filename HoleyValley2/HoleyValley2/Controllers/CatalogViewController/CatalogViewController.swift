@@ -130,9 +130,15 @@ class CatalogViewController: UIViewController {
         
         let sortingVC = SortingViewController(nibName: String(describing: SortingViewController.self), bundle: nil)
         
-        sortingVC.modalTransitionStyle = .coverVertical
-        sortingVC.modalPresentationStyle = .overFullScreen
-        self.present(sortingVC, animated: true)
+        if let sheet = sortingVC.sheetPresentationController {
+            sheet.detents = [ .medium()]
+            sheet.prefersGrabberVisible = true
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.preferredCornerRadius = 34
+        }
+        
+//        sortingVC.modalTransitionStyle = .coverVertical
+//        sortingVC.modalPresentationStyle = .overFullScreen
         
         sortingVC.saveSortingParameters = {
             
@@ -184,6 +190,8 @@ class CatalogViewController: UIViewController {
                 self.reloadCatalogTable()
             }
         }
+        
+        self.present(sortingVC, animated: true)
     }
     
     private func reloadCatalogTable() {

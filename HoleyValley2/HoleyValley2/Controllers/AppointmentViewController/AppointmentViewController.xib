@@ -200,7 +200,7 @@
                                         <action selector="selectMasterAction:" destination="-1" eventType="touchUpInside" id="Wd0-yc-j6M"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw5-8b-kJK">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw5-8b-kJK">
                                     <rect key="frame" x="105.5" y="279.5" width="203" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш мастер: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWt-27-E9G">
@@ -226,7 +226,7 @@
                                         <constraint firstItem="fxn-Az-RjV" firstAttribute="top" secondItem="nw5-8b-kJK" secondAttribute="top" id="tnd-Bf-REq"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ik-wV-7dJ">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ik-wV-7dJ">
                                     <rect key="frame" x="145.5" y="1170" width="123" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напоминание:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T8-cx-4fx">

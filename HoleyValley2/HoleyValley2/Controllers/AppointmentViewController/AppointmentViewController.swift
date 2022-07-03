@@ -93,6 +93,20 @@ class AppointmentViewController: UIViewController {
         showSelectedMaster()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if self.selectedMaster == nil {
+            self.constraintWithMaster.isActive = false
+            self.constraintWithoutMaster.isActive = true
+            self.viewWithMaster.isHidden = true
+        }
+        
+        if self.dateForNotification == nil {
+            self.viewWithNotification.isHidden = true
+            self.constraintWithNotification.isActive = false
+            self.constraintWithoutNotification.isActive = true
+        }
+    }
+    
     private func showSelectedMaster() {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(masterLabelTapped(sender:)))
@@ -202,9 +216,19 @@ class AppointmentViewController: UIViewController {
     @IBAction func setNotificationAppointmentAction(_ sender: UIButton) {
         
         let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
-        notificationsSettingsVC.modalTransitionStyle = .coverVertical
-        notificationsSettingsVC.modalPresentationStyle = .overFullScreen
+//        notificationsSettingsVC.modalTransitionStyle = .coverVertical
+//        notificationsSettingsVC.modalPresentationStyle = .overFullScreen
         
+        
+        if let sheet = notificationsSettingsVC.sheetPresentationController {
+            sheet.detents = [ .medium()]
+            sheet.prefersGrabberVisible = true
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.preferredCornerRadius = 34
+        }
+        
+//        present(notificationsSettingsVC, animated: true)
+                
         notificationsSettingsVC.postDate = {
             
             guard let notifDate = notificationsSettingsVC.notificationDate else { return }
@@ -230,6 +254,7 @@ class AppointmentViewController: UIViewController {
         }
         
         self.present(notificationsSettingsVC, animated: true)
+        
     }
 
     @IBAction func saveAppointmentAction(_ sender: UIButton) {

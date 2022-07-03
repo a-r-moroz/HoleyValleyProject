@@ -13,7 +13,6 @@ class SortingViewController: UIViewController {
     @IBOutlet weak var cleanButtonOutlet: UIButton!
     @IBOutlet weak var sortingParametersTable: UITableView!
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var backgroundImage: UIImageView!
     
     let sortingPoints = SortingPoints.allCases
 //    var currentSortingParameters: (type: String, price: String)?
@@ -40,8 +39,6 @@ class SortingViewController: UIViewController {
 //        navigationController?.navigationBar.scrollEdgeAppearance = appearance
 //        self.navigationItem.setHidesBackButton(true, animated: true)
         
-        closeViewControllerByTap()
-        closeViewControllerBySwipe()
         backView.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
         backView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
@@ -61,30 +58,6 @@ class SortingViewController: UIViewController {
         sortingParametersTable.delegate = self
         sortingParametersTable.dataSource = self
         sortingParametersTable.register(UINib(nibName: String(describing: SortingCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SortingCell.self))
-    }
-    
-    private func closeViewControllerByTap() {
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(closeTap(sender:)))
-        backgroundImage.addGestureRecognizer(tap)
-        backgroundImage.isUserInteractionEnabled = true
-    }
-    
-    @objc func closeTap(sender: UITapGestureRecognizer) {
-        
-        dismiss(animated: true)
-    }
-    
-    private func closeViewControllerBySwipe() {
-        
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(closeSwipe))
-        swipe.direction = .down
-        self.view.addGestureRecognizer(swipe)
-    }
-    
-    @objc func closeSwipe(sender: UISwipeGestureRecognizer) {
-        
-        dismiss(animated: true)
     }
     
     func setupBlur() {
