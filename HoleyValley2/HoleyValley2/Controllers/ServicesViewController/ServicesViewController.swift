@@ -23,6 +23,7 @@ class ServicesViewController: UIViewController {
         self.spinner.startAnimating()
         servicesTable.delegate = self
         servicesTable.dataSource = self
+        self.tabBarController?.delegate = self
         
         setupTable()
         loadServices()
@@ -120,5 +121,16 @@ extension ServicesViewController: UITableViewDataSource {
         serviceCell.previewPrice.isHidden = true
         
         return serviceCell
+    }
+}
+
+extension ServicesViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        let tabBarIndex = tabBarController.selectedIndex
+        if tabBarIndex == 0 {
+            servicesTable.setContentOffset(CGPoint.zero, animated: true)
+        }
     }
 }

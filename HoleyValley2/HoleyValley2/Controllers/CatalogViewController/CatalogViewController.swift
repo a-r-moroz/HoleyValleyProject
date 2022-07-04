@@ -61,6 +61,7 @@ class CatalogViewController: UIViewController {
 //        viewWithSearch.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
 //        viewWithSearch.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
+        self.tabBarController?.delegate = self
         
     }
     
@@ -238,29 +239,23 @@ extension CatalogViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0)
-        {
+        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
             print("scrolled up")
             self.oldHeightConstraint.isActive = true
             self.newHeightConstraint.isActive = false
-            
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) {
-                
-            } completion: { finish in
+
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) { } completion: { finish in
                 self.viewWithSearch.isHidden = false
                 self.view.layoutIfNeeded()
             }
         }
-        else
-        {
+        else {
             print("scrolled down")
-            
+
             oldHeightConstraint.isActive = false
             newHeightConstraint.isActive = true
-            
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) {
-                
-            } completion: { finish in
+
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) { } completion: { finish in
                 self.viewWithSearch.isHidden = true
                 self.view.layoutIfNeeded()
             }
@@ -340,6 +335,17 @@ extension CatalogViewController: UITableViewDataSource {
         
         print("INDEX: \n\(indexPath.row)")
         return decorationCell
+    }
+}
+
+extension CatalogViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        let tabBarIndex = tabBarController.selectedIndex
+        if tabBarIndex == 1 {
+            decorationsTable.setContentOffset(CGPoint.zero, animated: true)
+        }
     }
 }
 //extension CatalogViewController: UISearchResultsUpdating {
