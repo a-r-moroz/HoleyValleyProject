@@ -11,8 +11,8 @@ class NotificationsSettingsViewController: UIViewController {
 
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var saveButtonOutlet: UIButton!
-    @IBOutlet weak var viewWithData: UIView!
-    
+    @IBOutlet weak var disclaimerView: UIView!
+
     var postDate: (() -> ())?
     var notificationDate: Date?
     
@@ -20,8 +20,10 @@ class NotificationsSettingsViewController: UIViewController {
         super.viewDidLoad()
 
 //        viewWithData.setRoundingToView(cornerRadius: 41)
-        viewWithData.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
-        viewWithData.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//        viewWithData.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
+//        viewWithData.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        disclaimerView.setRoundingToView(cornerRadius: 18)
+
 
         saveButtonOutlet.setCapsuleRoundingToButton()
         saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
