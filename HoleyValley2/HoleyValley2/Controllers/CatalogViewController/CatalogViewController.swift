@@ -16,9 +16,12 @@ class CatalogViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var viewWithSearch: UIView!
     @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var oldSearchConstraint: NSLayoutConstraint!
+    @IBOutlet weak var newSearchConstraint: NSLayoutConstraint!
+    @IBOutlet weak var oldHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var newHeightConstraint: NSLayoutConstraint!
     
     var database: DatabaseReference!
-    
     var decorations = [Decoration]()
     var sortingDecorations = [Decoration]()
     var originalDecorations = [Decoration]()
@@ -57,6 +60,8 @@ class CatalogViewController: UIViewController {
         
 //        viewWithSearch.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
 //        viewWithSearch.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        
     }
     
     private func setupTable() {
@@ -230,6 +235,84 @@ extension CatalogViewController: UITableViewDelegate {
         navigationController?.pushViewController(decorationVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0)
+        {
+            print("scrolled up")
+            self.oldHeightConstraint.isActive = true
+            self.newHeightConstraint.isActive = false
+            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) {
+                
+            } completion: { finish in
+                self.viewWithSearch.isHidden = false
+                self.view.layoutIfNeeded()
+            }
+        }
+        else
+        {
+            print("scrolled down")
+            
+            oldHeightConstraint.isActive = false
+            newHeightConstraint.isActive = true
+            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) {
+                
+            } completion: { finish in
+                self.viewWithSearch.isHidden = true
+                self.view.layoutIfNeeded()
+            }
+        }
+        
+//        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0)
+//        {
+//            print("scrolled up")
+//            oldSearchConstraint.isActive = true
+//            newSearchConstraint.isActive = false
+//            UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseInOut]) {
+//                self.viewWithSearch.isHidden = false
+//                self.viewWithSearch.alpha = 1.0
+//            } completion: { finish in
+//                self.view.layoutIfNeeded()
+//            }
+//        }
+//        else
+//        {
+//            print("scrolled down")
+//
+//            oldSearchConstraint.isActive = false
+//            newSearchConstraint.isActive = true
+//            UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseInOut]) {
+//                self.viewWithSearch.alpha = 0.0
+//            } completion: { finish in
+//                self.viewWithSearch.isHidden = true
+//                self.view.layoutIfNeeded()
+//            }
+//        }
+        
+        
+//        let originalRect = self.viewWithSearch.frame
+//        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+//
+//            var rect: CGRect = self.viewWithSearch.frame
+//            rect.origin.y -= scrollView.contentOffset.y
+//            self.viewWithSearch.frame = rect
+//        } else {
+//            var rect: CGRect = originalRect
+//            rect.origin.y += scrollView.contentOffset.y
+//            self.viewWithSearch.frame = rect
+//        }
+        
+//        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+//
+//            let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+//            var fractionComplete = translation.y / viewWithSearch.frame.height
+//            updateinter
+//        }
+
+    }
 }
 
 
@@ -259,7 +342,6 @@ extension CatalogViewController: UITableViewDataSource {
         return decorationCell
     }
 }
-
 //extension CatalogViewController: UISearchResultsUpdating {
 //
 //    func updateSearchResults(for searchController: UISearchController) {

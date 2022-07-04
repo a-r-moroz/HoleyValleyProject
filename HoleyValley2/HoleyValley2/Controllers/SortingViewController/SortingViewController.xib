@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-Lk-bi3">
-                            <rect key="frame" x="0.0" y="66" width="414" height="786"/>
+                            <rect key="frame" x="0.0" y="66" width="414" height="652"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vse-I9-ixO">
@@ -48,11 +48,29 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLU-9A-gel">
+                            <rect key="frame" x="115.5" y="738" width="183" height="50"/>
+                            <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Ax9-JF-zp8"/>
+                                <constraint firstAttribute="width" constant="183" id="tZl-qa-YXg"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Применить">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="saveSortingParametersAction:" destination="-1" eventType="touchUpInside" id="go8-vd-Hx8"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="zLU-9A-gel" secondAttribute="bottom" constant="64" id="5O7-ev-Gav"/>
+                        <constraint firstItem="zLU-9A-gel" firstAttribute="centerX" secondItem="lWx-L2-0pG" secondAttribute="centerX" id="80w-KS-r9M"/>
                         <constraint firstAttribute="trailing" secondItem="iX2-Lk-bi3" secondAttribute="trailing" id="DzD-MO-WoD"/>
-                        <constraint firstAttribute="bottom" secondItem="iX2-Lk-bi3" secondAttribute="bottom" id="ETe-hT-WET"/>
+                        <constraint firstItem="zLU-9A-gel" firstAttribute="top" secondItem="iX2-Lk-bi3" secondAttribute="bottom" constant="20" id="Oaf-sX-hKI"/>
                         <constraint firstAttribute="trailing" secondItem="Vse-I9-ixO" secondAttribute="trailing" constant="16" id="RCh-zF-Alr"/>
                         <constraint firstItem="Vse-I9-ixO" firstAttribute="top" secondItem="lWx-L2-0pG" secondAttribute="top" constant="20" id="RIp-bg-n1O"/>
                         <constraint firstItem="iX2-Lk-bi3" firstAttribute="top" secondItem="2wR-59-bid" secondAttribute="bottom" constant="20" id="Srn-Vv-x24"/>
@@ -61,29 +79,11 @@
                         <constraint firstItem="2wR-59-bid" firstAttribute="centerX" secondItem="lWx-L2-0pG" secondAttribute="centerX" id="sAD-sc-E8p"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLU-9A-gel">
-                    <rect key="frame" x="115.5" y="782" width="183" height="50"/>
-                    <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Ax9-JF-zp8"/>
-                        <constraint firstAttribute="width" constant="183" id="tZl-qa-YXg"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Применить">
-                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="saveSortingParametersAction:" destination="-1" eventType="touchUpInside" id="go8-vd-Hx8"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="zLU-9A-gel" firstAttribute="centerX" secondItem="iX2-Lk-bi3" secondAttribute="centerX" id="7Gk-i5-XUc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lWx-L2-0pG" secondAttribute="trailing" id="Eb7-oG-hyE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zLU-9A-gel" secondAttribute="bottom" constant="30" id="SC4-EO-WcG"/>
                 <constraint firstItem="lWx-L2-0pG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fV8-be-uHY"/>
                 <constraint firstItem="lWx-L2-0pG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q1j-8q-hxd"/>
                 <constraint firstAttribute="bottom" secondItem="lWx-L2-0pG" secondAttribute="bottom" id="unl-Kq-u8U"/>
