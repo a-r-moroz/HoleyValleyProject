@@ -14,23 +14,14 @@ class DecorationCell: UITableViewCell {
     @IBOutlet weak var decorationNameLabel: UILabel!
     @IBOutlet weak var decorationPriceLabel: UILabel!
     @IBOutlet weak var viewWithData: UIView!
-    @IBOutlet weak var previewName: UIView!
-    @IBOutlet weak var previewPrice: UIView!
     
 //    var database: DatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        decorationPictureView.setRounding()
-        viewWithData.setRoundingToView(cornerRadius: 18)
-        viewWithData.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
-        
-        previewName.layer.cornerRadius = previewName.frame.height / 4
-        previewPrice.layer.cornerRadius = previewPrice.frame.height / 4
-        previewName.isHidden = false
-        previewPrice.isHidden = false
-        
+        decorationPictureView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.photos)
+        viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

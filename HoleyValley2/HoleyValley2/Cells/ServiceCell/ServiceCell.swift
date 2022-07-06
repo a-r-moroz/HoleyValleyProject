@@ -12,20 +12,12 @@ class ServiceCell: UITableViewCell {
     @IBOutlet weak var serviceName: UILabel!
     @IBOutlet weak var servicePrice: UILabel!
     @IBOutlet weak var ViewWithData: UIView!
-    @IBOutlet weak var previewName: UIView!
-    @IBOutlet weak var previewPrice: UIView!
     
     override func awakeFromNib() {
         
         super.awakeFromNib()
 
-        ViewWithData.setRoundingToView(cornerRadius: 18)
-        ViewWithData.setShadowToView(color: CGColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), cornerRadius: 18)
-        
-        previewName.layer.cornerRadius = previewName.frame.height / 4
-        previewPrice.layer.cornerRadius = previewPrice.frame.height / 4
-        previewName.isHidden = false
-        previewPrice.isHidden = false
+        ViewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

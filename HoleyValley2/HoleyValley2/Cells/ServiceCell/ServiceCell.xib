@@ -40,39 +40,18 @@
                                     <constraint firstAttribute="width" constant="20" id="rY7-Ax-MRd"/>
                                 </constraints>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzm-49-jHd">
-                                <rect key="frame" x="12" y="10" width="232" height="16"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="VYq-nS-QAF"/>
-                                </constraints>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHs-Gl-y7R">
-                                <rect key="frame" x="12" y="34.5" width="116" height="16"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="T3w-7y-3Oh"/>
-                                    <constraint firstAttribute="height" constant="16" id="tdW-lu-TAH"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Uzm-49-jHd" firstAttribute="centerY" secondItem="hmw-F3-0kn" secondAttribute="centerY" id="5vM-va-MES"/>
-                            <constraint firstItem="uHs-Gl-y7R" firstAttribute="leading" secondItem="tia-As-ESW" secondAttribute="leading" constant="12" id="9az-pT-9rf"/>
                             <constraint firstItem="hmw-F3-0kn" firstAttribute="top" secondItem="tia-As-ESW" secondAttribute="top" constant="8" id="AEP-jk-0bd"/>
                             <constraint firstItem="9DZ-mf-fPS" firstAttribute="top" secondItem="hmw-F3-0kn" secondAttribute="bottom" constant="5" id="AR4-EA-7RL"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9DZ-mf-fPS" secondAttribute="bottom" constant="8" id="ARD-Qh-xvf"/>
                             <constraint firstItem="brp-wc-PcF" firstAttribute="centerY" secondItem="tia-As-ESW" secondAttribute="centerY" id="Awj-0f-WAg"/>
-                            <constraint firstItem="Uzm-49-jHd" firstAttribute="leading" secondItem="tia-As-ESW" secondAttribute="leading" constant="12" id="MMh-ZE-d2Z"/>
                             <constraint firstItem="brp-wc-PcF" firstAttribute="leading" secondItem="hmw-F3-0kn" secondAttribute="trailing" constant="8" id="OX0-Z5-gqK"/>
                             <constraint firstAttribute="trailing" secondItem="brp-wc-PcF" secondAttribute="trailing" constant="12" id="Tdy-aS-v3X"/>
-                            <constraint firstItem="brp-wc-PcF" firstAttribute="leading" secondItem="Uzm-49-jHd" secondAttribute="trailing" constant="12" id="WpN-RF-H6C"/>
                             <constraint firstItem="hmw-F3-0kn" firstAttribute="leading" secondItem="tia-As-ESW" secondAttribute="leading" constant="12" id="Xlc-Fj-PIH"/>
                             <constraint firstItem="9DZ-mf-fPS" firstAttribute="leading" secondItem="tia-As-ESW" secondAttribute="leading" constant="12" id="dbG-HJ-oOq"/>
                             <constraint firstItem="brp-wc-PcF" firstAttribute="leading" secondItem="9DZ-mf-fPS" secondAttribute="trailing" constant="8" id="fp0-L8-Xsq"/>
-                            <constraint firstItem="Uzm-49-jHd" firstAttribute="centerX" secondItem="uHs-Gl-y7R" secondAttribute="trailing" id="hDI-Bb-TRT"/>
-                            <constraint firstItem="uHs-Gl-y7R" firstAttribute="centerY" secondItem="9DZ-mf-fPS" secondAttribute="centerY" id="yGS-rL-zNP"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -86,8 +65,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="ViewWithData" destination="tia-As-ESW" id="nUr-eV-SsW"/>
-                <outlet property="previewName" destination="Uzm-49-jHd" id="1O9-wi-pZM"/>
-                <outlet property="previewPrice" destination="uHs-Gl-y7R" id="QAr-pu-0dA"/>
                 <outlet property="serviceName" destination="hmw-F3-0kn" id="EVa-jP-5Sp"/>
                 <outlet property="servicePrice" destination="9DZ-mf-fPS" id="OqZ-wC-zOl"/>
             </connections>
@@ -101,9 +78,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -25,23 +25,20 @@ class CatalogViewController: UIViewController {
     var searchController = UISearchController()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        
         spinner.startAnimating()
-        decorationsTable.delegate = self
-        decorationsTable.dataSource = self
-        
-        setupTable()
-//        decorations = FirebaseManager.getDecorations()
-        
-        title = "Каталог"
-        
-        loadDecorations()
-        print("COUNT \n\(decorations.count)")
-        
-        addSortingButton()
-        
         self.tabBarController?.delegate = self
+        setupTable()
+        loadDecorations()
+        title = "Каталог"
+        addSortingButton()
+        addSearchBar()
+        
+//        decorations = FirebaseManager.getDecorations()
+    }
+    
+    private func addSearchBar() {
         
 //        searchBar.placeholder = "Поиск"
 //        searchBar.sizeToFit()
@@ -54,6 +51,8 @@ class CatalogViewController: UIViewController {
     
     private func setupTable() {
         
+        decorationsTable.delegate = self
+        decorationsTable.dataSource = self
         decorationsTable.register(UINib(nibName: String(describing: DecorationCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DecorationCell.self))
     }
     
@@ -252,9 +251,6 @@ extension CatalogViewController: UITableViewDataSource {
         decorationCell.decorationPriceLabel.text = String(decor.price) + Const.belRublesSign
 //        decorationCell.decorationPictureView.setImageFromULR(decor.image)
         decorationCell.decorationPictureView.sd_setImage(with: URL(string: decor.image), placeholderImage: UIImage(named: "imagePatternLittle.png"))
-
-        decorationCell.previewName.isHidden = true
-        decorationCell.previewPrice.isHidden = true
         
         print("INDEX: \n\(indexPath.row)")
         return decorationCell

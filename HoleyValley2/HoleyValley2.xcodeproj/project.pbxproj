@@ -259,14 +259,6 @@
 			path = OverlayVC;
 			sourceTree = "<group>";
 		};
-		8E787D492874E64100755508 /* NavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				8E787D4A2874E65A00755508 /* NavigationBar.swift */,
-			);
-			path = NavigationBar;
-			sourceTree = "<group>";
-		};
 		8E9D5128284D010A0019F8A0 /* SortingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,7 +386,7 @@
 		8ECF9CD5283279D20058899B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8E787D492874E64100755508 /* NavigationBar */,
+				8E787D4A2874E65A00755508 /* NavigationBar.swift */,
 				8ECF9CD628327B7B0058899B /* UIImageView.swift */,
 				8E609B8A28399FFF001D242E /* ImageScrollView.swift */,
 				8E13BD4E283BA0690039D1F9 /* UIButton.swift */,

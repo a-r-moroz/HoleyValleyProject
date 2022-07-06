@@ -19,33 +19,18 @@ class ServicesViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         self.spinner.startAnimating()
-        servicesTable.delegate = self
-        servicesTable.dataSource = self
         self.tabBarController?.delegate = self
-        
         setupTable()
         loadServices()
         title = "Услуги"
-
-//        UINavigationBar.appearance().isTranslucent = false
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: ""), for: UIBarMetrics.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage(named: "")
-//        UINavigationBar.appearance().barStyle = .black
-
-        
-
-        
-//        UITabBar.appearance().shadowImage = UIImage()
-//        UITabBar.appearance().backgroundImage = UIImage()
-//        UITabBar.appearance().backgroundColor = nil
-
 //        services = FirebaseManager.getServices()
     }
     
     func setupTable() {
         
+        servicesTable.delegate = self
+        servicesTable.dataSource = self
         let nib = UINib(nibName: String(describing: ServiceCell.self), bundle: nil)
         servicesTable.register(nib, forCellReuseIdentifier: String(describing: ServiceCell.self))
     }
@@ -129,8 +114,6 @@ extension ServicesViewController: UITableViewDataSource {
         let service = services[indexPath.row]
         serviceCell.serviceName.text = service.name
         serviceCell.servicePrice.text = "от " + String(service.price) + Const.belRublesSign
-        serviceCell.previewName.isHidden = true
-        serviceCell.previewPrice.isHidden = true
         
         return serviceCell
     }
