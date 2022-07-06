@@ -28,11 +28,11 @@ class SingleServiceViewController: UIViewController {
         super.viewDidLoad()
 
         setupViewControllerWithData()
-        catalogButtonOutlet.setCapsuleRoundingToButton()
-        appointmentButtonOutlet.setCapsuleRoundingToButton()
-        catalogButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-//        appointmentButtonOutlet.addShadow(color: CGColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1), cornerRadius: 10)
+        catalogButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        appointmentButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+
+//        catalogButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+//        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
     }
     
     func setupViewControllerWithData() {
