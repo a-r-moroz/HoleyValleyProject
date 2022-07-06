@@ -23,7 +23,6 @@ extension UITextField {
 //        self.clearButtonRect(forBounds: self.bounds).offsetBy(dx: -10, dy: 0)
         self.leftViewMode = .always
 //        self.rightViewMode = .always
-
     }
     
 //    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {

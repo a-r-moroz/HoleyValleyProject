@@ -65,21 +65,6 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u14-SZ-qtY">
-                                    <rect key="frame" x="16" y="577" width="382" height="50"/>
-                                    <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="wdX-nn-9am"/>
-                                    </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Записаться">
-                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                    </buttonConfiguration>
-                                    <connections>
-                                        <action selector="appointmentButtonAction:" destination="-1" eventType="touchUpInside" id="svb-Ro-gcP"/>
-                                    </connections>
-                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrF-Tg-mhu">
                                     <rect key="frame" x="16" y="486.5" width="382" height="70.5"/>
                                     <subviews>
@@ -109,7 +94,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jy7-W9-vhW">
-                                    <rect key="frame" x="16" y="647" width="382" height="119.5"/>
+                                    <rect key="frame" x="16" y="577" width="382" height="119.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы в соцсетях:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llu-sU-Aj5">
                                             <rect key="frame" x="16" y="10" width="350" height="19.5"/>
@@ -182,20 +167,35 @@
                                         <constraint firstItem="GTM-3B-Hro" firstAttribute="top" secondItem="7Bt-Y6-na9" secondAttribute="bottom" constant="20" id="uzS-6R-DuG"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u14-SZ-qtY">
+                                    <rect key="frame" x="16" y="716.5" width="382" height="50"/>
+                                    <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="wdX-nn-9am"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Записаться">
+                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="appointmentButtonAction:" destination="-1" eventType="touchUpInside" id="svb-Ro-gcP"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="u14-SZ-qtY" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="6Vc-JP-Mnz"/>
                                 <constraint firstAttribute="trailing" secondItem="bhp-Mf-LQ6" secondAttribute="trailing" constant="16" id="AF2-TR-z07"/>
                                 <constraint firstItem="x9l-9J-qiS" firstAttribute="top" secondItem="bhp-Mf-LQ6" secondAttribute="bottom" constant="20" id="Eie-gR-uDf"/>
                                 <constraint firstItem="x9l-9J-qiS" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="F2E-fl-Uz4"/>
-                                <constraint firstItem="u14-SZ-qtY" firstAttribute="top" secondItem="hrF-Tg-mhu" secondAttribute="bottom" constant="20" id="HMJ-3c-EGf"/>
                                 <constraint firstItem="hrF-Tg-mhu" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="IzR-SR-y8D"/>
                                 <constraint firstItem="nKA-Tf-oW9" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="KR8-gx-xPT"/>
                                 <constraint firstItem="bhp-Mf-LQ6" firstAttribute="leading" secondItem="2vU-Br-07O" secondAttribute="leading" constant="16" id="P9M-mq-LUB"/>
-                                <constraint firstAttribute="bottom" secondItem="Jy7-W9-vhW" secondAttribute="bottom" constant="50" id="Pp6-y8-jtA"/>
                                 <constraint firstAttribute="trailing" secondItem="hrF-Tg-mhu" secondAttribute="trailing" constant="16" id="RD4-Ny-2fP"/>
+                                <constraint firstItem="u14-SZ-qtY" firstAttribute="top" secondItem="Jy7-W9-vhW" secondAttribute="bottom" constant="20" id="Raq-ei-BJZ"/>
                                 <constraint firstAttribute="trailing" secondItem="Jy7-W9-vhW" secondAttribute="trailing" constant="16" id="SgV-E4-0yN"/>
-                                <constraint firstItem="Jy7-W9-vhW" firstAttribute="top" secondItem="u14-SZ-qtY" secondAttribute="bottom" constant="20" id="jLx-2G-dKq"/>
+                                <constraint firstAttribute="bottom" secondItem="u14-SZ-qtY" secondAttribute="bottom" constant="50" id="Xa6-4g-iw2"/>
+                                <constraint firstItem="Jy7-W9-vhW" firstAttribute="top" secondItem="hrF-Tg-mhu" secondAttribute="bottom" constant="20" id="jLx-2G-dKq"/>
                                 <constraint firstItem="hrF-Tg-mhu" firstAttribute="top" secondItem="nKA-Tf-oW9" secondAttribute="bottom" constant="20" id="noS-fY-t5K"/>
                                 <constraint firstItem="nKA-Tf-oW9" firstAttribute="top" secondItem="x9l-9J-qiS" secondAttribute="bottom" constant="5" id="qhV-Gb-gT4"/>
                                 <constraint firstAttribute="trailing" secondItem="nKA-Tf-oW9" secondAttribute="trailing" constant="16" id="rDl-ia-fmI"/>

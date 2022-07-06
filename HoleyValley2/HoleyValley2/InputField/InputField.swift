@@ -77,7 +77,7 @@ import Haptica
 //        self.textField.leftView = paddingView
 //        self.textField.leftViewMode = .always
         textField.setupTextFieldWithBorderAndPadding(color: UIColor.systemGray5.cgColor, cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        
+        textField.delegate = self
     }
     
     @objc private func validateText() {
@@ -141,5 +141,18 @@ import Haptica
          }
          */
         
+    }
+}
+
+extension InputField: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.layer.borderColor = Const.Colors.gold.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        textField.layer.borderColor = UIColor.systemGray5.cgColor
     }
 }

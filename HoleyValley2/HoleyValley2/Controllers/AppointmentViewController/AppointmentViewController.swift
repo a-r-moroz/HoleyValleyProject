@@ -443,5 +443,15 @@ extension AppointmentViewController: UITextFieldDelegate {
         }
         return result
     }
+            
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.layer.borderColor = Const.Colors.gold.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        textField.layer.borderColor = UIColor.systemGray5.cgColor
+    }
 }
  

@@ -51,13 +51,13 @@ class SingleServiceViewController: UIViewController {
     
     @IBAction func catalogButtonAction(_ sender: UIButton) {
         
-        navigationController?.popToRootViewController(animated: true)
+//        navigationController?.popToRootViewController(animated: true)
         tabBarController?.selectedIndex = 1
     }
     
     @IBAction func appointmentButtonAction(_ sender: UIButton) {
         
-        navigationController?.popToRootViewController(animated: true)
+//        navigationController?.popToRootViewController(animated: true)
         tabBarController?.selectedIndex = 2
     }
 }
