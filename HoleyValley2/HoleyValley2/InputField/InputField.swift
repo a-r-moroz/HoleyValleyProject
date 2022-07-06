@@ -76,7 +76,7 @@ import Haptica
 //        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.size.height))
 //        self.textField.leftView = paddingView
 //        self.textField.leftViewMode = .always
-        textField.setupTextFieldWithBorderAndPadding(color: UIColor.systemGray5.cgColor)
+        textField.setupTextFieldWithBorderAndPadding(color: UIColor.systemGray5.cgColor, cornerRadius: Const.CornerRadiusTo.viewAndImage)
         
     }
     

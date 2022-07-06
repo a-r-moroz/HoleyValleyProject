@@ -48,28 +48,47 @@ class AppointmentViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        database = Database.database().reference()
         
-        selectMasterButtonOutlet.setCapsuleRoundingToButton()
-        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        confirmButtonOutlet.setCapsuleRoundingToButton()
-        confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        setNotificationButtonOutlet.setCapsuleRoundingToButton()
-        setNotificationButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        infoView.setRoundingToView(cornerRadius: 18)
-        infoView.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
-
-        let picker = UIPickerView()
-        picker.delegate = self
-        picker.dataSource = self
+        selectMasterButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        confirmButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        setNotificationButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        setNotificationButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        infoView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        calendarView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
                 
 //        hideKeyboardByTap()
         
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarView.locale = Locale(identifier: "RU")
+        setInputFields()
+        showSelectedMaster()
+        title = "Записаться"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.selectedMaster == nil {
+            self.constraintWithMaster.isActive = false
+            self.constraintWithoutMaster.isActive = true
+            self.viewWithMaster.isHidden = true
+        }
         
-        database = Database.database().reference()
-
+        if self.dateForNotification == nil {
+            self.viewWithNotification.isHidden = true
+            self.constraintWithNotification.isActive = false
+            self.constraintWithoutNotification.isActive = true
+        }
+    }
+    
+    private func setInputFields() {
+        
+        let picker = UIPickerView()
+        picker.delegate = self
+        picker.dataSource = self
+        
         timeInputField.textField.inputView = picker
         timeInputField.textField.placeholder = "12:00"
         timeInputField.validationType = .none
@@ -88,23 +107,6 @@ class AppointmentViewController: UIViewController {
         nameInputField.textField.text = name
         surnameInputField.textField.text = surname
         phoneInputField.textField.text = phone
-                
-        title = "Записаться"
-        showSelectedMaster()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if self.selectedMaster == nil {
-            self.constraintWithMaster.isActive = false
-            self.constraintWithoutMaster.isActive = true
-            self.viewWithMaster.isHidden = true
-        }
-        
-        if self.dateForNotification == nil {
-            self.viewWithNotification.isHidden = true
-            self.constraintWithNotification.isActive = false
-            self.constraintWithoutNotification.isActive = true
-        }
     }
     
     private func showSelectedMaster() {

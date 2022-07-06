@@ -10,12 +10,12 @@ import UIKit
 
 extension UITextField {
     
-    func setupTextFieldWithBorderAndPadding(color: CGColor) {
+    func setupTextFieldWithBorderAndPadding(color: CGColor, cornerRadius: CGFloat) {
         
         self.borderStyle = .none
         self.layer.borderColor = color
         self.layer.borderWidth = 1
-        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.cornerRadius = cornerRadius
         let paddingLeftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
         let paddingRightView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: self.frame.size.height))
         self.leftView = paddingLeftView
