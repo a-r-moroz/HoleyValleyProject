@@ -13,8 +13,8 @@ class MastersViewController: UIViewController {
 
     @IBOutlet weak var mastersTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var selectMasterButtonOutlet: UIButton!
-    @IBOutlet weak var selectButtonOutlet: UIButton!
+//    @IBOutlet weak var selectMasterButtonOutlet: UIButton!
+//    @IBOutlet weak var selectButtonOutlet: UIButton!
     
     var masters = [Master]()
     var database: DatabaseReference!
@@ -28,11 +28,11 @@ class MastersViewController: UIViewController {
         self.spinner.startAnimating()
         setupTable()
         loadMasters()
-        selectMasterButtonOutlet.setCapsuleRoundingToButton()
+//        selectMasterButtonOutlet.setCapsuleRoundingToButton()
 //        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        mastersTable.setRoundingToView(cornerRadius: 18)
+        mastersTable.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         mastersTable.showsVerticalScrollIndicator = false
-        selectButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+//        selectButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
     }
 
     private func setupTable() {
@@ -73,18 +73,18 @@ class MastersViewController: UIViewController {
         }
     }
 
-    @IBAction func selectMasterAction(_ sender: UIButton) {
-        
-        if selectedMaster != nil {
-//            navigationController?.popViewController(animated: true)
-            dismiss(animated: true)
-        } else {
-            let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
-            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, выберите мастера, чтобы продолжить.", preferredStyle: .alert)
-            alert.addAction(action)
-            present(alert, animated: true)
-        }
-    }
+//    @IBAction func selectMasterAction(_ sender: UIButton) {
+//
+//        if selectedMaster != nil {
+////            navigationController?.popViewController(animated: true)
+//            dismiss(animated: true)
+//        } else {
+//            let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
+//            let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, выберите мастера, чтобы продолжить.", preferredStyle: .alert)
+//            alert.addAction(action)
+//            present(alert, animated: true)
+//        }
+//    }
     
 }
 

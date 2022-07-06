@@ -45,6 +45,7 @@ struct Const {
         
         static let viewAndImage: CGFloat = 12
         static let imageInContainer: CGFloat = 4
+        static let sheetController: CGFloat = 28
     }
     
     struct Firebase {

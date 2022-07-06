@@ -46,6 +46,7 @@ class CatalogViewController: UIViewController {
         searchController.searchResultsUpdater = self
 //        searchController.searchBar.delegate = self
         searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        searchController.searchBar.placeholder = "Поиск"
         navigationItem.searchController = searchController
     }
     
@@ -126,7 +127,7 @@ class CatalogViewController: UIViewController {
             sheet.detents = [ .medium()]
             sheet.prefersGrabberVisible = true
             sheet.prefersEdgeAttachedInCompactHeight = true
-            sheet.preferredCornerRadius = 34
+            sheet.preferredCornerRadius = Const.CornerRadiusTo.sheetController
         }
         
 //        sortingVC.modalTransitionStyle = .coverVertical

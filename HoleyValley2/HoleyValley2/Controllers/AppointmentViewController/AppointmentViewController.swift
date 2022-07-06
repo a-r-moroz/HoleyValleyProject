@@ -123,7 +123,7 @@ class AppointmentViewController: UIViewController {
             sheet.detents = [.medium()]
             sheet.prefersGrabberVisible = true
             sheet.prefersEdgeAttachedInCompactHeight = true
-            sheet.preferredCornerRadius = 34
+            sheet.preferredCornerRadius = Const.CornerRadiusTo.sheetController
         }
         
         selectedMasterVC.master = selectedMaster
@@ -181,7 +181,7 @@ class AppointmentViewController: UIViewController {
 //             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
              sheet.prefersGrabberVisible = true
              sheet.prefersEdgeAttachedInCompactHeight = true
-             sheet.preferredCornerRadius = 34
+             sheet.preferredCornerRadius = Const.CornerRadiusTo.sheetController
  //            sheet.preferredFocusEnvironments = UIFocusEnvironment()
          }
         
@@ -226,7 +226,7 @@ class AppointmentViewController: UIViewController {
             sheet.detents = [ .medium()]
             sheet.prefersGrabberVisible = true
             sheet.prefersEdgeAttachedInCompactHeight = true
-            sheet.preferredCornerRadius = 34
+            sheet.preferredCornerRadius = Const.CornerRadiusTo.sheetController
         }
         
 //        present(notificationsSettingsVC, animated: true)
