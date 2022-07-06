@@ -17,22 +17,22 @@ class ReceptionViewController: UIViewController {
     @IBOutlet weak var instagramLogo: UIImageView!
     @IBOutlet weak var tiktokLogo: UIImageView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var socialNetworksView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        appointmentButtonOutlet.setCapsuleRoundingToButton()
-        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        mapWithCoordinatesView.setRoundingToView(cornerRadius: 18)
+        appointmentButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
+        disclaimerView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        socialNetworksView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
 
 //        instagramLogo.setRoundingToImage(cornerRadius: 18)
 //        tiktokLogo.setRoundingToImage(cornerRadius: 18)
 //        instagramLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
 //        tiktokLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
-        
-        disclaimerView.setRoundingToView(cornerRadius: 18)
-        disclaimerView.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
         
         title = "Контакты"
         

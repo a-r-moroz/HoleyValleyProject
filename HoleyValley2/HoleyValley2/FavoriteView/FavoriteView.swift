@@ -11,6 +11,7 @@ class FavoriteView: UIView {
 
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var viewForBackground: UIView!
     
     weak var viewDelegate: FavoriteViewDelegate?
     
@@ -60,6 +61,7 @@ class FavoriteView: UIView {
         
         favoriteImageView.image = isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         favoriteImageView.tintColor = isLiked ? Const.Colors.gold : Const.Colors.gold
+        viewForBackground.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
     }
     
     func setupWith(condition: Bool) {

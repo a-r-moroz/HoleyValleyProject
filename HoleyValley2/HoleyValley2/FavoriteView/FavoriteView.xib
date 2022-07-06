@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,6 +12,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="fMN-bp-kg8"/>
                 <outlet property="favoriteImageView" destination="rzl-sr-mJe" id="6fE-kd-KKA"/>
+                <outlet property="viewForBackground" destination="qau-v9-6Bl" id="2k0-7F-iUE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,6 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="150" height="155"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qau-v9-6Bl">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="155"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                </view>
                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rzl-sr-mJe">
                     <rect key="frame" x="10" y="11.5" width="130" height="132.5"/>
                     <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,10 +31,14 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
+                <constraint firstItem="qau-v9-6Bl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8TH-wS-mXK"/>
                 <constraint firstAttribute="trailing" secondItem="rzl-sr-mJe" secondAttribute="trailing" constant="10" id="8Zj-c0-rLw"/>
                 <constraint firstItem="rzl-sr-mJe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="EiX-gZ-A0N"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qau-v9-6Bl" secondAttribute="bottom" id="Wqb-VU-wtU"/>
+                <constraint firstItem="qau-v9-6Bl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eN3-8T-SfU"/>
                 <constraint firstItem="rzl-sr-mJe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="fue-Fc-f6x"/>
                 <constraint firstAttribute="bottom" secondItem="rzl-sr-mJe" secondAttribute="bottom" constant="10" id="grX-kK-5PA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qau-v9-6Bl" secondAttribute="trailing" id="zcF-Gy-iG0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-59.420289855072468" y="-188.50446428571428"/>
@@ -36,5 +46,8 @@
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

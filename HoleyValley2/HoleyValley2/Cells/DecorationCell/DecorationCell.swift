@@ -20,7 +20,7 @@ class DecorationCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        decorationPictureView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.photos)
+        decorationPictureView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
         viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)        
     }
 

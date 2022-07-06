@@ -44,7 +44,7 @@ struct Const {
     struct CornerRadiusTo {
         
         static let viewAndImage: CGFloat = 12
-        static let photos: CGFloat = 4
+        static let imageInContainer: CGFloat = 4
     }
     
     struct Firebase {

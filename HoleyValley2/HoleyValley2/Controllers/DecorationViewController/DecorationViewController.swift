@@ -28,7 +28,7 @@ class DecorationViewController: UIViewController {
         
         setupViewControllerWithData()
         decorationImageTapped()
-        decorationImage.setRoundingToImage(cornerRadius: 18)
+        decorationImage.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
     }
     
     func setupViewControllerWithData() {
