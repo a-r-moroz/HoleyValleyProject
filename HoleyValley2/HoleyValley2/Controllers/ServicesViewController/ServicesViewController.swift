@@ -29,6 +29,18 @@ class ServicesViewController: UIViewController {
         loadServices()
         title = "Услуги"
 
+//        UINavigationBar.appearance().isTranslucent = false
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: ""), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage(named: "")
+//        UINavigationBar.appearance().barStyle = .black
+
+        
+
+        
+//        UITabBar.appearance().shadowImage = UIImage()
+//        UITabBar.appearance().backgroundImage = UIImage()
+//        UITabBar.appearance().backgroundColor = nil
+
 //        services = FirebaseManager.getServices()
     }
     

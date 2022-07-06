@@ -19,6 +19,16 @@ class BarController: UITabBarController {
 //        tabBar.sendSubviewToBack(visualEffect)
 //        tabBar.isTranslucent = true
         setupControllers()
+        
+//        let appearance = tabBar.standardAppearance
+//        appearance.shadowImage = nil
+//        appearance.shadowColor = nil
+//        tabBar.standardAppearance = appearance
+        
+        UITabBar.appearance().layer.borderWidth = 0
+        UITabBar.appearance().clipsToBounds = true
+        UITabBar.appearance().backgroundColor = .systemBackground
+        UITabBar.appearance().isTranslucent = false
     }
     
     private func setupControllers() {

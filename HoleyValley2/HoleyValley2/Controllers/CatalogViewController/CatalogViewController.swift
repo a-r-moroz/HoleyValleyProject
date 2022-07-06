@@ -13,21 +13,16 @@ class CatalogViewController: UIViewController {
     
     @IBOutlet weak var decorationsTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var searchField: UITextField!
-    @IBOutlet weak var viewWithSearch: UIView!
     @IBOutlet weak var emptyLabel: UILabel!
-    @IBOutlet weak var oldSearchConstraint: NSLayoutConstraint!
-    @IBOutlet weak var newSearchConstraint: NSLayoutConstraint!
-    @IBOutlet weak var oldHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var newHeightConstraint: NSLayoutConstraint!
     
     var database: DatabaseReference!
     var decorations = [Decoration]()
     var sortingDecorations = [Decoration]()
     var originalDecorations = [Decoration]()
     var timer: Timer?
-//    var searchBar = UISearchBar()
-//    var searchField = UITextField()
+    
+//    lazy var searchBar: UISearchBar = UISearchBar(frame: CGRect.zero)
+    var searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +30,6 @@ class CatalogViewController: UIViewController {
         spinner.startAnimating()
         decorationsTable.delegate = self
         decorationsTable.dataSource = self
-        
-//        searchField = UITextField(frame: CGRect(x: 0, y: 0, width: decorationsTable.frame.size.width, height: 34.0))
-//        searchField.placeholder = "Поиск"
-//        decorationsTable.tableHeaderView = searchField
-        
-//        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: decorationsTable.frame.size.width, height: 44.0))
-//        decorationsTable.tableHeaderView = searchBar
         
         setupTable()
 //        decorations = FirebaseManager.getDecorations()
@@ -53,16 +41,15 @@ class CatalogViewController: UIViewController {
         
         addSortingButton()
         
-        searchField.setupTextFieldWithBorderAndPadding(color: Const.Colors.gold.cgColor)
-        searchField.clearButtonRect(forBounds: searchField.bounds).offsetBy(dx: -10, dy: 0)
-        
-        searchField.addTarget(self, action: #selector(textDidChange), for: .allEvents)
-        
-//        viewWithSearch.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
-//        viewWithSearch.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
         self.tabBarController?.delegate = self
         
+//        searchBar.placeholder = "Поиск"
+//        searchBar.sizeToFit()
+//        navigationItem.titleView = searchBar
+        searchController.searchResultsUpdater = self
+//        searchController.searchBar.delegate = self
+        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        navigationItem.searchController = searchController
     }
     
     private func setupTable() {
@@ -206,25 +193,6 @@ class CatalogViewController: UIViewController {
             self.decorationsTable.reloadData()
         }
     }
-    
-    @objc func textDidChange() {
-
-        self.timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-            
-            if self.searchField.text != "" {
-                self.decorations = self.originalDecorations.filter({ $0.name.lowercased().contains(self.searchField.text?.lowercased() ?? "") })
-                self.reloadCatalogTable()
-                
-                self.emptyLabel.isHidden = self.decorations.isEmpty ? false : true
-                
-            } else {
-                self.decorations = self.originalDecorations
-                self.reloadCatalogTable()
-                self.emptyLabel.isHidden = true
-            }
-        })
-    }
 }
 
 extension CatalogViewController: UITableViewDelegate {
@@ -237,77 +205,32 @@ extension CatalogViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
-            print("scrolled up")
-            self.oldHeightConstraint.isActive = true
-            self.newHeightConstraint.isActive = false
-
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) { } completion: { finish in
-                self.viewWithSearch.isHidden = false
-                self.view.layoutIfNeeded()
-            }
-        }
-        else {
-            print("scrolled down")
-
-            oldHeightConstraint.isActive = false
-            newHeightConstraint.isActive = true
-
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut]) { } completion: { finish in
-                self.viewWithSearch.isHidden = true
-                self.view.layoutIfNeeded()
-            }
-        }
-        
-//        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0)
-//        {
-//            print("scrolled up")
-//            oldSearchConstraint.isActive = true
-//            newSearchConstraint.isActive = false
-//            UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseInOut]) {
-//                self.viewWithSearch.isHidden = false
-//                self.viewWithSearch.alpha = 1.0
-//            } completion: { finish in
-//                self.view.layoutIfNeeded()
-//            }
-//        }
-//        else
-//        {
-//            print("scrolled down")
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 //
-//            oldSearchConstraint.isActive = false
-//            newSearchConstraint.isActive = true
-//            UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseInOut]) {
-//                self.viewWithSearch.alpha = 0.0
-//            } completion: { finish in
-//                self.viewWithSearch.isHidden = true
-//                self.view.layoutIfNeeded()
-//            }
-//        }
-        
-        
-//        let originalRect = self.viewWithSearch.frame
-//        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+//        if(velocity.y>0) {
+//            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
+//            self.navigationController?.setNavigationBarHidden(true, animated: true)
 //
-//            var rect: CGRect = self.viewWithSearch.frame
-//            rect.origin.y -= scrollView.contentOffset.y
-//            self.viewWithSearch.frame = rect
+//
 //        } else {
-//            var rect: CGRect = originalRect
-//            rect.origin.y += scrollView.contentOffset.y
-//            self.viewWithSearch.frame = rect
-//        }
-        
-//        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+//            self.navigationController?.setNavigationBarHidden(false, animated: true)
 //
-//            let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-//            var fractionComplete = translation.y / viewWithSearch.frame.height
-//            updateinter
+//          }
+//    }
+//
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//
+//        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//    }
+    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y >= 0) {
+//            self.navigationController?.setNavigationBarHidden(false, animated: true)
+//        } else {
+//            self.navigationController?.setNavigationBarHidden(true, animated: true)
+//
 //        }
-
-    }
+//    }
 }
 
 
@@ -348,9 +271,33 @@ extension CatalogViewController: UITabBarControllerDelegate {
         }
     }
 }
-//extension CatalogViewController: UISearchResultsUpdating {
+extension CatalogViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let text = searchController.searchBar.text else { return }
+        print(text)
+        
+        self.timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            
+            if text != "" {
+                self.decorations = self.originalDecorations.filter({ $0.name.lowercased().contains(text.lowercased()) })
+                self.reloadCatalogTable()
+                self.emptyLabel.isHidden = self.decorations.isEmpty ? false : true
+            } else {
+                self.decorations = self.originalDecorations
+                self.reloadCatalogTable()
+                self.emptyLabel.isHidden = true
+            }
+        })
+    }
+}
+
+//extension CatalogViewController: UISearchBarDelegate {
 //
-//    func updateSearchResults(for searchController: UISearchController) {
-//        <#code#>
+//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        let cancelButton = searchBar.value(forKey: "cancelButton") as! UIButton
+//        cancelButton.setTitle("Отменить", for: .normal)
 //    }
 //}

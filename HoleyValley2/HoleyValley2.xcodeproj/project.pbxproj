@@ -33,6 +33,9 @@
 		8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E609B8A28399FFF001D242E /* ImageScrollView.swift */; };
 		8E75D61F285517B100ACBAF8 /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75D61D285517B100ACBAF8 /* AppointmentCell.swift */; };
 		8E75D620285517B100ACBAF8 /* AppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E75D61E285517B100ACBAF8 /* AppointmentCell.xib */; };
+		8E787D472874D74D00755508 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E787D452874D74D00755508 /* OverlayViewController.swift */; };
+		8E787D482874D74D00755508 /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E787D462874D74D00755508 /* OverlayViewController.xib */; };
+		8E787D4B2874E65A00755508 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E787D4A2874E65A00755508 /* NavigationBar.swift */; };
 		8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C439528326834001C0A2A /* GoogleService-Info.plist */; };
 		8E977782285E79A1009B4817 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E977781285E79A1009B4817 /* TextField.swift */; };
 		8E9D512B284D01260019F8A0 /* SortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5129284D01260019F8A0 /* SortingViewController.swift */; };
@@ -109,6 +112,9 @@
 		8E609B8A28399FFF001D242E /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		8E75D61D285517B100ACBAF8 /* AppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
 		8E75D61E285517B100ACBAF8 /* AppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentCell.xib; sourceTree = "<group>"; };
+		8E787D452874D74D00755508 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		8E787D462874D74D00755508 /* OverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayViewController.xib; sourceTree = "<group>"; };
+		8E787D4A2874E65A00755508 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		8E7C439528326834001C0A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8E977781285E79A1009B4817 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		8E9D5129284D01260019F8A0 /* SortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +250,23 @@
 			path = AppointmentCell;
 			sourceTree = "<group>";
 		};
+		8E787D442874D73B00755508 /* OverlayVC */ = {
+			isa = PBXGroup;
+			children = (
+				8E787D452874D74D00755508 /* OverlayViewController.swift */,
+				8E787D462874D74D00755508 /* OverlayViewController.xib */,
+			);
+			path = OverlayVC;
+			sourceTree = "<group>";
+		};
+		8E787D492874E64100755508 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				8E787D4A2874E65A00755508 /* NavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		8E9D5128284D010A0019F8A0 /* SortingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +394,7 @@
 		8ECF9CD5283279D20058899B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8E787D492874E64100755508 /* NavigationBar */,
 				8ECF9CD628327B7B0058899B /* UIImageView.swift */,
 				8E609B8A28399FFF001D242E /* ImageScrollView.swift */,
 				8E13BD4E283BA0690039D1F9 /* UIButton.swift */,
@@ -400,6 +424,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E787D442874D73B00755508 /* OverlayVC */,
 				8E0845122871E8C600350DED /* SelectedMasterViewController */,
 				8EEBA95B2860FF85005F5825 /* MastersViewController */,
 				8EBBF7FF285734E800FE8655 /* NotificationsSettingsViewController */,
@@ -586,6 +611,7 @@
 				8E75D620285517B100ACBAF8 /* AppointmentCell.xib in Resources */,
 				8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */,
 				8E13BD48283B921C0039D1F9 /* ServiceCell.xib in Resources */,
+				8E787D482874D74D00755508 /* OverlayViewController.xib in Resources */,
 				8E9D512C284D01260019F8A0 /* SortingViewController.xib in Resources */,
 				8E5AA6FE2856056D00CE70B7 /* SettingsViewController.xib in Resources */,
 			);
@@ -645,9 +671,11 @@
 				8E5AA6FD2856056D00CE70B7 /* SettingsViewController.swift in Sources */,
 				8EEBA96628610142005F5825 /* Master.swift in Sources */,
 				8E9D8F532835A34B009FDF12 /* Const.swift in Sources */,
+				8E787D472874D74D00755508 /* OverlayViewController.swift in Sources */,
 				8E9D512B284D01260019F8A0 /* SortingViewController.swift in Sources */,
 				8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
+				8E787D4B2874E65A00755508 /* NavigationBar.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
 				8EC2EB54285F30FF008FA683 /* FavoriteView.swift in Sources */,
 				8EBBF8052857C86A00FE8655 /* NotificationManager.swift in Sources */,
