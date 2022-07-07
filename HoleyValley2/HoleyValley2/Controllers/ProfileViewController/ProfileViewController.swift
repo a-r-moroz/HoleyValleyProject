@@ -16,13 +16,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var surnameInputField: InputField!
     @IBOutlet weak var phoneInputField: InputField!
     @IBOutlet weak var viewWithData: UIView!
-    @IBOutlet weak var appointmentsTable: UITableView!
     @IBOutlet weak var oldViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var newViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var oldLabelConstraint: NSLayoutConstraint!
     @IBOutlet weak var newLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var favoritesButtonOutlet: UIButton!
+    @IBOutlet weak var appointmentsButtonOutlet: UIButton!
     
-//    var appointments = [Appointment]()
+    //    var appointments = [Appointment]()
     /*
     var appointments = RealmManager.read(type: Appointment.self) {
         didSet {
@@ -37,7 +38,6 @@ class ProfileViewController: UIViewController {
 
         title = "Профиль"
         setupInputFields()
-        setupTable()
         addSettingsButton()
         phoneInputField.textField.delegate = self
         
@@ -46,9 +46,14 @@ class ProfileViewController: UIViewController {
               let phone = UserDefaults.standard.string(forKey: "userPhone") else { return }
         nameLabel.text = name + " " + surname
         phoneLabel.text = phone
-
+        
+        favoritesButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        appointmentsButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        
 //        appointments = BarController.appointments
     }
+    
+    
     /*
     override func viewWillAppear(_ animated: Bool) {
 
@@ -74,13 +79,6 @@ class ProfileViewController: UIViewController {
 //        phoneInputField.placeholderLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         phoneInputField.textField.keyboardType = .numberPad
 //        phoneInputField.textField.delegate = self
-    }
-    
-    private func setupTable() {
-        
-        appointmentsTable.register(UINib(nibName: String(describing: AppointmentCell.self), bundle: nil), forCellReuseIdentifier: String(describing: AppointmentCell.self))
-//        appointmentsTable.delegate = self
-//        appointmentsTable.dataSource = self
     }
     
     private func openingAnimation() {
