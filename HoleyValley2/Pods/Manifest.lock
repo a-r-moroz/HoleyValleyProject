@@ -780,6 +780,11 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.1.0)
+  - Realm (10.25.0):
+    - Realm/Headers (= 10.25.0)
+  - Realm/Headers (10.25.0)
+  - RealmSwift (10.25.0):
+    - Realm (= 10.25.0)
   - SDWebImage (5.12.5):
     - SDWebImage/Core (= 5.12.5)
   - SDWebImage/Core (5.12.5)
@@ -793,6 +798,7 @@ DEPENDENCIES:
   - FSCalendar
   - Haptica
   - IQKeyboardManager
+  - RealmSwift
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
@@ -820,6 +826,8 @@ SPEC REPOS:
     - Libuv-gRPC
     - nanopb
     - PromisesObjC
+    - Realm
+    - RealmSwift
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -846,8 +854,10 @@ SPEC CHECKSUMS:
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  Realm: 22a82aaa0e73f3483e3a6df32549c4c5cd34aa63
+  RealmSwift: c2a635212400923edd3f828b8a37d55d3eb31863
   SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
 
-PODFILE CHECKSUM: 802b146204008ff402c87883e617a69f139934cd
+PODFILE CHECKSUM: a9e656bb1c822d71bac941e4ff5fe8a74986b6e5
 
 COCOAPODS: 1.11.3
