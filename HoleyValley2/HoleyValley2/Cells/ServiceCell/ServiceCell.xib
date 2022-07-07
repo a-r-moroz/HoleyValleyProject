@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tia-As-ESW">
-                        <rect key="frame" x="16" y="8" width="288" height="64"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="64"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmw-F3-0kn">
                                 <rect key="frame" x="12" y="8" width="236" height="19.5"/>
@@ -57,9 +57,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="tia-As-ESW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Nv0-uL-zgS"/>
-                    <constraint firstAttribute="bottom" secondItem="tia-As-ESW" secondAttribute="bottom" constant="8" id="Rv5-EZ-PT1"/>
+                    <constraint firstAttribute="bottom" secondItem="tia-As-ESW" secondAttribute="bottom" constant="16" id="Rv5-EZ-PT1"/>
                     <constraint firstAttribute="trailing" secondItem="tia-As-ESW" secondAttribute="trailing" constant="16" id="aJh-S1-FZb"/>
-                    <constraint firstItem="tia-As-ESW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="uy2-9g-Yri"/>
+                    <constraint firstItem="tia-As-ESW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uy2-9g-Yri"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

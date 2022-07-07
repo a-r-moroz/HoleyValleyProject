@@ -32,12 +32,12 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="naL-tk-1XE" secondAttribute="bottom" id="9bb-Kl-8Ea"/>
                 <constraint firstItem="naL-tk-1XE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DIu-iz-bL7"/>
-                <constraint firstItem="naL-tk-1XE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="F7a-kn-X6P"/>
+                <constraint firstItem="naL-tk-1XE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZT4-CX-PrI"/>
                 <constraint firstItem="8tI-EK-28O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dVU-gd-nuQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="naL-tk-1XE" secondAttribute="trailing" id="eQN-3z-8NH"/>
                 <constraint firstItem="8tI-EK-28O" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="o24-uy-cgI"/>
             </constraints>
-            <point key="canvasLocation" x="-104" y="7"/>
+            <point key="canvasLocation" x="-104.34782608695653" y="6.6964285714285712"/>
         </view>
     </objects>
     <resources>

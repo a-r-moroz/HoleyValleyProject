@@ -35,7 +35,7 @@ class BarController: UITabBarController {
         
         let iconConfig = UIImage.SymbolConfiguration(scale: .large)
         
-        let servicesVC = UINavigationController(rootViewController: ServicesViewController())
+        let servicesVC = UINavigationController(rootViewController: MainServicesViewController())
         let catalogVC = UINavigationController(rootViewController: CatalogViewController())
         let receptionVC = UINavigationController(rootViewController: ReceptionViewController())
         let profileVC = UINavigationController(rootViewController: ProfileViewController())

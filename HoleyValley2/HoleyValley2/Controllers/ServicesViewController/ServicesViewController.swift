@@ -15,16 +15,24 @@ class ServicesViewController: UIViewController {
     
     var database: DatabaseReference!
     var services = [Service]()
+    var servicesPath = ""
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.spinner.startAnimating()
         self.tabBarController?.delegate = self
-        setupTable()
-        loadServices()
         title = "Услуги"
 //        services = FirebaseManager.getServices()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        loadServices()
+        setupTable()
     }
     
     func setupTable() {
@@ -40,7 +48,7 @@ class ServicesViewController: UIViewController {
         database = Database.database().reference()
         services = []
             
-        let query = self.database.child(Const.Firebase.servicesPath).queryOrderedByKey()
+        let query = self.database.child(servicesPath).queryOrderedByKey()
         
         query.observeSingleEvent(of: .value) { snapshot in
             
