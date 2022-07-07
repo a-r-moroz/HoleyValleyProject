@@ -12,6 +12,7 @@ class ServicesViewController: UIViewController {
     
     @IBOutlet weak var servicesTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var viewForSpinner: UIView!
     
     var database: DatabaseReference!
     var services = [Service]()
@@ -21,7 +22,6 @@ class ServicesViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.spinner.startAnimating()
         self.tabBarController?.delegate = self
         title = "Услуги"
 //        services = FirebaseManager.getServices()
@@ -31,6 +31,8 @@ class ServicesViewController: UIViewController {
         
         super.viewWillAppear(animated)
         
+        self.spinner.startAnimating()
+        self.viewForSpinner.isHidden = false
         loadServices()
         setupTable()
     }
@@ -94,6 +96,7 @@ class ServicesViewController: UIViewController {
                 }
             }
             self.spinner.stopAnimating()
+            self.viewForSpinner.isHidden = true
         }
     }
 }

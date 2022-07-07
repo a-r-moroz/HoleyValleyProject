@@ -14,6 +14,7 @@ class CatalogViewController: UIViewController {
     @IBOutlet weak var decorationsTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var viewForSpinner: UIView!
     
     var database: DatabaseReference!
     var decorations = [Decoration]()
@@ -106,6 +107,7 @@ class CatalogViewController: UIViewController {
                 }
             }
             self.spinner.stopAnimating()
+            self.viewForSpinner.isHidden = true
         }
     }
     

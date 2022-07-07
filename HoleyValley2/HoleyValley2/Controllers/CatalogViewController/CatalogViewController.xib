@@ -14,6 +14,7 @@
                 <outlet property="emptyLabel" destination="n3r-Xg-cBa" id="kh6-gg-eNk"/>
                 <outlet property="spinner" destination="flN-FS-ys2" id="lzF-px-VYZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewForSpinner" destination="G9R-Gm-6xT" id="e4O-c6-jxn"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,34 +26,54 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="flN-FS-ys2">
-                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                </activityIndicatorView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пусто" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3r-Xg-cBa">
                     <rect key="frame" x="16" y="436" width="382" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" systemColor="systemGray2Color"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9R-Gm-6xT">
+                    <rect key="frame" x="167" y="408" width="80" height="80"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="flN-FS-ys2">
+                            <rect key="frame" x="21.5" y="21.5" width="37" height="37"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="39A-xI-iMT"/>
+                        <constraint firstItem="flN-FS-ys2" firstAttribute="centerX" secondItem="G9R-Gm-6xT" secondAttribute="centerX" id="cxm-Xf-r2i"/>
+                        <constraint firstAttribute="width" constant="80" id="ehE-kY-GOh"/>
+                        <constraint firstItem="flN-FS-ys2" firstAttribute="centerY" secondItem="G9R-Gm-6xT" secondAttribute="centerY" id="gaK-OX-mNj"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="E2U-vq-8PN" secondAttribute="bottom" id="7YH-0e-Mvq"/>
                 <constraint firstItem="n3r-Xg-cBa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="AlD-7p-gCK"/>
-                <constraint firstItem="flN-FS-ys2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="BW6-c1-EVk"/>
+                <constraint firstItem="G9R-Gm-6xT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="BMa-5a-EY1"/>
                 <constraint firstItem="E2U-vq-8PN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FcE-zq-oYZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n3r-Xg-cBa" secondAttribute="trailing" constant="16" id="Gvc-Mp-Jv6"/>
                 <constraint firstItem="n3r-Xg-cBa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UV8-xR-MIJ"/>
                 <constraint firstItem="E2U-vq-8PN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wpz-qK-Mfx"/>
                 <constraint firstItem="n3r-Xg-cBa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z9W-2c-DkP"/>
+                <constraint firstItem="G9R-Gm-6xT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZCk-o6-OUM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E2U-vq-8PN" secondAttribute="trailing" id="iGW-sh-CK5"/>
-                <constraint firstItem="flN-FS-ys2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tj6-A1-YxE"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="81.696428571428569"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

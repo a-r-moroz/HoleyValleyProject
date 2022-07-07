@@ -13,6 +13,8 @@ class MastersViewController: UIViewController {
 
     @IBOutlet weak var mastersTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var viewForSpinner: UIView!
+
 //    @IBOutlet weak var selectMasterButtonOutlet: UIButton!
 //    @IBOutlet weak var selectButtonOutlet: UIButton!
     
@@ -70,6 +72,7 @@ class MastersViewController: UIViewController {
                 }
             }
             self.spinner.stopAnimating()
+            self.viewForSpinner.isHidden = true
         }
     }
 
