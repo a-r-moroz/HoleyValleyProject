@@ -25,16 +25,18 @@ class ServicesViewController: UIViewController {
         self.tabBarController?.delegate = self
         title = "Услуги"
 //        services = FirebaseManager.getServices()
+        
+        self.spinner.startAnimating()
+        self.viewForSpinner.isHidden = false
+        loadServices()
+        setupTable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         
-        self.spinner.startAnimating()
-        self.viewForSpinner.isHidden = false
-        loadServices()
-        setupTable()
+
     }
     
     func setupTable() {

@@ -21,6 +21,14 @@ class MainServicesViewController: UIViewController {
         setupConstraintsFor(controller: servicesController)
         setupSegmentControllers()
         title = "Услуги"
+        
+//        segmentController.layer.style = .none
+//        segmentController.layer.cornerRadius = segmentController.frame.height / 2
+//        segmentController.layer.borderWidth = 1
+//        segmentController.layer.borderColor = Const.Colors.gold.cgColor
+//        segmentController.layer.masksToBounds = true
+//        segmentController.layer.shadowColor = nil
+//        segmentController.selectedSegmentTintColor = Const.Colors.gold
     }
     
     private func setupSegmentControllers() {
@@ -57,11 +65,17 @@ class MainServicesViewController: UIViewController {
         // удаление всех контроллеров
         removeEmbeddedControllers()
         if sender.selectedSegmentIndex == 0 {
+            servicesController?.spinner.startAnimating()
+            servicesController?.viewForSpinner.isHidden = false
             servicesController?.servicesPath = Const.Firebase.servicesPath
+            servicesController?.loadServices()
             setupConstraintsFor(controller: servicesController)
         } else if sender.selectedSegmentIndex == 1 {
+            servicesController?.spinner.startAnimating()
+            servicesController?.viewForSpinner.isHidden = false
             servicesController?.servicesPath = Const.Firebase.servicesAdditionalPath
             setupConstraintsFor(controller: servicesController)
+            servicesController?.loadServices()
         }
     }
 }
