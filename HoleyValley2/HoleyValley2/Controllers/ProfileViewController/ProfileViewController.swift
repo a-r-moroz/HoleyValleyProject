@@ -191,6 +191,17 @@ class ProfileViewController: UIViewController {
         
         closingAnimation()
     }
+    
+    @IBAction func favoriteDecorationsAction(_ sender: UIButton) {
+        
+        let FavoriteDecorationsVC = FavoriteDecorationsViewController(nibName: String(describing: FavoriteDecorationsViewController.self), bundle: nil)
+        navigationController?.pushViewController(FavoriteDecorationsVC, animated: true)
+    }
+    
+    @IBAction func appointmentsAction(_ sender: UIButton) {
+    }
+    
+    
 }
 
 /*

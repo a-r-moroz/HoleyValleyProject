@@ -160,6 +160,9 @@
                                     <buttonConfiguration key="configuration" style="plain" title="Избранные украшения">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="favoriteDecorationsAction:" destination="-1" eventType="touchUpInside" id="H8d-Vj-tkq"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NL8-BD-5p2">
                                     <rect key="frame" x="16" y="151" width="382" height="50"/>
@@ -172,6 +175,9 @@
                                     <buttonConfiguration key="configuration" style="plain" title="Записи на прием">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="appointmentsAction:" destination="-1" eventType="touchUpInside" id="LUo-5S-8Qk"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17g-c1-6pg">
                                     <rect key="frame" x="16" y="221" width="58.5" height="20.5"/>

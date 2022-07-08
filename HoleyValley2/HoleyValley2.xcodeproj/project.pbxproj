@@ -12,6 +12,8 @@
 		8E0845152871E8DC00350DED /* SelectedMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0845132871E8DC00350DED /* SelectedMasterViewController.swift */; };
 		8E0845162871E8DC00350DED /* SelectedMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E0845142871E8DC00350DED /* SelectedMasterViewController.xib */; };
 		8E0E28A52878BB0000BDDFEA /* FavoriteDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E28A42878BB0000BDDFEA /* FavoriteDecoration.swift */; };
+		8E0E28A92878CFFF00BDDFEA /* FavoriteDecorationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E28A72878CFFF00BDDFEA /* FavoriteDecorationsViewController.swift */; };
+		8E0E28AA2878CFFF00BDDFEA /* FavoriteDecorationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E0E28A82878CFFF00BDDFEA /* FavoriteDecorationsViewController.xib */; };
 		8E13A0B5283D67E2002D35EB /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13A0B3283D67E2002D35EB /* AppointmentViewController.swift */; };
 		8E13A0B6283D67E2002D35EB /* AppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E13A0B4283D67E2002D35EB /* AppointmentViewController.xib */; };
 		8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD45283B921B0039D1F9 /* ServiceCell.swift */; };
@@ -94,6 +96,8 @@
 		8E0845132871E8DC00350DED /* SelectedMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMasterViewController.swift; sourceTree = "<group>"; };
 		8E0845142871E8DC00350DED /* SelectedMasterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedMasterViewController.xib; sourceTree = "<group>"; };
 		8E0E28A42878BB0000BDDFEA /* FavoriteDecoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDecoration.swift; sourceTree = "<group>"; };
+		8E0E28A72878CFFF00BDDFEA /* FavoriteDecorationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDecorationsViewController.swift; sourceTree = "<group>"; };
+		8E0E28A82878CFFF00BDDFEA /* FavoriteDecorationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteDecorationsViewController.xib; sourceTree = "<group>"; };
 		8E13A0B3283D67E2002D35EB /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8E13A0B4283D67E2002D35EB /* AppointmentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
 		8E13BD45283B921B0039D1F9 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -200,6 +204,15 @@
 				8E0845142871E8DC00350DED /* SelectedMasterViewController.xib */,
 			);
 			path = SelectedMasterViewController;
+			sourceTree = "<group>";
+		};
+		8E0E28A62878CFE700BDDFEA /* FavoriteDecorationsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E0E28A72878CFFF00BDDFEA /* FavoriteDecorationsViewController.swift */,
+				8E0E28A82878CFFF00BDDFEA /* FavoriteDecorationsViewController.xib */,
+			);
+			path = FavoriteDecorationsViewController;
 			sourceTree = "<group>";
 		};
 		8E13A0B2283D67C2002D35EB /* AppointmentViewController */ = {
@@ -432,6 +445,7 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E0E28A62878CFE700BDDFEA /* FavoriteDecorationsViewController */,
 				8E787D442874D73B00755508 /* OverlayVC */,
 				8E0845122871E8C600350DED /* SelectedMasterViewController */,
 				8EEBA95B2860FF85005F5825 /* MastersViewController */,
@@ -608,6 +622,7 @@
 				8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */,
 				8EC2EB52285F30E7008FA683 /* FavoriteView.xib in Resources */,
 				8E0845162871E8DC00350DED /* SelectedMasterViewController.xib in Resources */,
+				8E0E28AA2878CFFF00BDDFEA /* FavoriteDecorationsViewController.xib in Resources */,
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
 				8EAB9147284EB8F9003BB9AA /* InputField.xib in Resources */,
@@ -692,6 +707,7 @@
 				8EBBF8052857C86A00FE8655 /* NotificationManager.swift in Sources */,
 				8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */,
 				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
+				8E0E28A92878CFFF00BDDFEA /* FavoriteDecorationsViewController.swift in Sources */,
 				8EC2EB56285F3134008FA683 /* FavoriteViewDelegate.swift in Sources */,
 				8E0E28A52878BB0000BDDFEA /* FavoriteDecoration.swift in Sources */,
 				8E0845152871E8DC00350DED /* SelectedMasterViewController.swift in Sources */,

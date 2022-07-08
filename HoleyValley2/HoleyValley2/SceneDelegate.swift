@@ -84,3 +84,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
+
+/*
+ 
+ pod 'Firebase/Analytics'
+ pod 'Firebase/Core'
+ pod 'Firebase/Database'
+ pod 'Firebase/Firestore'
+ pod 'Firebase/Storage'
+ pod 'IQKeyboardManager'
+ pod 'FSCalendar'
+ pod 'SDWebImage', '~> 5.0'
+ pod 'Haptica'
+ pod 'RealmSwift'
+ 
+ */

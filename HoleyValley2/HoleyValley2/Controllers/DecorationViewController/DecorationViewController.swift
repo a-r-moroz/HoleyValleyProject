@@ -19,6 +19,8 @@ class DecorationViewController: UIViewController {
     @IBOutlet weak var likeIndicator: UIImageView!
     
     var currentDecoration: Decoration?
+    var favoriteDecoration = FavoriteDecoration()
+    var currentFavoriteDecoration: FavoriteDecoration?
     
     override func viewDidLoad() {
         
@@ -31,12 +33,39 @@ class DecorationViewController: UIViewController {
         decorationImage.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+//        guard let item = currentDecoration else { return }
+//        let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
+        
+//        for i in favoriteArray {
+//            if item.name == i.name {
+//                if i.isLiked {
+//                    favoriteViewOutlet.isLiked = true
+//                } else {
+//                    favoriteViewOutlet.isLiked = false
+//                }
+//            }
+//        }
+    }
+    
     func setupViewControllerWithData() {
-        guard let item = currentDecoration else { return }
+        
+        if let item = currentDecoration {
         decorationNameLabel.text = item.name
         decorationPriceLabel.text = String(item.price) + Const.belRublesSign
         decorationDescribtionLabel.text = item.description
-        decorationImage.sd_setImage(with: URL(string: item.image), placeholderImage: UIImage(named: "imagePattern.png"))        
+        decorationImage.sd_setImage(with: URL(string: item.image), placeholderImage: UIImage(named: "imagePattern.png"))
+        }
+        if let favoriteItem = currentFavoriteDecoration {
+            decorationNameLabel.text = favoriteItem.name
+            decorationPriceLabel.text = String(favoriteItem.price) + Const.belRublesSign
+            decorationDescribtionLabel.text = favoriteItem.descrip
+            decorationImage.sd_setImage(with: URL(string: favoriteItem.image), placeholderImage: UIImage(named: "imagePattern.png"))
+            favoriteViewOutlet.isLiked = true
+        }
     }
     
     func decorationImageTapped() {
@@ -85,6 +114,45 @@ extension DecorationViewController: FavoriteViewDelegate {
                 }
             }
         }
+        
+        guard let item = currentDecoration else { return }
+        
+        favoriteDecoration.name = item.name
+        favoriteDecoration.price = item.price
+        favoriteDecoration.descrip = item.description
+        favoriteDecoration.image = item.image
+        favoriteDecoration.isLiked = favoriteViewOutlet.isLiked
+        
+        if favoriteDecoration.isLiked {
+            
+            RealmManager.add(object: FavoriteDecoration(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
+
+        } else {
+            
+            RealmManager.remove(object: favoriteDecoration)
+        }
+        
+//        favoriteDecoration?.name = item.name
+//        favoriteDecoration?.price = item.price
+//        favoriteDecoration?.descrip = item.description
+//        favoriteDecoration?.image = item.image
+//        favoriteDecoration?.isLiked = ((favoriteDecoration?.isLiked.toggle()) != nil)
+        
+//        RealmManager.add(object: FavoriteDecoration(name: favoriteItem.name, price: favoriteItem.price, descrip: favoriteItem.descrip, image: favoriteItem.image, isLiked: true))
+        
+//        let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
+//
+//        for i in favoriteArray {
+//            if favoriteDecoration.name != i.name {
+//                if i.isLiked {
+//                    RealmManager.add(object: FavoriteDecoration(name: favoriteItem.name, price: favoriteItem.price, descrip: favoriteItem.descrip, image: favoriteItem.image, isLiked: true))
+//                } else {
+//                    continue
+//                }
+//            } else {
+//                RealmManager.remove(object: favoriteItem)
+//            }
+//        }
         
 //        UIView.animateKeyframes(withDuration: 0.6, delay: 0.0, animations: {
 //            self.likeIndicator.image
