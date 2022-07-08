@@ -15,6 +15,7 @@
                 <outlet property="newTextConstraint" destination="rZn-4z-ACi" id="ET5-Ho-JUl"/>
                 <outlet property="oldGradientConstraint" destination="1Vv-c4-qUN" id="p0K-6f-ly0"/>
                 <outlet property="oldTextConstraint" destination="6kV-lS-O2M" id="VO0-Zh-Yz8"/>
+                <outlet property="studioNameLabel" destination="sg7-R9-Iht" id="gZs-cu-zpk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,19 +42,26 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomGradient" translatesAutoresizingMaskIntoConstraints="NO" id="Cw8-rc-mN4">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="300" id="1Vv-c4-qUN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="41v-Vs-Wwi" secondAttribute="bottom" constant="-100" id="6kV-lS-O2M"/>
+                <constraint firstItem="Cw8-rc-mN4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AeH-hg-g8f"/>
                 <constraint firstAttribute="bottom" secondItem="9ud-K6-isk" secondAttribute="bottom" id="DZw-Tv-Yij"/>
                 <constraint firstItem="8lM-7F-arv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EA6-qT-Iqh"/>
                 <constraint firstItem="sg7-R9-Iht" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EH9-p5-hh4"/>
                 <constraint firstItem="41v-Vs-Wwi" firstAttribute="top" secondItem="sg7-R9-Iht" secondAttribute="bottom" constant="10" id="O7h-wi-rGp"/>
+                <constraint firstItem="Cw8-rc-mN4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="STo-8I-LG3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="41v-Vs-Wwi" secondAttribute="trailing" constant="16" id="aWO-ge-USU"/>
                 <constraint firstItem="9ud-K6-isk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="daW-MT-okP"/>
                 <constraint firstItem="9ud-K6-isk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-500" id="eVq-db-H43"/>
+                <constraint firstAttribute="bottom" secondItem="Cw8-rc-mN4" secondAttribute="bottom" id="edd-Vv-xZo"/>
+                <constraint firstAttribute="trailing" secondItem="Cw8-rc-mN4" secondAttribute="trailing" id="iu1-VI-b7U"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sg7-R9-Iht" secondAttribute="trailing" constant="16" id="lnx-y6-TBb"/>
                 <constraint firstAttribute="bottom" secondItem="8lM-7F-arv" secondAttribute="bottom" id="ngm-Ol-NxX"/>
                 <constraint firstAttribute="trailing" secondItem="9ud-K6-isk" secondAttribute="trailing" id="pVX-92-SAz"/>
@@ -72,6 +80,7 @@
         </view>
     </objects>
     <resources>
+        <image name="bottomGradient" width="900" height="1950"/>
         <image name="launchComplexGradient" width="1000" height="2000"/>
         <image name="launch_CleanSmall" width="1000" height="2000"/>
         <systemColor name="systemBackgroundColor">

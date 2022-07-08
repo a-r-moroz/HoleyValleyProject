@@ -14,6 +14,7 @@ final class SplashViewController: UIViewController {
     @IBOutlet weak var oldTextConstraint: NSLayoutConstraint!
     @IBOutlet weak var newGradientConstraint: NSLayoutConstraint!
     @IBOutlet weak var newTextConstraint: NSLayoutConstraint!
+    @IBOutlet weak var studioNameLabel: UILabel!
     
     override func viewDidLoad() {
         
@@ -33,6 +34,7 @@ final class SplashViewController: UIViewController {
 
         UIView.animate(withDuration: 1.0, delay: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseOut]) {
             
+            self.studioNameLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             self.view.layoutIfNeeded()
 
         }
