@@ -4,32 +4,11 @@
 //
 //  Created by Andrew Moroz on 3.05.22.
 //
-/*
+
 import Foundation
 import RealmSwift
 
 final class RealmManager {
-
-//    let fileManager = FileManager.default
-//    var config = RealmSwift.Realm.Configuration()
-
-//    let urls = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask)
-//
-//    lazy var applicationSupportURL = urls.last {
-//        do {
-//            try fileManager.createDirectory(at: applicationSupportURL, withIntermediateDirectories: true, attributes: nil)
-//            config.fileURL = applicationSupportURL.appendingPathComponent("demo.realm")
-//        } catch let err {
-//            print(err)
-//
-//        }
-//    }
-//
-//    // Set this as the configuration used for the default Realm
-//    Realm.Configuration.defaultConfiguration = config
-//
-//    print (Realm.Configuration.defaultConfiguration.fileURL!)
-
 
     private static let realm = try! Realm()
 
@@ -58,4 +37,3 @@ final class RealmManager {
         try? realm.commitWrite()
     }
 }
-*/

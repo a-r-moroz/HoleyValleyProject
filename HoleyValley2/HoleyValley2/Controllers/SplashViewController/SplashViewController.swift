@@ -36,7 +36,10 @@ final class SplashViewController: UIViewController {
             
             self.studioNameLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             self.view.layoutIfNeeded()
-
+        } completion: { finish in
+            UIView.animate(withDuration: 0.2, delay: 0.3) {
+                self.view.alpha = 0.0
+            }
         }
         
         

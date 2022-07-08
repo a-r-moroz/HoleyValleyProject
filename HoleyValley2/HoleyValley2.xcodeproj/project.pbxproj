@@ -11,6 +11,7 @@
 		8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0192B02822F2CF0057C3D8 /* DecorationType.swift */; };
 		8E0845152871E8DC00350DED /* SelectedMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0845132871E8DC00350DED /* SelectedMasterViewController.swift */; };
 		8E0845162871E8DC00350DED /* SelectedMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E0845142871E8DC00350DED /* SelectedMasterViewController.xib */; };
+		8E0E28A52878BB0000BDDFEA /* FavoriteDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E28A42878BB0000BDDFEA /* FavoriteDecoration.swift */; };
 		8E13A0B5283D67E2002D35EB /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13A0B3283D67E2002D35EB /* AppointmentViewController.swift */; };
 		8E13A0B6283D67E2002D35EB /* AppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E13A0B4283D67E2002D35EB /* AppointmentViewController.xib */; };
 		8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD45283B921B0039D1F9 /* ServiceCell.swift */; };
@@ -92,6 +93,7 @@
 		8E0192B02822F2CF0057C3D8 /* DecorationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationType.swift; sourceTree = "<group>"; };
 		8E0845132871E8DC00350DED /* SelectedMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMasterViewController.swift; sourceTree = "<group>"; };
 		8E0845142871E8DC00350DED /* SelectedMasterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedMasterViewController.xib; sourceTree = "<group>"; };
+		8E0E28A42878BB0000BDDFEA /* FavoriteDecoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDecoration.swift; sourceTree = "<group>"; };
 		8E13A0B3283D67E2002D35EB /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8E13A0B4283D67E2002D35EB /* AppointmentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
 		8E13BD45283B921B0039D1F9 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				8E19E52428456454007FABB0 /* Appointment.swift */,
 				8E5AA7042856527800CE70B7 /* SettingsPoints.swift */,
 				8EEBA96528610142005F5825 /* Master.swift */,
+				8E0E28A42878BB0000BDDFEA /* FavoriteDecoration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				8E13BD47283B921B0039D1F9 /* ServiceCell.swift in Sources */,
 				8EE42F2328219BA500D7210D /* ServicesViewController.swift in Sources */,
 				8EC2EB56285F3134008FA683 /* FavoriteViewDelegate.swift in Sources */,
+				8E0E28A52878BB0000BDDFEA /* FavoriteDecoration.swift in Sources */,
 				8E0845152871E8DC00350DED /* SelectedMasterViewController.swift in Sources */,
 				8E9D8F572835A774009FDF12 /* DecorationViewController.swift in Sources */,
 				8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */,
