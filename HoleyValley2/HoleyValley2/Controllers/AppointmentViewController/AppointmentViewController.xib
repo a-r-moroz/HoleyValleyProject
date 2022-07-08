@@ -26,6 +26,7 @@
                 <outlet property="surnameInputField" destination="ESD-ch-UUw" id="6ha-jw-xtT"/>
                 <outlet property="timeInputField" destination="jSz-hX-MoD" id="QyF-VF-xDK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewWithCalendar" destination="g68-8Y-AQO" id="kYx-fN-D7m"/>
                 <outlet property="viewWithMaster" destination="nw5-8b-kJK" id="k3L-f2-QcT"/>
                 <outlet property="viewWithNotification" destination="0Ik-wV-7dJ" id="NxS-3e-8h2"/>
             </connections>
@@ -62,35 +63,48 @@
                                         <action selector="saveAppointmentAction:" destination="-1" eventType="touchUpInside" id="wXH-z6-PZ0"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHh-vA-pWR" customClass="FSCalendar">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g68-8Y-AQO">
                                     <rect key="frame" x="16" y="384" width="382" height="382"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHh-vA-pWR" customClass="FSCalendar">
+                                            <rect key="frame" x="8" y="8" width="366" height="366"/>
+                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="JHh-vA-pWR" secondAttribute="height" multiplier="1:1" id="4XJ-ZF-vDA"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                                    <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                                    <color key="value" systemColor="labelColor"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                                    <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                                                    <integer key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                                    <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
                                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="JHh-vA-pWR" secondAttribute="height" multiplier="1:1" id="4XJ-ZF-vDA"/>
+                                        <constraint firstItem="JHh-vA-pWR" firstAttribute="leading" secondItem="g68-8Y-AQO" secondAttribute="leading" constant="8" id="5eQ-cr-EYl"/>
+                                        <constraint firstItem="JHh-vA-pWR" firstAttribute="top" secondItem="g68-8Y-AQO" secondAttribute="top" constant="8" id="DUK-23-hVi"/>
+                                        <constraint firstAttribute="width" secondItem="g68-8Y-AQO" secondAttribute="height" multiplier="1:1" id="RIt-j0-Ted"/>
+                                        <constraint firstAttribute="bottom" secondItem="JHh-vA-pWR" secondAttribute="bottom" constant="8" id="vDE-3T-LEI"/>
+                                        <constraint firstAttribute="trailing" secondItem="JHh-vA-pWR" secondAttribute="trailing" constant="8" id="zRJ-wR-9cb"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                            <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
-                                            <color key="value" systemColor="labelColor"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                            <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
-                                            <integer key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
-                                            <color key="value" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xi-fA-n1m">
                                     <rect key="frame" x="16" y="20" width="382" height="72"/>
@@ -190,7 +204,7 @@
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Выбрать мастера">
+                                    <buttonConfiguration key="configuration" style="plain" image="person.and.person.fill" catalog="system" title="Выбрать мастера">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                     </buttonConfiguration>
                                     <connections>
@@ -258,6 +272,7 @@
                                 <constraint firstItem="Tbh-oF-qQf" firstAttribute="top" secondItem="ESD-ch-UUw" secondAttribute="bottom" id="2Sv-K6-T3s"/>
                                 <constraint firstItem="B5y-bT-wfM" firstAttribute="top" secondItem="fsB-Bl-YhW" secondAttribute="bottom" constant="30" id="4DU-bw-5ac"/>
                                 <constraint firstAttribute="trailing" secondItem="Tbh-oF-qQf" secondAttribute="trailing" constant="16" id="4qX-nP-aBC"/>
+                                <constraint firstAttribute="trailing" secondItem="g68-8Y-AQO" secondAttribute="trailing" constant="16" id="9Z5-s2-hfB"/>
                                 <constraint firstAttribute="trailing" secondItem="B5y-bT-wfM" secondAttribute="trailing" constant="16" id="9uw-RH-8rc"/>
                                 <constraint firstItem="fsB-Bl-YhW" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="AXg-Xb-Hgc"/>
                                 <constraint firstItem="ESD-ch-UUw" firstAttribute="top" secondItem="B5y-bT-wfM" secondAttribute="bottom" id="Bxq-nc-2Qb"/>
@@ -269,25 +284,24 @@
                                 <constraint firstItem="0Ik-wV-7dJ" firstAttribute="top" secondItem="fsB-Bl-YhW" secondAttribute="bottom" constant="10" id="RuB-tt-8Pb"/>
                                 <constraint firstAttribute="trailing" secondItem="Ge7-HS-Mrn" secondAttribute="trailing" constant="16" id="Rw1-2m-ntg"/>
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="top" secondItem="egm-LX-PUI" secondAttribute="top" constant="20" id="RzA-7d-kEH"/>
-                                <constraint firstItem="JHh-vA-pWR" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="SBe-aP-t5K"/>
                                 <constraint firstItem="u4e-mj-Tvu" firstAttribute="top" secondItem="Tbh-oF-qQf" secondAttribute="bottom" constant="10" id="SvA-55-zog"/>
                                 <constraint firstItem="fsB-Bl-YhW" firstAttribute="top" secondItem="jSz-hX-MoD" secondAttribute="bottom" constant="10" id="TEH-go-AYv"/>
                                 <constraint firstItem="0Ik-wV-7dJ" firstAttribute="centerX" secondItem="fsB-Bl-YhW" secondAttribute="centerX" id="Uj5-f2-SYO"/>
                                 <constraint firstAttribute="bottom" secondItem="u4e-mj-Tvu" secondAttribute="bottom" constant="50" id="WlJ-lv-wm9"/>
-                                <constraint firstAttribute="trailing" secondItem="JHh-vA-pWR" secondAttribute="trailing" constant="16" id="Xf8-WV-gKh"/>
                                 <constraint firstAttribute="trailing" secondItem="u4e-mj-Tvu" secondAttribute="trailing" constant="16" id="Yqb-hZ-Iec"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="Yvr-Gc-aDh"/>
-                                <constraint firstItem="jSz-hX-MoD" firstAttribute="top" secondItem="JHh-vA-pWR" secondAttribute="bottom" constant="20" id="ZuY-ah-3tJ"/>
+                                <constraint firstItem="g68-8Y-AQO" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="bmv-Vd-15c"/>
                                 <constraint firstItem="Xjm-1u-UxK" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="c3M-ar-tWI"/>
                                 <constraint firstItem="nw5-8b-kJK" firstAttribute="top" secondItem="Xjm-1u-UxK" secondAttribute="bottom" constant="10" id="c9U-tw-mXs"/>
                                 <constraint firstAttribute="trailing" secondItem="ESD-ch-UUw" secondAttribute="trailing" constant="16" id="ftk-mG-fex"/>
                                 <constraint firstAttribute="trailing" secondItem="wf9-4Q-QN6" secondAttribute="trailing" constant="16" id="g5G-ZD-Ppa"/>
                                 <constraint firstItem="Xjm-1u-UxK" firstAttribute="top" secondItem="wf9-4Q-QN6" secondAttribute="bottom" constant="30" id="h53-5m-UER"/>
-                                <constraint firstItem="JHh-vA-pWR" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="jdk-Ub-Zk6"/>
                                 <constraint firstItem="B5y-bT-wfM" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="mge-XE-5jV"/>
                                 <constraint firstAttribute="trailing" secondItem="3Xi-fA-n1m" secondAttribute="trailing" constant="16" id="q4G-ml-Brx"/>
                                 <constraint firstItem="wf9-4Q-QN6" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="qiA-Eb-DhM"/>
+                                <constraint firstItem="g68-8Y-AQO" firstAttribute="top" secondItem="Ge7-HS-Mrn" secondAttribute="bottom" constant="10" id="re1-3I-mk1"/>
                                 <constraint firstItem="u4e-mj-Tvu" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="rqh-sQ-LgF"/>
+                                <constraint firstItem="jSz-hX-MoD" firstAttribute="top" secondItem="g68-8Y-AQO" secondAttribute="bottom" constant="20" id="sf1-3q-NSo"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="top" secondItem="nw5-8b-kJK" secondAttribute="bottom" constant="20" id="smc-Wm-GTA"/>
                                 <constraint firstItem="Ge7-HS-Mrn" firstAttribute="top" secondItem="Xjm-1u-UxK" secondAttribute="bottom" constant="30" id="tNJ-HN-F9d"/>
                                 <constraint firstItem="3Xi-fA-n1m" firstAttribute="leading" secondItem="egm-LX-PUI" secondAttribute="leading" constant="16" id="tSd-z1-PLX"/>
@@ -324,6 +338,7 @@
     <resources>
         <image name="calendar.badge.clock.rtl" catalog="system" width="128" height="108"/>
         <image name="exclamationmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.and.person.fill" catalog="system" width="128" height="80"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -17,6 +17,7 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var viewWithMaster: UIView!
     @IBOutlet weak var masterNameLabel: UILabel!
     @IBOutlet weak var calendarView: FSCalendar!
+    @IBOutlet weak var viewWithCalendar: UIView!
     @IBOutlet weak var timeInputField: InputField!
     @IBOutlet weak var nameInputField: InputField!
     @IBOutlet weak var surnameInputField: InputField!
@@ -57,7 +58,8 @@ class AppointmentViewController: UIViewController {
         setNotificationButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
 //        setNotificationButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         infoView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        calendarView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        calendarView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
+        viewWithCalendar.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
                 
 //        hideKeyboardByTap()
         
