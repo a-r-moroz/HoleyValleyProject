@@ -22,6 +22,7 @@ class DecorationViewController: UIViewController {
     var favoriteDecoration = FavoriteDecoration()
     var currentFavoriteDecoration: FavoriteDecoration?
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -49,6 +50,40 @@ class DecorationViewController: UIViewController {
 //                }
 //            }
 //        }
+        
+        checkDecorationIsLiked()
+    }
+    
+    func checkDecorationIsLiked() {
+        
+        guard let item = currentDecoration else { return }
+        
+        favoriteDecoration.name = item.name
+        favoriteDecoration.price = item.price
+        favoriteDecoration.descrip = item.description
+        favoriteDecoration.image = item.image
+        favoriteDecoration.isLiked = favoriteViewOutlet.isLiked
+        
+        let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
+        if let objectToCheck = favoriteArray.filter({ $0.name == item.name }).first {
+            favoriteDecoration.isLiked = true
+            favoriteViewOutlet.isLiked = true
+        } else {
+            favoriteDecoration.isLiked = false
+            favoriteViewOutlet.isLiked = false
+        }
+        
+        
+
+//        for i in favoriteArray {
+//            if favoriteDecoration.name != i.name {
+//                favoriteDecoration.isLiked = false
+//                favoriteViewOutlet.isLiked = false
+//            } else {
+//                favoriteDecoration.isLiked = true
+//                favoriteViewOutlet.isLiked = true
+//            }
+//        }
     }
     
     func setupViewControllerWithData() {
@@ -59,6 +94,7 @@ class DecorationViewController: UIViewController {
         decorationDescribtionLabel.text = item.description
         decorationImage.sd_setImage(with: URL(string: item.image), placeholderImage: UIImage(named: "imagePattern.png"))
         }
+        
         if let favoriteItem = currentFavoriteDecoration {
             decorationNameLabel.text = favoriteItem.name
             decorationPriceLabel.text = String(favoriteItem.price) + Const.belRublesSign
@@ -123,14 +159,23 @@ extension DecorationViewController: FavoriteViewDelegate {
         favoriteDecoration.image = item.image
         favoriteDecoration.isLiked = favoriteViewOutlet.isLiked
         
-        if favoriteDecoration.isLiked {
+        if favoriteViewOutlet.isLiked {
             
             RealmManager.add(object: FavoriteDecoration(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
 
         } else {
             
-            RealmManager.remove(object: favoriteDecoration)
+            RealmManager.deleteDecoration(object: favoriteDecoration)
         }
+        
+//        static func delegate(object: SavedCoordinates) {
+//            let data = read()
+//            guard let objectToDelete = data.filter({ $0.latitude == object.latitude && $0.longitude == object.longitude }).first else { return }
+//
+//            try? realm.write({
+//                realm.delete(objectToDelete)
+//            })
+//        }
         
 //        favoriteDecoration?.name = item.name
 //        favoriteDecoration?.price = item.price

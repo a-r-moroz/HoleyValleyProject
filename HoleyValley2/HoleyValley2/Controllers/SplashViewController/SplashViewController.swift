@@ -23,7 +23,7 @@ final class SplashViewController: UIViewController {
         self.oldGradientConstraint.isActive = false
         self.newGradientConstraint.isActive = true
         
-        UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut]) {
+        UIView.animate(withDuration: 1.5, delay: 0.0, options: [.curveEaseInOut]) {
             self.view.layoutIfNeeded()
         } completion: { finish in
             

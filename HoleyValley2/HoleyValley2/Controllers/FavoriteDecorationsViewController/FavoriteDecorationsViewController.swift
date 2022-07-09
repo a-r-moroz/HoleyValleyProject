@@ -25,13 +25,19 @@ class FavoriteDecorationsViewController: UIViewController {
         title = "Избранные украшения"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        favoriteDecorationsTable.reloadData()
+    }
+    
     private func setupTable() {
         
         favoriteDecorationsTable.delegate = self
         favoriteDecorationsTable.dataSource = self
         favoriteDecorationsTable.register(UINib(nibName: String(describing: DecorationCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DecorationCell.self))
     }
-    
     
 }
 
@@ -60,5 +66,19 @@ extension FavoriteDecorationsViewController: UITableViewDelegate, UITableViewDat
         decorationVC.currentFavoriteDecoration = favoriteDecorations[indexPath.row]
         navigationController?.pushViewController(decorationVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+                
+        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+            RealmManager.remove(object: self.favoriteDecorations[indexPath.row])
+            self.favoriteDecorations = RealmManager.read(type: FavoriteDecoration.self)
+                self.favoriteDecorationsTable.reloadData()
+
+        }
+        
+        let actions = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return actions
     }
 }

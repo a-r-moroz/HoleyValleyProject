@@ -35,13 +35,32 @@ final class RealmManager {
     class func closeTransaction() {
         try? realm.commitWrite()
     }
+    
+    static func deleteDecoration(object: FavoriteDecoration) {
+        let data = read(type: FavoriteDecoration.self)
+        guard let objectToDelete = data.filter({ $0.name == object.name }).first else { return }
+        try? realm.write({
+            realm.delete(objectToDelete)
+        })
+    }
 }
 
 /*
- let data = read()
- guard let objectToDelete = data.filter({ $0.name == object.name && $0.surname == object.surname && $0.phone == object.phone }).first else { return }
+ static func delegate(object: SavedCoordinates) {
+     let data = read()
+     guard let objectToDelete = data.filter({ $0.latitude == object.latitude && $0.longitude == object.longitude }).first else { return }
+     
+     try? realm.write({
+         realm.delete(objectToDelete)
+     })
+ }
+ */
+
+/*
  
- try? realm.write({
-     realm.delete(objectToDelete)
- })
+ class func remove<T: Object>(object: T) {
+     try? realm.write({
+         realm.delete(object)
+     })
+ }
  */
