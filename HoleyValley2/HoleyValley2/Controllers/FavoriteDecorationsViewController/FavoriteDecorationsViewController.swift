@@ -10,12 +10,10 @@ import UIKit
 class FavoriteDecorationsViewController: UIViewController {
 
     @IBOutlet weak var favoriteDecorationsTable: UITableView!
+    @IBOutlet weak var emptyLabel: UILabel!
+
     
-    var favoriteDecorations = RealmManager.read(type: FavoriteDecoration.self) {
-        didSet {
-            favoriteDecorationsTable.reloadData()
-        }
-    }
+    var favoriteDecorations = RealmManager.read(type: FavoriteDecoration.self)
     
     override func viewDidLoad() {
         
@@ -30,6 +28,8 @@ class FavoriteDecorationsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         favoriteDecorationsTable.reloadData()
+        
+        self.emptyLabel.isHidden = self.favoriteDecorations.isEmpty ? false : true
     }
     
     private func setupTable() {
@@ -64,6 +64,11 @@ extension FavoriteDecorationsViewController: UITableViewDelegate, UITableViewDat
         
         let decorationVC = DecorationViewController(nibName: String(describing: DecorationViewController.self), bundle: nil)
         decorationVC.currentFavoriteDecoration = favoriteDecorations[indexPath.row]
+        
+        decorationVC.updateTable = {
+            
+            self.favoriteDecorationsTable.reloadData()
+        }
         navigationController?.pushViewController(decorationVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }

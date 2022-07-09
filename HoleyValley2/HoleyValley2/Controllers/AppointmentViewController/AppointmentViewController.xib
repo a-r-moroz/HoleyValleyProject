@@ -40,16 +40,16 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egm-LX-PUI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1314"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1321"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите день" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-HS-Mrn">
-                                    <rect key="frame" x="16" y="353.5" width="382" height="20.5"/>
+                                    <rect key="frame" x="16" y="360.5" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-mj-Tvu">
-                                    <rect key="frame" x="16" y="1214" width="382" height="50"/>
+                                    <rect key="frame" x="16" y="1221" width="382" height="50"/>
                                     <color key="backgroundColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="cqi-FN-nKV"/>
@@ -64,7 +64,7 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g68-8Y-AQO">
-                                    <rect key="frame" x="16" y="384" width="382" height="382"/>
+                                    <rect key="frame" x="16" y="391" width="382" height="382"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHh-vA-pWR" customClass="FSCalendar">
                                             <rect key="frame" x="8" y="8" width="366" height="366"/>
@@ -113,17 +113,17 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf9-4Q-QN6">
-                                    <rect key="frame" x="16" y="112" width="382" height="113.5"/>
+                                    <rect key="frame" x="16" y="112" width="382" height="120.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVE-3E-IGI">
-                                            <rect key="frame" x="41" y="10" width="333" height="93.5"/>
+                                            <rect key="frame" x="41" y="10" width="333" height="100.5"/>
                                             <string key="text">Обратите внимание, что прокол нельзя делать в период острых заболеваний; месяц после выздоровления, вакцинации, хирургических вмешательств; за месяц и в течение месяца после перелетов и дальних переездов. После прокола 2 месяца нельзя плавать в водоемах.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" systemColor="systemGray2Color"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kM3-6C-92q">
-                                            <rect key="frame" x="8" y="45" width="25" height="24"/>
+                                            <rect key="frame" x="8" y="48.5" width="25" height="24"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="uIU-GG-PHx"/>
@@ -142,7 +142,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSz-hX-MoD" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="786" width="382" height="85"/>
+                                    <rect key="frame" x="16" y="793" width="382" height="85"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="85" id="wDE-Ae-Mc7"/>
                                     </constraints>
@@ -152,7 +152,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-bT-wfM" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="979" width="382" height="80"/>
+                                    <rect key="frame" x="16" y="986" width="382" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="cot-2N-ueS"/>
                                     </constraints>
@@ -162,7 +162,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-ch-UUw" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="1059" width="382" height="60"/>
+                                    <rect key="frame" x="16" y="1066" width="382" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="u5T-SL-DgG"/>
                                     </constraints>
@@ -171,7 +171,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbh-oF-qQf" customClass="InputField" customModule="HoleyValley2" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="1119" width="382" height="85"/>
+                                    <rect key="frame" x="16" y="1126" width="382" height="85"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="AAM-jf-iNo"/>
                                         <constraint firstAttribute="height" constant="85" id="KRO-YP-2fd"/>
@@ -182,7 +182,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsB-Bl-YhW">
-                                    <rect key="frame" x="16" y="881" width="382" height="50"/>
+                                    <rect key="frame" x="16" y="888" width="382" height="50"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="rjF-4q-8oE"/>
@@ -197,7 +197,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjm-1u-UxK">
-                                    <rect key="frame" x="16" y="255.5" width="382" height="50"/>
+                                    <rect key="frame" x="16" y="262.5" width="382" height="50"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="Mde-Ve-zdo"/>
@@ -212,7 +212,7 @@
                                     </connections>
                                 </button>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw5-8b-kJK">
-                                    <rect key="frame" x="105.5" y="315.5" width="203" height="18"/>
+                                    <rect key="frame" x="105.5" y="322.5" width="203" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш мастер: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWt-27-E9G">
                                             <rect key="frame" x="5" y="0.0" width="94" height="18"/>
@@ -238,7 +238,7 @@
                                     </constraints>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ik-wV-7dJ">
-                                    <rect key="frame" x="145.5" y="941" width="123" height="18"/>
+                                    <rect key="frame" x="145.5" y="948" width="123" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напоминание:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T8-cx-4fx">
                                             <rect key="frame" x="5" y="0.0" width="104" height="18"/>

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteDecorationsViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
+                <outlet property="emptyLabel" destination="otc-bX-SPt" id="BTC-Cz-RAr"/>
                 <outlet property="favoriteDecorationsTable" destination="oRT-ND-dwY" id="Rjj-nQ-12f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,11 +24,21 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пусто" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otc-bX-SPt">
+                    <rect key="frame" x="16" y="436" width="382" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" systemColor="systemGray2Color"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="otc-bX-SPt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2l7-6a-KRF"/>
+                <constraint firstItem="otc-bX-SPt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Mq-Yk-oCz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oRT-ND-dwY" secondAttribute="trailing" id="5xI-CS-YrG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="otc-bX-SPt" secondAttribute="trailing" constant="16" id="7JC-aL-7SI"/>
+                <constraint firstItem="otc-bX-SPt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Evv-PA-YrJ"/>
                 <constraint firstItem="oRT-ND-dwY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jga-yG-Pg2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oRT-ND-dwY" secondAttribute="bottom" id="o16-84-2B7"/>
                 <constraint firstItem="oRT-ND-dwY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wzI-rf-uck"/>
@@ -38,6 +49,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

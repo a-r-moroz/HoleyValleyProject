@@ -21,6 +21,7 @@ class DecorationViewController: UIViewController {
     var currentDecoration: Decoration?
     var favoriteDecoration = FavoriteDecoration()
     var currentFavoriteDecoration: FavoriteDecoration?
+    var updateTable: (() -> ())?
     
     
     override func viewDidLoad() {
@@ -56,22 +57,40 @@ class DecorationViewController: UIViewController {
     
     func checkDecorationIsLiked() {
         
-        guard let item = currentDecoration else { return }
-        
-        favoriteDecoration.name = item.name
-        favoriteDecoration.price = item.price
-        favoriteDecoration.descrip = item.description
-        favoriteDecoration.image = item.image
-        favoriteDecoration.isLiked = favoriteViewOutlet.isLiked
-        
-        let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
-        if let objectToCheck = favoriteArray.filter({ $0.name == item.name }).first {
-            favoriteDecoration.isLiked = true
-            favoriteViewOutlet.isLiked = true
-        } else {
-            favoriteDecoration.isLiked = false
-            favoriteViewOutlet.isLiked = false
+        if let item = currentDecoration {
+            favoriteDecoration.name = item.name
+            favoriteDecoration.price = item.price
+            favoriteDecoration.descrip = item.description
+            favoriteDecoration.image = item.image
+            favoriteDecoration.isLiked = favoriteViewOutlet.isLiked
+            
+            let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
+            if let objectToCheck = favoriteArray.filter({ $0.name == item.name }).first {
+                favoriteDecoration.isLiked = true
+                favoriteViewOutlet.isLiked = true
+            } else {
+                favoriteDecoration.isLiked = false
+                favoriteViewOutlet.isLiked = false
+            }
+            
+        } else if let favoriteItem = currentFavoriteDecoration {
+        favoriteDecoration.name = favoriteItem.name
+        favoriteDecoration.price = favoriteItem.price
+        favoriteDecoration.descrip = favoriteItem.description
+        favoriteDecoration.image = favoriteItem.image
+        favoriteDecoration.isLiked = favoriteItem.isLiked
+            
+            let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
+            if let objectToCheck = favoriteArray.filter({ $0.name == favoriteItem.name }).first {
+                favoriteDecoration.isLiked = true
+                favoriteViewOutlet.isLiked = true
+            } else {
+                favoriteDecoration.isLiked = false
+                favoriteViewOutlet.isLiked = false
         }
+        } else { return }
+        
+
         
         
 
@@ -100,7 +119,9 @@ class DecorationViewController: UIViewController {
             decorationPriceLabel.text = String(favoriteItem.price) + Const.belRublesSign
             decorationDescribtionLabel.text = favoriteItem.descrip
             decorationImage.sd_setImage(with: URL(string: favoriteItem.image), placeholderImage: UIImage(named: "imagePattern.png"))
-            favoriteViewOutlet.isLiked = true
+//            favoriteViewOutlet.isLiked = true
+            favoriteViewOutlet.isLiked = favoriteItem.isLiked
+
         }
     }
     
@@ -151,7 +172,7 @@ extension DecorationViewController: FavoriteViewDelegate {
             }
         }
         
-        guard let item = currentDecoration else { return }
+        if let item = currentDecoration {
         
         favoriteDecoration.name = item.name
         favoriteDecoration.price = item.price
@@ -166,8 +187,27 @@ extension DecorationViewController: FavoriteViewDelegate {
         } else {
             
             RealmManager.deleteDecoration(object: favoriteDecoration)
+            updateTable?()
         }
+        } else if let favoriteItem = currentFavoriteDecoration {
         
+        favoriteDecoration.name = favoriteItem.name
+        favoriteDecoration.price = favoriteItem.price
+        favoriteDecoration.descrip = favoriteItem.description
+        favoriteDecoration.image = favoriteItem.image
+        favoriteDecoration.isLiked = favoriteViewOutlet.isLiked
+        
+        if favoriteViewOutlet.isLiked {
+            
+            RealmManager.add(object: FavoriteDecoration(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
+            updateTable?()
+
+        } else {
+            
+            RealmManager.deleteDecoration(object: favoriteDecoration)
+            updateTable?()
+        }
+        } else { return }
 //        static func delegate(object: SavedCoordinates) {
 //            let data = read()
 //            guard let objectToDelete = data.filter({ $0.latitude == object.latitude && $0.longitude == object.longitude }).first else { return }
