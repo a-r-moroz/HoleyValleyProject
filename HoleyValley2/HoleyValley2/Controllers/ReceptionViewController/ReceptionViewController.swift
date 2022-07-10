@@ -16,7 +16,6 @@ class ReceptionViewController: UIViewController {
     @IBOutlet weak var wathsappLogo: UIImageView!
     @IBOutlet weak var instagramLogo: UIImageView!
     @IBOutlet weak var tiktokLogo: UIImageView!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var socialNetworksView: UIView!
     
     override func viewDidLoad() {
@@ -104,6 +103,26 @@ class ReceptionViewController: UIViewController {
         }
     }
     
+//    func makePhoneCall(phoneNumber: String) {
+//        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+//            let alert = UIAlertController(title: ("Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+//                UIApplication.shared.openURL(phoneURL as URL)
+//              }))
+//
+//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//    }
+    
+    func makePhoneCall(phoneNumber: String) {
+        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+            
+            UIApplication.shared.openURL(phoneURL as URL)
+        }
+    }
+    
 //    private func phoneAction() {
 //
 //        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(didPressCall(sender:)))
@@ -116,6 +135,16 @@ class ReceptionViewController: UIViewController {
 //        if let url = URL(string: "tel://\(number)") { UIApplication.shared.open(url, options: [:], completionHandler: nil
 //        )}
 //    }
+    
+    @IBAction func phoneImageAction(_ sender: UIButton) {
+        
+        makePhoneCall(phoneNumber: Const.salonPhoneNumberNoSpaces)
+    }
+    
+    @IBAction func phoneNumberAction(_ sender: UIButton) {
+        
+        makePhoneCall(phoneNumber: Const.salonPhoneNumberNoSpaces)
+    }
     
     @IBAction func appointmentButtonAction(_ sender: UIButton) {
         

@@ -64,7 +64,7 @@
                                 </view>
                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gxi-rT-gfQ">
                                     <rect key="frame" x="100" y="85.5" width="214" height="211.5"/>
-                                    <color key="tintColor" systemColor="labelColor"/>
+                                    <color key="tintColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="gxi-rT-gfQ" secondAttribute="height" multiplier="1:1" id="UcE-mF-DiX"/>
                                     </constraints>
@@ -117,9 +117,6 @@
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="imagePattern" width="1000" height="1000"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

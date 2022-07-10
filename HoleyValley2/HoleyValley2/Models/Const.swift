@@ -14,6 +14,8 @@ struct Const {
     static let belRublesSign = " BYN"
     static let openingHours = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
     static let salonAddress = "Кальварийская улица, 25, 302"
+    static let salonPhoneNumber = "+375 (33) 990-77-88"
+    static let salonPhoneNumberNoSpaces = "375339907788"
 
 
     struct DecorationType {

@@ -14,7 +14,6 @@
                 <outlet property="disclaimerView" destination="hrF-Tg-mhu" id="afo-f7-Jev"/>
                 <outlet property="instagramLogo" destination="ZVj-9w-WpO" id="CcN-HS-NjP"/>
                 <outlet property="mapWithCoordinatesView" destination="bhp-Mf-LQ6" id="ke3-DP-vtK"/>
-                <outlet property="phoneNumberLabel" destination="Ftb-jq-1u4" id="mlp-WX-BxP"/>
                 <outlet property="socialNetworksView" destination="Jy7-W9-vhW" id="92r-hu-dK7"/>
                 <outlet property="telegramLogo" destination="s6n-0u-wCx" id="st8-ay-CFV"/>
                 <outlet property="tiktokLogo" destination="Qlf-9E-XY5" id="Ku3-1b-ucv"/>
@@ -135,23 +134,33 @@
                                                 </imageView>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-3B-Hro">
-                                            <rect key="frame" x="101" y="89.5" width="180" height="20"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-3B-Hro">
+                                            <rect key="frame" x="96.5" y="89.5" width="189" height="20"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ifY-WW-vuh">
-                                                    <rect key="frame" x="0.0" y="1.5" width="20" height="17.5"/>
-                                                    <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yiw-5n-KHY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Z1m-a6-RhI"/>
-                                                        <constraint firstAttribute="width" constant="20" id="sl3-pb-NOv"/>
+                                                        <constraint firstAttribute="width" constant="20" id="3l5-RV-iha"/>
+                                                        <constraint firstAttribute="height" constant="20" id="DCs-XM-XR2"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+375 (33) 990-77-88" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-jq-1u4">
-                                                    <rect key="frame" x="30" y="0.0" width="150" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="phone.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="phoneImageAction:" destination="-1" eventType="touchUpInside" id="XKN-ZE-SCg"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-2z-4vo">
+                                                    <rect key="frame" x="15" y="0.0" width="174" height="20"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="+375 (33) 990-77-88">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="phoneNumberAction:" destination="-1" eventType="touchUpInside" id="Aoo-DK-f9v"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
@@ -234,6 +243,9 @@
         <image name="telegram_logo" width="144" height="144"/>
         <image name="tiktok_logo" width="144" height="144"/>
         <image name="whatsapp_logo" width="144" height="144"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
