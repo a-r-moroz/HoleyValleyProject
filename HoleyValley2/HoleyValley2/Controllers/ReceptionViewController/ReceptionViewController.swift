@@ -12,12 +12,9 @@ class ReceptionViewController: UIViewController {
     @IBOutlet weak var mapWithCoordinatesView: UIView!
     @IBOutlet weak var disclaimerView: UIView!
     @IBOutlet weak var appointmentButtonOutlet: UIButton!
-    @IBOutlet weak var telegramLogo: UIImageView!
-    @IBOutlet weak var wathsappLogo: UIImageView!
-    @IBOutlet weak var instagramLogo: UIImageView!
-    @IBOutlet weak var tiktokLogo: UIImageView!
     @IBOutlet weak var socialNetworksView: UIView!
     
+    @IBOutlet weak var telegramButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,85 +31,28 @@ class ReceptionViewController: UIViewController {
 //        tiktokLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
         
         title = "Контакты"
-        
-        instagramAction()
-        tiktokAction()
-        whatsappAction()
-        telegramAction()
     }
     
-    private func instagramAction() {
-        
-        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapToInstagram(sender:)))
-        instagramLogo.isUserInteractionEnabled = true
-        instagramLogo.addGestureRecognizer(tapLogo)
-    }
-    
-    @objc func tapToInstagram(sender: UITapGestureRecognizer) {
-        
-        if let targetURL = URL(string: "https://instagram.com/holey.valley.piercing/") {
-            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
-        }
-    }
-    
-    private func tiktokAction() {
-        
-        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapToTiktok(sender:)))
-        tiktokLogo.isUserInteractionEnabled = true
-        tiktokLogo.addGestureRecognizer(tapLogo)
-    }
-    
-    @objc func tapToTiktok(sender: UITapGestureRecognizer) {
-        
-        if let targetURL = URL(string: "https://vm.tiktok.com/ZMN1XXtLe/") {
-            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
-        }
-    }
-    
-    private func whatsappAction() {
-        
-        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapWhatsapp(sender:)))
-        wathsappLogo.isUserInteractionEnabled = true
-        wathsappLogo.addGestureRecognizer(tapLogo)
-    }
-    
-    @objc func tapWhatsapp(sender: UITapGestureRecognizer) {
-        let phoneNumber =  "375339907788"
-        let targetURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)")!
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(targetURL)
-        }
-    }
-    
-    private func telegramAction() {
-        
-        let tapLogo = UITapGestureRecognizer(target: self, action: #selector(tapTelegram(sender:)))
-        telegramLogo.isUserInteractionEnabled = true
-        telegramLogo.addGestureRecognizer(tapLogo)
-    }
-    
-    @objc func tapTelegram(sender: UITapGestureRecognizer) {
-        let phoneNumber =  "375339907788"
-        let targetURL = URL(string: "https://t.me/+\(phoneNumber)")!
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(targetURL)
-        }
-    }
-    
-//    func makePhoneCall(phoneNumber: String) {
-//        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
-//            let alert = UIAlertController(title: ("Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
-//                UIApplication.shared.openURL(phoneURL as URL)
-//              }))
+//    private func goToApp(url: String, phoneNumber: String? = nil) {
 //
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        if let phoneNumber = phoneNumber {
 //
-//            self.present(alert, animated: true, completion: nil)
+//            let targetURL = URL(string: url + phoneNumber)!
+//
+//            if #available(iOS 10.0, *) {
+//                UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+//            } else {
+//                UIApplication.shared.openURL(targetURL)
+//            }
+//        } else {
+//
+//            let targetURL = URL(string: url)!
+//
+//            if #available(iOS 10.0, *) {
+//                UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+//            } else {
+//                UIApplication.shared.openURL(targetURL)
+//            }
 //        }
 //    }
     
@@ -136,6 +76,42 @@ class ReceptionViewController: UIViewController {
 //        )}
 //    }
     
+    @IBAction func telegramAction(_ sender: UIButton) {
+        
+        let phoneNumber = Const.salonPhoneNumberNoSpaces
+        let targetURL = URL(string: Const.SocialNetworks.telegram + phoneNumber)!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(targetURL)
+        }
+    }
+    
+    @IBAction func whatsAppAction(_ sender: UIButton) {
+        
+        let phoneNumber = Const.SocialNetworks.whatsApp
+        let targetURL = URL(string: Const.SocialNetworks.whatsApp + phoneNumber)!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(targetURL)
+        }
+    }
+    
+    @IBAction func instagramAction(_ sender: UIButton) {
+        
+        if let targetURL = URL(string: Const.SocialNetworks.instagram) {
+            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func tikTokAction(_ sender: UIButton) {
+        
+        if let targetURL = URL(string: Const.SocialNetworks.tikTok) {
+            UIApplication.shared.open(targetURL, options: [:], completionHandler: nil)
+        }
+    }
+    
     @IBAction func phoneImageAction(_ sender: UIButton) {
         
         makePhoneCall(phoneNumber: Const.salonPhoneNumberNoSpaces)
@@ -152,5 +128,4 @@ class ReceptionViewController: UIViewController {
         
         navigationController?.pushViewController(appointmentVC, animated: true)
     }
-    
 }

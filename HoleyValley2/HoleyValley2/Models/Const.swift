@@ -58,6 +58,14 @@ struct Const {
         static let appointmentsPath = "appointments"
         static let mastersPath = "masters"
     }
+    
+    struct SocialNetworks {
+        
+        static let telegram = "https://t.me/+"
+        static let whatsApp = "https://api.whatsapp.com/send?phone="
+        static let instagram = "https://instagram.com/holey.valley.piercing/"
+        static let tikTok = "https://vm.tiktok.com/ZMN1XXtLe/"
+    }
 }
 
 /*
