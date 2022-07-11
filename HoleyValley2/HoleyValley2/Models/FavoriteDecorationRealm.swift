@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class FavoriteDecoration: Object {
+class FavoriteDecorationRealm: Object {
     
     @objc dynamic var name: String = ""
     @objc dynamic var price: Int = 0

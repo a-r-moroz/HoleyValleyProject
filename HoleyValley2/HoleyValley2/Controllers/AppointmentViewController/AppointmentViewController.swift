@@ -278,7 +278,12 @@ class AppointmentViewController: UIViewController {
     //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
     //        self.database.child("appointments").setValue(["name": name])
             
-//            guard let date = selectedDate else { return }
+//            guard let name = nameInputField.textField.text,
+//                  let surname = surnameInputField.text,
+//                  let appointmentDate = selectedDate,
+//                  let master = selectedMaster else { return }
+//            RealmManager.add(object: AppointmentRealm(name: <#T##String#>, date: <#T##Date#>, time: <#T##Date#>, masterName: <#T##String#>))
+            
             guard let date = dateForAlert else { return }
             
             let dateFormatter = DateFormatter()

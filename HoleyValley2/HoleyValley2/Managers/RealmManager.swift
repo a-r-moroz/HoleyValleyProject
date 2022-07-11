@@ -36,8 +36,8 @@ final class RealmManager {
         try? realm.commitWrite()
     }
     
-    static func deleteDecoration(object: FavoriteDecoration) {
-        let data = read(type: FavoriteDecoration.self)
+    static func deleteDecoration(object: FavoriteDecorationRealm) {
+        let data = read(type: FavoriteDecorationRealm.self)
         guard let objectToDelete = data.filter({ $0.name == object.name }).first else { return }
         try? realm.write({
             realm.delete(objectToDelete)

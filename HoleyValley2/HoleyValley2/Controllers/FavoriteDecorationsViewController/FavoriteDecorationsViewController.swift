@@ -13,14 +13,14 @@ class FavoriteDecorationsViewController: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
 
     
-    var favoriteDecorations = RealmManager.read(type: FavoriteDecoration.self)
+    var favoriteDecorations = RealmManager.read(type: FavoriteDecorationRealm.self)
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         setupTable()
-        title = "Избранные украшения"
+        title = "Избранные"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +77,7 @@ extension FavoriteDecorationsViewController: UITableViewDelegate, UITableViewDat
                 
         let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
             RealmManager.remove(object: self.favoriteDecorations[indexPath.row])
-            self.favoriteDecorations = RealmManager.read(type: FavoriteDecoration.self)
+            self.favoriteDecorations = RealmManager.read(type: FavoriteDecorationRealm.self)
                 self.favoriteDecorationsTable.reloadData()
 
         }

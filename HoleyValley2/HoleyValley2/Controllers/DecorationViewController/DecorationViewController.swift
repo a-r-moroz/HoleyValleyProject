@@ -19,8 +19,8 @@ class DecorationViewController: UIViewController {
     @IBOutlet weak var likeIndicator: UIImageView!
     
     var currentDecoration: Decoration?
-    var favoriteDecoration = FavoriteDecoration()
-    var currentFavoriteDecoration: FavoriteDecoration?
+    var favoriteDecoration = FavoriteDecorationRealm()
+    var currentFavoriteDecoration: FavoriteDecorationRealm?
     var updateTable: (() -> ())?
     
     
@@ -64,7 +64,7 @@ class DecorationViewController: UIViewController {
             favoriteDecoration.image = item.image
             favoriteDecoration.isLiked = favoriteViewOutlet.isLiked
             
-            let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
+            let favoriteArray = RealmManager.read(type: FavoriteDecorationRealm.self)
             if let objectToCheck = favoriteArray.filter({ $0.name == item.name }).first {
                 favoriteDecoration.isLiked = true
                 favoriteViewOutlet.isLiked = true
@@ -80,7 +80,7 @@ class DecorationViewController: UIViewController {
         favoriteDecoration.image = favoriteItem.image
         favoriteDecoration.isLiked = favoriteItem.isLiked
             
-            let favoriteArray = RealmManager.read(type: FavoriteDecoration.self)
+            let favoriteArray = RealmManager.read(type: FavoriteDecorationRealm.self)
             if let objectToCheck = favoriteArray.filter({ $0.name == favoriteItem.name }).first {
                 favoriteDecoration.isLiked = true
                 favoriteViewOutlet.isLiked = true
@@ -182,7 +182,7 @@ extension DecorationViewController: FavoriteViewDelegate {
         
         if favoriteViewOutlet.isLiked {
             
-            RealmManager.add(object: FavoriteDecoration(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
+            RealmManager.add(object: FavoriteDecorationRealm(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
 
         } else {
             
@@ -199,7 +199,7 @@ extension DecorationViewController: FavoriteViewDelegate {
         
         if favoriteViewOutlet.isLiked {
             
-            RealmManager.add(object: FavoriteDecoration(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
+            RealmManager.add(object: FavoriteDecorationRealm(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
             updateTable?()
 
         } else {

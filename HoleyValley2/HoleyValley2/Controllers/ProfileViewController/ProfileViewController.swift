@@ -199,6 +199,9 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func appointmentsAction(_ sender: UIButton) {
+        
+        let appointmentsTableVC = AppointmentsTableViewController(nibName: String(describing: AppointmentsTableViewController.self), bundle: nil)
+        navigationController?.pushViewController(appointmentsTableVC, animated: true)
     }
     
     
