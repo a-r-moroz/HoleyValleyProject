@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2J6-6k-03I">
-                    <rect key="frame" x="167" y="408" width="80" height="80"/>
+                    <rect key="frame" x="167" y="339" width="80" height="80"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8tI-EK-28O">
                             <rect key="frame" x="21.5" y="21.5" width="37" height="37"/>
@@ -51,7 +51,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="naL-tk-1XE" secondAttribute="bottom" id="9bb-Kl-8Ea"/>
                 <constraint firstItem="naL-tk-1XE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DIu-iz-bL7"/>
                 <constraint firstItem="2J6-6k-03I" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rtv-Kz-FKo"/>
-                <constraint firstItem="2J6-6k-03I" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Soj-7s-60f"/>
+                <constraint firstItem="2J6-6k-03I" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-69" id="Soj-7s-60f"/>
                 <constraint firstItem="naL-tk-1XE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZT4-CX-PrI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="naL-tk-1XE" secondAttribute="trailing" id="eQN-3z-8NH"/>
             </constraints>

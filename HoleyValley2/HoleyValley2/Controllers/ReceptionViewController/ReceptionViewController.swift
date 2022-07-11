@@ -11,26 +11,35 @@ class ReceptionViewController: UIViewController {
 
     @IBOutlet weak var mapWithCoordinatesView: UIView!
     @IBOutlet weak var disclaimerView: UIView!
-    @IBOutlet weak var appointmentButtonOutlet: UIButton!
+    @IBOutlet weak var appointmentButton: UIButton!
     @IBOutlet weak var socialNetworksView: UIView!
-    
+    @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var telegramButton: UIButton!
+    @IBOutlet weak var whatsAppButton: UIButton!
+    @IBOutlet weak var instagramButton: UIButton!
+    @IBOutlet weak var tikTokButton: UIButton!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        appointmentButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        
+        title = "Контакты"
+        setupUI()
+    }
+    
+    private func setupUI() {
+        
+        appointmentButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
 //        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
         disclaimerView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        socialNetworksView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-
-//        instagramLogo.setRoundingToImage(cornerRadius: 18)
-//        tiktokLogo.setRoundingToImage(cornerRadius: 18)
-//        instagramLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
-//        tiktokLogo.setShadowToImage(color: Const.Colors.gray.cgColor)
-        
-        title = "Контакты"
+//        socialNetworksView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        phoneView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        telegramButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        whatsAppButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        instagramButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        tikTokButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
     }
     
 //    private func goToApp(url: String, phoneNumber: String? = nil) {
