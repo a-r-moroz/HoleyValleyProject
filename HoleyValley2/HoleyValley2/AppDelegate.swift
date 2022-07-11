@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 //import RealmSwift
 
 @main
@@ -24,6 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UITabBar.appearance().backgroundColor = .black
         
         FirebaseApp.configure()
+        
+        var config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {}
+        })
+        config.deleteRealmIfMigrationNeeded = true
+
+        Realm.Configuration.defaultConfiguration = config
+
+        _ = try! Realm()
 
         return true
     }

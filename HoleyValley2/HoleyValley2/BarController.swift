@@ -55,6 +55,20 @@ class BarController: UITabBarController {
 
     }
     
+//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        
+//        
+//        
+//        let currentIndex = tabBar.items?.firstIndex(of: item)
+//        if selectedIndex == 0 && currentIndex == 0 {
+//            print("0 selected")
+//        } else if selectedIndex == 1 && currentIndex == 1 {
+//            print("1 selected")
+//            let catalogVC = CatalogViewController()
+////            catalogVC.decorationsTable.setContentOffset(.zero, animated: true)
+//            catalogVC.decorationsTable.scrollsToTop = true
+//        }
+//    }
     
 //    line.3.crossed.swirl.circle.fill
 //    fanblades.fill

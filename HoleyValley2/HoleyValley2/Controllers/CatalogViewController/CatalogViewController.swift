@@ -263,12 +263,27 @@ extension CatalogViewController: UITableViewDataSource {
 extension CatalogViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
+
         let tabBarIndex = tabBarController.selectedIndex
         if tabBarIndex == 1 {
-            decorationsTable.setContentOffset(CGPoint.zero, animated: true)
+            
+            if viewController.viewIfLoaded?.window != nil {
+                decorationsTable.setContentOffset(CGPoint.zero, animated: true)
+                print("1 selected")
+            }
         }
     }
+    
+//    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        
+//        let selectedIndex = tabBarController?.selectedIndex
+//        let currentIndex = tabBar.items?.firstIndex(of: item)
+//        if selectedIndex == 1 && currentIndex == 1 {
+//            decorationsTable.setContentOffset(CGPoint.zero, animated: true)
+//            decorationsTable.scrollsToTop = true
+//            print("1 selected")
+//        }
+//    }
 }
 extension CatalogViewController: UISearchResultsUpdating {
 

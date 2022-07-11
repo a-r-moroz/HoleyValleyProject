@@ -29,6 +29,7 @@
                 <outlet property="viewWithCalendar" destination="g68-8Y-AQO" id="kYx-fN-D7m"/>
                 <outlet property="viewWithMaster" destination="nw5-8b-kJK" id="k3L-f2-QcT"/>
                 <outlet property="viewWithNotification" destination="0Ik-wV-7dJ" id="NxS-3e-8h2"/>
+                <outlet property="warningImage" destination="kM3-6C-92q" id="4J9-5p-cNM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

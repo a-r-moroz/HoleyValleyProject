@@ -19,6 +19,7 @@
                 <outlet property="telegramButton" destination="vS1-f5-zsf" id="vBZ-3P-xer"/>
                 <outlet property="tikTokButton" destination="Xy6-zZ-gTh" id="Usl-zs-rPQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="warningImage" destination="V3W-vp-y6N" id="Ren-HI-oHe"/>
                 <outlet property="whatsAppButton" destination="ETU-wB-fZY" id="ffr-J5-4yl"/>
             </connections>
         </placeholder>

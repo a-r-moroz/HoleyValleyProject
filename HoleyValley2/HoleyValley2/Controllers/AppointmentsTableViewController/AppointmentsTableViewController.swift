@@ -11,11 +11,20 @@ class AppointmentsTableViewController: UIViewController {
 
     @IBOutlet weak var appointmentsTable: UITableView!
     
+    var appointments = RealmManager.read(type: AppointmentRealm.self)
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         setupTable()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        appointmentsTable.reloadData()
     }
     
     private func setupTable() {
@@ -41,7 +50,7 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return appointments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,6 +58,21 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AppointmentCell.self), for: indexPath)
         guard let appointmentCell = cell as? AppointmentCell else { return cell }
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "RU")
+        dateFormatter.dateFormat = "d MMM, yyyy"
+        let dateString = dateFormatter.string(from: appointments[indexPath.row].date)
+        
+        if appointments[indexPath.row].date > .now {
+            appointmentCell.ViewWithData.backgroundColor = .blue
+        } else {
+            appointmentCell.ViewWithData.backgroundColor = .systemRed
+        }
+        
+        appointmentCell.appointmentNameLabel.text = appointments[indexPath.row].name
+        appointmentCell.appointmentDateLabel.text = dateString
+        appointmentCell.appointmentTimeLabel.text = appointments[indexPath.row].time
+        appointmentCell.appointmentMasterNameLabel.text = appointments[indexPath.row].masterName
         return appointmentCell
     }
     

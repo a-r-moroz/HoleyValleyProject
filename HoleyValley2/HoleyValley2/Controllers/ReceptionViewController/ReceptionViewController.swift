@@ -18,6 +18,7 @@ class ReceptionViewController: UIViewController {
     @IBOutlet weak var whatsAppButton: UIButton!
     @IBOutlet weak var instagramButton: UIButton!
     @IBOutlet weak var tikTokButton: UIButton!
+    @IBOutlet weak var warningImage: UIImageView!
     
     override func viewDidLoad() {
         
@@ -40,6 +41,9 @@ class ReceptionViewController: UIViewController {
         whatsAppButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         instagramButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         tikTokButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        
+        warningImage.tintColor = .systemRed
+//        warningImage.setShadowToImage(color: UIColor.systemRed.cgColor)
     }
     
 //    private func goToApp(url: String, phoneNumber: String? = nil) {

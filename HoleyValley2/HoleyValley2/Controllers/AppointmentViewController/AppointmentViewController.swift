@@ -30,6 +30,7 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var constraintWithMaster: NSLayoutConstraint!
     @IBOutlet weak var constraintWithoutNotification: NSLayoutConstraint!
     @IBOutlet weak var constraintWithNotification: NSLayoutConstraint!
+    @IBOutlet weak var warningImage: UIImageView!
     
     var database: DatabaseReference!
     var selectedMaster: Master?
@@ -50,16 +51,6 @@ class AppointmentViewController: UIViewController {
         
         super.viewDidLoad()
         database = Database.database().reference()
-        
-        selectMasterButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        confirmButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        setNotificationButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        setNotificationButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        infoView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        calendarView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
-        viewWithCalendar.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
                 
 //        hideKeyboardByTap()
         
@@ -67,6 +58,7 @@ class AppointmentViewController: UIViewController {
         calendarView.dataSource = self
         calendarView.locale = Locale(identifier: "RU")
         setInputFields()
+        setupUI()
         showSelectedMaster()
         title = "Записаться"
     }
@@ -83,6 +75,21 @@ class AppointmentViewController: UIViewController {
             self.constraintWithNotification.isActive = false
             self.constraintWithoutNotification.isActive = true
         }
+    }
+    
+    private func setupUI() {
+        
+        selectMasterButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        confirmButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        setNotificationButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        setNotificationButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        infoView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        calendarView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
+        viewWithCalendar.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        warningImage.tintColor = .systemRed
+//        warningImage.setShadowToImage(color: UIColor.systemRed.cgColor)
     }
     
     private func setInputFields() {
@@ -278,11 +285,9 @@ class AppointmentViewController: UIViewController {
     //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
     //        self.database.child("appointments").setValue(["name": name])
             
-//            guard let name = nameInputField.textField.text,
-//                  let surname = surnameInputField.text,
-//                  let appointmentDate = selectedDate,
-//                  let master = selectedMaster else { return }
-//            RealmManager.add(object: AppointmentRealm(name: <#T##String#>, date: <#T##Date#>, time: <#T##Date#>, masterName: <#T##String#>))
+            guard let appointmentDate = dateForAlert,
+                  let master = selectedMaster?.name else { return }
+            RealmManager.add(object: AppointmentRealm(name: name + " " + surname, date: appointmentDate, time: time, masterName: master))
             
             guard let date = dateForAlert else { return }
             

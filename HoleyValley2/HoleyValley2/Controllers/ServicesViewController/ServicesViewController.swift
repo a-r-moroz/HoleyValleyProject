@@ -141,4 +141,13 @@ extension ServicesViewController: UITabBarControllerDelegate {
             servicesTable.setContentOffset(CGPoint.zero, animated: true)
         }
     }
+    
+//    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        
+//        let selectedIndex = tabBarController?.selectedIndex
+//        let currentIndex = tabBar.items?.firstIndex(of: item)
+//        if selectedIndex == 0 && currentIndex == 0 {
+//            servicesTable.setContentOffset(CGPoint.zero, animated: true)
+//        }
+//    }
 }
