@@ -99,13 +99,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Bt-Y6-na9">
-                                            <rect key="frame" x="83" y="39.5" width="216" height="72"/>
+                                            <rect key="frame" x="81.5" y="39.5" width="219" height="72"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w30-N6-nDU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="216" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="219" height="31"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vS1-f5-zsf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="113" height="31"/>
                                                             <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="telegram-circle-fill" title="Telegram" imagePadding="5"/>
@@ -114,7 +114,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETU-wB-fZY">
-                                                            <rect key="frame" x="108" y="0.0" width="108" height="31"/>
+                                                            <rect key="frame" x="113" y="0.0" width="106" height="31"/>
                                                             <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="whatsapp-fill" title="WhatsApp" imagePadding="5"/>
@@ -125,7 +125,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Gj-ke-gEy">
-                                                    <rect key="frame" x="0.0" y="41" width="216" height="31"/>
+                                                    <rect key="frame" x="0.0" y="41" width="219" height="31"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-YN-N75">
                                                             <rect key="frame" x="0.0" y="0.0" width="103" height="31"/>
@@ -137,7 +137,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xy6-zZ-gTh">
-                                                            <rect key="frame" x="113" y="0.0" width="103" height="31"/>
+                                                            <rect key="frame" x="113" y="0.0" width="106" height="31"/>
                                                             <color key="tintColor" red="0.54901960780000003" green="0.40000000000000002" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="tiktok-fill" title="TikTok" imagePadding="5"/>
@@ -148,6 +148,9 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xy6-zZ-gTh" firstAttribute="leading" secondItem="ETU-wB-fZY" secondAttribute="leading" id="8b3-gl-g8q"/>
+                                            </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-3B-Hro">
                                             <rect key="frame" x="96.5" y="131.5" width="189" height="20"/>
