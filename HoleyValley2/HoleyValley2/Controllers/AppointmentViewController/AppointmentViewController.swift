@@ -88,7 +88,7 @@ class AppointmentViewController: UIViewController {
         infoView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         calendarView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
         viewWithCalendar.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        warningImage.tintColor = .systemRed
+        warningImage.tintColor = Const.Colors.red
 //        warningImage.setShadowToImage(color: UIColor.systemRed.cgColor)
     }
     

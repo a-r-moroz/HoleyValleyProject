@@ -41,6 +41,7 @@ struct Const {
         
         static let gray: UIColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
         static let gold: UIColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1.0)
+        static let red: UIColor = UIColor(red: 242/255, green: 97/255, blue: 97/255, alpha: 1.0)
     }
     
     struct CornerRadiusTo {

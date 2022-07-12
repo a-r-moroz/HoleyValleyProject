@@ -42,7 +42,7 @@ class ReceptionViewController: UIViewController {
         instagramButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         tikTokButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         
-        warningImage.tintColor = .systemRed
+        warningImage.tintColor = Const.Colors.red
 //        warningImage.setShadowToImage(color: UIColor.systemRed.cgColor)
     }
     

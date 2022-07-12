@@ -12,6 +12,7 @@ class NotificationsSettingsViewController: UIViewController {
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var saveButtonOutlet: UIButton!
     @IBOutlet weak var disclaimerView: UIView!
+    @IBOutlet weak var warningImage: UIImageView!
 
     var postDate: (() -> ())?
     var notificationDate: Date?
@@ -27,6 +28,7 @@ class NotificationsSettingsViewController: UIViewController {
 
         saveButtonOutlet.setCapsuleRoundingToButton()
         saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+        warningImage.tintColor = Const.Colors.red
         
         timePicker.locale = Locale(identifier: "ru")
         
