@@ -13,7 +13,7 @@ class CatalogViewController: UIViewController {
     
     @IBOutlet weak var decorationsTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyImage: UIImageView!
     @IBOutlet weak var viewForSpinner: UIView!
     
     var database: DatabaseReference!
@@ -298,11 +298,11 @@ extension CatalogViewController: UISearchResultsUpdating {
             if text != "" {
                 self.decorations = self.originalDecorations.filter({ $0.name.lowercased().contains(text.lowercased()) })
                 self.reloadCatalogTable()
-                self.emptyLabel.isHidden = self.decorations.isEmpty ? false : true
+                self.emptyImage.isHidden = self.decorations.isEmpty ? false : true
             } else {
                 self.decorations = self.originalDecorations
                 self.reloadCatalogTable()
-                self.emptyLabel.isHidden = true
+                self.emptyImage.isHidden = true
             }
         })
     }

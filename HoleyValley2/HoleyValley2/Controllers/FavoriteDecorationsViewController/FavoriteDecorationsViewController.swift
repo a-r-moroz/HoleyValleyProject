@@ -10,8 +10,7 @@ import UIKit
 class FavoriteDecorationsViewController: UIViewController {
 
     @IBOutlet weak var favoriteDecorationsTable: UITableView!
-    @IBOutlet weak var emptyLabel: UILabel!
-
+    @IBOutlet weak var emptyImage: UIImageView!
     
     var favoriteDecorations = RealmManager.read(type: FavoriteDecorationRealm.self)
     
@@ -29,7 +28,7 @@ class FavoriteDecorationsViewController: UIViewController {
         
         favoriteDecorationsTable.reloadData()
         
-        self.emptyLabel.isHidden = self.favoriteDecorations.isEmpty ? false : true
+        self.emptyImage.isHidden = self.favoriteDecorations.isEmpty ? false : true
     }
     
     private func setupTable() {
