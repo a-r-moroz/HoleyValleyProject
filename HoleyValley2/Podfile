@@ -15,5 +15,6 @@ target 'HoleyValley2' do
   pod 'SDWebImage', '~> 5.0'
   pod 'Haptica'
   pod 'RealmSwift'
+  pod 'GoogleMaps'
 
 end

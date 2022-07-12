@@ -694,6 +694,11 @@ PODS:
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleMaps (6.1.1):
+    - GoogleMaps/Maps (= 6.1.1)
+  - GoogleMaps/Base (6.1.1)
+  - GoogleMaps/Maps (6.1.1):
+    - GoogleMaps/Base
   - GoogleUtilities/AppDelegateSwizzler (7.7.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -796,6 +801,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - FSCalendar
+  - GoogleMaps
   - Haptica
   - IQKeyboardManager
   - RealmSwift
@@ -816,6 +822,7 @@ SPEC REPOS:
     - FSCalendar
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleMaps
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -844,6 +851,7 @@ SPEC CHECKSUMS:
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   GoogleAppMeasurement: 4c19f031220c72464d460c9daa1fb5d1acce958e
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  GoogleMaps: 94e6e0851beece6678af9f508f4918b7a7c61722
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
@@ -858,6 +866,6 @@ SPEC CHECKSUMS:
   RealmSwift: c2a635212400923edd3f828b8a37d55d3eb31863
   SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
 
-PODFILE CHECKSUM: a9e656bb1c822d71bac941e4ff5fe8a74986b6e5
+PODFILE CHECKSUM: a853b4c81608209163198a8654700178985a7dd7
 
 COCOAPODS: 1.11.3

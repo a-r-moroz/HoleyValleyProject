@@ -593,6 +593,7 @@
 				8EA9AB3828219663005E0C2A /* Frameworks */,
 				8EA9AB3928219663005E0C2A /* Resources */,
 				E2C4452181BBF4ACFD7085EB /* [CP] Embed Pods Frameworks */,
+				3CA1639985462F9467138B53 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -678,6 +679,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3CA1639985462F9467138B53 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoleyValley2/Pods-HoleyValley2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C9C55C786F216B0B211E089D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
