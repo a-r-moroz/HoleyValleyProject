@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import RealmSwift
-//import RealmSwift
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UITabBar.appearance().backgroundColor = .black
         
         FirebaseApp.configure()
+        
+        GMSServices.provideAPIKey("AIzaSyAS6qgX2yi3HcDVg_Um0ScpBP4wkp3R5pM")
         
         var config = Realm.Configuration(
             schemaVersion: 1,

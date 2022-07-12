@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class ReceptionViewController: UIViewController {
 
-    @IBOutlet weak var mapWithCoordinatesView: UIView!
+    @IBOutlet weak var mapWithCoordinatesView: GMSMapView!
     @IBOutlet weak var disclaimerView: UIView!
     @IBOutlet weak var appointmentButton: UIButton!
     @IBOutlet weak var socialNetworksView: UIView!
@@ -25,7 +26,39 @@ class ReceptionViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Контакты"
+        
+        mapWithCoordinatesView.isMyLocationEnabled = true
+        mapWithCoordinatesView.isIndoorEnabled = true
+        mapWithCoordinatesView.isTrafficEnabled = true
+        mapWithCoordinatesView.delegate = self
         setupUI()
+        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        createMarker(coordinate: CLLocationCoordinate2D(latitude: 53.906117, longitude: 27.520889))
+        setupMap()
+    }
+    
+    private func setupMap() {
+        
+        mapWithCoordinatesView.settings.compassButton = true
+        mapWithCoordinatesView.settings.setAllGesturesEnabled(true)
+    }
+    
+    private func createMarker(coordinate: CLLocationCoordinate2D) {
+        let marker = GMSMarker(position: coordinate)
+        marker.title = "HoleyValley"
+        mapWithCoordinatesView.clear()
+//        marker.icon = UIImage(systemName: "circle.circle.fill")
+//        marker.iconView?.tintColor = .red
+        marker.snippet = "Минск, Кальварийская улица, 25, 302 \nКоординаты: \(coordinate.latitude), \(coordinate.longitude)"
+        marker.map = mapWithCoordinatesView
+        updateCamera(coordinate: coordinate)
+    }
+    
+    private func updateCamera(coordinate: CLLocationCoordinate2D) {
+        let camera = GMSCameraPosition(latitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 15)
+        
+        mapWithCoordinatesView.animate(to: camera)
+//        mapView.camera = camera
     }
     
     private func setupUI() {
@@ -141,4 +174,9 @@ class ReceptionViewController: UIViewController {
         
         navigationController?.pushViewController(appointmentVC, animated: true)
     }
+}
+
+extension ReceptionViewController: GMSMapViewDelegate {
+    
+    
 }

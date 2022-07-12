@@ -34,7 +34,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vU-Br-07O">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="867"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-Mf-LQ6">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-Mf-LQ6" customClass="GMSMapView">
                                     <rect key="frame" x="16" y="20" width="382" height="382"/>
                                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                                     <constraints>
