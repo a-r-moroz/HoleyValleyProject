@@ -41,6 +41,8 @@
 		8E77511E287CA1810016E08B /* AppointmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77511C287CA1810016E08B /* AppointmentsTableViewController.swift */; };
 		8E77511F287CA1810016E08B /* AppointmentsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E77511D287CA1810016E08B /* AppointmentsTableViewController.xib */; };
 		8E775122287CB6740016E08B /* AppointmentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E775121287CB6740016E08B /* AppointmentRealm.swift */; };
+		8E775126287DB6AA0016E08B /* FavoriteDecorationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E775124287DB6AA0016E08B /* FavoriteDecorationCollectionCell.swift */; };
+		8E775127287DB6AA0016E08B /* FavoriteDecorationCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E775125287DB6AA0016E08B /* FavoriteDecorationCollectionCell.xib */; };
 		8E787D472874D74D00755508 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E787D452874D74D00755508 /* OverlayViewController.swift */; };
 		8E787D482874D74D00755508 /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E787D462874D74D00755508 /* OverlayViewController.xib */; };
 		8E787D4B2874E65A00755508 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E787D4A2874E65A00755508 /* NavigationBar.swift */; };
@@ -128,6 +130,8 @@
 		8E77511C287CA1810016E08B /* AppointmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewController.swift; sourceTree = "<group>"; };
 		8E77511D287CA1810016E08B /* AppointmentsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsTableViewController.xib; sourceTree = "<group>"; };
 		8E775121287CB6740016E08B /* AppointmentRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentRealm.swift; sourceTree = "<group>"; };
+		8E775124287DB6AA0016E08B /* FavoriteDecorationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDecorationCollectionCell.swift; sourceTree = "<group>"; };
+		8E775125287DB6AA0016E08B /* FavoriteDecorationCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteDecorationCollectionCell.xib; sourceTree = "<group>"; };
 		8E787D452874D74D00755508 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 		8E787D462874D74D00755508 /* OverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayViewController.xib; sourceTree = "<group>"; };
 		8E787D4A2874E65A00755508 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -291,6 +295,15 @@
 				8E77511D287CA1810016E08B /* AppointmentsTableViewController.xib */,
 			);
 			path = AppointmentsTableViewController;
+			sourceTree = "<group>";
+		};
+		8E775123287DB6890016E08B /* FavoriteDecorationCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E775124287DB6AA0016E08B /* FavoriteDecorationCollectionCell.swift */,
+				8E775125287DB6AA0016E08B /* FavoriteDecorationCollectionCell.xib */,
+			);
+			path = FavoriteDecorationCollectionCell;
 			sourceTree = "<group>";
 		};
 		8E787D442874D73B00755508 /* OverlayVC */ = {
@@ -522,6 +535,7 @@
 		8EE42F362821A18D00D7210D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E775123287DB6890016E08B /* FavoriteDecorationCollectionCell */,
 				8EEBA96028610074005F5825 /* MasterCell */,
 				8E5AA6FF28564BD300CE70B7 /* SettingsCell */,
 				8E75D61C2855179300ACBAF8 /* AppointmentCell */,
@@ -654,6 +668,7 @@
 				8E75D620285517B100ACBAF8 /* AppointmentCell.xib in Resources */,
 				8EA9AB4628219663005E0C2A /* Main.storyboard in Resources */,
 				8E13BD48283B921C0039D1F9 /* ServiceCell.xib in Resources */,
+				8E775127287DB6AA0016E08B /* FavoriteDecorationCollectionCell.xib in Resources */,
 				8E787D482874D74D00755508 /* OverlayViewController.xib in Resources */,
 				8E9D512C284D01260019F8A0 /* SortingViewController.xib in Resources */,
 				8E5AA6FE2856056D00CE70B7 /* SettingsViewController.xib in Resources */,
@@ -714,6 +729,7 @@
 				8E5AA6FD2856056D00CE70B7 /* SettingsViewController.swift in Sources */,
 				8EEBA96628610142005F5825 /* Master.swift in Sources */,
 				8E9D8F532835A34B009FDF12 /* Const.swift in Sources */,
+				8E775126287DB6AA0016E08B /* FavoriteDecorationCollectionCell.swift in Sources */,
 				8E775122287CB6740016E08B /* AppointmentRealm.swift in Sources */,
 				8E787D472874D74D00755508 /* OverlayViewController.swift in Sources */,
 				8E6955A82877914E00BFB6D2 /* MainServicesViewController.swift in Sources */,

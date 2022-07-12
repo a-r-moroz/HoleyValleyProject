@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteDecorationsViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
                 <outlet property="emptyImage" destination="hSW-eT-RDp" id="iGp-Zy-ka4"/>
+                <outlet property="favoriteDecorationsCollection" destination="6fg-6F-k88" id="vYm-QD-Krj"/>
                 <outlet property="favoriteDecorationsTable" destination="oRT-ND-dwY" id="Rjj-nQ-12f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-ND-dwY">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-ND-dwY">
+                    <rect key="frame" x="0.0" y="862" width="414" height="0.0"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HoleyValleyLogo_Gray" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-eT-RDp">
@@ -31,6 +32,16 @@
                         <constraint firstAttribute="height" constant="250" id="Z7H-L2-Yos"/>
                     </constraints>
                 </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6fg-6F-k88">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="LcJ-Sc-XrB">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -38,11 +49,15 @@
                 <constraint firstItem="hSW-eT-RDp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5H4-tN-tAx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oRT-ND-dwY" secondAttribute="trailing" id="5xI-CS-YrG"/>
                 <constraint firstItem="hSW-eT-RDp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BJW-LN-Gss"/>
+                <constraint firstItem="6fg-6F-k88" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E8Y-tt-u9s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6fg-6F-k88" secondAttribute="trailing" id="Lc9-3W-Eef"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6fg-6F-k88" secondAttribute="bottom" id="eiF-lb-6sk"/>
+                <constraint firstItem="6fg-6F-k88" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="i0N-v7-WoO"/>
+                <constraint firstItem="oRT-ND-dwY" firstAttribute="top" secondItem="6fg-6F-k88" secondAttribute="bottom" id="jUz-h9-5Bq"/>
                 <constraint firstItem="oRT-ND-dwY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jga-yG-Pg2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oRT-ND-dwY" secondAttribute="bottom" id="o16-84-2B7"/>
-                <constraint firstItem="oRT-ND-dwY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wzI-rf-uck"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="78"/>
+            <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
         </view>
     </objects>
     <resources>

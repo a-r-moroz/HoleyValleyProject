@@ -108,7 +108,7 @@ extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
         masterCell.nameLabel.text = master.name
         masterCell.experienceLabel.text = master.experience
         masterCell.descriptionLabel.text = master.description
-        masterCell.masterPhoto.sd_setImage(with: URL(string: master.photo), placeholderImage: UIImage(systemName: "person.fill"))
+        masterCell.masterPhoto.sd_setImage(with: URL(string: master.photo), placeholderImage: UIImage(named: "imagePatternLittle.png"))
         return masterCell
     }
     

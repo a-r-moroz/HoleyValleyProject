@@ -183,6 +183,7 @@ extension DecorationViewController: FavoriteViewDelegate {
         if favoriteViewOutlet.isLiked {
             
             RealmManager.add(object: FavoriteDecorationRealm(name: favoriteDecoration.name, price: favoriteDecoration.price, descrip: favoriteDecoration.descrip, image: favoriteDecoration.image, isLiked: true))
+            updateTable?()
 
         } else {
             

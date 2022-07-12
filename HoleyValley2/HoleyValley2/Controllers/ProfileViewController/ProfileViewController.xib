@@ -10,9 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="HoleyValley2" customModuleProvider="target">
             <connections>
-                <outlet property="appointmentsButtonOutlet" destination="NL8-BD-5p2" id="dn3-HT-5kD"/>
+                <outlet property="appointmentsButtonOutlet" destination="NL8-BD-5p2" id="LWX-Sn-sH0"/>
                 <outlet property="editButtonOutlet" destination="XPD-FG-kBr" id="adR-rL-msv"/>
-                <outlet property="favoritesButtonOutlet" destination="9eb-W7-sDl" id="MYA-71-wRu"/>
+                <outlet property="favoritesButtonOutlet" destination="9eb-W7-sDl" id="2is-g8-HWa"/>
                 <outlet property="nameInputField" destination="uNx-id-SNd" id="Tkq-l2-0YO"/>
                 <outlet property="nameLabel" destination="M6l-eo-uAs" id="P59-BH-8Tb"/>
                 <outlet property="newLabelConstraint" destination="uhV-Jm-JDe" id="ezO-QL-YN2"/>
