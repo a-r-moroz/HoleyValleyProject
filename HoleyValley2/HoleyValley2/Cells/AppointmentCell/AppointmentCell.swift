@@ -13,7 +13,7 @@ class AppointmentCell: UITableViewCell {
     @IBOutlet weak var appointmentDateLabel: UILabel!
     @IBOutlet weak var appointmentTimeLabel: UILabel!
     @IBOutlet weak var appointmentMasterNameLabel: UILabel!
-    
+    @IBOutlet weak var appointmentNotificationDateAndTimeLabel: UILabel!
     @IBOutlet weak var ViewWithData: UIView!
     
     override func awakeFromNib() {

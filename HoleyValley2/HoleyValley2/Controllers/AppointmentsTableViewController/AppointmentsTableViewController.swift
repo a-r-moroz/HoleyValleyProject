@@ -32,18 +32,6 @@ class AppointmentsTableViewController: UIViewController {
         self.appointmentsTable.delegate = self
         self.appointmentsTable.dataSource = self
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDelegate {
@@ -64,19 +52,23 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
         let dateString = dateFormatter.string(from: appointments[indexPath.row].date)
         
         if appointments[indexPath.row].date > .now {
-            appointmentCell.ViewWithData.backgroundColor = .blue
+            appointmentCell.ViewWithData.layer.borderColor = UIColor.blue.cgColor
+            appointmentCell.ViewWithData.layer.borderWidth = 1
         } else {
-            appointmentCell.ViewWithData.backgroundColor = .systemRed
+            appointmentCell.ViewWithData.layer.borderColor = UIColor.systemRed.cgColor
+            appointmentCell.ViewWithData.layer.borderWidth = 1
         }
         
         appointmentCell.appointmentNameLabel.text = appointments[indexPath.row].name
         appointmentCell.appointmentDateLabel.text = dateString
         appointmentCell.appointmentTimeLabel.text = appointments[indexPath.row].time
         appointmentCell.appointmentMasterNameLabel.text = appointments[indexPath.row].masterName
+        appointmentCell.appointmentNotificationDateAndTimeLabel.text = appointments[indexPath.row].notificationDateAndTime
         return appointmentCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

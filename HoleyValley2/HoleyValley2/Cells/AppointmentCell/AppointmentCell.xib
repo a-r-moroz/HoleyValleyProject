@@ -68,8 +68,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-MC-fuA">
-                                <rect key="frame" x="16" y="106" width="165" height="14"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-MC-fuA">
+                                <rect key="frame" x="16" y="106" width="151.5" height="14"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmf-e9-P1E">
                                         <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
@@ -80,12 +80,12 @@
                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="bell.fill" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="14"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="8"/>
                                         </buttonConfiguration>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="notification date, time" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2i-3w-BvX">
-                                        <rect key="frame" x="24" y="0.0" width="141" height="14"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="19" y="0.0" width="132.5" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" systemColor="systemGray2Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -133,6 +133,7 @@
                 <outlet property="appointmentDateLabel" destination="YXR-qS-RsD" id="zug-Om-jsW"/>
                 <outlet property="appointmentMasterNameLabel" destination="cR2-Sh-0rH" id="0bo-rp-4ug"/>
                 <outlet property="appointmentNameLabel" destination="0oW-kn-3fK" id="d1Q-Di-PUm"/>
+                <outlet property="appointmentNotificationDateAndTimeLabel" destination="Q2i-3w-BvX" id="a5d-PH-364"/>
                 <outlet property="appointmentTimeLabel" destination="hyH-HR-QkI" id="DP3-GS-3Zq"/>
             </connections>
             <point key="canvasLocation" x="130.43478260869566" y="103.45982142857143"/>

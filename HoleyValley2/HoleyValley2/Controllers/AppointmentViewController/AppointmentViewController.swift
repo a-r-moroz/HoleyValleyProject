@@ -285,10 +285,6 @@ class AppointmentViewController: UIViewController {
     //        self.database.child("appointments/\(date)/\(time)").setValue(["name" : surname + " " + name])
     //        self.database.child("appointments").setValue(["name": name])
             
-            guard let appointmentDate = dateForAlert,
-                  let master = selectedMaster?.name else { return }
-            RealmManager.add(object: AppointmentRealm(name: name + " " + surname, date: appointmentDate, time: time, masterName: master))
-            
             guard let date = dateForAlert else { return }
             
             let dateFormatter = DateFormatter()
@@ -332,6 +328,11 @@ class AppointmentViewController: UIViewController {
                 self.phoneInputField.textField.text = ""
                 self.selectedMaster = nil
             }
+            
+            guard let appointmentDate = dateForAlert,
+                  let master = selectedMaster?.name else { return }
+            RealmManager.add(object: AppointmentRealm(name: name + " " + surname, date: appointmentDate, time: time, masterName: master, notificationDateAndTime: "\(dateNotificationForAlert), \(Calendar.current.component(.hour, from: notificationDate)):\(Calendar.current.component(.minute, from: notificationDate))"))
+            
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
             let alert = UIAlertController(title: "Упс!", message: "Пожалуйста, удебитесь, что выбрана дата и доступное время, все поля заполнены корректно.", preferredStyle: .alert)

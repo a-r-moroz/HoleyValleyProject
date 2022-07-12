@@ -14,13 +14,15 @@ class AppointmentRealm: Object {
     @objc dynamic var date: Date = .now
     @objc dynamic var time: String = ""
     @objc dynamic var masterName: String = ""
+    @objc dynamic var notificationDateAndTime: String = ""
     
-    convenience init(name: String = "", date: Date = .now, time: String = "", masterName: String = "") {
+    convenience init(name: String = "", date: Date = .now, time: String = "", masterName: String = "", notificationDateAndTime: String = "") {
         
         self.init()
         self.name = name
         self.date = date
         self.time = time
         self.masterName = masterName
+        self.notificationDateAndTime = notificationDateAndTime
     }
 }
