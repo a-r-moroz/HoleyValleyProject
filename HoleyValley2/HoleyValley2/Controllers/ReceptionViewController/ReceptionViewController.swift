@@ -33,14 +33,14 @@ class ReceptionViewController: UIViewController {
     
     private func setupMap() {
         
-        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
         mapWithCoordinatesView.delegate = self
         mapWithCoordinatesView.isMyLocationEnabled = true
         mapWithCoordinatesView.isIndoorEnabled = true
         mapWithCoordinatesView.isTrafficEnabled = true
         mapWithCoordinatesView.settings.compassButton = true
         mapWithCoordinatesView.settings.setAllGesturesEnabled(true)
+        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
         createMarker(coordinate: CLLocationCoordinate2D(latitude: Const.Coordinates.latitude, longitude: Const.Coordinates.longitude))
     }
     
@@ -56,7 +56,7 @@ class ReceptionViewController: UIViewController {
     }
     
     private func updateCamera(coordinate: CLLocationCoordinate2D) {
-        let camera = GMSCameraPosition(latitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 15)
+        let camera = GMSCameraPosition(latitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 17)
         
         mapWithCoordinatesView.animate(to: camera)
 //        mapView.camera = camera

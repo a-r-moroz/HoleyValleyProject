@@ -12,14 +12,21 @@ class SingleServiceViewController: UIViewController {
     @IBOutlet weak var serviseNameLabel: UILabel!
     @IBOutlet weak var servicePriceLabel: UILabel!
     @IBOutlet weak var serviceDescriptionLabel: UILabel!
-    @IBOutlet weak var advantageHeader1: UILabel!
-    @IBOutlet weak var advantageHeader2: UILabel!
-    @IBOutlet weak var advantageHeader3: UILabel!
-    @IBOutlet weak var advantageBody1: UILabel!
-    @IBOutlet weak var advantageBody2: UILabel!
-    @IBOutlet weak var advantageBody3: UILabel!
+    @IBOutlet weak var advantageHeaderFirst: UILabel!
+    @IBOutlet weak var advantageHeaderSecond: UILabel!
+    @IBOutlet weak var advantageHeaderThird: UILabel!
+    @IBOutlet weak var advantageBodyFirst: UILabel!
+    @IBOutlet weak var advantageBodySecond: UILabel!
+    @IBOutlet weak var advantageBodyThird: UILabel!
     @IBOutlet weak var catalogButtonOutlet: UIButton!
     @IBOutlet weak var appointmentButtonOutlet: UIButton!
+    @IBOutlet weak var likeImageFirst: UIImageView!
+    @IBOutlet weak var likeImageSecond: UIImageView!
+    @IBOutlet weak var likeImageThird: UIImageView!
+    @IBOutlet weak var constraintWithAdvantages: NSLayoutConstraint!
+    @IBOutlet weak var constraintWithoutAdvantages: NSLayoutConstraint!
+
+    
     
     var currentService: Service?
     
@@ -41,12 +48,28 @@ class SingleServiceViewController: UIViewController {
         serviseNameLabel.text = item.name
         servicePriceLabel.text = "от " + String(item.price) + Const.belRublesSign
         serviceDescriptionLabel.text = item.description
-        advantageHeader1.text = item.advantageHeaderFirst
-        advantageBody1.text = item.advantageBodyFirst
-        advantageHeader2.text = item.advantageHeaderSecond
-        advantageBody2.text = item.advantageBodySecond
-        advantageHeader3.text = item.advantageHeaderThird
-        advantageBody3.text = item.advantageBodyThird
+        if item.advantageHeaderFirst != "",
+           item.advantageHeaderSecond != "",
+           item.advantageHeaderThird != "" {
+        advantageHeaderFirst.text = item.advantageHeaderFirst
+        advantageBodyFirst.text = item.advantageBodyFirst
+        advantageHeaderSecond.text = item.advantageHeaderSecond
+        advantageBodySecond.text = item.advantageBodySecond
+        advantageHeaderThird.text = item.advantageHeaderThird
+        advantageBodyThird.text = item.advantageBodyThird
+        } else {
+            likeImageFirst.isHidden = true
+            likeImageSecond.isHidden = true
+            likeImageThird.isHidden = true
+            advantageHeaderFirst.isHidden = true
+            advantageHeaderSecond.isHidden = true
+            advantageHeaderThird.isHidden = true
+            advantageBodyFirst.isHidden = true
+            advantageBodySecond.isHidden = true
+            advantageBodyThird.isHidden = true
+            constraintWithAdvantages.isActive = false
+            constraintWithoutAdvantages.isActive = true
+        }
     }
     
     @IBAction func catalogButtonAction(_ sender: UIButton) {

@@ -27,6 +27,7 @@ class ServicesViewController: UIViewController {
 //        services = FirebaseManager.getServices()
         
         self.spinner.startAnimating()
+        self.view.isUserInteractionEnabled = false
         self.viewForSpinner.isHidden = false
         loadServices()
         setupTable()
@@ -99,6 +100,7 @@ class ServicesViewController: UIViewController {
                 }
             }
             self.spinner.stopAnimating()
+            self.view.isUserInteractionEnabled = true
             self.viewForSpinner.isHidden = true
         }
     }

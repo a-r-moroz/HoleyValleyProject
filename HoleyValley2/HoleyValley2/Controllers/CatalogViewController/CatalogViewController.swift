@@ -29,6 +29,7 @@ class CatalogViewController: UIViewController {
         
         super.viewDidLoad()
         spinner.startAnimating()
+        self.view.isUserInteractionEnabled = false
         self.tabBarController?.delegate = self
         setupTable()
         loadDecorations()
@@ -107,6 +108,7 @@ class CatalogViewController: UIViewController {
                 }
             }
             self.spinner.stopAnimating()
+            self.view.isUserInteractionEnabled = true
             self.viewForSpinner.isHidden = true
         }
     }
