@@ -77,6 +77,13 @@ class AppointmentViewController: UIViewController {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        
+//        NotificationManager.
+    }
+    
     private func setupUI() {
         
         selectMasterButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)

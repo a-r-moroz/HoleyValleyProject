@@ -67,6 +67,12 @@ struct Const {
         static let instagram = "https://instagram.com/holey.valley.piercing/"
         static let tikTok = "https://vm.tiktok.com/ZMN1XXtLe/"
     }
+    
+    struct Coordinates {
+        
+        static let latitude = 53.906117
+        static let longitude = 27.520889
+    }
 }
 
 /*

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>50612997512-4v0gvbser0unre3morh0u4uhom16v831.apps.googleusercontent.com</string>
+	<string>509880029352-d924nhr0snps6g79b6b34t62nbgiunt4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.50612997512-4v0gvbser0unre3morh0u4uhom16v831</string>
+	<string>com.googleusercontent.apps.509880029352-d924nhr0snps6g79b6b34t62nbgiunt4</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDRrK_RuZ9OUPngGJ_XGBwIa4sfyEgi_Wo</string>
+	<string>AIzaSyBh4WxjLNKvREd6r8pUOScoOgCnldp-aX0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>50612997512</string>
+	<string>509880029352</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>access.random.HoleyValley</string>
 	<key>PROJECT_ID</key>
-	<string>holeyvalleytest</string>
+	<string>holey-valley-project</string>
 	<key>STORAGE_BUCKET</key>
-	<string>holeyvalleytest.appspot.com</string>
+	<string>holey-valley-project.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:50612997512:ios:3ef5d5471c0b2f999f7e3d</string>
+	<string>1:509880029352:ios:cdf698a3c4c11f4503f29d</string>
+	<key>DATABASE_URL</key>
+	<string>https://holey-valley-project-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

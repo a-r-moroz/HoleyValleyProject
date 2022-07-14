@@ -27,20 +27,21 @@ class ReceptionViewController: UIViewController {
         
         title = "Контакты"
         
-        mapWithCoordinatesView.isMyLocationEnabled = true
-        mapWithCoordinatesView.isIndoorEnabled = true
-        mapWithCoordinatesView.isTrafficEnabled = true
-        mapWithCoordinatesView.delegate = self
         setupUI()
-        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        createMarker(coordinate: CLLocationCoordinate2D(latitude: 53.906117, longitude: 27.520889))
         setupMap()
     }
     
     private func setupMap() {
         
+        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
+        mapWithCoordinatesView.delegate = self
+        mapWithCoordinatesView.isMyLocationEnabled = true
+        mapWithCoordinatesView.isIndoorEnabled = true
+        mapWithCoordinatesView.isTrafficEnabled = true
         mapWithCoordinatesView.settings.compassButton = true
         mapWithCoordinatesView.settings.setAllGesturesEnabled(true)
+        createMarker(coordinate: CLLocationCoordinate2D(latitude: Const.Coordinates.latitude, longitude: Const.Coordinates.longitude))
     }
     
     private func createMarker(coordinate: CLLocationCoordinate2D) {
@@ -49,7 +50,7 @@ class ReceptionViewController: UIViewController {
         mapWithCoordinatesView.clear()
 //        marker.icon = UIImage(systemName: "circle.circle.fill")
 //        marker.iconView?.tintColor = .red
-        marker.snippet = "Минск, Кальварийская улица, 25, 302 \nКоординаты: \(coordinate.latitude), \(coordinate.longitude)"
+        marker.snippet = "\(Const.salonAddress)\nКоординаты: \(coordinate.latitude), \(coordinate.longitude)"
         marker.map = mapWithCoordinatesView
         updateCamera(coordinate: coordinate)
     }
@@ -65,8 +66,8 @@ class ReceptionViewController: UIViewController {
         
         appointmentButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
 //        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
+//        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+//        mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
         disclaimerView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
 //        socialNetworksView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         phoneView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)

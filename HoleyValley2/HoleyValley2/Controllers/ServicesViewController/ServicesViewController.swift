@@ -30,6 +30,7 @@ class ServicesViewController: UIViewController {
         self.viewForSpinner.isHidden = false
         loadServices()
         setupTable()
+        print("services.count: \(services.count)")
     }
     
     override func viewWillAppear(_ animated: Bool) {

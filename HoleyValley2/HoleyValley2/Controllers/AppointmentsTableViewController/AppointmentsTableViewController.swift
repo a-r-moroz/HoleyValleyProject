@@ -24,7 +24,8 @@ class AppointmentsTableViewController: UIViewController {
         
         super.viewWillAppear(animated)
         
-        appointmentsTable.reloadData()
+        self.appointments = RealmManager.read(type: AppointmentRealm.self)
+        self.appointmentsTable.reloadData()
     }
     
     private func setupTable() {
