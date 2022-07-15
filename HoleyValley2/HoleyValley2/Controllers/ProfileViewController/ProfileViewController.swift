@@ -209,8 +209,10 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(appointmentsTableVC, animated: true)
     }
     
-    @IBAction func popelarQuestionsAction(_ sender: UIButton) {
+    @IBAction func popularQuestionsAction(_ sender: UIButton) {
         
+        let questionsVC = PopularQuestionsViewController(nibName: String(describing: PopularQuestionsViewController.self), bundle: nil)
+        navigationController?.pushViewController(questionsVC, animated: true)
     }
     
 }

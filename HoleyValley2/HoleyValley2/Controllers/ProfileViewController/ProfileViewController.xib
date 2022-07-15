@@ -199,7 +199,7 @@
                                         <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="popelarQuestionsAction:" destination="-1" eventType="touchUpInside" id="dko-OK-Qcs"/>
+                                        <action selector="popularQuestionsAction:" destination="-1" eventType="touchUpInside" id="fus-YX-5hF"/>
                                     </connections>
                                 </button>
                             </subviews>

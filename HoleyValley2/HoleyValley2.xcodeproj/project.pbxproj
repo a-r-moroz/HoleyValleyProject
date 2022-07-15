@@ -25,6 +25,13 @@
 		8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */; };
 		8E2F0D1128816E1700886C5C /* ServicePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D0F28816E1700886C5C /* ServicePhotoCell.swift */; };
 		8E2F0D1228816E1700886C5C /* ServicePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */; };
+		8E2F0D162881943200886C5C /* PopularQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D142881943200886C5C /* PopularQuestionsViewController.swift */; };
+		8E2F0D172881943200886C5C /* PopularQuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2F0D152881943200886C5C /* PopularQuestionsViewController.xib */; };
+		8E2F0D1C2881947500886C5C /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D1A2881947500886C5C /* QuestionCell.swift */; };
+		8E2F0D1D2881947500886C5C /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2F0D1B2881947500886C5C /* QuestionCell.xib */; };
+		8E2F0D1F28819AF900886C5C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D1E28819AF900886C5C /* Question.swift */; };
+		8E2F0D232881ADC100886C5C /* SingleQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D212881ADC100886C5C /* SingleQuestionViewController.swift */; };
+		8E2F0D242881ADC100886C5C /* SingleQuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2F0D222881ADC100886C5C /* SingleQuestionViewController.xib */; };
 		8E516316283CCE06004CAFD3 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E516314283CCE06004CAFD3 /* SplashViewController.swift */; };
 		8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E516315283CCE06004CAFD3 /* SplashViewController.xib */; };
 		8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51631A283CFD72004CAFD3 /* UIView.swift */; };
@@ -116,6 +123,13 @@
 		8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCopyabel.swift; sourceTree = "<group>"; };
 		8E2F0D0F28816E1700886C5C /* ServicePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePhotoCell.swift; sourceTree = "<group>"; };
 		8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicePhotoCell.xib; sourceTree = "<group>"; };
+		8E2F0D142881943200886C5C /* PopularQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularQuestionsViewController.swift; sourceTree = "<group>"; };
+		8E2F0D152881943200886C5C /* PopularQuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularQuestionsViewController.xib; sourceTree = "<group>"; };
+		8E2F0D1A2881947500886C5C /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		8E2F0D1B2881947500886C5C /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		8E2F0D1E28819AF900886C5C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8E2F0D212881ADC100886C5C /* SingleQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleQuestionViewController.swift; sourceTree = "<group>"; };
+		8E2F0D222881ADC100886C5C /* SingleQuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleQuestionViewController.xib; sourceTree = "<group>"; };
 		8E516314283CCE06004CAFD3 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8E516315283CCE06004CAFD3 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8E51631A283CFD72004CAFD3 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -263,6 +277,33 @@
 				8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */,
 			);
 			path = ServicePhotoCell;
+			sourceTree = "<group>";
+		};
+		8E2F0D132881941600886C5C /* PopularQuestionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E2F0D142881943200886C5C /* PopularQuestionsViewController.swift */,
+				8E2F0D152881943200886C5C /* PopularQuestionsViewController.xib */,
+			);
+			path = PopularQuestionsViewController;
+			sourceTree = "<group>";
+		};
+		8E2F0D182881943600886C5C /* QuestionCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E2F0D1A2881947500886C5C /* QuestionCell.swift */,
+				8E2F0D1B2881947500886C5C /* QuestionCell.xib */,
+			);
+			path = QuestionCell;
+			sourceTree = "<group>";
+		};
+		8E2F0D202881ADA300886C5C /* SingleQuestionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E2F0D212881ADC100886C5C /* SingleQuestionViewController.swift */,
+				8E2F0D222881ADC100886C5C /* SingleQuestionViewController.xib */,
+			);
+			path = SingleQuestionViewController;
 			sourceTree = "<group>";
 		};
 		8E5AA6FA2856054E00CE70B7 /* SettingsVC */ = {
@@ -480,6 +521,7 @@
 				8EEBA96528610142005F5825 /* Master.swift */,
 				8E0E28A42878BB0000BDDFEA /* FavoriteDecorationRealm.swift */,
 				8E775121287CB6740016E08B /* AppointmentRealm.swift */,
+				8E2F0D1E28819AF900886C5C /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -487,6 +529,8 @@
 		8EE42F1F28219B7100D7210D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E2F0D202881ADA300886C5C /* SingleQuestionViewController */,
+				8E2F0D132881941600886C5C /* PopularQuestionsViewController */,
 				8E77511B287CA15E0016E08B /* AppointmentsTableViewController */,
 				8E0E28A62878CFE700BDDFEA /* FavoriteDecorationsViewController */,
 				8E787D442874D73B00755508 /* OverlayVC */,
@@ -548,6 +592,7 @@
 		8EE42F362821A18D00D7210D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E2F0D182881943600886C5C /* QuestionCell */,
 				8E2F0D0E28816DFF00886C5C /* ServicePhotoCell */,
 				8E775123287DB6890016E08B /* FavoriteDecorationCollectionCell */,
 				8EEBA96028610074005F5825 /* MasterCell */,
@@ -660,7 +705,9 @@
 				8EEBA9642861008D005F5825 /* MasterCell.xib in Resources */,
 				8EEBA95F2860FF9E005F5825 /* MastersViewController.xib in Resources */,
 				8EBBF8032857351000FE8655 /* NotificationsSettingsViewController.xib in Resources */,
+				8E2F0D242881ADC100886C5C /* SingleQuestionViewController.xib in Resources */,
 				8E5AA70328564C0C00CE70B7 /* SettingsCell.xib in Resources */,
+				8E2F0D172881943200886C5C /* PopularQuestionsViewController.xib in Resources */,
 				8E9D8F582835A774009FDF12 /* DecorationViewController.xib in Resources */,
 				8EE42F3328219C5400D7210D /* ProfileViewController.xib in Resources */,
 				8EE42F2928219BC900D7210D /* CatalogViewController.xib in Resources */,
@@ -674,6 +721,7 @@
 				8E7C439628326834001C0A2A /* GoogleService-Info.plist in Resources */,
 				8EA9AB4B28219666005E0C2A /* LaunchScreen.storyboard in Resources */,
 				8EAB9147284EB8F9003BB9AA /* InputField.xib in Resources */,
+				8E2F0D1D2881947500886C5C /* QuestionCell.xib in Resources */,
 				8EE42F3B2821A1AC00D7210D /* DecorationCell.xib in Resources */,
 				8E13BD4D283B92D00039D1F9 /* SingleServiceViewController.xib in Resources */,
 				8EE42F2E28219C2E00D7210D /* ReceptionViewController.xib in Resources */,
@@ -770,6 +818,7 @@
 				8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8E787D4B2874E65A00755508 /* NavigationBar.swift in Sources */,
+				8E2F0D162881943200886C5C /* PopularQuestionsViewController.swift in Sources */,
 				8EE42F2828219BC900D7210D /* CatalogViewController.swift in Sources */,
 				8EC2EB54285F30FF008FA683 /* FavoriteView.swift in Sources */,
 				8EBBF8052857C86A00FE8655 /* NotificationManager.swift in Sources */,
@@ -801,11 +850,14 @@
 				8EBBF8022857351000FE8655 /* NotificationsSettingsViewController.swift in Sources */,
 				8EAB9149284EB91D003BB9AA /* InputField.swift in Sources */,
 				8E19E52528456454007FABB0 /* Appointment.swift in Sources */,
+				8E2F0D1C2881947500886C5C /* QuestionCell.swift in Sources */,
 				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,
 				8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */,
 				8E2F0D1128816E1700886C5C /* ServicePhotoCell.swift in Sources */,
 				8E5AA7052856527800CE70B7 /* SettingsPoints.swift in Sources */,
 				8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */,
+				8E2F0D1F28819AF900886C5C /* Question.swift in Sources */,
+				8E2F0D232881ADC100886C5C /* SingleQuestionViewController.swift in Sources */,
 				8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */,
 				8E77511E287CA1810016E08B /* AppointmentsTableViewController.swift in Sources */,
 				8EEB32252858B12A00918EA4 /* Date.swift in Sources */,

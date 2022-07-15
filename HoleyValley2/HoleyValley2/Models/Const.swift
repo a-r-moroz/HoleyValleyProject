@@ -53,11 +53,12 @@ struct Const {
     
     struct Firebase {
         
+        static let appointmentsPath = "appointments"
         static let decorationsPath = "decorations"
+        static let mastersPath = "masters"
         static let servicesPath = "services"
         static let servicesAdditionalPath = "servicesAdditional"
-        static let appointmentsPath = "appointments"
-        static let mastersPath = "masters"
+        static let questionsPath = "popularQuestions"
     }
     
     struct SocialNetworks {
