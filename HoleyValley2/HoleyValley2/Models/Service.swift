@@ -18,8 +18,9 @@ final class Service {
     var advantageBodySecond: String
     var advantageHeaderThird: String
     var advantageBodyThird: String
+    var photos: [String]
     
-    internal init(name: String, price: Int, description: String, advantageHeaderFirst: String, advantageBodyFirst: String, advantageHeaderSecond: String, advantageBodySecond: String, advantageHeaderThird: String, advantageBodyThird: String) {
+    internal init(name: String, price: Int, description: String, advantageHeaderFirst: String, advantageBodyFirst: String, advantageHeaderSecond: String, advantageBodySecond: String, advantageHeaderThird: String, advantageBodyThird: String, photos: [String]) {
         self.name = name
         self.price = price
         self.description = description
@@ -29,5 +30,6 @@ final class Service {
         self.advantageBodySecond = advantageBodySecond
         self.advantageHeaderThird = advantageHeaderThird
         self.advantageBodyThird = advantageBodyThird
+        self.photos = photos
     }
 }

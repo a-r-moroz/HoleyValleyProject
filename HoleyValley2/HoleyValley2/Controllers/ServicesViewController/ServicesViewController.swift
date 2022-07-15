@@ -71,6 +71,7 @@ class ServicesViewController: UIViewController {
                 let advantageBodyFirst = value?["advantageBodyFirst"] as? String ?? ""
                 let advantageBodySecond = value?["advantageBodySecond"] as? String ?? ""
                 let advantageBodyThird = value?["advantageBodyThird"] as? String ?? ""
+                let photos = value?["photos"] as? [String] ?? []
                 
                 /*
                  let item = Service(name: value["name"] as? String ?? "",
@@ -91,7 +92,8 @@ class ServicesViewController: UIViewController {
                                    advantageHeaderSecond: advantageHeaderSecond,
                                    advantageBodySecond: advantageBodySecond,
                                    advantageHeaderThird: advantageHeaderThird,
-                                   advantageBodyThird: advantageBodyThird)
+                                   advantageBodyThird: advantageBodyThird,
+                                   photos: photos)
                 
                 self.services.append(item)
                 
@@ -130,6 +132,7 @@ extension ServicesViewController: UITableViewDataSource {
         let service = services[indexPath.row]
         serviceCell.serviceName.text = service.name
         serviceCell.servicePrice.text = "от " + String(service.price) + Const.belRublesSign
+        print("PHOTOS: \(service.photos)")
         
         return serviceCell
     }

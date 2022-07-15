@@ -23,6 +23,8 @@
 		8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD4E283BA0690039D1F9 /* UIButton.swift */; };
 		8E19E52528456454007FABB0 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E52428456454007FABB0 /* Appointment.swift */; };
 		8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */; };
+		8E2F0D1128816E1700886C5C /* ServicePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D0F28816E1700886C5C /* ServicePhotoCell.swift */; };
+		8E2F0D1228816E1700886C5C /* ServicePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */; };
 		8E516316283CCE06004CAFD3 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E516314283CCE06004CAFD3 /* SplashViewController.swift */; };
 		8E516317283CCE06004CAFD3 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E516315283CCE06004CAFD3 /* SplashViewController.xib */; };
 		8E51631B283CFD72004CAFD3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51631A283CFD72004CAFD3 /* UIView.swift */; };
@@ -112,6 +114,8 @@
 		8E13BD4E283BA0690039D1F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		8E19E52428456454007FABB0 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCopyabel.swift; sourceTree = "<group>"; };
+		8E2F0D0F28816E1700886C5C /* ServicePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePhotoCell.swift; sourceTree = "<group>"; };
+		8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicePhotoCell.xib; sourceTree = "<group>"; };
 		8E516314283CCE06004CAFD3 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8E516315283CCE06004CAFD3 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8E51631A283CFD72004CAFD3 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -250,6 +254,15 @@
 				8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */,
 			);
 			path = SingleServiceVC;
+			sourceTree = "<group>";
+		};
+		8E2F0D0E28816DFF00886C5C /* ServicePhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E2F0D0F28816E1700886C5C /* ServicePhotoCell.swift */,
+				8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */,
+			);
+			path = ServicePhotoCell;
 			sourceTree = "<group>";
 		};
 		8E5AA6FA2856054E00CE70B7 /* SettingsVC */ = {
@@ -535,6 +548,7 @@
 		8EE42F362821A18D00D7210D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E2F0D0E28816DFF00886C5C /* ServicePhotoCell */,
 				8E775123287DB6890016E08B /* FavoriteDecorationCollectionCell */,
 				8EEBA96028610074005F5825 /* MasterCell */,
 				8E5AA6FF28564BD300CE70B7 /* SettingsCell */,
@@ -642,6 +656,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E2F0D1228816E1700886C5C /* ServicePhotoCell.xib in Resources */,
 				8EEBA9642861008D005F5825 /* MasterCell.xib in Resources */,
 				8EEBA95F2860FF9E005F5825 /* MastersViewController.xib in Resources */,
 				8EBBF8032857351000FE8655 /* NotificationsSettingsViewController.xib in Resources */,
@@ -788,6 +803,7 @@
 				8E19E52528456454007FABB0 /* Appointment.swift in Sources */,
 				8ECF9CD728327B7B0058899B /* UIImageView.swift in Sources */,
 				8EA9AB3F28219663005E0C2A /* AppDelegate.swift in Sources */,
+				8E2F0D1128816E1700886C5C /* ServicePhotoCell.swift in Sources */,
 				8E5AA7052856527800CE70B7 /* SettingsPoints.swift in Sources */,
 				8E609B8B28399FFF001D242E /* ImageScrollView.swift in Sources */,
 				8EA9AB4128219663005E0C2A /* SceneDelegate.swift in Sources */,

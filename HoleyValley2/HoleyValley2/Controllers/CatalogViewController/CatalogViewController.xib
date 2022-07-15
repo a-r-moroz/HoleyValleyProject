@@ -40,7 +40,7 @@
                             <rect key="frame" x="21.5" y="21.5" width="37" height="37"/>
                         </activityIndicatorView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="39A-xI-iMT"/>
                         <constraint firstItem="flN-FS-ys2" firstAttribute="centerX" secondItem="G9R-Gm-6xT" secondAttribute="centerX" id="cxm-Xf-r2i"/>
@@ -81,14 +81,14 @@
     </objects>
     <resources>
         <image name="HoleyValleyLogo_Gray" width="492" height="492"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

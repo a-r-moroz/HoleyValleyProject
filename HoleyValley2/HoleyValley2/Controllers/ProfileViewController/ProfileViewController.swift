@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var newLabelConstraint: NSLayoutConstraint!
     @IBOutlet weak var favoritesButtonOutlet: UIButton!
     @IBOutlet weak var appointmentsButtonOutlet: UIButton!
+    @IBOutlet weak var appVersionLabel: UILabel!
     
     //    var appointments = [Appointment]()
     /*
@@ -51,6 +52,10 @@ class ProfileViewController: UIViewController {
         appointmentsButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         
 //        appointments = BarController.appointments
+        
+        let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
+        let version = nsObject as! String
+        appVersionLabel.text = "Версия \(version)"
     }
     
     
@@ -204,6 +209,9 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(appointmentsTableVC, animated: true)
     }
     
+    @IBAction func popelarQuestionsAction(_ sender: UIButton) {
+        
+    }
     
 }
 
