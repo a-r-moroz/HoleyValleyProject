@@ -64,6 +64,7 @@ class AppointmentViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         if self.selectedMaster == nil {
             self.constraintWithMaster.isActive = false
             self.constraintWithoutMaster.isActive = true
@@ -77,12 +78,12 @@ class AppointmentViewController: UIViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        
-        super.viewDidDisappear(animated)
-        
-//        NotificationManager.
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        
+//        super.viewWillDisappear(animated)
+//        
+//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+//    }
     
     private func setupUI() {
         
@@ -338,7 +339,7 @@ class AppointmentViewController: UIViewController {
             
             guard let appointmentDate = dateForAlert,
                   let master = selectedMaster?.name else { return }
-            RealmManager.add(object: AppointmentRealm(name: name + " " + surname, date: appointmentDate, time: time, masterName: master, notificationDateAndTime: "\(dateNotificationForAlert), \(Calendar.current.component(.hour, from: notificationDate)):\(Calendar.current.component(.minute, from: notificationDate))"))
+            RealmManager.add(object: AppointmentRealm(name: name + " " + surname,phone: phone, date: appointmentDate, time: time, masterName: master, notificationDateAndTime: "\(dateNotificationForAlert), \(Calendar.current.component(.hour, from: notificationDate)):\(Calendar.current.component(.minute, from: notificationDate))"))
             
         } else {
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)

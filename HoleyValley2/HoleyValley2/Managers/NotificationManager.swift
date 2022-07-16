@@ -25,8 +25,8 @@ class NotificationManager {
     class func setNotification(body: String, time: Date) {
         
         let content = UNMutableNotificationContent()
-        content.title = "Этот день настал!"
-        content.subtitle = "Ваша мечта вот-вот исполнится"
+        content.title = "HoleyValley"
+//        content.subtitle = ""
         content.body = body
         content.sound = .defaultCritical
                 
@@ -48,33 +48,33 @@ class NotificationManager {
         UNUserNotificationCenter.current().add(request)
     }
     
-    class func requestDefaultAutorization() {
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                setDefaultNotification()
-            } else {
-                print("Error")
-            }
-        }
-    }
-    
-    class func setDefaultNotification() {
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Внимание!"
-        content.body = "Это специальное напоминание, которое должно придти в понедельник 18.04.2022 в 19:30"
-        content.sound = .defaultCritical
-        
-        var dateComponents = DateComponents()
-        dateComponents.day = 14
-        dateComponents.hour = 15
-        dateComponents.minute = 28
-        
-        let defaultTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: defaultTrigger)
-        
-        UNUserNotificationCenter.current().add(request)
-    }
+//    class func requestDefaultAutorization() {
+//
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+//            if success {
+//                setDefaultNotification()
+//            } else {
+//                print("Error")
+//            }
+//        }
+//    }
+//
+//    class func setDefaultNotification() {
+//
+//        let content = UNMutableNotificationContent()
+//        content.title = "Внимание!"
+//        content.body = "Это специальное напоминание, которое должно придти в понедельник 18.04.2022 в 19:30"
+//        content.sound = .defaultCritical
+//
+//        var dateComponents = DateComponents()
+//        dateComponents.day = 14
+//        dateComponents.hour = 15
+//        dateComponents.minute = 28
+//
+//        let defaultTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+//
+//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: defaultTrigger)
+//
+//        UNUserNotificationCenter.current().add(request)
+//    }
 }

@@ -264,17 +264,17 @@ extension CatalogViewController: UITableViewDataSource {
 
 extension CatalogViewController: UITabBarControllerDelegate {
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-
-        let tabBarIndex = tabBarController.selectedIndex
-        if tabBarIndex == 1 {
-            
-            if viewController.viewIfLoaded?.window != nil {
-                decorationsTable.setContentOffset(CGPoint.zero, animated: true)
-                print("1 selected")
-            }
-        }
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//
+//        let tabBarIndex = tabBarController.selectedIndex
+//        if tabBarIndex == 1 {
+//            
+//            if viewController.viewIfLoaded?.window != nil {
+//                decorationsTable.setContentOffset(CGPoint.zero, animated: true)
+//                print("1 selected")
+//            }
+//        }
+//    }
     
 //    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
 //        

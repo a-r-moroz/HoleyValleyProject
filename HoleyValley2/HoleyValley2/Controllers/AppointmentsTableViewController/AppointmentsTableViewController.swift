@@ -45,9 +45,9 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
         
         if section == 0 {
             return appointments.filter ({ $0.date >= .now }).count
-        } else {
-            return appointments.filter ({ $0.date < .now }).count
         }
+        
+        return appointments.filter ({ $0.date < .now }).count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -77,6 +77,7 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
 //        }
         
         appointmentCell.appointmentNameLabel.text = appointments[indexPath.row].name
+        appointmentCell.appointmentPhoneLabel.text = appointments[indexPath.row].phone
         appointmentCell.appointmentDateLabel.text = dateString
         appointmentCell.appointmentTimeLabel.text = appointments[indexPath.row].time
         appointmentCell.appointmentMasterNameLabel.text = appointments[indexPath.row].masterName

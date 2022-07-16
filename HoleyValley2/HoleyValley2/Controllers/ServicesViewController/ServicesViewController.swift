@@ -132,7 +132,6 @@ extension ServicesViewController: UITableViewDataSource {
         let service = services[indexPath.row]
         serviceCell.serviceName.text = service.name
         serviceCell.servicePrice.text = "от " + String(service.price) + Const.belRublesSign
-        print("PHOTOS: \(service.photos)")
         
         return serviceCell
     }

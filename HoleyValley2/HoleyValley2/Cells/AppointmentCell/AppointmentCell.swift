@@ -10,6 +10,7 @@ import UIKit
 class AppointmentCell: UITableViewCell {
     
     @IBOutlet weak var appointmentNameLabel: UILabel!
+    @IBOutlet weak var appointmentPhoneLabel: UILabel!
     @IBOutlet weak var appointmentDateLabel: UILabel!
     @IBOutlet weak var appointmentTimeLabel: UILabel!
     @IBOutlet weak var appointmentMasterNameLabel: UILabel!
