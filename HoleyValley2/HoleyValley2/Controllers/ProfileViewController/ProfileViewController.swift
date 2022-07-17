@@ -39,7 +39,6 @@ class ProfileViewController: UIViewController {
         title = Const.tabBarItemTitles.fourthItem
         setupUI()
         setupInputFields()
-        addSettingsButton()
         getAppVersion()
         phoneInputField.textField.delegate = self
         
@@ -143,11 +142,11 @@ class ProfileViewController: UIViewController {
     
     private func addSettingsButton() {
         
-        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(showSortingVC(sender:)))
+        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(showSettingsVC(sender:)))
         navigationItem.rightBarButtonItem = settingsButton
     }
     
-    @objc func showSortingVC(sender:UIBarButtonItem) {
+    @objc func showSettingsVC(sender:UIBarButtonItem) {
         
         let settingsVC = SettingsViewController(nibName: String(describing: SettingsViewController.self), bundle: nil)
         self.navigationController?.pushViewController(settingsVC, animated: true)
