@@ -21,15 +21,18 @@ class SelectedMasterViewController: UIViewController {
         
         super.viewDidLoad()
         
-        masterPhoto.setRounding()
-        viewWithData.setRoundingToView(cornerRadius: 18)
-        viewWithData.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
-        
+        setupUI()
         guard let master = master else { return }
         nameLabel.text = master.name
         experienceLabel.text = master.experience
         descriptionLabel.text = master.description
         masterPhoto.sd_setImage(with: URL(string: master.photo), placeholderImage: UIImage(systemName: "person.fill"))
+    }
+    
+    private func setupUI() {
+        
+        masterPhoto.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
+        viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
     }
     
     @IBAction func closeAction(_ sender: UIButton) {

@@ -14,9 +14,6 @@ class MastersViewController: UIViewController {
     @IBOutlet weak var mastersTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var viewForSpinner: UIView!
-
-//    @IBOutlet weak var selectMasterButtonOutlet: UIButton!
-//    @IBOutlet weak var selectButtonOutlet: UIButton!
     
     var masters = [Master]()
     var database: DatabaseReference!
@@ -29,15 +26,18 @@ class MastersViewController: UIViewController {
         
         self.spinner.startAnimating()
         setupTable()
+        setupUI()
         loadMasters()
-//        selectMasterButtonOutlet.setCapsuleRoundingToButton()
-//        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
+    }
+    
+    private func setupUI() {
+        
         mastersTable.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         mastersTable.showsVerticalScrollIndicator = false
-//        selectButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
     }
 
     private func setupTable() {
+        
         mastersTable.register(UINib(nibName: String(describing: MasterCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MasterCell.self))
         self.mastersTable.delegate = self
         self.mastersTable.dataSource = self
@@ -104,7 +104,7 @@ extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
         guard let masterCell = cell as? MasterCell else { return cell }
         
         let master = masters[indexPath.row]
-
+        
         masterCell.nameLabel.text = master.name
         masterCell.experienceLabel.text = master.experience
         masterCell.descriptionLabel.text = master.description
@@ -134,8 +134,6 @@ extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
             selectedMaster = nil
             print(selectedMaster?.name ?? "Not selected!")
         }
-        
-
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -147,39 +145,4 @@ extension MastersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.viewWithData.backgroundColor = .secondarySystemBackground
         cell.isSelectedCell = false
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return }
-//        cell.viewWithData.layer.borderWidth = 1
-//        cell.viewWithData.layer.borderColor = Const.Colors.gold.cgColor
-//    }
-//
-//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-//
-//        guard let cell = tableView.cellForRow(at: indexPath) as? MasterCell else { return nil }
-//
-//        if let indexPathForSelectedRow = tableView.indexPathForSelectedRow,
-//            indexPathForSelectedRow == indexPath {
-//            cell.viewWithData.layer.borderWidth = 0
-//            cell.viewWithData.layer.borderColor = nil
-//            tableView.deselectRow(at: indexPath, animated: false)
-//            return nil
-//        }
-//        return indexPath
-//    }
-    
-//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-//        if tableView.indexPathsForSelectedRows?.contains(indexPath) ?? false {
-//           tableView.deselectRow(at: indexPath, animated: true)
-//           return nil
-//        }
-//
-//        return indexPath
-//    }
-//
-//    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
-//        return nil
-//    }
-    
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class MainServicesViewController: UIViewController {
-
+    
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var segmentView: UIView!
     
@@ -17,18 +17,10 @@ class MainServicesViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
+        title = "Услуги"
         setupConstraintsFor(controller: servicesController)
         setupSegmentControllers()
-        title = "Услуги"
-        
-//        segmentController.layer.style = .none
-//        segmentController.layer.cornerRadius = segmentController.frame.height / 2
-//        segmentController.layer.borderWidth = 1
-//        segmentController.layer.borderColor = Const.Colors.gold.cgColor
-//        segmentController.layer.masksToBounds = true
-//        segmentController.layer.shadowColor = nil
-//        segmentController.selectedSegmentTintColor = Const.Colors.gold
     }
     
     private func setupSegmentControllers() {
@@ -41,9 +33,8 @@ class MainServicesViewController: UIViewController {
         
         guard let controller = controller else { return }
         segmentView.addSubview(controller.view)
-        // отключение существующих констрейнтов для установки новых кодом
-        controller.view.translatesAutoresizingMaskIntoConstraints = false
         
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             controller.view.leadingAnchor.constraint(equalTo: segmentView.leadingAnchor),
             controller.view.trailingAnchor.constraint(equalTo: segmentView.trailingAnchor),
@@ -62,7 +53,6 @@ class MainServicesViewController: UIViewController {
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         
-        // удаление всех контроллеров
         removeEmbeddedControllers()
         if sender.selectedSegmentIndex == 0 {
             servicesController?.spinner.startAnimating()

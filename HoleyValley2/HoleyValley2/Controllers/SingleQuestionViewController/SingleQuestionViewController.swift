@@ -22,5 +22,4 @@ class SingleQuestionViewController: UIViewController {
         questionLabel.text = question.header
         answerLabel.text = question.body
     }
-
 }

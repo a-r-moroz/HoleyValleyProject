@@ -24,22 +24,23 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var appointmentsButtonOutlet: UIButton!
     @IBOutlet weak var appVersionLabel: UILabel!
     
-    //    var appointments = [Appointment]()
     /*
     var appointments = RealmManager.read(type: Appointment.self) {
         didSet {
             appointmentsTable.reloadData()
-//            checkTableCount()
         }
     }
     */
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
-        title = "Профиль"
+        title = Const.tabBarItemTitles.fourthItem
+        setupUI()
         setupInputFields()
         addSettingsButton()
+        getAppVersion()
         phoneInputField.textField.delegate = self
         
         guard let name = UserDefaults.standard.string(forKey: "userName"),
@@ -47,41 +48,33 @@ class ProfileViewController: UIViewController {
               let phone = UserDefaults.standard.string(forKey: "userPhone") else { return }
         nameLabel.text = name + " " + surname
         phoneLabel.text = phone
+    }
+    
+    private func setupUI() {
         
         favoritesButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         appointmentsButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-        
-//        appointments = BarController.appointments
+    }
+    
+    private func getAppVersion() {
         
         let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
         let version = nsObject as! String
         appVersionLabel.text = "Версия \(version)"
     }
     
-    
-    /*
-    override func viewWillAppear(_ animated: Bool) {
-
-        appointments = RealmManager.read(type: Appointment.self)
-        appointmentsTable.reloadData()
-//        checkTableCount()
-    }
-    */
     private func setupInputFields() {
         
         viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         nameInputField.validationType = .name
         nameInputField.textField.placeholder = "Имя"
         nameInputField.placeholderLabel.textColor = .label
-//        nameInputField.placeholderLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         surnameInputField.validationType = .surname
         surnameInputField.textField.placeholder = "Фамилия"
         surnameInputField.placeholderLabel.textColor = .label
-//        surnameInputField.placeholderLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         phoneInputField.validationType = .phone
         phoneInputField.textField.placeholder = "+375 (XX) XXX-XX-XX"
         phoneInputField.placeholderLabel.textColor = .label
-//        phoneInputField.placeholderLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         phoneInputField.textField.keyboardType = .numberPad
 //        phoneInputField.textField.delegate = self
     }
@@ -113,7 +106,6 @@ class ProfileViewController: UIViewController {
                     self.view.layoutIfNeeded()
 
                 }
-//                self.viewWithData.verticalShake(self.viewWithData)
                 self.view.layoutIfNeeded()
             }
         }
@@ -158,7 +150,6 @@ class ProfileViewController: UIViewController {
     @objc func showSortingVC(sender:UIBarButtonItem) {
         
         let settingsVC = SettingsViewController(nibName: String(describing: SettingsViewController.self), bundle: nil)
-        
         self.navigationController?.pushViewController(settingsVC, animated: true)
     }
 
@@ -217,38 +208,6 @@ class ProfileViewController: UIViewController {
     
 }
 
-/*
-extension ProfileViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension ProfileViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        appointments.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let appointment = appointments[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AppointmentCell.self), for: indexPath)
-        guard let appointmentCell = cell as? AppointmentCell else { return cell }
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "RU")
-        dateFormatter.dateFormat = "d MMM, yyyy"
-        let dateString = dateFormatter.string(from: appointment.date)
-        appointmentCell.appointmentDate.text = dateString
-        appointmentCell.appointmentTime.text = appointment.time
-        return appointmentCell
-    }
-    
-    
-}
-*/
-
 extension ProfileViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -265,7 +224,7 @@ extension ProfileViewController: UITextFieldDelegate {
         return false
     }
     
- // mask example: `+X (XXX) XXX-XXXXX
+ // +X (XXX) XXX-XXXXX
     func format(with mask: String, phone: String) -> String {
 
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)

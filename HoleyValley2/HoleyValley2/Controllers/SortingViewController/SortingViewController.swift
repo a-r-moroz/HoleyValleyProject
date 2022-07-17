@@ -15,7 +15,6 @@ class SortingViewController: UIViewController {
     @IBOutlet weak var backView: UIView!
     
     let sortingPoints = SortingPoints.allCases
-//    var currentSortingParameters: (type: String, price: String)?
     var currentType = "Все украшения"
     var currentPrice = "-"
     let defaultSortingByType = "Все украшения"
@@ -25,32 +24,14 @@ class SortingViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-//        title = "Сортировка"
-//        let appearance = UINavigationBarAppearance()
-//        appearance.backgroundColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1.0)
-//        appearance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
-//        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBackground]
-//
-//        navigationController?.navigationBar.tintColor = .white
-//        navigationController?.navigationBar.standardAppearance = appearance
-//        navigationController?.navigationBar.compactAppearance = appearance
-//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-//        self.navigationItem.setHidesBackButton(true, animated: true)
         
         backView.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
         backView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
         saveButtonOutlet.setCapsuleRoundingToButton()
-        saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        
+        saveButtonOutlet.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor, cornerRadius: Const.CornerRadiusTo.viewAndImage)
         setupTable()
-        
-//        UserDefaults.standard.set("Все украшения", forKey: "currentType")
-//        UserDefaults.standard.set("-", forKey: "currentPrice")
-        
-//        setupBlur()
     }
     
     private func setupTable() {

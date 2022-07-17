@@ -24,7 +24,7 @@ class MasterCell: UITableViewCell {
         
         masterPhoto.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
         viewWithData.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        viewWithData.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: 18)
+//        viewWithData.setShadowToView(color: Const.Colors.gray.cgColor, cornerRadius: Const.CornerRadiusTo.viewAndImage)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

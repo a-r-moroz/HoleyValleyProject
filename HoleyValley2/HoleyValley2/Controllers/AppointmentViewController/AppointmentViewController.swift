@@ -88,16 +88,12 @@ class AppointmentViewController: UIViewController {
     private func setupUI() {
         
         selectMasterButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        selectMasterButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         confirmButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        confirmButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         setNotificationButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        setNotificationButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         infoView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         calendarView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
         viewWithCalendar.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         warningImage.tintColor = Const.Colors.red
-//        warningImage.setShadowToImage(color: UIColor.systemRed.cgColor)
     }
     
     private func setInputFields() {
@@ -147,7 +143,6 @@ class AppointmentViewController: UIViewController {
         present(selectedMasterVC, animated: true)
     }
     
-    //Calls this function when the tap is recognized to hide keyboard
     private func hideKeyboardByTap() {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -155,7 +150,7 @@ class AppointmentViewController: UIViewController {
     }
     
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
         view.endEditing(true)
     }
     
@@ -171,16 +166,15 @@ class AppointmentViewController: UIViewController {
                 let snap = child as! DataSnapshot
                 let key = snap.key
                 self.busyHours.append(key)
-//                self.usingHours.filter { $0 != key }
             }
-
+            
             DispatchQueue.main.async {
                 self.usingHours = self.openingHours.filter { !self.busyHours.contains($0) }
                 print("ARRAY BUSY:\n\(self.busyHours)")
                 print("ARRAY USE:\n\(self.usingHours)")
             }
         }
-}
+    }
     
     @IBAction func selectMasterAction(_ sender: UIButton) {
         
@@ -228,16 +222,11 @@ class AppointmentViewController: UIViewController {
         }
                 
         present(mastersVC, animated: true)
-        
-//        navigationController?.pushViewController(mastersVC, animated: true)
     }
     
     @IBAction func setNotificationAppointmentAction(_ sender: UIButton) {
         
         let notificationsSettingsVC = NotificationsSettingsViewController(nibName: String(describing: NotificationsSettingsViewController.self), bundle: nil)
-//        notificationsSettingsVC.modalTransitionStyle = .coverVertical
-//        notificationsSettingsVC.modalPresentationStyle = .overFullScreen
-        
         
         if let sheet = notificationsSettingsVC.sheetPresentationController {
             sheet.detents = [ .medium()]
@@ -245,9 +234,7 @@ class AppointmentViewController: UIViewController {
             sheet.prefersEdgeAttachedInCompactHeight = true
             sheet.preferredCornerRadius = Const.CornerRadiusTo.sheetController
         }
-        
-//        present(notificationsSettingsVC, animated: true)
-                
+                        
         notificationsSettingsVC.postDate = {
             
             guard let notifDate = notificationsSettingsVC.notificationDate else { return }
@@ -269,11 +256,9 @@ class AppointmentViewController: UIViewController {
                 self.constraintWithoutNotification.isActive = false
             }
             self.notificationDateLabel.text = ("\(dateString), \(Calendar.current.component(.hour, from: notifDate)):\(Calendar.current.component(.minute, from: notifDate))")
-//            self.notificationDateLabel.text = ("\(dateString)")
         }
         
         self.present(notificationsSettingsVC, animated: true)
-        
     }
 
     @IBAction func saveAppointmentAction(_ sender: UIButton) {
@@ -379,59 +364,32 @@ extension AppointmentViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MMM d, yyyy"
         dateFormatter.locale = Locale(identifier: "EN")
         dateFormatter.dateFormat = "d MMM, yyyy"
         let dateString = dateFormatter.string(from: date)
         selectedDate = dateString
         dateForAlert = date
         availableHours(date: dateString)
-                
-        //        for i in busyHours {
-        //            usingHours = openingHours.filter { $0 != i }
-        //        }
-        
-//        for i in openingHours {
-//        for a in busyHours {
-//            if i == a {
-//                continue
-//            } else {
-//                usingHours.append(i)
-//            }
-//        }
-//        }
-        
-        
-//        let curDate = dateForAlert!.toLocalTime()
-//        let notificationDate = curDate.addingTimeInterval(11 * 60 * 60)
-//        print(notificationDate)
-
         print(dateString)
     }
-    
-//    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//
-//        print("deselect")
-//    }
-    
-//    func calendar(_ calendar: FSCalendar, shouldDeselect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-//        return true
-//    }
 }
 
 extension AppointmentViewController: FSCalendarDataSource {
 
     func minimumDate(for calendar: FSCalendar) -> Date {
+        
         return Calendar.current.date(byAdding: .day, value: 1, to: .now) ?? Date()
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
+        
         return Date().addingTimeInterval((24 * 60 * 60) * 55)
     }
 }
 
 
 extension AppointmentViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         textField.resignFirstResponder()
@@ -446,7 +404,7 @@ extension AppointmentViewController: UITextFieldDelegate {
         return false
     }
     
- // mask example: `+X (XXX) XXX-XXXXX
+ // +X (XXX) XXX-XXXXX
     func format(with mask: String, phone: String) -> String {
 
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)

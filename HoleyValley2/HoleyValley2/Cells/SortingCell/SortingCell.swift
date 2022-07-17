@@ -30,7 +30,4 @@ class SortingCell: UITableViewCell {
     @IBAction func popUpButtonAction(_ sender: UIButton) {
         
     }
-    
-    
-    
 }

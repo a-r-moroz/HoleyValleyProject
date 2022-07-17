@@ -39,9 +39,6 @@ class SingleServiceViewController: UIViewController {
         setupViewControllerWithData()
         catalogButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         appointmentButtonOutlet.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-
-//        catalogButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-//        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
         
         setupCollection()
     }
@@ -64,19 +61,18 @@ class SingleServiceViewController: UIViewController {
         if item.advantageHeaderFirst != "",
            item.advantageHeaderSecond != "",
            item.advantageHeaderThird != "" {
-        advantageHeaderFirst.text = item.advantageHeaderFirst
-        advantageBodyFirst.text = item.advantageBodyFirst
-        advantageHeaderSecond.text = item.advantageHeaderSecond
-        advantageBodySecond.text = item.advantageBodySecond
-        advantageHeaderThird.text = item.advantageHeaderThird
-        advantageBodyThird.text = item.advantageBodyThird
-        
+            advantageHeaderFirst.text = item.advantageHeaderFirst
+            advantageBodyFirst.text = item.advantageBodyFirst
+            advantageHeaderSecond.text = item.advantageHeaderSecond
+            advantageBodySecond.text = item.advantageBodySecond
+            advantageHeaderThird.text = item.advantageHeaderThird
+            advantageBodyThird.text = item.advantageBodyThird
+            
             servicePhotos = item.photos
             print("servicePhotos \(servicePhotos.count)")
-//            for i in item.photos {
-//                self.servicePhotos.append(i)
-//            }
-        
+//                        for i in item.photos {
+//                            self.servicePhotos.append(i)
+//                        }
         } else {
             likeImageFirst.isHidden = true
             likeImageSecond.isHidden = true
@@ -91,9 +87,7 @@ class SingleServiceViewController: UIViewController {
             constraintWithAdvantages.isActive = false
             constraintWithoutAdvantages.isActive = true
         }
-        
 //        servicePhotosCollection.isHidden = item.photos.isEmpty ? true : false
-        
         if item.photos.isEmpty {
             servicePhotosCollection.isHidden = true
             oldConstraintUnderCollection.isActive = false
@@ -103,18 +97,17 @@ class SingleServiceViewController: UIViewController {
     
     @IBAction func catalogButtonAction(_ sender: UIButton) {
         
-//        navigationController?.popToRootViewController(animated: true)
         tabBarController?.selectedIndex = 1
     }
     
     @IBAction func appointmentButtonAction(_ sender: UIButton) {
         
-//        navigationController?.popToRootViewController(animated: true)
         tabBarController?.selectedIndex = 2
     }
 }
 
 extension SingleServiceViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return servicePhotos.count
@@ -146,11 +139,8 @@ extension SingleServiceViewController: UICollectionViewDataSource, UICollectionV
         self.present(imageVC, animated: true)
     }
     
-//    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-//        <#code#>
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: 150, height: 134)
     }
 }

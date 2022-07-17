@@ -18,46 +18,33 @@ class NotificationsSettingsViewController: UIViewController {
     var notificationDate: Date?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-//        viewWithData.setRoundingToView(cornerRadius: 41)
-//        viewWithData.layer.cornerRadius = Const.CornerRadiusTo.viewAndImage
-//        viewWithData.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        disclaimerView.setRoundingToView(cornerRadius: 18)
-
-
-        saveButtonOutlet.setCapsuleRoundingToButton()
-        saveButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-        warningImage.tintColor = Const.Colors.red
         
+        setupUI()
         timePicker.locale = Locale(identifier: "ru")
-        
-//        timePicker.datePickerMode = .time
         timePicker.addTarget(self, action: #selector(timePickerValue(sender:)), for: UIControl.Event.valueChanged)
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        UIView.animate(withDuration: 0.3, delay: 0.3) {
-//            self.backgroundView.alpha = 1.0
-//        }
-//    }
+    private func setupUI() {
+        
+        disclaimerView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        saveButtonOutlet.setCapsuleRoundingToButton()
+        saveButtonOutlet.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor, cornerRadius: Const.CornerRadiusTo.viewAndImage)
+        warningImage.tintColor = Const.Colors.red
+    }
     
     @objc func timePickerValue(sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru")
-//        dateFormatter.dateFormat = "hh:mm"
         dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        self.notificationDate = timePicker.date
         
-            self.notificationDate = timePicker.date
-        
-        
-//            self.selectedDate = picker.date
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "MM-dd-yyyy HH:mm"
-//            dateField.text = formatter.string(from: picker.date)
-
+//        self.selectedDate = picker.date
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+//        dateField.text = formatter.string(from: picker.date)
         
         let selectedTime = dateFormatter.string(from: sender.date)
         print(selectedTime)
@@ -70,6 +57,7 @@ class NotificationsSettingsViewController: UIViewController {
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
+        
         dismiss(animated: true)
     }
 }

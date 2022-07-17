@@ -15,17 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        UITabBar.appearance().tintColor = UIColor(red: 255/255, green: 0, blue: 108/255, alpha: 1)
         UITabBar.appearance().tintColor = UIColor(red: 140/255, green: 102/255, blue: 53/255, alpha: 1)
 //        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 0, green: 252/255, blue: 255/255, alpha: 1)
         UITabBar.appearance().unselectedItemTintColor = .systemGray2
-
-//        UITabBar.appearance().barTintColor = .blue
-        
-//        UITabBar.appearance().backgroundColor = .black
-        
         FirebaseApp.configure()
-        
         GMSServices.provideAPIKey("AIzaSyAS6qgX2yi3HcDVg_Um0ScpBP4wkp3R5pM")
         
         var config = Realm.Configuration(
@@ -33,12 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             migrationBlock: { migration, oldSchemaVersion in
                 if (oldSchemaVersion < 1) {}
         })
+        
         config.deleteRealmIfMigrationNeeded = true
-
         Realm.Configuration.defaultConfiguration = config
-
         _ = try! Realm()
-
+        
         return true
     }
 
@@ -55,17 +47,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
-//    func openRealm() {
-//
-//        let defaultRealmPath = Realm.defaultPath
-//        let bundleReamPath = NSBundle.mainBundle().resourcePath?.stringByAppendingPathComponent("default.realm")
-//
-//        if !NSFileManager.defaultManager().fileExistsAtPath(defaultRealmPath) {
-//            NSFileManager.defaultManager().copyItemAtPath(bundleReamPath!, toPath: defaultRealmPath, error: nil)
-//        }
-//    }
-
-
 }
 

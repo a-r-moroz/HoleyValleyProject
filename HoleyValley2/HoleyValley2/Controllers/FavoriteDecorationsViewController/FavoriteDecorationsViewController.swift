@@ -36,7 +36,6 @@ class FavoriteDecorationsViewController: UIViewController {
         
         favoriteDecorations = RealmManager.read(type: FavoriteDecorationRealm.self)
         favoriteDecorationsCollection.reloadData()
-        
         self.emptyImage.isHidden = self.favoriteDecorations.isEmpty ? false : true
     }
         
@@ -53,28 +52,8 @@ class FavoriteDecorationsViewController: UIViewController {
            flowLayout.minimumInteritemSpacing = margin
            flowLayout.minimumLineSpacing = margin
            flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-        
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical
-//        favoriteDecorationsCollection.frame = view.bounds
     }
 }
-
-/*
- func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-             
-     let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
-         RealmManager.remove(object: self.favoriteDecorations[indexPath.row])
-         self.favoriteDecorations = RealmManager.read(type: FavoriteDecorationRealm.self)
-             self.favoriteDecorationsTable.reloadData()
-
-     }
-     
-     let actions = UISwipeActionsConfiguration(actions: [deleteAction])
-     
-     return actions
- }
- */
 
 extension FavoriteDecorationsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -123,51 +102,4 @@ extension FavoriteDecorationsViewController: UICollectionViewDelegateFlowLayout 
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
         return CGSize(width: width, height: width + 50)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: screenWidth, height: screenWidth)
-//    }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-//    {
-//        return CGSize(width: (favoriteDecorationsCollection.frame.width / 2) - 2, height: 200.0)
-//    }
-    
-//    // 1
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        sizeForItemAt indexPath: Index
-//    ) -> CGSize {
-//        // 2
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//
-//        return CGSize(width: widthPerItem, height: widthPerItem)
-//    }
-//
-//    // 3
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        insetForSectionAt section: Int
-//    ) -> UIEdgeInsets {
-//        return sectionInsets
-//    }
-//
-//    // 4
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        minimumLineSpacingForSectionAt section: Int
-//    ) -> CGFloat {
-//        return sectionInsets.left
-//    }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: view.frame.width / 2, height: view.frame.height / 2)
-//    }
 }

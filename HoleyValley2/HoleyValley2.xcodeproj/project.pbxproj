@@ -20,9 +20,7 @@
 		8E13BD48283B921C0039D1F9 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E13BD46283B921B0039D1F9 /* ServiceCell.xib */; };
 		8E13BD4C283B92D00039D1F9 /* SingleServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD4A283B92D00039D1F9 /* SingleServiceViewController.swift */; };
 		8E13BD4D283B92D00039D1F9 /* SingleServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */; };
-		8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E13BD4E283BA0690039D1F9 /* UIButton.swift */; };
 		8E19E52528456454007FABB0 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E52428456454007FABB0 /* Appointment.swift */; };
-		8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */; };
 		8E2F0D1128816E1700886C5C /* ServicePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D0F28816E1700886C5C /* ServicePhotoCell.swift */; };
 		8E2F0D1228816E1700886C5C /* ServicePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */; };
 		8E2F0D162881943200886C5C /* PopularQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F0D142881943200886C5C /* PopularQuestionsViewController.swift */; };
@@ -118,9 +116,7 @@
 		8E13BD46283B921B0039D1F9 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		8E13BD4A283B92D00039D1F9 /* SingleServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleServiceViewController.swift; sourceTree = "<group>"; };
 		8E13BD4B283B92D00039D1F9 /* SingleServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleServiceViewController.xib; sourceTree = "<group>"; };
-		8E13BD4E283BA0690039D1F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		8E19E52428456454007FABB0 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
-		8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCopyabel.swift; sourceTree = "<group>"; };
 		8E2F0D0F28816E1700886C5C /* ServicePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePhotoCell.swift; sourceTree = "<group>"; };
 		8E2F0D1028816E1700886C5C /* ServicePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicePhotoCell.xib; sourceTree = "<group>"; };
 		8E2F0D142881943200886C5C /* PopularQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularQuestionsViewController.swift; sourceTree = "<group>"; };
@@ -499,9 +495,7 @@
 				8E787D4A2874E65A00755508 /* NavigationBar.swift */,
 				8ECF9CD628327B7B0058899B /* UIImageView.swift */,
 				8E609B8A28399FFF001D242E /* ImageScrollView.swift */,
-				8E13BD4E283BA0690039D1F9 /* UIButton.swift */,
 				8E51631A283CFD72004CAFD3 /* UIView.swift */,
-				8E288EC228481F2C00A7F98B /* LabelCopyabel.swift */,
 				8EEB32242858B12A00918EA4 /* Date.swift */,
 				8E977781285E79A1009B4817 /* TextField.swift */,
 			);
@@ -815,7 +809,6 @@
 				8E787D472874D74D00755508 /* OverlayViewController.swift in Sources */,
 				8E6955A82877914E00BFB6D2 /* MainServicesViewController.swift in Sources */,
 				8E9D512B284D01260019F8A0 /* SortingViewController.swift in Sources */,
-				8E288EC328481F2C00A7F98B /* LabelCopyabel.swift in Sources */,
 				8EE42F2D28219C2E00D7210D /* ReceptionViewController.swift in Sources */,
 				8E787D4B2874E65A00755508 /* NavigationBar.swift in Sources */,
 				8E2F0D162881943200886C5C /* PopularQuestionsViewController.swift in Sources */,
@@ -842,7 +835,6 @@
 				8EE42F3228219C5400D7210D /* ProfileViewController.swift in Sources */,
 				8E5AA70228564C0C00CE70B7 /* SettingsCell.swift in Sources */,
 				8EE42F3528219C7600D7210D /* BarController.swift in Sources */,
-				8E13BD4F283BA0690039D1F9 /* UIButton.swift in Sources */,
 				8E59ACEB284A3ED50080039A /* SortingPoints.swift in Sources */,
 				8EEBA95E2860FF9E005F5825 /* MastersViewController.swift in Sources */,
 				8E0192B12822F2CF0057C3D8 /* DecorationType.swift in Sources */,

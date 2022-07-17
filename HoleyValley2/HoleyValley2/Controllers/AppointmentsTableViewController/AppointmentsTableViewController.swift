@@ -8,7 +8,7 @@
 import UIKit
 
 class AppointmentsTableViewController: UIViewController {
-
+    
     @IBOutlet weak var appointmentsTable: UITableView!
     
     var appointments = RealmManager.read(type: AppointmentRealm.self)
@@ -16,7 +16,7 @@ class AppointmentsTableViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
         setupTable()
     }
     
@@ -29,6 +29,7 @@ class AppointmentsTableViewController: UIViewController {
     }
     
     private func setupTable() {
+        
         appointmentsTable.register(UINib(nibName: String(describing: AppointmentCell.self), bundle: nil), forCellReuseIdentifier: String(describing: AppointmentCell.self))
         self.appointmentsTable.delegate = self
         self.appointmentsTable.dataSource = self
@@ -38,19 +39,21 @@ class AppointmentsTableViewController: UIViewController {
 extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
-            return appointments.filter ({ $0.date >= .now }).count
+            return appointments.filter ({ $0.date > .now }).count
         }
         
         return appointments.filter ({ $0.date < .now }).count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         if section == 0 {
             return "Предстоящие"
         } else {
@@ -87,7 +90,17 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+            RealmManager.remove(object: self.appointments[indexPath.row])
+            self.appointments = RealmManager.read(type: AppointmentRealm.self)
+            self.appointmentsTable.reloadData()
+        }
+        let actions = UISwipeActionsConfiguration(actions: [deleteAction])
+        return actions
     }
 }

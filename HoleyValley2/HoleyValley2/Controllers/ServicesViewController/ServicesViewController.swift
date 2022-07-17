@@ -22,10 +22,8 @@ class ServicesViewController: UIViewController {
         
         super.viewDidLoad()
         
+        title = Const.tabBarItemTitles.firstItem
         self.tabBarController?.delegate = self
-        title = "Услуги"
-//        services = FirebaseManager.getServices()
-        
         self.spinner.startAnimating()
         self.view.isUserInteractionEnabled = false
         self.viewForSpinner.isHidden = false
@@ -37,8 +35,6 @@ class ServicesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        
-
     }
     
     func setupTable() {
@@ -61,7 +57,6 @@ class ServicesViewController: UIViewController {
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 
                 let value = child.value as? NSDictionary
-                
                 let name = value?["name"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
                 let description = value?["description"] as? String ?? ""
@@ -72,19 +67,6 @@ class ServicesViewController: UIViewController {
                 let advantageBodySecond = value?["advantageBodySecond"] as? String ?? ""
                 let advantageBodyThird = value?["advantageBodyThird"] as? String ?? ""
                 let photos = value?["photos"] as? [String] ?? []
-                
-                /*
-                 let item = Service(name: value["name"] as? String ?? "",
-                                    price: value["price"] as? Int ?? 0,
-                                    description: value["description"] as? String ?? "",
-                                    advantageHeader1: value["advantageHeader1"] as? String ?? "",
-                                    advantageBody1: value["advantageBody1"] as? String ?? "",
-                                    advantageHeader2: value["advantageHeader2"] as? String ?? "",
-                                    advantageBody2: value["advantageBody2"] as? String ?? "",
-                                    advantageHeader3: value["advantageHeader3"] as? String ?? "",
-                                    advantageBody3: value["advantageBody3"] as? String ?? ""
-                 )
-                 */
 
                 let item = Service(name: name, price: price, description: description,
                                    advantageHeaderFirst: advantageHeaderFirst,
@@ -120,7 +102,9 @@ extension ServicesViewController: UITableViewDelegate {
 }
 
 extension ServicesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return services.count
     }
     
@@ -132,7 +116,6 @@ extension ServicesViewController: UITableViewDataSource {
         let service = services[indexPath.row]
         serviceCell.serviceName.text = service.name
         serviceCell.servicePrice.text = "от " + String(service.price) + Const.belRublesSign
-        
         return serviceCell
     }
 }

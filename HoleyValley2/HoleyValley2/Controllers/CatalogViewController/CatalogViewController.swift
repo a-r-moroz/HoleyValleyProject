@@ -20,33 +20,26 @@ class CatalogViewController: UIViewController {
     var decorations = [Decoration]()
     var sortingDecorations = [Decoration]()
     var originalDecorations = [Decoration]()
-    var timer: Timer?
-    
-//    lazy var searchBar: UISearchBar = UISearchBar(frame: CGRect.zero)
+    var timer: Timer?    
     var searchController = UISearchController()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        spinner.startAnimating()
+        
+        title = Const.tabBarItemTitles.secondItem
         self.view.isUserInteractionEnabled = false
         self.tabBarController?.delegate = self
         setupTable()
         loadDecorations()
-        title = "Каталог"
         addSortingButton()
         addSearchBar()
-        
-//        decorations = FirebaseManager.getDecorations()
+        spinner.startAnimating()
     }
     
     private func addSearchBar() {
         
-//        searchBar.placeholder = "Поиск"
-//        searchBar.sizeToFit()
-//        navigationItem.titleView = searchBar
         searchController.searchResultsUpdater = self
-//        searchController.searchBar.delegate = self
         searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
         searchController.searchBar.placeholder = "Поиск"
         navigationItem.searchController = searchController
@@ -75,30 +68,13 @@ class CatalogViewController: UIViewController {
                 let description = value?["description"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
                 let type = value?["type"] as? String ?? ""
-//                let pictureString = value?["picture"] as? String ?? ""
                 let picture = value?["picture"] as? String ?? ""
-
-//                var picture = UIImage()
-//
-//                guard let pictureUrl = URL(string: pictureString) else { return }
                 
-//                DispatchQueue.global().async {
-//                    if let data = try? Data(contentsOf: pictureUrl) {
-//                        if let image = UIImage(data: data) {
-//                            DispatchQueue.main.async {
-//                                picture = image
-//                            }
-//                        }
-//                    }
-//                }
-                
-//                if let pictureUrl = URL(string: pictureString) {
-//                    if let pictureData = try? Data(contentsOf: pictureUrl) {
-//                        picture = UIImage(data: pictureData)!
-//                    }
-//                }
-                
-                let item = Decoration(name: name, price: price, description: description, type: type, image: picture)
+                let item = Decoration(name: name,
+                                      price: price,
+                                      description: description,
+                                      type: type,
+                                      image: picture)
                 
                 self.decorations.append(item)
                 self.originalDecorations.append(item)
@@ -121,10 +97,6 @@ class CatalogViewController: UIViewController {
     
     @objc func showSortingVC(sender: UIBarButtonItem) {
         
-//        let sortingVC = SortingViewController(nibName: String(describing: SortingViewController.self), bundle: nil)
-//
-//        navigationController?.pushViewController(sortingVC, animated: true)
-        
         let sortingVC = SortingViewController(nibName: String(describing: SortingViewController.self), bundle: nil)
         
         if let sheet = sortingVC.sheetPresentationController {
@@ -134,14 +106,7 @@ class CatalogViewController: UIViewController {
             sheet.preferredCornerRadius = Const.CornerRadiusTo.sheetController
         }
         
-//        sortingVC.modalTransitionStyle = .coverVertical
-//        sortingVC.modalPresentationStyle = .overFullScreen
-        
         sortingVC.saveSortingParameters = {
-            
-//            DispatchQueue.global().async {
-//                self.originalDecorations = self.decorations
-//            }
             
             print("Current value: \(sortingVC.currentType), \(sortingVC.currentPrice)")
             
@@ -251,10 +216,8 @@ extension CatalogViewController: UITableViewDataSource {
         guard let decorationCell = cell as? DecorationCell else { return cell }
         
         let decor = decorations[indexPath.row]
-        
         decorationCell.decorationNameLabel.text = decor.name
         decorationCell.decorationPriceLabel.text = String(decor.price) + Const.belRublesSign
-//        decorationCell.decorationPictureView.setImageFromULR(decor.image)
         decorationCell.decorationPictureView.sd_setImage(with: URL(string: decor.image), placeholderImage: UIImage(named: "imagePatternLittle.png"))
         
         print("INDEX: \n\(indexPath.row)")

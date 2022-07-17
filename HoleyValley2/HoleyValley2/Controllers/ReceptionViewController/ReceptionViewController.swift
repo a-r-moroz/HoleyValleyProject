@@ -25,8 +25,7 @@ class ReceptionViewController: UIViewController {
         
         super.viewDidLoad()
         
-        title = "Контакты"
-        
+        title = Const.tabBarItemTitles.thirdItem
         setupUI()
         setupMap()
     }
@@ -46,10 +45,8 @@ class ReceptionViewController: UIViewController {
     
     private func createMarker(coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker(position: coordinate)
-        marker.title = "HoleyValley"
+        marker.title = Const.appName
         mapWithCoordinatesView.clear()
-//        marker.icon = UIImage(systemName: "circle.circle.fill")
-//        marker.iconView?.tintColor = .red
         marker.snippet = "\(Const.salonAddress)\nКоординаты: \(coordinate.latitude), \(coordinate.longitude)"
         marker.map = mapWithCoordinatesView
         updateCamera(coordinate: coordinate)
@@ -65,11 +62,7 @@ class ReceptionViewController: UIViewController {
     private func setupUI() {
         
         appointmentButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        appointmentButtonOutlet.setShadowToButton(color: Const.Colors.gray.cgColor)
-//        mapWithCoordinatesView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        mapWithCoordinatesView.setShadowWithOffsetToView(color: Const.Colors.gray.cgColor)
         disclaimerView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
-//        socialNetworksView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         phoneView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         telegramButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         whatsAppButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
@@ -77,7 +70,6 @@ class ReceptionViewController: UIViewController {
         tikTokButton.setRoundingToView(cornerRadius: Const.CornerRadiusTo.viewAndImage)
         
         warningImage.tintColor = Const.Colors.red
-//        warningImage.setShadowToImage(color: UIColor.systemRed.cgColor)
     }
     
 //    private func goToApp(url: String, phoneNumber: String? = nil) {

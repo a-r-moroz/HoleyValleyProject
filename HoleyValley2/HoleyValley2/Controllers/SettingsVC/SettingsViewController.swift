@@ -48,10 +48,12 @@ extension SettingsViewController: UITableViewDelegate {
 extension SettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return sections.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         return sections[section].sectionTitle
     }
     
@@ -69,10 +71,12 @@ extension SettingsViewController: UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return settings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingsCell.self), for: indexPath)
         guard let settingCell = cell as? SettingsCell else { return cell }
         settingCell.setupCellWith(settings[indexPath.row])
@@ -97,6 +101,4 @@ extension SettingsViewController: UITableViewDataSource {
         
         return settingCell
     }
-    
-    
 }

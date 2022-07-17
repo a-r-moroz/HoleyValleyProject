@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class PopularQuestionsViewController: UIViewController {
-
+    
     @IBOutlet weak var questionsTable: UITableView!
     @IBOutlet weak var viewForSpinner: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -28,12 +28,10 @@ class PopularQuestionsViewController: UIViewController {
         loadQuestions()
     }
     
-    
     private func setupTable() {
         
         questionsTable.delegate = self
         questionsTable.dataSource = self
-//        questionsTable.allowsSelection = false
         let nib = UINib(nibName: String(describing: QuestionCell.self), bundle: nil)
         questionsTable.register(nib, forCellReuseIdentifier: String(describing: QuestionCell.self))
         questionsTable.estimatedRowHeight = 100
@@ -42,33 +40,30 @@ class PopularQuestionsViewController: UIViewController {
     
     private func loadQuestions() {
         
-            database = Database.database().reference()
-            questions = []
-                
+        database = Database.database().reference()
+        questions = []
+        
         let query = self.database.child(Const.Firebase.questionsPath).queryOrderedByKey()
+        
+        query.observeSingleEvent(of: .value) { snapshot in
             
-            query.observeSingleEvent(of: .value) { snapshot in
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
                 
-                for child in snapshot.children.allObjects as! [DataSnapshot] {
-                    
-                    let value = child.value as? NSDictionary
-                    
-                    let header = value?["header"] as? String ?? ""
-                    let body = value?["body"] as? String ?? ""
-//                    let photos = value?["photos"] as? [String] ?? []
-                    
-                    let item = Question(header: header, body: body)
-                    
-                    self.questions.append(item)
-                    
-                    DispatchQueue.main.async {
-                        self.questionsTable.reloadData()
-                    }
+                let value = child.value as? NSDictionary
+                
+                let header = value?["header"] as? String ?? ""
+                let body = value?["body"] as? String ?? ""
+                let item = Question(header: header, body: body)
+                self.questions.append(item)
+                
+                DispatchQueue.main.async {
+                    self.questionsTable.reloadData()
                 }
-                self.spinner.stopAnimating()
-                self.viewForSpinner.isHidden = true
-                self.view.isUserInteractionEnabled = true
             }
+            self.spinner.stopAnimating()
+            self.viewForSpinner.isHidden = true
+            self.view.isUserInteractionEnabled = true
+        }
     }
 }
 
@@ -103,7 +98,6 @@ extension PopularQuestionsViewController: UITableViewDataSource, UITableViewDele
         
         selectedAnswerVC.currentQuestion = questions[indexPath.row]
         present(selectedAnswerVC, animated: true)
-        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

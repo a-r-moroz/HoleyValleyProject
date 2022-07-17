@@ -8,7 +8,7 @@
 import UIKit
 
 class ImageScrollView: UIScrollView, UIScrollViewDelegate {
-
+    
     var imageZoomView: UIImageView!
     
     lazy var zoomingTap: UITapGestureRecognizer = {
@@ -48,7 +48,7 @@ class ImageScrollView: UIScrollView, UIScrollViewDelegate {
         
         self.imageZoomView.addGestureRecognizer(self.zoomingTap)
         self.imageZoomView.isUserInteractionEnabled = true
-
+        
     }
     
     override func layoutSubviews() {
@@ -72,7 +72,7 @@ class ImageScrollView: UIScrollView, UIScrollViewDelegate {
         if minScale >= 0.1 && minScale < 0.5 {
             maxScale = 0.8
 //            maxScale = 0.7
-
+            
         }
         if minScale >= 0.5 {
             maxScale = max(1.0, minScale)
@@ -101,7 +101,6 @@ class ImageScrollView: UIScrollView, UIScrollViewDelegate {
         imageZoomView.frame = frameToCenter
     }
     
-    // gesture
     @objc func handleZoomingTap(sender: UITapGestureRecognizer) {
         let location = sender.location(in: sender.view)
         self.zoom(point: location, animated: true)

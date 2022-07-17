@@ -18,6 +18,7 @@ class DecorationCell: UITableViewCell {
 //    var database: DatabaseReference!
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         
         decorationPictureView.setRoundingToView(cornerRadius: Const.CornerRadiusTo.imageInContainer)
@@ -30,6 +31,7 @@ class DecorationCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        
         self.decorationPictureView.image = UIImage(named: "imagePatternLittle")
     }
 }

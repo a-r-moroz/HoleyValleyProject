@@ -26,43 +26,6 @@ extension UIImageView {
 }
 
 //extension UIImageView {
-//    override open func awakeFromNib() {
-//
-//      self.layoutIfNeeded()
-//      layer.cornerRadius = self.frame.height / 10
-//      layer.masksToBounds = true
-//
-//     }}
-
-extension UIImageView {
-    
-    func setRounding() {
-
-      self.layoutIfNeeded()
-      layer.cornerRadius = 10
-      layer.masksToBounds = true
-     }
-    
-    func setRoundingToImage(cornerRadius: CGFloat) {
-
-        self.layer.cornerRadius = cornerRadius
-        self.layer.masksToBounds = true
-    }
-    
-    func setShadowToImage(color: CGColor) {
-        
-        self.layer.shadowColor = color
-        self.layer.shadowOpacity = 0.4
-        self.layer.masksToBounds = false
-        self.layer.shadowRadius = 20
-        self.layer.shadowOffset = .zero
-        
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = UIScreen.main.scale
-    }
-}
-
-//extension UIImageView {
 //  func enableZoom() {
 //    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
 //    isUserInteractionEnabled = true

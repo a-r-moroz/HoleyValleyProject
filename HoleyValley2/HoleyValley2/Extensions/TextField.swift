@@ -24,16 +24,5 @@ extension UITextField {
         self.leftViewMode = .always
 //        self.rightViewMode = .always
     }
-    
-//    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-//
-//        return CGRect(x: 300, y: 25, width: 40, height: 20)
-//    }
-    
-//    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-//        let originalRect = super.clearButtonRect(forBounds: bounds)
-//
-//        return originalRect.offsetBy(dx: -8, dy: 0)
-//    }
 }
 

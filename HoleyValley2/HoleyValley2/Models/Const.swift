@@ -16,8 +16,16 @@ struct Const {
     static let salonAddress = "Кальварийская улица, 25, 302"
     static let salonPhoneNumber = "+375 (33) 990-77-88"
     static let salonPhoneNumberNoSpaces = "375339907788"
-
-
+    static let appName = "HoleyValley"
+    
+    struct tabBarItemTitles {
+        
+        static let firstItem = "Услуги"
+        static let secondItem = "Каталог"
+        static let thirdItem = "Контакты"
+        static let fourthItem = "Профиль"
+    }
+    
     struct DecorationType {
         
         static let defaultType = "Все украшения"
@@ -75,19 +83,3 @@ struct Const {
         static let longitude = 27.520889
     }
 }
-
-/*
- struct BrandColors {
-     static let purple = "BrandPurple"
-     static let lightPurple = "BrandLightPurple"
-     static let blue = "BrandBlue"
-     static let lighBlue = "BrandLightBlue"
- }
- 
- struct FStore {
-     static let collectionName = "messages"
-     static let senderField = "sender"
-     static let bodyField = "body"
-     static let dateField = "date"
- }
- */

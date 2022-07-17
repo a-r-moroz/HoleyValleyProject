@@ -44,23 +44,3 @@ final class RealmManager {
         })
     }
 }
-
-/*
- static func delegate(object: SavedCoordinates) {
-     let data = read()
-     guard let objectToDelete = data.filter({ $0.latitude == object.latitude && $0.longitude == object.longitude }).first else { return }
-     
-     try? realm.write({
-         realm.delete(objectToDelete)
-     })
- }
- */
-
-/*
- 
- class func remove<T: Object>(object: T) {
-     try? realm.write({
-         realm.delete(object)
-     })
- }
- */
