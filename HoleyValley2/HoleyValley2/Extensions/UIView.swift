@@ -85,10 +85,10 @@ extension UIView {
         case rightToLeft
       }
       
-      func startShimmeringAnimation(animationSpeed: Float = 1.4, direction: Direction = .leftToRight, repeatCount: Float = MAXFLOAT) {
+      func startShimmeringAnimation(animationSpeed: Float = 2.8, direction: Direction = .leftToRight, repeatCount: Float = MAXFLOAT) { // animationSpeed: Float = 1.4
         
         // Create color  ->2
-        let lightColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.1).cgColor
+        let lightColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.75).cgColor
         let blackColor = UIColor.black.cgColor
         
         // Create a CAGradientLayer  ->3
@@ -120,8 +120,8 @@ extension UIView {
         // Add animation over gradient Layer  ->4
         CATransaction.begin()
         let animation = CABasicAnimation(keyPath: "locations")
-        animation.fromValue = [0.0, 0.1, 0.2]
-        animation.toValue = [0.8, 0.9, 1.0]
+        animation.fromValue = [0.0, 0.15, 0.3] // [0.0, 0.1, 0.2]
+        animation.toValue = [0.7, 0.85, 1.0] // [0.8, 0.9, 1.0]
         animation.duration = CFTimeInterval(animationSpeed)
         animation.repeatCount = repeatCount
         CATransaction.setCompletionBlock { [weak self] in
