@@ -30,6 +30,13 @@ class ReceptionViewController: UIViewController {
         setupMap()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        appointmentButton.startShimmeringAnimation()
+    }
+    
     private func setupMap() {
         
         mapWithCoordinatesView.delegate = self
