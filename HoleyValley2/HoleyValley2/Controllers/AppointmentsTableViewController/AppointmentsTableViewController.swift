@@ -38,28 +38,30 @@ class AppointmentsTableViewController: UIViewController {
 
 extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 2
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//
+//        return 2
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return appointments.filter ({ $0.date > .now }).count
-        }
+//        if section == 0 {
+//            return appointments.filter ({ $0.date > .now }).count
+//        }
+//
+//        return appointments.filter ({ $0.date < .now }).count
         
-        return appointments.filter ({ $0.date < .now }).count
+        return appointments.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if section == 0 {
-            return "Предстоящие"
-        } else {
-            return "Архив"
-        }
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        if section == 0 {
+//            return "Предстоящие"
+//        } else {
+//            return "Архив"
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -78,6 +80,15 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
 //            appointmentCell.ViewWithData.layer.borderColor = UIColor.systemRed.cgColor
 //            appointmentCell.ViewWithData.layer.borderWidth = 1
 //        }
+        
+        if appointments[indexPath.row].date < .now {
+            
+            appointmentCell.appointmentNameLabel.textColor = .systemGray2
+            appointmentCell.appointmentPhoneLabel.textColor = .systemGray2
+            appointmentCell.appointmentDateLabel.textColor = .systemGray2
+            appointmentCell.appointmentTimeLabel.textColor = .systemGray2
+            appointmentCell.appointmentMasterNameLabel.textColor = .systemGray2
+        }
         
         appointmentCell.appointmentNameLabel.text = appointments[indexPath.row].name
         appointmentCell.appointmentPhoneLabel.text = appointments[indexPath.row].phone
