@@ -25,6 +25,7 @@ class AppointmentsTableViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.appointments = RealmManager.read(type: AppointmentRealm.self)
+        self.appointments = self.appointments.sorted(by: { $0.date > $1.date })
         self.appointmentsTable.reloadData()
     }
     
@@ -88,6 +89,8 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
             appointmentCell.appointmentDateLabel.textColor = .systemGray2
             appointmentCell.appointmentTimeLabel.textColor = .systemGray2
             appointmentCell.appointmentMasterNameLabel.textColor = .systemGray2
+        } else {
+            appointmentCell.ViewWithData.backgroundColor = Const.Colors.gold.withAlphaComponent(0.1)
         }
         
         appointmentCell.appointmentNameLabel.text = appointments[indexPath.row].name
@@ -109,6 +112,7 @@ extension AppointmentsTableViewController: UITableViewDataSource, UITableViewDel
         let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
             RealmManager.remove(object: self.appointments[indexPath.row])
             self.appointments = RealmManager.read(type: AppointmentRealm.self)
+            self.appointments = self.appointments.sorted(by: { $0.date > $1.date })
             self.appointmentsTable.reloadData()
         }
         let actions = UISwipeActionsConfiguration(actions: [deleteAction])

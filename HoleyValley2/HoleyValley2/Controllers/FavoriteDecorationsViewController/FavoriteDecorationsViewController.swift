@@ -35,6 +35,7 @@ class FavoriteDecorationsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         favoriteDecorations = RealmManager.read(type: FavoriteDecorationRealm.self)
+        self.favoriteDecorations.reverse()
         favoriteDecorationsCollection.reloadData()
         self.emptyImage.isHidden = self.favoriteDecorations.isEmpty ? false : true
     }
@@ -81,6 +82,7 @@ extension FavoriteDecorationsViewController: UICollectionViewDelegate, UICollect
         
         decorationVC.updateTable = {
             self.favoriteDecorations = RealmManager.read(type: FavoriteDecorationRealm.self)
+            self.favoriteDecorations.reverse()
             self.favoriteDecorationsCollection.reloadData()
         }
         navigationController?.pushViewController(decorationVC, animated: true)
